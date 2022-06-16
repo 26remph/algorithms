@@ -1,9 +1,9 @@
-# import time
+import time
 
 word_one: str = input().strip()
 word_two: str = input().strip()
 
-# start_time = time.time()
+start_time = time.time()
 use_index: set = set()
 
 for ind, ch in enumerate(word_two):
@@ -36,4 +36,4 @@ for ind, ch in enumerate(word_two):
         else:
             print('present')
 
-# print("--- %s seconds ---" % (time.time() - start_time))
+print("--- %s seconds ---" % (time.time() - start_time))

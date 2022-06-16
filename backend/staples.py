@@ -10,28 +10,19 @@ def get_pos(expr: str) -> int:
     pos: int = -1
 
     matches: list = re.findall(pattern, expr)
-    open_left = True if matches[0] == '(' else False
-    print(matches)
-    print(open_left)
+    open_left = False
+    if matches:
+        open_left = True if matches[0] == '(' else False
 
     cnt = Counter(matches)
-    print(dict(cnt))
-    print(cnt)
-    print(len(cnt))
 
     if abs(cnt['('] - cnt[')']) == 1 and open_left:
 
-    # if cnt['('] == cnt[')'] or abs(cnt['('] - cnt[')']) > 1 or len(cnt) == 0:
-    #     return -1
-
         pattern = pattern_left if cnt['('] > cnt[')'] else pattern_right
-
-        print(pattern)
         match = re.search(pattern, expr)
         if match:
             pos = match.end()
-            print(match.start())
-            print(match.end(), type(match))
+
         return pos
 
     return pos
@@ -47,6 +38,7 @@ def read_input() -> str:
 
 if __name__ == '__main__':
     expression: str = read_input()
+    # start_time = time.time()
     with open('output.txt', 'w') as f:
         print(get_pos(expression), file=f)
-
+    # print("--- %s seconds ---" % (time.time() - start_time))
