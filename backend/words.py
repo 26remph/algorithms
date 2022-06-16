@@ -15,7 +15,6 @@ for ind, ch in enumerate(word_two):
         ind_find: int = 0
         pos = 0
         # print('---')
-        # while pos not in use_index or pos == -1:
         while True:
             pos = word_one.find(ch, ind_find, len(word_one))
             # print('ch:', ch)
