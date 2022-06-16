@@ -3,7 +3,7 @@
 
 Расчет минимальной дистанции
 """
-# id 68972579
+# id 68997991
 from typing import List
 
 
@@ -49,5 +49,6 @@ def read_input() -> List[int]:
     return street
 
 
-streets = read_input()
-print(" ".join(map(str, get_dist(streets))))
+if __name__ == '__main__':
+    streets = read_input()
+    print(*get_dist(streets))

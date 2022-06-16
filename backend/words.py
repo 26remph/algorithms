@@ -1,4 +1,4 @@
-import time
+# import time
 
 word_one: str = input().strip()
 word_two: str = input().strip()
@@ -22,9 +22,14 @@ for ind, ch in enumerate(word_two):
             if pos in use_index:
                 ind_find = pos + 1
                 continue
-            else:
+
+            if word_one[pos] == word_two[pos]:
                 use_index.add(pos)
-                break
+                ind_find = pos + 1
+                continue
+
+            use_index.add(pos)
+            break
 
         if pos == -1 or word_one[pos] == word_two[pos]:
             print('absent')

@@ -2,17 +2,15 @@
 Ловкость рук.
 Игра «Тренажёр для скоростной печати»
 """
-# id 68972555
+# id 68997972
 from typing import List, Tuple
+from collections import Counter
 
 
 def get_sum(matrix: List[str], k: int) -> int:
     """Рассчитывает число баллов, которое смогут заработать участники."""
-    count: int = 0
-    for char in set(matrix):
-        if matrix.count(char) <= 2 * k:
-            count += 1
-    return count
+    cnt = Counter(matrix)
+    return len(list(filter(lambda x: x <= k * 2, cnt.values())))
 
 
 def read_input() -> Tuple[List[str], int]:
@@ -25,5 +23,6 @@ def read_input() -> Tuple[List[str], int]:
     return matrix, k
 
 
-arr, key = read_input()
-print(get_sum(arr, key))
+if __name__ == '__main__':
+    arr, key = read_input()
+    print(get_sum(arr, key))
