@@ -1,10 +1,9 @@
-from typing import Tuple
 import time
 
 word_one: str = input().strip()
 word_two: str = input().strip()
 
-start_time = time.time()
+# start_time = time.time()
 use_index: set = set()
 
 for ind, ch in enumerate(word_two):
@@ -14,13 +13,8 @@ for ind, ch in enumerate(word_two):
     else:
         ind_find: int = 0
         pos = 0
-        # print('---')
         while True:
             pos = word_one.find(ch, ind_find, len(word_one))
-            # print('ch:', ch)
-            # print('ind_find', ind_find)
-            # print('pos', pos)
-            # print('ind', ind)
 
             if pos == - 1:
                 break
@@ -32,12 +26,9 @@ for ind, ch in enumerate(word_two):
                 use_index.add(pos)
                 break
 
-        # print('useindex: ', use_index)
-
-
         if pos == -1 or word_one[pos] == word_two[pos]:
             print('absent')
         else:
             print('present')
 
-print("--- %s seconds ---" % (time.time() - start_time))
+# print("--- %s seconds ---" % (time.time() - start_time))
