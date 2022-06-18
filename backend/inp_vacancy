@@ -7,3 +7,13 @@ bjarne_stroustrup,developer,6,1
 julian_assange,hacker,5,100500
 bill_gates,developer,2,0
 guccifer,hacker,2,0
+
+2
+plant,2
+gardener,1
+5
+demeter,gardener,4,12
+acacia,plant,0,5
+cactus,plant,0,1
+ficus,plant,0,4
+palm,plant,0,3
