@@ -1,19 +1,41 @@
 from typing import List, Tuple, Dict
-# import time
+import time
 
 
-def foo(vacancy: Dict[str, int], arr: List[Tuple[str, str, int, int]]) -> List[str]:
+def judge(x, name, cnt):
+    if x[1] == name:
+        cnt['count'] += 1
+        return True
+
+    return False
+
+
+def foo(vacancy: dict, arr: List[Tuple[str, str, int, int]]) -> List[str]:
 
     staff: List[str] = []
+    vacancy_sorted = dict(sorted(vacancy.items(), key=lambda x: x[0]))
 
-    for name, capcity in vacancy.items():
+    for name, capacity in vacancy_sorted.items():
+        cnt: dict = {'count': 0}
+        # filtered_vacancy = list(filter(lambda x: x[1] == name, arr))
+        # rez: list = sorted(filtered_vacancy, key=lambda x: (-x[2], x[3]))
+        # filtered_vacancy = list(filter(lambda x: x[1] == name, arr))
+        arr.sort(key=lambda x: (-judge(x, name, cnt), -x[2], x[3]))
+        # print('arr:', arr)
+        # print('count', cnt)
+        end_names: int = min(cnt['count'], capacity)
+        end_slice: int = cnt['count']
 
-        filtered_vacancy = list(filter(lambda x: x[1] == name, arr))
-        rez: list = sorted(filtered_vacancy, key=lambda x: (-x[2], x[3]))
-
-        end: int = min(len(rez), capcity)
-        names = [x[0] for x in rez[:end]]
+        # print('arr end:', arr[:end])
+        names = [x[0] for x in arr[:end_names]]
         staff = staff + names
+        # print('names:', names)
+        del arr[:end_slice]
+        # return staff
+
+        # end: int = min(len(rez), capcity)
+        # names = [x[0] for x in rez[:end]]
+        # staff = staff + names
 
     staff.sort()
 
@@ -21,21 +43,38 @@ def foo(vacancy: Dict[str, int], arr: List[Tuple[str, str, int, int]]) -> List[s
 
 
 def read_input() -> Tuple[dict, list]:
-    n = int(input())
-    vacancy = {}
-    for _ in range(n):
-        name, capcity = input().strip().split(',')
-        vacancy[name] = int(capcity)
-    k: int = int(input())
-    arr = []
-    for _ in range(k):
-        candidate_id, vacancy_id, task, fine = input().strip().split(',')
-        arr.append((candidate_id, vacancy_id, int(task), int(fine)))
+    # file input
+    with open('inp_vaconcy_all.txt') as f:
+        n = int(f.readline())
+        vacancy = {}
+        for _ in range(n):
+            name, capcity = f.readline().strip().split(',')
+            vacancy[name] = int(capcity)
+        k: int = int(f.readline())
+        arr = []
+        for _ in range(k):
+            candidate_id, vacancy_id, task, fine = f.readline().split(',')
+            arr.append((candidate_id, vacancy_id, int(task), int(fine)))
+
+    # stdin input
+    # n = int(input())
+    # vacancy = {}
+    # for _ in range(n):
+    #     name, capcity = input().strip().split(',')
+    #     vacancy[name] = int(capcity)
+    # k: int = int(input())
+    # arr = []
+    # for _ in range(k):
+    #     candidate_id, vacancy_id, task, fine = input().strip().split(',')
+    #     arr.append((candidate_id, vacancy_id, int(task), int(fine)))
+
     return vacancy, arr
 
 
 if __name__ == '__main__':
     vacancy, arr = read_input()
-    # start_time = time.time()
-    print('\n'.join(foo(vacancy, arr)))
-    # print("--- %s seconds ---" % (time.time() - start_time))
+    start_time = time.time()
+    for staff in foo(vacancy, arr):
+        print(staff)
+    # print('\n'.join(foo(vacancy, arr)))
+    print("--- %s seconds ---" % (time.time() - start_time))
