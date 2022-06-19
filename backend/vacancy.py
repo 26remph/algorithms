@@ -14,23 +14,40 @@ def foo(vacancy: dict, arr: List[Tuple[str, str, int, int]]) -> List[str]:
 
     staff: List[str] = []
     vacancy_sorted = dict(sorted(vacancy.items(), key=lambda x: x[0]))
+    arr.sort(key=lambda x: (x[1], -x[2], x[3]))
+
+    # print(vacancy_sorted)
+    # print(arr)
+    # return staff
 
     for name, capacity in vacancy_sorted.items():
-        cnt: dict = {'count': 0}
+        count: int = 0
         # filtered_vacancy = list(filter(lambda x: x[1] == name, arr))
         # rez: list = sorted(filtered_vacancy, key=lambda x: (-x[2], x[3]))
         # filtered_vacancy = list(filter(lambda x: x[1] == name, arr))
-        arr.sort(key=lambda x: (-judge(x, name, cnt), -x[2], x[3]))
+        # arr.sort(key=lambda x: (-judge(x, name, cnt), -x[2], x[3]))
         # print('arr:', arr)
         # print('count', cnt)
-        end_names: int = min(cnt['count'], capacity)
-        end_slice: int = cnt['count']
+        if not arr:
+            break
+
+        names: list = []
+        while count < len(arr) and arr[count][1] == name:
+            # print('arr[count]', arr[count])
+            # print('count', count)
+            if count < capacity:
+                names.append(arr[count][0])
+
+            count += 1
+
+        # end_names: int = min(count, capacity)
+        # end_slice: int = count
 
         # print('arr end:', arr[:end])
-        names = [x[0] for x in arr[:end_names]]
+        # names = [x[0] for x in arr[:end_names]]
         staff = staff + names
         # print('names:', names)
-        del arr[:end_slice]
+        del arr[:count]
         # return staff
 
         # end: int = min(len(rez), capcity)
