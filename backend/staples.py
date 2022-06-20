@@ -36,10 +36,10 @@ def get_pos(expr: str) -> int:
 
             stack.pop()
 
-    if len(stack) == 1:
+    if len(stack) == 1 and len(wrong_seq) == 0:
         pos = stack.pop()
 
-    if len(wrong_seq) == 1:
+    if len(wrong_seq) == 1 and len(stack) == 0:
         match = re.search(r'\)', expr)
         if match:
             pos = match.end()
