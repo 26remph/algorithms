@@ -61,7 +61,7 @@ if __name__ == '__main__':
     expression: str = read_input()
     # start_time = time.time()
     with open('output.txt', 'w') as f:
-        # print(get_pos(expression), file=f)
-        print(get_pos(expression))
+        print(get_pos(expression), file=f)
+        # print(get_pos(expression))
 
     # print("--- %s seconds ---" % (time.time() - start_time))
