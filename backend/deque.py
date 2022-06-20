@@ -2,9 +2,12 @@ from collections import deque
 
 
 q = deque()
+if not q:
+    print('--empty--')
 q.append('a')
 q.append('b')
 q.append('c')
+print('len q:', len(q))
 print('Initial queue')
 print(q)
 print('\nElements dequeued from the queue')

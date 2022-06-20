@@ -1,5 +1,7 @@
 import re
 import time
+from collections import deque
+
 
 def get_pos(expr: str) -> int:
 
@@ -19,7 +21,8 @@ def get_pos(expr: str) -> int:
     elif count == 1:
         return pos
 
-    stack: list = []
+    # stack: list = []
+    stack = deque()
     matches = re.finditer(pattern, expr)
     for match in matches:
 
