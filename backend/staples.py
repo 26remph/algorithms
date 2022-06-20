@@ -43,7 +43,6 @@ def get_pos(expr: str) -> int:
         match = re.search(r'\)', expr)
         if match:
             pos = match.end()
-            # print(match.end(), type(match))
             return pos
 
     return pos
