@@ -22,29 +22,33 @@ def get_pos(expr: str) -> int:
     stack: list = []
     matches = re.finditer(pattern, expr)
     pos: int = -1
-    wrong_seq = []
+    wrong_seq: list = []
     for match in matches:
-        print(stack)
         if match[0] == '(':
             stack.append(match.end())
         if match[0] == ')':
             if not stack:
                 # return -1
+                if len(wrong_seq) > 1:
+                    continue
                 wrong_seq.append(match.end())
-                print(match, match.endpos, match.end())
                 continue
+
             stack.pop()
 
-    print('len(stack):', len(stack))
-    print(stack)
+    # print('len(stack):', len(stack))
+    # print(stack)
     if len(stack) == 1:
         pos = stack.pop()
 
     if len(wrong_seq) == 1:
-        print('--search--')
-
-    print('wrong:', wrong_seq)
-
+        # print('--search--')
+        # print('wrong:', wrong_seq)
+        match = re.search(r'\)', expr)
+        if match:
+            pos = match.end()
+            # print(match.end(), type(match))
+            return pos
 
     return pos
 
