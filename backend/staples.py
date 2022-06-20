@@ -1,5 +1,5 @@
 import re
-import time
+# import time
 
 def get_pos(expr: str) -> int:
 
@@ -36,14 +36,10 @@ def get_pos(expr: str) -> int:
 
             stack.pop()
 
-    # print('len(stack):', len(stack))
-    # print(stack)
     if len(stack) == 1:
         pos = stack.pop()
 
     if len(wrong_seq) == 1:
-        # print('--search--')
-        # print('wrong:', wrong_seq)
         match = re.search(r'\)', expr)
         if match:
             pos = match.end()
@@ -64,9 +60,9 @@ def read_input() -> str:
 
 if __name__ == '__main__':
     expression: str = read_input()
-    start_time = time.time()
+    # start_time = time.time()
     with open('output.txt', 'w') as f:
         # print(get_pos(expression), file=f)
         print(get_pos(expression))
 
-    print("--- %s seconds ---" % (time.time() - start_time))
+    # print("--- %s seconds ---" % (time.time() - start_time))
