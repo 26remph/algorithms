@@ -21,15 +21,16 @@ def get_pos(expr: str) -> int:
 
     stack: list = []
     matches = re.finditer(pattern, expr)
+    pos: int = -1
     for match in matches:
-
         if match[0] == '(':
             stack.append(match.endpos)
         if match[0] == ')':
             if not stack:
-                return pos
+                return -1
             stack.pop()
 
+    print('len(stack):', len(stack))
     if len(stack) == 1:
         pos = stack.pop()
 
@@ -38,8 +39,8 @@ def get_pos(expr: str) -> int:
 
 def read_input() -> str:
 
-    # with open('input.txt', 'r') as f:
-    with open('inp_stapels_full.txt', 'r') as f:
+    with open('input.txt', 'r') as f:
+    # with open('inp_stapels_full.txt', 'r') as f:
         input_str: str = f.readline().strip()
 
     return input_str
