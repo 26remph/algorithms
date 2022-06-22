@@ -1,5 +1,5 @@
 import re
-from collections import deque
+
 
 def get_pos(expr: str) -> int:
 
@@ -19,8 +19,7 @@ def get_pos(expr: str) -> int:
     elif count == 1:
         return pos
 
-    # stack: list = []
-    stack = deque()
+    stack: list = []
     matches = re.finditer(pattern, expr)
     pos: int = -1
     wrong_seq: list = []

@@ -14,45 +14,49 @@ def judge(element, _filter):
     date_before = time.strptime(_filter['DATE_BEFORE'], '%d.%m.%Y')
     f_4 = date_after <= date <= date_before
 
-    is_judge = all([f_1, f_2, f_3, f_4])
+    is_allowed = all([f_1, f_2, f_3, f_4])
 
-    if is_judge:
+    if is_allowed:
         _filter['match'] += 1
 
-    return is_judge
+    return is_allowed
 
 
 def foo(input_dict, _filter) -> str:
+
+    if not input_dict:
+        return json.dumps({})
+
+    if len(input_dict) == 1 and not input_dict[0]:
+        return json.dumps({})
 
     output_dict: list = sorted(
         input_dict, key=lambda x: (-judge(x, _filter), x['id'])
     )
 
     count = _filter['match']
-    return json.dumps(output_dict[:count])
+
+    if count > 0:
+        return json.dumps(output_dict[:count])
+    else:
+        return json.dumps({})
 
 
 def read_input() -> Tuple[dict, Dict[str, Union[str, int]]]:
 
-    input_dict = json.loads(input())
-    # with open('input_report.json') as f:
-    #     input_dict = json.load(f)
+    json_str = input()
+    if json_str:
+        input_dict = json.loads(json_str)
+    else:
+        input_dict = json.loads('{}')
 
     _filter: Dict[str, Union[str, int]] = {'match': 0}
-    # for _ in range(5):
-    #     key, val = input().split()
-    #     _filter[key] = val
-
-    with open('input_report.txt') as f:
-        for _ in range(5):
-            key, val = f.readline().split()
-            _filter[key] = val
+    for _ in range(5):
+        key, val = input().split()
+        _filter[key] = val
 
     return input_dict, _filter
 
 
-if __name__ == '__main__':
-    data, _filter = read_input()
-    # start_time = time.time()
-    print(foo(data, _filter))
-    # print("--- %s seconds ---" % (time.time() - start_time))
+data, _filter = read_input()
+print(foo(data, _filter))

@@ -82,8 +82,5 @@ def print_result(result: List[List[str]]) -> None:
         print(''.join(row))
 
 
-if __name__ == '__main__':
-    matrix, enter = read_input()
-    # start_time = time.time()
-    print_result(foo(matrix, enter))
-    # print("--- %s seconds ---" % (time.time() - start_time))
+matrix, enter = read_input()
+print_result(foo(matrix, enter))

@@ -1,13 +1,5 @@
-from typing import List, Tuple, Dict
+from typing import List, Tuple
 # import time
-
-
-def judge(x, name, cnt):
-    if x[1] == name:
-        cnt['count'] += 1
-        return True
-
-    return False
 
 
 def foo(vacancy: dict, arr: List[Tuple[str, str, int, int]]) -> List[str]:
@@ -22,13 +14,14 @@ def foo(vacancy: dict, arr: List[Tuple[str, str, int, int]]) -> List[str]:
         if not arr:
             break
 
-        names: list = []
+        # names: list = []
         while count < len(arr) and arr[count][1] == name:
             if count < capacity:
-                names.append(arr[count][0])
+                # names.append(arr[count][0])
+                staff.append(arr[count][0])
             count += 1
 
-        staff = staff + names
+        # staff = staff + names
         del arr[:count]
 
     staff.sort()
@@ -51,10 +44,9 @@ def read_input() -> Tuple[dict, list]:
     return vacancy, arr
 
 
-if __name__ == '__main__':
-    vacancy, arr = read_input()
-    # start_time = time.time()
-    for staff in foo(vacancy, arr):
-        print(staff)
-    # print('\n'.join(foo(vacancy, arr)))
-    # print("--- %s seconds ---" % (time.time() - start_time))
+# if __name__ == '__main__':
+vacancy, arr = read_input()
+# start_time = time.time()
+for staff in foo(vacancy, arr):
+    print(staff)
+# print("--- %s seconds ---" % (time.time() - start_time))
