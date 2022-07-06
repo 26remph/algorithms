@@ -17,6 +17,8 @@ for _ in range(n):
         else:
             t_matrix[m] = [row_val]
 
+del n, m
+
 for _, val in t_matrix.items():
     print(' '.join(val))
 
