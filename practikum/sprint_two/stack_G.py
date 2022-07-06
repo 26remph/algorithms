@@ -8,28 +8,44 @@ class StackMaxEffective:
         return False if self.obj else True
 
     def peek_max(self):
+
+        assert len(self.obj) == len(self.max)
+
         if self.max:
+            # print('--- peek ---')
+            # print('obj', self.obj)
+            # print('max', self.max)
+            # print('peek', self.max[-1])
             return self.max[-1]
         else:
             return None
 
     def get_max(self):
-        # print('--- get_max ---')
-        # print('obj:', self.obj)
-        # print('max:', self.max)
         print('None' if self.is_empty() else self.peek_max())
+        assert len(self.obj) == len(self.max)
+        if self.obj:
+            assert self.peek_max() == max(self.obj)
+        else:
+            assert  self.peek_max() is None
 
     def push(self, x):
         last_max = self.peek_max()
-        self.obj.append(x)
-        if last_max:
+
+        if last_max is not None:
             self.max.append(max(x, last_max))
         else:
             self.max.append(x)
 
+        self.obj.append(x)
+
         # print('--- push ---')
-        # print('obj:', self.obj)
-        # print('max:', self.max)
+        # print('last_max:', last_max)
+        # print('obj', self.obj)
+        # print('max', self.max)
+        # print('peek', self.max[-1])
+
+        assert len(self.obj) == len(self.max)
+
 
     def pop(self):
         if self.is_empty():
@@ -37,6 +53,8 @@ class StackMaxEffective:
         else:
             self.obj.pop()
             self.max.pop()
+
+        assert len(self.obj) == len(self.max)
 
 
 n = int(input())
