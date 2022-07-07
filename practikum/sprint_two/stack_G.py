@@ -9,24 +9,13 @@ class StackMaxEffective:
 
     def peek_max(self):
 
-        assert len(self.obj) == len(self.max)
-
         if self.max:
-            # print('--- peek ---')
-            # print('obj', self.obj)
-            # print('max', self.max)
-            # print('peek', self.max[-1])
             return self.max[-1]
         else:
             return None
 
     def get_max(self):
         print('None' if self.is_empty() else self.peek_max())
-        assert len(self.obj) == len(self.max)
-        if self.obj:
-            assert self.peek_max() == max(self.obj)
-        else:
-            assert  self.peek_max() is None
 
     def push(self, x):
         last_max = self.peek_max()
@@ -38,23 +27,12 @@ class StackMaxEffective:
 
         self.obj.append(x)
 
-        # print('--- push ---')
-        # print('last_max:', last_max)
-        # print('obj', self.obj)
-        # print('max', self.max)
-        # print('peek', self.max[-1])
-
-        assert len(self.obj) == len(self.max)
-
-
     def pop(self):
         if self.is_empty():
             print('error')
         else:
             self.obj.pop()
             self.max.pop()
-
-        assert len(self.obj) == len(self.max)
 
 
 n = int(input())
