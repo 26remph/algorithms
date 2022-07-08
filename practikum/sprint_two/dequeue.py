@@ -1,65 +1,67 @@
-# ID 69334279
+# ID 69340518
 
-class MyDequeueSized:
+class Deque:
 
     def __init__(self, n):
-        self.max_n = n
-        self.queue = [None] * n
-        self.tail = 0
-        self.head = 0
-        self.len = 0
+        self.__max_n = n
+        self.__queue = [None] * n
+        self.__tail = 0
+        self.__head = 0
+        self.__len = 0
 
     def is_empty(self):
-        return self.len == 0
+        return self.__len == 0
 
     def push_back(self, x):
-        if self.len != self.max_n:
-            self.queue[self.tail] = x
-            self.tail = (self.tail + 1) % self.max_n
-            self.len += 1
+        if self.__len != self.__max_n:
+            self.__queue[self.__tail] = x
+            self.__tail = (self.__tail + 1) % self.__max_n
+            self.__len += 1
         else:
-            print('error')
+            raise ValueError('error')
 
     def push_front(self, x):
-        if self.len != self.max_n:
-            self.queue[self.head - 1] = x
-            self.head = (self.head - 1) % self.max_n
-            self.len += 1
+        if self.__len != self.__max_n:
+            self.__queue[self.__head - 1] = x
+            self.__head = (self.__head - 1) % self.__max_n
+            self.__len += 1
         else:
-            print('error')
+            raise ValueError('error')
 
     def pop_front(self):
         if self.is_empty():
-            print('error')
-            return
+            raise ValueError('error')
 
-        x = self.queue[self.head]
-        self.queue[self.head] = None
-        self.head = (self.head + 1) % self.max_n
-        self.len -= 1
+        x = self.__queue[self.__head]
+        self.__queue[self.__head] = None
+        self.__head = (self.__head + 1) % self.__max_n
+        self.__len -= 1
 
-        print(x)
+        return x
 
     def pop_back(self):
         if self.is_empty():
-            print('error')
-            return
+            raise ValueError('error')
 
+        x = self.__queue[self.__tail - 1]
+        self.__queue[self.__tail - 1] = None
+        self.__tail = (self.__tail - 1) % self.__max_n
+        self.__len -= 1
 
-        x = self.queue[self.tail - 1]
-        self.queue[self.tail - 1] = None
-        self.tail = (self.tail - 1) % self.max_n
-        self.len -= 1
-
-        print(x)
+        return x
 
 
 if __name__ == '__main__':
     n = int(input())
     capacity = int(input())
-    queue = MyDequeueSized(capacity)
+    queue = Deque(capacity)
 
     for _ in range(n):
         command, *params = input().split(' ')
         func = getattr(queue, command)
-        func(*params)
+        try:
+            rez = func(*params)
+            if rez is not None:
+                print(rez)
+        except ValueError as e:
+            print(e)
