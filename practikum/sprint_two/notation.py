@@ -1,7 +1,16 @@
-# ID 69334279
-from typing import List
+# ID 69340835
+import operator
 
-SIGN = ('+', '-', '*', '/')
+fabric = {
+    '+': operator.add,
+    '-': operator.sub,
+    '*': operator.mul,
+    '/': operator.floordiv,
+}
+
+
+class Stack(list):
+    pass
 
 
 def read_input():
@@ -10,18 +19,15 @@ def read_input():
 
 def calculator(row):
 
-    stack: List[str] = []
+    stack = Stack()
 
     for ch in row:
-        if ch in SIGN:
+        if ch in fabric.keys():
 
-            x = str(stack.pop())
-            y = str(stack.pop())
-            if ch == '/':
-                ch = '//'
-            expression = f'{y} {ch} {x}'
-            code = compile(expression, '<string>', mode='eval')
-            rez = eval(code, {"__builtins__": {}}, {'x': x, 'y': y})
+            x = int(stack.pop())
+            y = int(stack.pop())
+            func = fabric[ch]
+            rez = func(y, x)
             stack.append(rez)
             continue
 
