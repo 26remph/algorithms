@@ -1,7 +1,7 @@
-# ID 69340835
+# ID 69343342
 import operator
 
-fabric = {
+FABRIC = {
     '+': operator.add,
     '-': operator.sub,
     '*': operator.mul,
@@ -9,8 +9,21 @@ fabric = {
 }
 
 
-class Stack(list):
-    pass
+class Stack():
+    def __init__(self):
+        self.__items = []
+
+    def pop(self):
+        return self.__items.pop()
+
+    def push(self, item):
+        return self.__items.append(item)
+
+    def peek(self):
+        return self.__items[-1]
+
+    def size(self):
+        return len(self.__items)
 
 
 def read_input():
@@ -22,16 +35,16 @@ def calculator(row):
     stack = Stack()
 
     for ch in row:
-        if ch in fabric.keys():
+        if ch in FABRIC.keys():
 
             x = int(stack.pop())
             y = int(stack.pop())
-            func = fabric[ch]
+            func = FABRIC[ch]
             rez = func(y, x)
-            stack.append(rez)
+            stack.push(rez)
             continue
 
-        stack.append(ch)
+        stack.push(ch)
 
     return stack.pop()
 
