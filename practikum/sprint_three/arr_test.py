@@ -3,16 +3,16 @@
 
 
 def foo(arr):
-
-    global arr
-    arr = [1, 2]
-
+    arr[0] = 1
+    arr[1] = 1
+    arr[2] = 1
     return arr
 
-
-def test_():
+def test():
     x = [6, 7, 8, 4, 5, 6]
+    print(x)
     foo(x)
     print(x)
 
-test_()
+if __name__ == '__main__':
+    test()
