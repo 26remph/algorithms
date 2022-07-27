@@ -34,7 +34,7 @@ for _ in range(0, n):
                 node.prev.cut[1] = node.cut[1]
                 node.prev.next = node.next
                 break
-            elif node.cut[1] < cut[1]:
+            elif node.cut[1] < cut[1]:c
                 node = node.next
 
             elif node.cut[0] > cut[1]:
