@@ -1,4 +1,4 @@
-# ID 69514553
+# ID 69514578
 import random
 
 def partition(array, pivot):
@@ -46,6 +46,7 @@ def read_input():
     return arr
 
 
-for write in quicksort(read_input()):
-    print(write[0])
+if __name__ == '__main__':
+    for write in quicksort(read_input()):
+        print(write[0])
 

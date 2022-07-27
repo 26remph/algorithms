@@ -1,3 +1,4 @@
+# ID 69455473
 def binary_search(arr, x, left, right):
 
     if right <= left:
