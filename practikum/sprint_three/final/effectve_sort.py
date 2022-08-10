@@ -1,4 +1,4 @@
-# ID 69514578
+# ID 69517242
 import random
 
 def partition(array, pivot):
@@ -29,18 +29,18 @@ def partition(array, pivot):
 def quicksort(array):
     if len(array) < 2:
         return array
-    else:
-        rnd = random.choice(array)
-        pivot = rnd[1], rnd[2]
-        left, right = partition(array, pivot)
-        return quicksort(left) + quicksort(right)
+
+    rnd = random.choice(array)
+    pivot = rnd[1], rnd[2]
+    left, right = partition(array, pivot)
+    return quicksort(left) + quicksort(right)
 
 
 def read_input():
     n = int(input())
     arr = []
     for _ in range(n):
-        row = input().split(' ')
+        row = input().split()
         score = (row[0], int(row[1]), -int(row[2]))
         arr.append(score)
     return arr

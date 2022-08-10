@@ -1,4 +1,4 @@
-# ID 69455473
+# ID 69517339
 def binary_search(arr, x, left, right):
 
     if right <= left:
@@ -17,8 +17,8 @@ def binary_search(arr, x, left, right):
         return binary_search(arr, x, left, mid)
     elif right_unsorted:
         return binary_search(arr, x, mid + 1, right)
-    else:
-        return -1
+
+    return -1
 
 
 def broken_search(nums, target) -> int:
