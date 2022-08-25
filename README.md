@@ -1,4 +1,4 @@
-![](../../Downloads/png-transparent-drawing-others-computer-network-angle-triangle.png)
+![](header_algo.png)
 
 # Алгоритмы и тестовые задания
 
