@@ -1,11 +1,13 @@
-from typing import Tuple, Dict, Union
 import json
 import time
 
 
-def judge(element, _filter):
+def gatekeeper(element, _filter):
 
-    f_1 = _filter['NAME_CONTAINS'] in element['name']
+    nc = _filter['NAME_CONTAINS'].lower()
+    el_name = element['name'].lower()
+
+    f_1 = nc in el_name
     f_2 = element['price'] >= int(_filter['PRICE_GREATER_THAN'])
     f_3 = element['price'] <= int(_filter['PRICE_LESS_THAN'])
 
@@ -14,15 +16,15 @@ def judge(element, _filter):
     date_before = time.strptime(_filter['DATE_BEFORE'], '%d.%m.%Y')
     f_4 = date_after <= date <= date_before
 
-    is_allowed = all([f_1, f_2, f_3, f_4])
+    is_true = all([f_1, f_2, f_3, f_4])
 
-    if is_allowed:
+    if is_true:
         _filter['match'] += 1
 
-    return is_allowed
+    return is_true
 
 
-def foo(input_dict, _filter) -> str:
+def foo(input_dict, _filter):
 
     if not input_dict:
         return json.dumps({})
@@ -30,32 +32,28 @@ def foo(input_dict, _filter) -> str:
     if len(input_dict) == 1 and not input_dict[0]:
         return json.dumps({})
 
-    output_dict: list = sorted(
-        input_dict, key=lambda x: (-judge(x, _filter), x['id'])
+    out_data: list = sorted(
+        input_dict, key=lambda x: (-gatekeeper(x, _filter), x['id'])
     )
 
     count = _filter['match']
 
     if count > 0:
-        return json.dumps(output_dict[:count])
+        return json.dumps(out_data[:count])
     else:
         return json.dumps({})
 
 
-def read_input() -> Tuple[dict, Dict[str, Union[str, int]]]:
+def read_input():
 
-    json_str = input()
-    if json_str:
-        input_dict = json.loads(json_str)
-    else:
-        input_dict = json.loads('{}')
+    inp_data = json.loads(input())
 
-    _filter: Dict[str, Union[str, int]] = {'match': 0}
+    inp_filter = {'match': 0}
     for _ in range(5):
         key, val = input().split()
-        _filter[key] = val
+        inp_filter[key] = val
 
-    return input_dict, _filter
+    return inp_data, inp_filter
 
 
 data, _filter = read_input()
