@@ -1,0 +1,1 @@
+[{"id": 106, "name": "map gas", "price": 6000, "date": "01.01.2020"}, {"id": 102, "name": "dell notebook", "price": 7000, "date": "05.12.2021"}]
