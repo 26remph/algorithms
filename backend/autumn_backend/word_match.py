@@ -6,16 +6,16 @@ str_b: str = input().strip()
 f = [val for ind, val in enumerate(str_a) if val != str_b[ind]]
 cnt = Counter(f)
 
-rez: str = ""
+result = []
 for ind, ch in enumerate(str_b):
     if ch == str_a[ind]:
-        rez += 'P'
+        result.append('P')
         continue
 
     if cnt[ch] > 0:
-        rez += 'S'
+        result.append('S')
         cnt.subtract(ch)
     else:
-        rez += 'I'
+        result.append('I')
 
-print(rez)
+print(''.join(result))
