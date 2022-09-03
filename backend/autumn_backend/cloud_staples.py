@@ -1,5 +1,5 @@
 
-READ_SIZE_LIMIT = 4_000_000
+READ_SIZE_LIMIT = 2_000_000
 
 def get_staples_pos():
 
