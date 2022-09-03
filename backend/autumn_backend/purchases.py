@@ -2,61 +2,41 @@ import json
 import time
 
 
-def gatekeeper(element, _filter):
+def judge(record, _filter):
 
-    nc = _filter['NAME_CONTAINS'].lower()
-    el_name = element['name'].lower()
+    if_1 = _filter['NAME_CONTAINS'].lower() in record['name'].lower()
+    if_2 = record['price'] >= int(_filter['PRICE_GREATER_THAN'])
+    if_3 = record['price'] <= int(_filter['PRICE_LESS_THAN'])
 
-    f_1 = nc in el_name
-    f_2 = element['price'] >= int(_filter['PRICE_GREATER_THAN'])
-    f_3 = element['price'] <= int(_filter['PRICE_LESS_THAN'])
+    date = time.strptime(record['date'], '%d.%m.%Y')
+    _after = time.strptime(_filter['DATE_AFTER'], '%d.%m.%Y')
+    _before = time.strptime(_filter['DATE_BEFORE'], '%d.%m.%Y')
+    if_4 = _after <= date <= _before
 
-    date = time.strptime(element['date'], '%d.%m.%Y')
-    date_after = time.strptime(_filter['DATE_AFTER'], '%d.%m.%Y')
-    date_before = time.strptime(_filter['DATE_BEFORE'], '%d.%m.%Y')
-    f_4 = date_after <= date <= date_before
-
-    is_true = all([f_1, f_2, f_3, f_4])
-
+    is_true = all([if_1, if_2, if_3, if_4])
     if is_true:
         _filter['match'] += 1
 
     return is_true
 
 
-def foo(input_dict, _filter):
+def output(data: list, _filter):
 
-    if not input_dict:
-        return json.dumps({})
-
-    if len(input_dict) == 1 and not input_dict[0]:
-        return json.dumps({})
-
-    out_data: list = sorted(
-        input_dict, key=lambda x: (-gatekeeper(x, _filter), x['id'])
-    )
-
+    data.sort(key=lambda x: (-judge(x, _filter), x['id']))
     count = _filter['match']
 
-    # if count > 0:
-    #     return json.dumps(out_data[:count])
-    # else:
-    #     return json.dumps({})
+    return json.dumps(data[:count]) if count > 0 else json.dumps({})
 
-    return json.dumps(out_data[:count]) if count > 0 else json.dumps({})
 
 def read_input():
-
-    inp_data = json.loads(input())
-    print(type(inp_data))
-
+    arr = json.loads(input())
     condition = {'match': 0}
+
     for _ in range(5):
         key, val = input().split()
         condition[key] = val
 
-    return inp_data, condition
+    return arr, condition
 
 
-data, _filter = read_input()
-print(foo(data, _filter))
+print(output(*read_input()))
