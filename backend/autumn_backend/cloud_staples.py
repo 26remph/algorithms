@@ -16,10 +16,10 @@ def get_staples_pos():
         row: str = f.readline(READ_SIZE_LIMIT)
         while row:
 
-            for ind, symbol in enumerate(row):
-                if symbol == '{':
+            for ind, ch in enumerate(row):
+                if ch == '{':
                     stack.append(ind + shift + 1)
-                if symbol == '}':
+                if ch == '}':
                     if is_first:
                         is_first = False
                         first_staples_pos = ind + shift + 1
