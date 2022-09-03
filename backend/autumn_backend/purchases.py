@@ -38,22 +38,24 @@ def foo(input_dict, _filter):
 
     count = _filter['match']
 
-    if count > 0:
-        return json.dumps(out_data[:count])
-    else:
-        return json.dumps({})
+    # if count > 0:
+    #     return json.dumps(out_data[:count])
+    # else:
+    #     return json.dumps({})
 
+    return json.dumps(out_data[:count]) if count > 0 else json.dumps({})
 
 def read_input():
 
     inp_data = json.loads(input())
+    print(type(inp_data))
 
-    inp_filter = {'match': 0}
+    condition = {'match': 0}
     for _ in range(5):
         key, val = input().split()
-        inp_filter[key] = val
+        condition[key] = val
 
-    return inp_data, inp_filter
+    return inp_data, condition
 
 
 data, _filter = read_input()

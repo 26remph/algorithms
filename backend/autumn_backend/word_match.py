@@ -1,23 +1,21 @@
-# import time
 from collections import Counter
 
-word_one: str = input().strip()
-word_two: str = input().strip()
+str_a: str = input().strip()
+str_b: str = input().strip()
 
-# start_time = time.time()
-
-f = [val for ind, val in enumerate(word_one) if val != word_two[ind]]
+f = [val for ind, val in enumerate(str_a) if val != str_b[ind]]
 cnt = Counter(f)
 
-for ind, ch in enumerate(word_two):
-    if ch == word_one[ind]:
-        print('P')
+rez: str = ""
+for ind, ch in enumerate(str_b):
+    if ch == str_a[ind]:
+        rez += 'P'
         continue
 
     if cnt[ch] > 0:
-        print('S')
+        rez += 'S'
         cnt.subtract(ch)
     else:
-        print('absent')
+        rez += 'I'
 
-# print("--- %s seconds ---" % (time.time() - start_time))
+print(rez)
