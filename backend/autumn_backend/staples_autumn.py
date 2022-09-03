@@ -1,48 +1,48 @@
 
-# memory_limit = 16_000_000
+READ_SIZE_LIMIT = 4_000_000
 
-memory_limit = 160
+def get_staples_pos():
 
-def get_min_pos():
-
-    with open('./input.txt', 'r') as f:
+    with open('input.txt', 'r') as f:
 
         stack: list = []
-        wrong_seq: list = []
+        break_pos = -1
 
         pos: int = -1
-        min_pos = -100
-        first_pos = True
+        first_staples_pos = -1
+        is_first = True
         shift: int = 0
 
-        input_str: str = f.readline(memory_limit)
-        while input_str:
-            # print(input_str, len(input_str))
-            for ind, symbol in enumerate(input_str):
+        row: str = f.readline(READ_SIZE_LIMIT)
+        while row:
+
+            for ind, symbol in enumerate(row):
                 if symbol == '{':
-                    stack.append(ind + 1 + shift)
+                    stack.append(ind + shift + 1)
                 if symbol == '}':
-                    if first_pos:
-                        first_pos = False
-                        min_pos = ind + 1 + shift
+                    if is_first:
+                        is_first = False
+                        first_staples_pos = ind + shift + 1
 
                     if not stack:
-                        if len(wrong_seq) > 1:
+                        if break_pos > 0:
                             break
-                        wrong_seq.append(ind + 1 + shift)
+
+                        break_pos = ind + shift + 1
                         continue
 
                     stack.pop()
 
-            shift += memory_limit
-            input_str = f.readline(memory_limit)
+            shift += READ_SIZE_LIMIT
+            row = f.readline(READ_SIZE_LIMIT)
 
-        if len(stack) == 1 and len(wrong_seq) == 0:
+        if len(stack) == 1 and break_pos == -1:
             pos = stack.pop()
 
-        if len(wrong_seq) == 1 and len(stack) == 0:
-            pos = min_pos
+        if len(stack) == 0 and break_pos > 0:
+            pos = first_staples_pos
 
         print(pos)
 
-get_min_pos()
+
+get_staples_pos()
