@@ -19,18 +19,19 @@ for _ in range(int(n)):
     ch_code *= 256
 
     code = diff_ch + birth_code + ch_code
-    print('diff_ch', diff_ch)
-    print('birth', birth_code)
-    print('ch_code', ch_code)
-    print('code', code)
-    print('hex', code)
+    # print('diff_ch', diff_ch)
+    # print('birth', birth_code)
+    # print('ch_code', ch_code)
+    # print('code', code)
+    # print('hex', code)
 
     rez = str(hex(code))[-3:]
 
     if len(rez) < 3:
-        nulls = ['0' for _ in range(3 - len(rez))]
-        null = ''.join(nulls)
-        rez = null + rez
+        # nulls = ['0' for _ in range(3 - len(rez))]
+        # null = ''.join(nulls)
+        # rez = null + rez
+        rez.rjust(3 - len(rez), '0')
 
     print(rez.upper())
 
