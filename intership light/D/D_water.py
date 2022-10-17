@@ -15,7 +15,6 @@ def find_end(arr: list, ind: int, x: int, left, right) -> int:
     mid = (left + right) // 2
     if arr[mid][ind] == x:
         while mid + 1 < len(arr):
-            print('-->')
             if arr[mid + 1][ind] == x:
                 mid += 1
             else:
@@ -110,28 +109,53 @@ with open('query.txt') as f:
         source = end_ind if _type == 2 else start_ind
         search_ind = 1 if _type == 2 else 0
         keys = keys_x1 if _type == 2 else keys_x0
+        total_sum = end_sum if _type == 2 else start_sum
 
         bi_time_start = time.time()
         ind = binsearch(source, search_ind, start, 0, len(source))
-        ind_end = find_end(source, search_ind, end, 0, len(source))
+        edge = len(source) - 1
+        # edge = -10
+        # ind_end = find_end(source, search_ind, end, 0, len(source))
 
-        ind_bi = bisect_left(keys, start)
-        print('query:', start, end, _type)
-        print('source:', source)
-        print('ind, ind_bi;', ind, ind_bi)
-        print('selected_keys:', keys)
-        print('keys_x0', keys_x0)
-        print('keys_x1', keys_x1)
-        assert ind == ind_bi
-        bi_time_end = time.time()
+        ind_left = bisect_left(keys, start)
+        # if ind_left == len(keys):
+        #     ind_left = 0
+        ind_right = bisect_right(keys, end)
+        if ind_right:
+            ind_right -= 1
+
+        # print('\nquery:', start, end, _type)
+        # print('source:', source)
+        # print('total_sum', total_sum)
+        # print('search_ind', search_ind)
+        # print('ind, ind_left;', ind, ind_left)
+        # print('selected_keys:', keys)
+        # print('keys_x0', keys_x0)
+        # print('keys_x1', keys_x1)
+        assert ind == ind_left
 
         _sum_alt = 0
+        # if (source[0][search_ind] <= end) and (ind_left <= ind_right):
+        #     _sum_alt = total_sum[0]
+
+        if ind_left <= ind_right and len(source) == 1:
+            if source[0][search_ind] <= end:
+                _sum_alt = total_sum[0]
+
+        if ind_left <= ind_right and len(source) > 1:
+            if ind_left - 1 < 0:
+                _sum_alt = total_sum[ind_right]
+            else:
+                _sum_alt = total_sum[ind_right] - total_sum[ind_left - 1]
+        bi_time_end = time.time()
 
         sub_query_start = time.time()
         _sum = 0
+        flag = False
         for pos in range(ind, len(source)):
 
             if source[pos][search_ind] > end:
+                flag = True
                 break
 
             if _type == 2:
@@ -139,19 +163,26 @@ with open('query.txt') as f:
             else:
                 _sum += source[pos][2]
         sub_query_end = time.time()
+        # edge = pos
 
+        if flag:
+            edge = max(0, pos - 1)
+
+        # print('edge_ind, ind_right:', edge, ind_right)
+
+        assert edge == ind_right
         # print('_sum, _sum_alt:', _sum, _sum_alt)
-        # assert _sum == _sum_alt
+        assert _sum == _sum_alt
 
-        # print(
-        #     # _sum,
-        #     f'QT --- {str((time.time() - query_time) * 1000)}  ms --- '
-        #     f'bi, {(bi_time_end - bi_time_start) * 1000} --'
-        #     f'sub_q, {(sub_query_end - sub_query_start) * 1000} ---'
-        # )
-        # qtime.append((time.time() - query_time) * 1000)
+        print(
+            # _sum,
+            f'QT --- {str((time.time() - query_time) * 1000)}  ms --- '
+            f'bi, {(bi_time_end - bi_time_start) * 1000} --'
+            f'sub_q, {(sub_query_end - sub_query_start) * 1000} ---'
+        )
+        qtime.append((time.time() - query_time) * 1000)
         # print("QUERY: --- %s seconds ---" % (time.time() - start_time))
 
-# print("TOTAL: --- %s seconds ---" % (time.time() - start_time))
-# print(f"COUNT: --- {len(qtime)}")
-# print(f"AVG TIME QUERY: --- {statistics.mean(qtime)}")
+print("\nTOTAL: --- %s seconds ---" % (time.time() - start_time))
+print(f"COUNT: --- {len(qtime)}")
+print(f"AVG TIME QUERY: --- {statistics.mean(qtime)}")
