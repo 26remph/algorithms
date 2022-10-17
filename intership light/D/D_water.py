@@ -112,7 +112,7 @@ with open('query.txt') as f:
         total_sum = end_sum if _type == 2 else start_sum
 
         bi_time_start = time.time()
-        ind = binsearch(source, search_ind, start, 0, len(source))
+        # ind = binsearch(source, search_ind, start, 0, len(source))
         edge = len(source) - 1
         # edge = -10
         # ind_end = find_end(source, search_ind, end, 0, len(source))
@@ -132,7 +132,7 @@ with open('query.txt') as f:
         # print('selected_keys:', keys)
         # print('keys_x0', keys_x0)
         # print('keys_x1', keys_x1)
-        assert ind == ind_left
+        # assert ind == ind_left
 
         _sum_alt = 0
         # if (source[0][search_ind] <= end) and (ind_left <= ind_right):
@@ -152,33 +152,33 @@ with open('query.txt') as f:
         sub_query_start = time.time()
         _sum = 0
         flag = False
-        for pos in range(ind, len(source)):
-
-            if source[pos][search_ind] > end:
-                flag = True
-                break
-
-            if _type == 2:
-                _sum += source[pos][1] - source[pos][0]
-            else:
-                _sum += source[pos][2]
+        # for pos in range(ind, len(source)):
+        #
+        #     if source[pos][search_ind] > end:
+        #         flag = True
+        #         break
+        #
+        #     if _type == 2:
+        #         _sum += source[pos][1] - source[pos][0]
+        #     else:
+        #         _sum += source[pos][2]
         sub_query_end = time.time()
         # edge = pos
 
-        if flag:
-            edge = max(0, pos - 1)
+        # if flag:
+        #     edge = max(0, pos - 1)
 
         # print('edge_ind, ind_right:', edge, ind_right)
 
-        assert edge == ind_right
+        # assert edge == ind_right
         # print('_sum, _sum_alt:', _sum, _sum_alt)
-        assert _sum == _sum_alt
+        # assert _sum == _sum_alt
 
         print(
             # _sum,
             f'QT --- {str((time.time() - query_time) * 1000)}  ms --- '
             f'bi, {(bi_time_end - bi_time_start) * 1000} --'
-            f'sub_q, {(sub_query_end - sub_query_start) * 1000} ---'
+            # f'sub_q, {(sub_query_end - sub_query_start) * 1000} ---'
         )
         qtime.append((time.time() - query_time) * 1000)
         # print("QUERY: --- %s seconds ---" % (time.time() - start_time))
