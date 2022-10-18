@@ -9,12 +9,8 @@ for _ in range(n-2):
     data.append(row)
     key += 1
 
-print(data)
 data.sort(key=lambda x: x[-1])
-print('sorted data:', data)
-
 ing_amount = {key: None for key in range(3, n + 1)}
-print(ing_amount)
 
 for value in data:
     key = value[-2]
@@ -58,6 +54,5 @@ for _ in range(q):
     else:
         rez.append('0')
 
-print(ing_amount)
 print(''.join(rez))
 
