@@ -30,6 +30,7 @@ for row in end_ind:
     end_sum.append(_sum)
 
 q = int(input())
+rez = []
 for _ in range(q):
     row = list(map(int, input().split()))
     start, end, _type = row
@@ -56,4 +57,6 @@ for _ in range(q):
         else:
             _sum_alt = total_sum[ind_right] - total_sum[ind_left - 1]
 
-    print(_sum_alt)
+    rez.append(str(_sum_alt))
+
+print(' '.join(rez))
