@@ -12,10 +12,6 @@ def flight_time(num_day: int, start: str, end: str) -> int:
         if num_day > 0:
             num_day -= 1
 
-    print('\ntime_delta:', t_delta, timedelta(num_day))
-    print('time_delta sec:', t_delta.seconds)
-    print('num_day', num_day)
-    print('rez:', t_delta.seconds // 60 + num_day * 3600)
     return t_delta.seconds // 60 + num_day * 3600
 
 
@@ -29,14 +25,13 @@ for _ in range(n):
     )
 
 data_vector.sort(key=lambda x: (x[0], x[1], x[2]))
-print(data_vector)
 
 id = data_vector[0][0]
 stat_A = (data_vector[0][1], f'{data_vector[0][3]}:{data_vector[0][4]}')
 end_BC = None
 
 i = 1
-
+rez = []
 while i < len(data_vector):
 
     fl_time = 0
@@ -51,11 +46,8 @@ while i < len(data_vector):
 
         i += 1
 
-    print('fl_time:', id, fl_time)
-
+    rez.append(str(fl_time))
     if i < len(data_vector):
         id = data_vector[i][0]
-        # stat_A = (data_vector[i][1], f'{data_vector[i][3]}:{data_vector[i][4]}')
-        # end_BC = None
 
-
+print(' '.join(rez))
