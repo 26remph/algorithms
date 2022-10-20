@@ -1,5 +1,4 @@
 from collections import deque
-from pprint import pprint
 
 
 def calculate(dq, ingredient):
@@ -12,9 +11,7 @@ def calculate(dq, ingredient):
         if value == 'X':
             break
 
-        # for value in _data:
         key = value[-2]
-        # link = value[-1]
 
         sum_A, sum_B = 0, 0
         wrong = False
@@ -43,42 +40,30 @@ def calculate(dq, ingredient):
     return dq, ingredient
 
 
-with open('data.txt') as f:
-    n = int(f.readline().rstrip())
-# n = int(input())
+n = int(input())
 
-    data = []
-    key = 3
-    # for _ in range(n - 2):
-    while line := f.readline().rstrip():
-        # row = list(map(int, input().split()))
-        row = list(map(int, line.split()))
-        row.append(key)
-        row.append(max(row[1:-1]))
+data = []
+key = 3
+for _ in range(n - 2):
+    row = list(map(int, input().split()))
+    row.append(key)
+    row.append(max(row[1:-1]))
 
-        data.append(row)
-        key += 1
+    data.append(row)
+    key += 1
 
 data.sort(key=lambda x: x[-1])
 ing_amount = {key: None for key in range(3, n + 1)}
 
-# print(data)
-
 dq = deque(data)
-# print('start dq:', len(dq), dq)
 _len_before = len(dq)
 _len_after = 0
 
 while _len_before != _len_after:
     _len_before = len(dq)
-    # print('\n_len_before', _len_before)
     dq, ing_amount = calculate(dq, ing_amount)
     _len_after = len(dq)
-    # print('_len_after', _len_after)
 
-
-# pprint(ing_amount)
-# print('dq_after:', len(dq), dq)
 
 q = int(input())
 rez = []
