@@ -1,3 +1,5 @@
+from pprint import pprint
+
 n = int(input())
 data = []
 key = 3
@@ -11,6 +13,7 @@ for _ in range(n-2):
 
 data.sort(key=lambda x: x[-1])
 ing_amount = {key: None for key in range(3, n + 1)}
+print(data)
 
 for value in data:
     key = value[-2]
@@ -36,6 +39,8 @@ for value in data:
         ing_amount[key] = None
     else:
         ing_amount[key] = sum_A, sum_B
+
+pprint(ing_amount)
 
 q = int(input())
 rez = []
