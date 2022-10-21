@@ -1,63 +1,50 @@
 from bisect import bisect_left, bisect_right
 
+n = int(input())
+arr = [tuple(map(int, input().split())) for _ in range(n)]
 
-def read_input() -> list:
-
-    n = int(input())
-
-    data = []
-    for _ in range(n):
-        data.append(tuple(map(int, input().split())))
-
-    return data
-
-
-data = read_input()
-start_ind = sorted(data, key=lambda x: (x[0], x[1]))
-keys_x0 = [x[0] for x in start_ind]
-_sum = 0
-start_sum = []
-for row in start_ind:
+x_ind = sorted(arr, key=lambda x: (x[0], x[1]))
+x_keys = [x[0] for x in x_ind]
+_sum, x_sum = 0, []
+for row in x_ind:
     _sum += row[2]
-    start_sum.append(_sum)
+    x_sum.append(_sum)
 
-end_ind = sorted(data, key=lambda x: (x[1], x[0]))
-keys_x1 = [x[1] for x in end_ind]
-end_sum = []
-_sum = 0
-for row in end_ind:
+y_ind = sorted(arr, key=lambda x: (x[1], x[0]))
+y_keys = [x[1] for x in y_ind]
+_sum, y_sum = 0, []
+for row in y_ind:
     _sum += row[1] - row[0]
-    end_sum.append(_sum)
+    y_sum.append(_sum)
 
 q = int(input())
-rez = []
+out = []
 for _ in range(q):
     row = list(map(int, input().split()))
-    start, end, _type = row
+    start, end, q_type = row
 
-    source = end_ind if _type == 2 else start_ind
-    search_ind = 1 if _type == 2 else 0
-    keys = keys_x1 if _type == 2 else keys_x0
-    total_sum = end_sum if _type == 2 else start_sum
+    if q_type == 2:
+        src, search_key, keys, total = y_ind, 1, y_keys, y_sum
+    else:
+        src, search_key, keys, total = x_ind, 0, x_keys, x_sum
 
-    ind_left = bisect_left(keys, start)
+    right = bisect_right(keys, end)
+    if right:
+        right -= 1
+    left = bisect_left(keys, start)
 
-    ind_right = bisect_right(keys, end)
-    if ind_right:
-        ind_right -= 1
+    _sum = 0
+    if left <= right and len(src) == 1:
+        if src[0][search_key] <= end:
+            _sum = total[0]
 
-    _sum_alt = 0
-    if ind_left <= ind_right and len(source) == 1:
-        if source[0][search_ind] <= end:
-            _sum_alt = total_sum[0]
-
-    if ind_left <= ind_right and len(source) > 1:
-        if ind_left - 1 < 0:
-            if source[ind_right][search_ind] <= end:
-                _sum_alt = total_sum[ind_right]
+    if left <= right and len(src) > 1:
+        if left - 1 < 0:
+            if src[right][search_key] <= end:
+                _sum = total[right]
         else:
-            _sum_alt = total_sum[ind_right] - total_sum[ind_left - 1]
+            _sum = total[right] - total[left - 1]
 
-    rez.append(str(_sum_alt))
+    out.append(str(_sum))
 
-print(' '.join(rez))
+print(' '.join(out))
