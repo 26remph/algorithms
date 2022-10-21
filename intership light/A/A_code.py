@@ -27,4 +27,3 @@ for _ in range(int(n)):
     out.append(code_out.upper())
 
 print(' '.join(out))
-

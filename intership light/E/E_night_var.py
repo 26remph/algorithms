@@ -1,61 +1,57 @@
 from collections import deque
 
 
-def calculate(dq, ingredient):
+def calculate(deq, ingredient):
 
-    dq.append('X')
-
-    while dq:
-
-        value = dq.popleft()
+    deq.append('X')
+    while deq:
+        value = deq.popleft()
         if value == 'X':
             break
 
-        key = value[-2]
+        _id = value[-2]
 
-        sum_A, sum_B = 0, 0
-        wrong = False
+        col_a, col_b = 0, 0
+        err = False
         for i in value[1:-2]:
             if i == 1:
-                sum_A += 1
+                col_a += 1
             elif i == 2:
-                sum_B += 1
+                col_b += 1
             else:
-                content = ingredient.get(i, None)
-                if content is None:
-                    wrong = True
+                x = ingredient.get(i, None)
+                if x is None:
+                    err = True
                     break
 
-                sum_A += content[0]
-                sum_B += content[1]
+                col_a += x[0]
+                col_b += x[1]
 
-        if wrong:
-            ingredient[key] = None
-            dq.append(value)
+        if err:
+            ingredient[_id] = None
+            deq.append(value)
         else:
-            ingredient[key] = sum_A, sum_B
+            ingredient[_id] = col_a, col_b
 
-    dq.reverse()
-
-    return dq, ingredient
+    deq.reverse()
+    return deq, ingredient
 
 
 n = int(input())
 
-data = []
+arr = []
 key = 3
 for _ in range(n - 2):
     row = list(map(int, input().split()))
     row.append(key)
     row.append(max(row[1:-1]))
-
-    data.append(row)
+    arr.append(row)
     key += 1
 
-data.sort(key=lambda x: x[-1])
+arr.sort(key=lambda x: x[-1])
 ing_amount = {key: None for key in range(3, n + 1)}
 
-dq = deque(data)
+dq = deque(arr)
 _len_before = len(dq)
 _len_after = 0
 
@@ -64,22 +60,17 @@ while _len_before != _len_after:
     dq, ing_amount = calculate(dq, ing_amount)
     _len_after = len(dq)
 
-
 q = int(input())
-rez = []
+out = []
 for _ in range(q):
     row = list(map(int, input().split()))
-    ing_A = row[0]
-    ing_B = row[1]
-    key = row[2]
-    content = ing_amount.get(key)
-    if content is None:
-        rez.append('0')
+    inc_a, inc_b, key = row[0], row[1], row[2]
+
+    x = ing_amount.get(key)
+    if x is None:
+        out.append('0')
         continue
 
-    if content[0] <= ing_A and content[1] <= ing_B:
-        rez.append('1')
-    else:
-        rez.append('0')
+    out.append('1') if x[0] <= inc_a and x[1] <= inc_b else out.append('0')
 
-print(''.join(rez))
+print(''.join(out))
