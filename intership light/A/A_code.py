@@ -3,25 +3,28 @@ import string
 abc = string.ascii_lowercase
 
 n = input()
+out = []
 for _ in range(int(n)):
 
-    data = input().split(',')
+    arr = input().split(',')
 
-    fio = ''.join(data[:3])
-    diff_ch = len(set(fio))
-    birth = ''.join(data[3:-1])
-    birth_code = 0
+    fio = ''.join(arr[:3])
+    first_code = len(set(fio))
+    birth = ''.join(arr[3:-1])
+    second_code = 0
     for ch in birth:
-        birth_code += int(ch)
+        second_code += int(ch)
 
-    birth_code *= 64
-    ch_code = abc.find(fio[0].lower()) + 1
-    ch_code *= 256
+    second_code *= 64
+    third_code = abc.find(fio[0].lower()) + 1
+    third_code *= 256
 
-    code = diff_ch + birth_code + ch_code
-    rez = str(hex(code))[-3:]
-    if len(rez) < 3:
-        rez.rjust(3 - len(rez), '0')
+    code = first_code + second_code + third_code
+    code_out = str(hex(code))[-3:]
+    if len(code_out) < 3:
+        code_out.rjust(3 - len(code_out), '0')
 
-    print(rez.upper())
+    out.append(code_out.upper())
+
+print(' '.join(out))
 
