@@ -23,13 +23,13 @@ data_vector = []
 for _ in range(n):
     data = input().split()
     data_vector.append(
-        (int(data[3]), int(data[0]), data[4], int(data[1]), int(data[2]))
+        (int(data[3]), int(data[0]), int(data[1]), int(data[2]), data[4])
     )
 
-data_vector.sort(key=lambda x: (x[0], x[1], x[3], x[4], x[2]))
+data_vector.sort(key=lambda x: (x[0], x[1], x[2], x[3], x[4]))
 
 id = data_vector[0][0]
-stat_A = (data_vector[0][1], f'{data_vector[0][3]}:{data_vector[0][4]}')
+stat_A = (data_vector[0][1], f'{data_vector[0][2]}:{data_vector[0][3]}')
 end_BC = None
 
 i = 1
