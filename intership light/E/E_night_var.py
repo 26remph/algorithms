@@ -39,19 +39,24 @@ def calculate(deq, ingredient):
 
 n = int(input())
 
-arr = []
+# arr = []
+dq = deque()
 key = 3
 for _ in range(n - 2):
     row = list(map(int, input().split()))
     row.append(key)
-    row.append(max(row[1:-1]))
-    arr.append(row)
+    max_ing = max(row[1:-1])
+    row.append(max_ing)
+    if max_ing > 2:
+        dq.appendleft(row)
+    else:
+        dq.append(row)
     key += 1
 
-arr.sort(key=lambda x: x[-1])
+# arr.sort(key=lambda x: x[-1])
 ing_amount = {key: None for key in range(3, n + 1)}
 
-dq = deque(arr)
+# dq = deque(arr)
 _len_before = len(dq)
 _len_after = 0
 
