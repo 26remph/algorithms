@@ -12,12 +12,9 @@ for i in range(1, N+1):
         topic[i] = input()
         _ = input()
     else:
-        # tree[i].append(num)
         tree[num].append(i)
         _ = input()
 
-# print(tree)
-# print(topic)
 topics = []
 max_cnt = 0
 for root in topic.keys():
@@ -29,7 +26,6 @@ for root in topic.keys():
         cnt += 1
 
     topics.append((topic[root], cnt))
-    # print(root, topic[root], cnt)
 
 print(max(topics, key=lambda x: x[1])[0])
 
