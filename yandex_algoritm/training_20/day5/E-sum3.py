@@ -20,6 +20,7 @@ import random
 # B = list(map(int, input().split()))[1:]
 # C = list(map(int, input().split()))[1:]
 
+
 def short_foo():
     setC = set(C)
 
