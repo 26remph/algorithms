@@ -1,0 +1,1 @@
+[handbook](https://academy.yandex.ru/handbook?utm_source=telegram&utm_medium=internal&utm_campaign=handbook&utm_content=9.11#all)
