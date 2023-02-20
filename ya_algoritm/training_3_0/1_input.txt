@@ -1,0 +1,357 @@
+
+  Id: output.cpp 1189 2004-07-14 10:46:58Z cherepanov
+
+
+include stdafx.h
+
+using namespace Solver2;
+
+pragma warning(disable:4244)
+
+
+static const int MAXSTRING  128;
+static const int MAXSTRINGLENGTH  1024;
+static iString  0;
+static char writeTextMAXSTRINGMAXSTRINGLENGTH;
+
+
+namespace Solver2
+
+char DumpTime(int time)
+
+int hh,mm,ss;
+if (iString  1  MAXSTRING) iString  0;
+ss  time10060;
+if (ss  0) time  (60-ss)  100;
+hh  time1006060;
+mm  time1006060;
+sprintf(writeTextiString, 0.2d:0.2d,hh,mm);
+return writeTextiString;
+
+
+char DumpTimeI(int64 time)
+
+int64 hh,mm,ss;
+if (iString  1  MAXSTRING) iString  0;
+ss  time10060;
+if (ss  0) time  (60-ss)  100;
+hh  time1006060;
+mm  time1006060;
+sprintf(writeTextiString, 0.2I64d:0.2I64d,hh,mm);
+return writeTextiString;
+
+
+char Write(const char format, const char s1, const char s2, const char s3, const char s4, const char s5)
+
+if (iString  1  MAXSTRING) iString  0;
+sprintf(writeTextiString, format, s1, s2, s3, s4, s5);
+return writeTextiString;
+
+
+char Write(const char format, const int v)
+
+if (iString  1  MAXSTRING) iString  0;
+sprintf(writeTextiString, format, v);
+return writeTextiString;
+
+
+char Write(const char format, const int v1, const int v2)
+
+if (iString  1  MAXSTRING) iString  0;
+sprintf(writeTextiString, format, v1, v2);
+return writeTextiString;
+
+
+char Write(const char format, const int v1, const int v2, const int v3)
+
+if (iString  1  MAXSTRING) iString  0;
+sprintf(writeTextiString, format, v1,v2,v3);
+return writeTextiString;
+
+
+char Write(const char format, const int v1, const int v2, const int v3, const int v4, const int v5)
+
+if (iString  1  MAXSTRING) iString  0;
+sprintf(writeTextiString, format, v1,v2,v3, v4, v5);
+return writeTextiString;
+
+
+
+char Write(const wchart text)
+
+if (iString  1  MAXSTRING) iString  0;
+for(int i0;iMAXSTRINGLENGTH - 1;i)
+
+writeTextiStringi  (char)texti;
+if (texti  0) break;
+
+writeTextiStringi  0;
+return writeTextiString;
+
+
+
+
+
+
+void RouteData::Dump(FILE f)
+
+fprintf(f, ttNumber of served client 8dn, nClient);
+fprintf(f, ttTotal mass1             8dn, totalMass1);
+fprintf(f, ttTotal mass2             8dn, totalMass2);
+fprintf(f, ttTotal travell dist     9I64d 6.1lf kmn, travellDist100, travellDist1e5);
+fprintf(f, ttTotal travell time      8I64d  s n, travellTime, DumpTimeI(travellTime));
+fprintf(f, ttTotal serving time      8I64d  s n, timeWork, DumpTimeI(timeWork));
+fprintf(f, ttTotal waiting time      8I64d  s n, timeWait, DumpTimeI(timeWait));
+fprintf(f, ttTotal late              8I64d  s n, overTimeTotal, DumpTimeI(overTimeTotal));
+fprintf(f, ttTotal late at client    8I64d  s n, overTimeClients, DumpTimeI(overTimeClients));
+fprintf(f, ttTotal late at finish    8I64d  s n, overTimeAgent, DumpTimeI(overTimeAgent));
+fprintf(f, ttTotal overload          8dn, overMass1);
+fprintf(f, ttTotal oversize          8dn, overMass2);
+fflush(f);
+
+
+void RouteData::DumpLog(LogData log)
+
+log-Write( ttNumber of served client 8dn, nClient);
+log-Write( ttTotal mass1             8dn, totalMass1);
+log-Write( ttTotal mass2             8dn, totalMass2);
+log-Write( ttTotal travell dist      8dn, (int)travellDist);
+log-Write( ttTotal travell time      8dn, (int)travellTime);
+log-Write( ttTotal serving time      8dn, (int)timeWork);
+if (timeWait  0)log-Write( ttTotal waiting time      8dn, (int)timeWait);
+if (overTimeTotal  0) log-Write( ttTotal late              8dn, (int)overTimeTotal);
+if ( overMass1  0) log-Write( ttTotal overload          8dn, overMass1);
+if ( overMass2  0) log-Write( ttTotal oversize          8dn, overMass2);
+
+
+
+
+void Route::DumpData(FILE f)
+
+int i;
+Client client;
+
+fprintf(f, ntRoute of agent dn, iAgent);
+
+if (nClient  0)
+
+fprintf(f, ntIncorrect route datan);
+return;
+
+
+if ( CalcFinalData()  0)
+
+fprintf(f, ntIncorrect route datan);
+return;
+
+
+fprintf(f, tt number of client 8dn, data.nClient);
+fprintf(f, tt mass1            8dn, data.totalMass1);
+fprintf(f, tt mass2            8dn, data.totalMass2);
+fprintf(f, tt time             8d  s n, pointnClient1.timeArrival - point0.timeDeparture, DumpTime(pointnClient1.timeArrival - point0.timeDeparture));
+fprintf(f, tt travell dist     8I64d 6.1lf km n, data.travellDist, data.travellDist1e5);
+fprintf(f, tt travell time     8I64d  s n, data.travellTime, DumpTimeI(data.travellTime));
+fprintf(f, tt serving time     8I64d  s n, data.timeWork, DumpTimeI(data.timeWork));
+if (data.timeWait  0) fprintf(f, tt waiting time     8I64d  s n, data.timeWait, DumpTimeI(data.timeWait));
+if (data.overTimeTotal  0)
+
+fprintf(f, tt late             8I64d  s n, data.overTimeTotal, DumpTimeI(data.overTimeTotal));
+fprintf(f, tt late at client   8I64d  s n, data.overTimeClients, DumpTimeI(data.overTimeClients));
+fprintf(f, tt late at finish   8I64d  s n, data.overTimeAgent, DumpTimeI(data.overTimeAgent));
+
+if (data.overMass1  0) fprintf(f, tt overload         8dn, data.overMass1);
+if (data.overMass2  0) fprintf(f, tt oversize         8dn, data.overMass2);
+
+fprintf(f, nttAgent dn, agent.idAgent);
+fprintf(f, tt   workday s - snn,DumpTime(agent.timeStart), DumpTime(agent.timeEnd));
+
+for(i0;inClient;i)
+
+fprintf(f, ttdeparture at s from dn, DumpTime(pointi.timeDeparture), pointi.iGraphNode);
+if (edgei.iStoreThrough  0)
+fprintf(f, ttt road 9d time  9d dist  9dn, edgei.edgeIn, edgei.roadTime, edgei.roadLength);
+else
+fprintf(f, ttt road d,d (through store d)t time  9d dist  9dnn,
+edgei.edgeIn, edgei.edgeOut, edgei.iStoreThrough, edgei.roadTime, edgei.roadLength);
+
+fprintf(f, ttarrive    at s to   dn, DumpTime(pointi1.timeArrival), pointi1.iGraphNode);
+if (i  nClient) break;
+fprintf(f, tt  serving client dn, pointi1.iClient);
+client  task-client  pointi1.iClient;
+fprintf(f, tt  open time s, service time s, close time s,ntt  mass1 4d, mass2 4dn,
+DumpTime(client-timeOpen), DumpTime(client-timeWork), DumpTime(client-timeClose),
+client-mass1, client-mass2);
+
+
+fflush(f);
+
+
+void Schedule::DumpData(const char name)
+
+int i,j,k, ok;
+FILE f;
+RouteEdge edg;
+
+if ((f  fopen(name, wt))  NULL) return;
+
+fprintf(f, Schedule data dumpnn);
+
+totalData.Dump(f);
+for(i0;inRoute;i)
+routei.DumpData(f);
+
+ unserved clients
+
+for(i0;inClient;i)
+isServedi  0;
+for(i0;inRoute;i)
+for(j0;jroutei.nClient;j)
+isServedroutei.pointj1.iClient  1;
+j  0;
+for(i0;inClient;i)
+if (isServedi  0) j;
+
+
+if (j  1)
+
+fclose(f);
+return;
+
+
+fprintf(f, nNumber of unserved clients - dn, j);
+fprintf(f, nList of unserved clients:);
+for(i0;inClient;i)
+if (isServedi  0)
+fprintf(f,  4d, i);
+fprintf(f, nn);
+
+for(i0;inClient;i)
+if (isServedi  0)
+
+fprintf(f, n Client dn, i);
+fprintf(f, tlocation     8dn, clienti.iNode);
+fprintf(f, tweight1      8dn, clienti.mass1);
+fprintf(f, tweight2      8dn, clienti.mass2);
+fprintf(f, topen time    8dn, clienti.timeOpen);
+fprintf(f, tclose time   8dn, clienti.timeClose);
+fprintf(f, tserve time   8dn, clienti.timeWork);
+fprintf(f, tservice mask 8xn, clienti.maskService);
+
+ok  0;
+for(j0;jnAgent;j)
+
+if (graph-GetRoad( agentj.iStartNode, clienti.iNode, edg, agentj)  0) continue;
+if (graph-GetRoad( clienti.iNode, agentj.iEndNode, edg, agentj)  0) continue;
+if ((clienti.maskService  agentj.maskService) ! 0)
+
+ok  1;
+break;
+
+
+if (ok) continue;
+fprintf(f, t this client cant be served by any of the agentsn);
+
+ok  0;
+for(j0;jgraph-nNodes;j)
+if (j!clienti.iNode)
+for(k0;kgraph-nVehicleTypes;k)
+if (graph-edgesgraph-EdgeIndex(k, j, clienti.iNode, 0, 0) 0)
+ok  1;
+if (!ok)
+fprintf(f, t no routes to this pointn);
+
+ok  0;
+for(j0;jgraph-nNodes;j)
+if (j!clienti.iNode)
+for(k0;kgraph-nVehicleTypes;k)
+if (graph-edgesgraph-EdgeIndex(k, clienti.iNode, j, 0, 0) 0)
+ok  1;
+if (!ok)
+fprintf(f, t no routes from this pointn);
+
+
+
+
+
+
+fclose(f);
+
+
+
+
+
+
+LogData::LogData()
+
+f  NULL;
+Open(Solver2.Log);
+SetMaxLevel(120);
+
+
+LogData::LogData()
+
+Close();
+
+
+void LogData::Open(const char name)
+
+Close();
+f  fopen(name, wt);
+
+
+void LogData::Open(const int type)
+
+Close();
+if (type  2) f  NULL;
+if (type  1) f  stdout;
+if (type  0) f  fopen(Solver2.Log, wt);
+
+
+
+void LogData::Close()
+
+if ( f ! NULL) fclose(f);
+f  NULL;
+
+
+void LogData::SetMaxLevel(int level)
+
+maxLevel  level;
+
+
+void LogData::SetLevel(int level)
+
+curLevel  level;
+
+
+void LogData::Write(char text)
+
+if (curLevel  maxLevel) return;
+if ( f  NULL) return;
+fprintf(f, text);
+fflush(f);
+
+
+void LogData::Write(int level, char text)
+
+if (level  maxLevel) return;
+if ( f  NULL) return;
+fprintf(f, text);
+fflush(f);
+
+
+
+void LogData::Write(char format, int v)
+
+if (curLevel  maxLevel) return;
+if ( f  NULL) return;
+fprintf(f, format, v);
+fflush(f);
+
+
+
+void LogData::Write(char format, double v)
+
+if (curLevel  maxLevel) return;
+if ( f  NULL) return;
+fprintf
