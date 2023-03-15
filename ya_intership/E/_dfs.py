@@ -22,7 +22,7 @@ def dfs(v):
         return
     visited.add(v)  # Посетили вершину v
     for i in inc[v]:  # Все смежные с v вершины
-        if not i in visited:
+        if i not in visited:
             dfs(i)
 
 
