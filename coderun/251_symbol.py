@@ -1,6 +1,3 @@
-import sys
-
-
 def main():
 
     s = input()
