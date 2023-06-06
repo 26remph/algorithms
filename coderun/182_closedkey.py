@@ -32,35 +32,15 @@ def main(x, y):
     if x == y: return 1
     if y % x != 0: return 0
 
-    t = time.time()
-    c = 2
-    for i in range(2, (y // x // 2) + 1):
-
-        if y % i == 0:
-            b = y // i
-            a = y * x / b
-
-            if a >= b:
-                break
-
-            if gcd(a, b) == x and a * b / x == y:
-                c += 2
-    print(time.time()-t, '(s)')
-
-    t = time.time()
     cnt = 2
-    for i in range(2, (y // x // 2 + 1)):
+    for i in range(2, (y // x // 2) + 1):
 
         a = x * i
         b = y * x / a
-        if a >= b:
-            break
 
-        if gcd(a, b) == x and a * b / x == y:
-            cnt += 2
-    print(time.time() - t, '(s)')
-
-    assert cnt == c, f'cnt={cnt}, c={c}'
+        if a >= b: break
+        if b != int(b): continue
+        if gcd(a, b) == x: cnt += 2
 
     return cnt
 
@@ -75,5 +55,5 @@ if __name__ == '__main__':
         # print(test10ok(x, y))
         # print('--->', time.time() - t)
         t = time.time()
-        print(main(x, y), time.time() - t, '(s)')
+        print(main(x, y), time.time() - t, '(sec)')
         # assert main(x, y) == test10ok(x, y), f'x={x}, y={y}'
