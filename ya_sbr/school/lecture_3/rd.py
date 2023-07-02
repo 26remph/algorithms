@@ -1,4 +1,10 @@
+import bisect
+import itertools
 
-# arr = list(map(int, input().strip().split(' ')))
-arr = list(map(int, input().strip().split(' ')))
-print(arr)
+
+arr = [-5, -2, 1, 2, 3]
+arr.sort()
+
+ind = bisect.bisect_right(arr, 3)
+print(ind, arr)
+
