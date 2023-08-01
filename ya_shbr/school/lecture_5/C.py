@@ -85,3 +85,4 @@ if __name__ == '__main__':
     #     peak = solution(n, arr)
     #     assert res in peak, f'{arr}, res: {res}, peak:{peak}'
     #     cnt += 1
+
