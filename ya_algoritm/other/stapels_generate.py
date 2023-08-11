@@ -1,13 +1,15 @@
 def solution():
 
     ans = []
+
     def gen(res, op, cl):
 
-        if len(res) == n:
+        if len(res) == 2 * n:
             ans.append(res)
-            return res
+            return
 
-        gen(res+'(', op+1, cl)
+        if op < n:
+            gen(res+'(', op+1, cl)
 
         if cl < op:
             res += ')'
