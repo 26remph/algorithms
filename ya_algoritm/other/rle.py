@@ -2,7 +2,6 @@ from string import ascii_lowercase
 
 def solution(s):
 
-
     def dfs(res, open, close, ind):
 
         if s[ind] == close:
@@ -34,4 +33,4 @@ if __name__ == '__main__':
     ]
     print(solution(s))
     for s, ans in tests:
-        assert solution(s) == ans, f's={s}, {solution(s)} != {ans}'
+        assert solution(s) == ans, f'{s=}, {solution(s)} != {ans}'
