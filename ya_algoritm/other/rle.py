@@ -1,36 +1,59 @@
+from collections import deque
 from string import ascii_lowercase
+
 
 def solution(s):
 
-    def dfs(res, open, close, ind):
+    steak = []
+    for i in range(len(s)):
 
-        if s[ind] == close:
-            return res
+        if s[i] == ']':
+            cur = deque()
+            while steak and (ch := steak.pop()) != '[':
+                cur.appendleft(ch)
+            num = steak.pop()
+            steak.append(''.join(cur) * int(num))
+        else:
+            steak.append(s[i])
 
-        num = 0
-        for i in range(ind, len(s)):
-            if s[i] == open:
-                res = dfs(res, open, close, i + 1)
-                res += res * num if num else 1
+    return ''.join(steak)
 
-            if s[i] not in ascii_lowercase:
-                num = int(s[i])
+
+
+def solution_recursion(s):
+
+
+    def dfs(cur):
+
+        for i in range(len(s)):
+
+            cur += s[i]
+
+            if s[i] == '[':
+                dfs(cur)
             else:
-                res += s[i] * num if num else 1
+                ...
 
-        return res
+        # return res
 
-    return dfs('', '[', ']', 0)
+    return dfs('')
 
 
 if __name__ == '__main__':
-    s = input()
+    # s = input()
     tests = [
-        ('2[4[2B]]', 'BBBBBBBBBBBBBBBBBBBB'),
-        ('4[BA]]', 'BABABABA'),
-        ('2[3A3B]', 'AAABBBAAABBB'),
-        ('2[2[2[B2A]]', 'BAABAABAABAABAABAABAABAA'),
+        ('2[4[2[b]]]', 'bbbbbbbbbbbbbbbb'),
+        ('4[ba]', 'babababa'),
+        ('2[3[a]3[b]a]', 'aaabbbaaaabbba'),
+        ('2[3[a]3[b]]', 'aaabbbaaabbb'),
+        ('2[2[2[b2[a]]]]', 'baabaabaabaabaabaabaabaa'),
+        ('2[ab3[as]]1[a]', 'abasasasabasasasa'),
+        ('1[1[1[abc]]]', 'abc'),
+        ('2[abc]1[de]3[f]', 'abcabcdefff'),
+        ('2[1[2[a]b3[c]]]', 'aabcccaabccc'),
+        ('ab2[ac2[ab]]', 'abacababacabab')
     ]
-    print(solution(s))
+    # print(solution(s))
     for s, ans in tests:
+        print(solution(s))
         assert solution(s) == ans, f'{s=}, {solution(s)} != {ans}'
