@@ -2,6 +2,7 @@ import collections
 
 
 def subarray_sum(nums, k):
+    """Prefix sum for array with negative integer numbers"""
     ans = 0
     total = 0
     prefix_summ = collections.defaultdict(int)
@@ -13,5 +14,3 @@ def subarray_sum(nums, k):
         prefix[total] += 1
 
     return ans
-
-
