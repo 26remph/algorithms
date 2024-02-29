@@ -1,7 +1,7 @@
 count = 0
 
 
-def make_equation_forward(*args):
+def make_equation_down(*args):
     global count
     if args:
         if not count:
