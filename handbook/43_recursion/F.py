@@ -10,9 +10,9 @@ def merge(arr1, arr2) -> list:
             res.append(arr2[j])
             j += 1
         else:
-            res += arr1 + arr2
+            res += [arr1[i], arr2[j]]
             i += 1
-            j += 2
+            j += 1
 
     if i < len(arr1):
         res += arr1[i:]
@@ -22,22 +22,17 @@ def merge(arr1, arr2) -> list:
     return res
 
 
-result = []
-
 
 def merge_sort(arr):
 
-    if len(arr) == 2:
-        return result.extend(merge(arr[0], arr[1]))
-    elif len(arr) > 2:
-        merge_sort(arr[:len(arr) // 2])
-        merge_sort(arr[len(arr) // 2:])
+    if len(arr) < 2:
+        return arr
+    else:
+        return merge(merge_sort(arr[:len(arr) // 2]), merge_sort(arr[len(arr) // 2:]))
 
-    return result.extend([arr[0]])
 
 
 if __name__ == '__main__':
-    result = []
     print('1', merge([1], [0]))
     print('2', merge([0], [1]))
     print('3', merge([0], []))
@@ -48,3 +43,5 @@ if __name__ == '__main__':
     print(a[len(a) // 2:])
     print(a[:len(a) // 2])
     print(merge_sort([2, 1, 6, 2, 0, 0]))
+    print(merge_sort([3, 2, 1]))
+    print(merge_sort([3, 1, 5, 3]))
