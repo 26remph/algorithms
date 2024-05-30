@@ -66,5 +66,5 @@ if __name__ == '__main__':
     rect.turn()
     rect.turn()
     rect.turn()
-    # rect.turn()
+    rect.turn()
     print(rect.get_pos(), rect.get_size(), sep='\n')
