@@ -72,7 +72,7 @@
 # assert (rez := pretty(k, s)) == 15, f'{rez}, s={s}, k={k}'
 
 # k = 50
-# s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'
+# s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'  # noqa: E501
 # ch = 'g'
 # 57
 
@@ -110,7 +110,10 @@ for i in range(len(s)):
         if cnt_z == k:
             left_summa = summa - k + 1
             print('SAVE')
-            print('i', i, 'l_sum=', left_summa, 'r_summa=', r_summa, 'sum=', summa, 'cnt_z=', cnt_z)
+            print(
+                'i', i, 'l_sum=', left_summa, 'r_summa=', r_summa, 'sum=', summa,
+                'cnt_z=', cnt_z
+            )
 
         if cnt_z > k:
             summa = summa - left_summa - k
@@ -129,7 +132,14 @@ for i in range(len(s)):
                 cnt_z = k
                 r_summa = 0
             print('RESET')
-            print('i', i, 'gsumm=', gsumm, 'l_sum=', left_summa, 'r_summa', r_summa, 'sum=', summa, 'cnt_z', cnt_z)
+            print(
+                'i', i, 'gsumm=',
+                gsumm, 'l_sum=',
+                left_summa,
+                'r_summa', r_summa,
+                'sum=', summa,
+                'cnt_z', cnt_z
+            )
 
         summa += 1
         r_summa += 1 if cnt_z >= 1 else 0

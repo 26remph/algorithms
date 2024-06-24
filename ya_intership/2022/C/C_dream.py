@@ -27,10 +27,7 @@ for v in range(1, N + 1):
     left = (2 * v) if (2 * v <= N) else None
     right = (2 * v + 1) if (2 * v + 1) <= N else None
 
-    if v == 1:
-        p = None
-    else:
-        p = route[v]
+    p = None if v == 1 else route[v]
 
     route[left] = v
     route[right] = v

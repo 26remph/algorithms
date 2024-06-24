@@ -29,9 +29,11 @@ for i in range(1, 5000):
 # arr_diff = [el[2] for el in ans]
 # avg = [el[3] for el in ans]
 # print(f'{statistics.mean(avg)}')
-# print('statistic:', f'{statistics.mean(arr_diff)=}, {statistics.harmonic_mean(arr_diff)=}')
+# print(
+# 'statistic:', f'{statistics.mean(arr_diff)=}, {statistics.harmonic_mean(arr_diff)=}'
+# )
 
-nums = set([(el[0], el[1]) for el in ans])
+nums = {(el[0], el[1]) for el in ans}
 # print(ans)
 # print('ans:', f'{len(ans)=}')
 # print(nums)

@@ -53,8 +53,6 @@ with open('query.txt') as f:
     # q = int(input())
     q = f.readline().rstrip()
     while line := f.readline().rstrip():
-    # for _ in range(q):
-    #     row = list(map(int, input().split()))
 
         row = list(map(int, line.split()))
         start, end, _type = row
@@ -86,4 +84,11 @@ with open('query.txt') as f:
         print(_sum_alt)
 
 print("\nTOTAL: --- %s seconds ---" % (time.time() - start_time))
-print('data_size_of:', sys.getsizeof(data) + sys.getsizeof(start_ind) + sys.getsizeof(keys_x0) + sys.getsizeof(end_ind) + sys.getsizeof(keys_x1))
+print(
+    'data_size_of:',
+    sys.getsizeof(data) +
+    sys.getsizeof(start_ind) +
+    sys.getsizeof(keys_x0) +
+    sys.getsizeof(end_ind) +
+    sys.getsizeof(keys_x1)
+)

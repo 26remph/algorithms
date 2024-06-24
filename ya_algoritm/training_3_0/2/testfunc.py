@@ -14,7 +14,7 @@ for _ in range(10_000):
     assert prettyfor(k, s) == prettywhile(k, s), (k, s)
 
 # k = 50
-# s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'
+# s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'  # noqa: E501
 # print(len(s))
 # print('for:', prettyfor(k, s))
 # print('while:', prettywhile(k, s))

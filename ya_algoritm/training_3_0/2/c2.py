@@ -104,7 +104,7 @@ if __name__ == '__main__':
     assert (rez := prettyfor(k, s)) == 30, f'{rez}, s={s}, k={k}'
 
     k = 50
-    s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'
+    s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'  # noqa: E501
     assert (rez := prettyfor(k, s)) == 57, f'{rez}, s={s}, k={k}'
 
     k = 10
@@ -116,7 +116,7 @@ if __name__ == '__main__':
     assert (rez := prettyfor(k, s)) == 29, f'{rez}, s={s}, k={k}'
 
     k = 50
-    s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'
+    s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'  # noqa: E501
     assert (rez := prettyfor(k, s)) == 57, f'{rez}, s={s}, k={k}'
 
     k = 4

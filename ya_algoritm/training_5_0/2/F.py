@@ -67,7 +67,10 @@ if __name__ == '__main__':
     #     res_l = max(clone[ai: bi + 1])
     #
     #     res = max(res_l, res_r)
-    #     print(f'{reverse_test_arr=}, {a=}, {b=},{ai=}, {bi=}, {n=}, {res=}, {res_r=}, {res_l=}')
+    #     print(
+    #       f'{reverse_test_arr=},
+    #       {a=}, {b=},{ai=}, {bi=}, {n=}, {res=}, {res_r=}, {res_l=}'
+    #     )
     #     print('-' * 50)
     #     ans = solution(a, b, k, arr)
     #     assert solution(a, b, k, arr) == res, f'{ans=}, {arr=}'

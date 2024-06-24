@@ -64,7 +64,7 @@ def bishop_handler(i, j):
 
 
 if __name__ == '__main__':
-    arr = [[ch for ch in input().strip()] for _ in range(8)]
+    arr = [list(input().strip()) for _ in range(8)]
     for i in range(8):
         for j in range(8):
             if arr[i][j] == 'R':

@@ -11,7 +11,10 @@ def get_num(x, y) -> None | int:
 
 def get_neig(dot, plan) -> list[tuple[int, int]]:
     x, y = dot
-    edges = [(x - 1, y + 1), (x - 1, y), (x - 1, y - 1), (x, y + 1), (x, y - 1), (x + 1, y + 1), (x + 1, y), (x + 1, y - 1)]
+    edges = [
+        (x - 1, y + 1), (x - 1, y), (x - 1, y - 1), (x, y + 1),
+        (x, y - 1), (x + 1, y + 1), (x + 1, y), (x + 1, y - 1)
+    ]
 
     neig = []
     for dot in edges:

@@ -18,9 +18,6 @@ with open(f'{MODE.get(mode)}.txt', 'w') as f:
         start = random.randint(1, RIGHT_EDGE)
         end = random.randint(start, RIGHT_EDGE)
 
-        if mode:
-            param = random.randint(1, 2)
-        else:
-            param = random.randint(1, RIGHT_EDGE)
+        param = random.randint(1, 2) if mode else random.randint(1, RIGHT_EDGE)
 
         f.write(f'\n{start} {end} {param}')

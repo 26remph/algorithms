@@ -13,7 +13,7 @@ def set_column_to_zero(a: list, column: int):
         a[i][0] = 0
 
 
-def renew_max_for_column(a: list):
+def renew_max_for_column():
 
     # search new max for j
     max_column = [0, 0]

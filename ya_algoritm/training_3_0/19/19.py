@@ -3,7 +3,7 @@
 class Heap:
     _seq = []
 
-    def push(self, *args, **kwargs):
+    def push(self, *args):
         self._seq.append(int(args[0]))
 
         i = len(self._seq) - 1
@@ -16,7 +16,7 @@ class Heap:
 
         # print(self._seq)
 
-    def pop(self, *args, **kwargs):
+    def pop(self):
         i = 0
         val = self._seq[i]
 

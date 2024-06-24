@@ -10,10 +10,7 @@ m = int(input())
 head = None
 for i in range(m):
     s, e = map(int, input().split(' '))
-    if i == 0:
-        head = Node(val=(s, e))
-    else:
-        head = Node(next=head, val=(s, e))
+    head = Node(val=(s, e)) if i == 0 else Node(next=head, val=(s, e))
 
     prev, cur = head, head.next
     while cur is not None:

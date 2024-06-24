@@ -23,7 +23,8 @@ if __name__ == '__main__':
     N = int(input())
     M = 8
     arr = [
-        [-1 if i == 0 or i == M + 1 or j == 0 or j == M + 1 else 0 for j in range(M + 2)] for i in range(M + 2)]
+        [-1 if i == 0 or i == M + 1 or j == 0 or j == M + 1 else 0 for j in range(M + 2)] for i in range(M + 2)
+    ]
     for _ in range(N):
         i, j = map(int, input().split())
         arr[i][j] = 1

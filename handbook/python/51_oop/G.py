@@ -6,8 +6,8 @@ from check import RectangleCheck
 class Rectangle:
     def __init__(self, dot1: tuple[float, float], dot2: tuple[float, float]):
         self.left_corner = (min(dot1[0], dot2[0]), max(dot1[1], dot2[1]))
-        self.w = abs(dot2[0] - dot1[0])
-        self.h = abs(dot2[1] - dot1[1])
+        self.w = round(abs(dot2[0] - dot1[0]), 2)
+        self.h = round(abs(dot2[1] - dot1[1]), 2)
 
     def area(self) -> float:
         return round(self.w * self.h, 2)
@@ -22,20 +22,22 @@ class Rectangle:
         return round(self.w, 2), round(self.h, 2)
 
     def move(self, dx: float, dy: float) -> None:
-        self.left_corner = self.left_corner[0] + dx, self.left_corner[1] + dy
+        lx = round(self.left_corner[0] + dx, 2)
+        ly = round(self.left_corner[1] + dy, 2)
+        self.left_corner = lx, ly
 
     def resize(self, width: float, height: float) -> None:
-        self.w = width
-        self.h = height
+        self.w = round(width, 2)
+        self.h = round(height, 2)
 
     def turn(self):
-        dx = dy = (self.w - self.h) / 2
+        dx = dy = round((self.w - self.h) / 2, 2)
         self.move(dx, dy)
         self.w, self.h = self.h, self.w
 
     def scale(self, factor: float) -> None:
-        dx = self.w * (factor - 1)
-        dy = self.h * (factor - 1)
+        dx = round((self.w * (factor - 1)), 2)
+        dy = round((self.h * (factor - 1)), 2)
         self.move(-dx / 2, dy / 2)
         self.resize(self.w * factor, self.h * factor)
 
@@ -64,7 +66,6 @@ if __name__ == '__main__':
     for _ in range(1):
         dot1 = (random.uniform(-10.0, 10.0), random.uniform(-10.0, 10.0))
         dot2 = (random.uniform(-10.0, 10.0), random.uniform(-10.0, 10.0))
-
         rect = Rectangle(dot1, dot2)
         rect_check = RectangleCheck(dot1, dot2)
         print('> rect', dot1, dot2, 'tested')

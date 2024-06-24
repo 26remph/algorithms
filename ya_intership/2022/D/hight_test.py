@@ -1,6 +1,8 @@
+import random
+
 import D_water as dw_speed
 import D_water_TL as dw_tl
-import random
+
 
 MODE = {
     False: 'data_create',
@@ -24,10 +26,7 @@ def create_test():
             start = random.randint(1, RIGHT_EDGE)
             end = random.randint(start, RIGHT_EDGE)
 
-            if mode:
-                param = random.randint(1, 2)
-            else:
-                param = random.randint(1, RIGHT_EDGE)
+            param = random.randint(1, 2) if mode else random.randint(1, RIGHT_EDGE)
 
             f.write(f'\n{start} {end} {param}')
 
@@ -41,10 +40,7 @@ def create_test():
             start = random.randint(1, RIGHT_EDGE)
             end = random.randint(start, RIGHT_EDGE)
 
-            if mode:
-                param = random.randint(1, 2)
-            else:
-                param = random.randint(1, RIGHT_EDGE)
+            param = random.randint(1, 2) if mode else random.randint(1, RIGHT_EDGE)
 
             f.write(f'\n{start} {end} {param}')
 
@@ -60,6 +56,3 @@ for i in range(len(rez_1)):
         print(rez_1[i], rez_2[i])
 
 assert rez_1 == rez_2
-
-
-

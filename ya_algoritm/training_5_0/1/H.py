@@ -4,15 +4,24 @@ def check(mid, a, s1, b, s2):
 
     print(f'{mid=}, {delta=}, {a=}, {s1=}, {b=}, {s2=}')
     if a < b:
-        print('test_1:', f'{mid * s2=},{mid * s1=}, {(b + mid * s2) - (a + mid * s1)=}, {((b + mid * s2) - (a + mid * s1) <= delta)=}')
+        print(
+            'test_1:',
+            f'{mid * s2=},{mid * s1=}, '
+            f'{(b + mid * s2) - (a + mid * s1)=}, '
+            f'{((b + mid * s2) - (a + mid * s1) <= delta)=}'
+        )
         return (b + mid * s2) - (a + mid * s1) <= delta
 
-    print('test_2:', f'{(a + mid * s1) - (b + mid * s2)=}, {((a + mid * s1) - (b + mid * s2) <= delta)=}')
+    print(
+        'test_2:',
+        f'{(a + mid * s1) - (b + mid * s2)=}, '
+        f'{((a + mid * s1) - (b + mid * s2) <= delta)=}'
+    )
     return (a + mid * s1) - (b + mid * s2) <= delta
 
 
 def bin_answer(t1, t2, x1, v1, x2, v2):
-    cnt = 0
+    # cnt = 0
     while abs(t1 - t2) / max(1, t2) >= delta:
         mid = (t1 + t2) / 2
         if check(mid, x1, v1, x2, v2):
@@ -21,7 +30,11 @@ def bin_answer(t1, t2, x1, v1, x2, v2):
             t1 = mid + delta
 
         # if cnt > 1000:
-        #     print(f'{t1=}, {t2=}, {mid=}, {abs(t1 - t2) / max(1, t2)}, {(abs(t1 - t2) / max(1, t2) > delta)=}, {abs(t1 - t2)=}, {max(1, t2)=}, terminate-' + '\033[91m')
+        #     print(
+        #         f'{t1=}, {t2=}, {mid=}, {abs(t1 - t2) / max(1, t2)},'
+        #         f'{(abs(t1 - t2) / max(1, t2) > delta)=}, {abs(t1 - t2)=},'
+        #         f'{max(1, t2)=}, terminate-' + '\033[91m'
+        #     )
         #     break
         # cnt += 1
     return t1
@@ -74,7 +87,10 @@ def shift_iniit_pos(L, x1, v1, x2, v2):
             else:
                 v1, v2 = -v1, -v2
 
-    print(f'{shift_x1_to_zero=}, {shift_x1_to_l2=}, {shift_x2_to_zero=}, {shift_x2_to_l2=}')
+    print(
+        f'{shift_x1_to_zero=}, {shift_x1_to_l2=}, '
+        f'{shift_x2_to_zero=}, {shift_x2_to_l2=}'
+    )
     return x1, v1, x2, v2, shift
 
 
@@ -195,7 +211,8 @@ if __name__ == '__main__':
     #     L, x1, v1, x2, v2, ans = test
     #     res = main(L, x1, v1, x2, v2)
     #     print(main(L, x1, v1, x2, v2))
-    #     assert abs(res - ans) / max((1, abs(ans))) <= delta, f'{L}, {x1=}, {v1=}, {x2=}, {v2=}, {ans=}, {res=}'
+    #     assert abs(res - ans) / max((1, abs(ans))) <= delta,
+    #     f'{L}, {x1=}, {v1=}, {x2=}, {v2=}, {ans=}, {res=}'
 
     # test for TL
     # pass for: a < b
@@ -212,4 +229,5 @@ if __name__ == '__main__':
     #
     #     res = main(L, x1, v1, x2, v2)
     #     print(main(L, x1, v1, x2, v2))
-        # assert abs(res - ans) / max((1, abs(ans))) <= delta, f'{L}, {x1=}, {v1=}, {x2=}, {v2=}, {ans=}, {res=}'
+        # assert abs(res - ans) / max((1, abs(ans))) <= delta,
+    # f'{L}, {x1=}, {v1=}, {x2=}, {v2=}, {ans=}, {res=}'

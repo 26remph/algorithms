@@ -1,3 +1,4 @@
+import sys
 
 
 def dfs(x, depht):
@@ -8,7 +9,7 @@ def dfs(x, depht):
 
     if depht > d:
         flag = False
-        ans.append(x)
+        # ans.append(x)
         return
 
     x *= 10
@@ -39,9 +40,6 @@ def main():
             break
 
     return x
-
-
-import sys
 
 
 sys.set_int_max_str_digits(0)
@@ -81,7 +79,7 @@ if __name__ == '__main__':
 
     # print(timeit.timeit(main_opt, number=1))
     # while True:
-    #     n, k, d = random.randint(1, 1000), random.randint(1, 1000), random.randint(1, 10_000)
+    #     n, k, d = [random.randint(1, 1000) for _ in range(3)]
     #     res_m = main()
     #     res_opt = main_opt()
     #     assert res_m == res_opt, f'{n=}, {k=}, {d=}, {res_m}, {res_opt}'

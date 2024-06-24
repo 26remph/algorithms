@@ -14,7 +14,7 @@ for ind in range(N):
         random.randint(1, EDGE)
     )
 
-for ind in range(N):
+for _ in range(N):
     data_list.append(
         (random.randint(1, EDGE),
          random.randint(1, EDGE),

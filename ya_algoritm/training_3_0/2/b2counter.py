@@ -76,7 +76,7 @@ if __name__ == '__main__':
     assert (rez := prettywhile(k, s)) == 29, f'{rez}, s={s}, k={k}'
 
     k = 50
-    s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'
+    s = 'pnwkexqnexjiljxkyhvgdxzpktcttnjwstwtowmupzullrzknjlgqyhutzftelcnzdogghzbhccrmvheoecjvpafekvllwijezhh'  # noqa: E501
     assert (rez := prettywhile(k, s)) == 57, f'{rez}, s={s}, k={k}'
 
     k = 4

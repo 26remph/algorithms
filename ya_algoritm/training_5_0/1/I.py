@@ -1,12 +1,16 @@
-def main(y, holiday):
+def main(_, holiday):
     calendar = {
         'January': 31, 'February': 28, 'March': 31, 'April': 30, 'May': 31, 'June': 30,
-        "July": 31, 'August': 31, 'September': 30, 'October': 31, 'November': 30, 'December': 31
+        "July": 31, 'August': 31, 'September': 30, 'October': 31,
+        'November': 30, 'December': 31
     }
     if year % 400 == 0 or year % 4 == 0 and year % 100:
         calendar['February'] = 29
 
-    day_of_week = {0: 'Monday', 1: 'Tuesday', 2: 'Wednesday', 3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
+    day_of_week = {
+        0: 'Monday', 1: 'Tuesday', 2: 'Wednesday',
+        3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'
+    }
     total = [0 for _ in range(len(day_of_week))]
 
     pos = [k for k, v in day_of_week.items() if v == start_day][0]
@@ -17,7 +21,10 @@ def main(y, holiday):
             else:
                 total[pos] += 1
 
-            # print(f'{key=}, {pos=},{day_of_week[pos]}, {total=}, {(str(d), day_of_week[pos])=}')
+            # print(
+            #   f'{key=}, {pos=},{day_of_week[pos]}, {total=},
+            #   {(str(d), day_of_week[pos])=}'
+            # )
             pos += 1
             pos = pos % 7
 
@@ -36,6 +43,6 @@ def main(y, holiday):
 if __name__ == '__main__':
     n = int(input())
     year = int(input())
-    holiday = set(tuple(input().split()) for _ in range(n))
+    holiday = {tuple(input().split()) for _ in range(n)}
     start_day = input()
     print(main(year, holiday))

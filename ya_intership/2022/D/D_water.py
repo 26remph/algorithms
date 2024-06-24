@@ -6,12 +6,10 @@ def read_input() -> list:
     with open('data_create.txt') as f:
 
         # n = int(input())
-        n = int(f.readline().rstrip())
+        _ = int(f.readline().rstrip())
 
         data = []
         while line := f.readline().rstrip():
-        # for _ in range(n):
-        #     data.append(tuple(map(int, input().split())))
             data.append(tuple(map(int, line.split())))
 
     return data
@@ -38,11 +36,9 @@ def water():
     print(end_ind)
     with open('query.txt') as f:
         # q = int(input())
-        q = int(f.readline().rstrip())
+        _ = int(f.readline().rstrip())
         rez = []
         while line := f.readline().rstrip():
-        # for _ in range(q):
-        #     row = list(map(int, input().split()))
             row = list(map(int, line.split()))
             start, end, _type = row
 

@@ -36,9 +36,8 @@ def insert_word(word, type):
 
 
 def insert_img(img: dict):
-    if img['layout'] == 'embedded':
-        if int(img['height']) < h:
-            ...
+    if img['layout'] == 'embedded' and int(img['height']) < h:
+        ...
     pass
 
 

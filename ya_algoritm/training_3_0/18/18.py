@@ -14,22 +14,22 @@ class Deque:
         self._seq.append(n)
         print('ok')
 
-    def pop_front(self, *args, **kwargs):
+    def pop_front(self):
         print('error' if not self._seq else self._seq.popleft())
 
-    def pop_back(self, *args, **kwargs):
+    def pop_back(self):
         print('error' if not self._seq else self._seq.pop())
 
-    def front(self, *args, **kwargs):
+    def front(self):
         print('error' if not self._seq else self._seq[0])
 
-    def back(self, *args, **kwargs):
+    def back(self):
         print('error' if not self._seq else self._seq[-1])
 
-    def size(self, *args, **kwargs):
+    def size(self):
         print(len(self._seq))
 
-    def clear(self, *args, **kwargs):
+    def clear(self):
         self._seq.clear()
         print('ok')
 

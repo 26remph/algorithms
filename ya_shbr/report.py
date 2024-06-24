@@ -46,10 +46,7 @@ def foo(input_dict, _filter) -> str:
 def read_input() -> Tuple[dict, Dict[str, Union[str, int]]]:
 
     json_str = input()
-    if json_str:
-        input_dict = json.loads(json_str)
-    else:
-        input_dict = json.loads('{}')
+    input_dict = json.loads(json_str) if json_str else json.loads('{}')
 
     _filter: Dict[str, Union[str, int]] = {'match': 0}
     for _ in range(5):
