@@ -9,7 +9,7 @@ with open(input(), encoding="UTF-8") as f:
     for line in f:
         arr = list(map(int, line.split()))
         col_num += len(arr)
-        col_positive += sum([1 for x in arr if x > 0])
+        col_positive += sum(1 for x in arr if x > 0)
         min_num = min(min_num, min(arr))
         max_num = max(max_num, max(arr))
         total += sum(arr)

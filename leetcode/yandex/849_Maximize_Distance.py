@@ -10,10 +10,7 @@ class Solution:
         prev = -1
         for i in range(len(seats)):
             if seats[i]:
-                if prev < 0:
-                    cur = i
-                else:
-                    cur = (i - prev) // 2
+                cur = i if prev < 0 else (i - prev) // 2
                 res = max(res, cur)
                 prev = i
 

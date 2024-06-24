@@ -58,16 +58,16 @@ class Queue:
                 self.head = -1
                 self.tail = -1
 
-    def front(self, *args, **kwargs):
+    def front(self):
         if self.head < 0:
             print('error')
         else:
             print(self._seq[self.head])
 
-    def size(self, *args, **kwargs):
+    def size(self):
         print(self.tail - self.head + 1 if self.head != - 1 else 0)
 
-    def clear(self, *args, **kwargs):
+    def clear(self):
         self._seq = [0] * self.k
         self.head, self.tail = -1, -1
         print('ok')

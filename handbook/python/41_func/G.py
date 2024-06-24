@@ -9,10 +9,7 @@ def can_eat(knight: tuple, piece: tuple) -> bool:
         (knight[0] + 1, knight[1] - 2),
         (knight[0] - 1, knight[1] - 2),
     }
-    if piece in bit:
-        return True
-
-    return False
+    return piece in bit
 
 
 if __name__ == '__main__':

@@ -8,4 +8,4 @@ for row in stdin:
         if w.lower() == w[::-1].lower():
             ans.add(w)
 
-print('\n'.join(sorted(list(ans))))
+print('\n'.join(sorted(ans)))

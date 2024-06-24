@@ -8,4 +8,4 @@ def fib(n):
 
 
 if __name__ == '__main__':
-    print([x for x in fib(10)])
+    print(list(fib(10)))
