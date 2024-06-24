@@ -35,9 +35,11 @@ class Rectangle:
         return round(lx + self.w / 2, 2), round(ly - self.h / 2, 2)
 
     def turn(self):
-        lc = self.get_center_pos()
-        self.dot1 = lc[0] + self.h / 2, lc[1] + self.w / 2
-        self.dot2 = self.dot1[0] - self.h, self.dot1[1] - self.w
+        lx, ly = self.get_pos()
+        dx = self.w / 2 + self.h / 2
+        dy = self.w / 2 - self.h / 2
+        self.dot1 = lx + dx, ly + dy
+        self.dot2 = lx, ly - dx
 
         self.w, self.h = self.h, self.w
 
@@ -45,8 +47,8 @@ class Rectangle:
         center = self.get_center_pos()
         self.w = self.w * factor
         self.h = self.h * factor
-        self.dot1 = center[0] - self.w / 2, center[1] + self.h / 2
-        self.dot2 = center[0] + self.w / 2, center[1] - self.h / 2
+        self.dot1 = round(center[0] - self.w / 2, 2), round(center[1] + self.h / 2, 2)
+        self.dot2 = round(center[0] + self.w / 2, 2), round(center[1] - self.h / 2, 2)
 
 
 if __name__ == '__main__':
@@ -68,3 +70,4 @@ if __name__ == '__main__':
     rect.turn()
     rect.turn()
     print(rect.get_pos(), rect.get_size(), sep='\n')
+    print(round(5.255, 2))
