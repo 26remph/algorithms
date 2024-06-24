@@ -19,4 +19,3 @@ if __name__ == '__main__':
         ans += is_poli(num)
 
     print(ans)
-

@@ -1,6 +1,7 @@
+import random
+
 from bisect import bisect_left
 from typing import List
-import random
 
 
 class Solution:
@@ -8,8 +9,6 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         i = bisect_left(nums, target)
         return i if i != len(nums) and nums[i] == target else -1
-
-
 
     def clasic_binary(self, nums: List[int], target: int) -> int:
 
@@ -63,4 +62,4 @@ for test in range(10_000):
     assert sol.search(nums, target) == ind, (target, ind, nums)
     assert sol.clasic_binary(nums, target) == ind, (target, ind, nums)
 
-print(f"\033[92m complete")
+print("\033[92m complete")

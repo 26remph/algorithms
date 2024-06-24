@@ -23,5 +23,3 @@ for i in range(len(arr)):
 
 for key, val in sorted(list(nums.items())):
     print(key, '-', ', '.join(map(str, val)))
-
-

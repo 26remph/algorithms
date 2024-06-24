@@ -1,5 +1,5 @@
-import collections
 import itertools
+
 from typing import List
 
 
@@ -20,7 +20,6 @@ class Solution:
                     close += 1
 
         return stack + close
-
 
     def removeInvalidParentheses(self, s: str) -> List[str]:
 

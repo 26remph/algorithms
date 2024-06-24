@@ -1,5 +1,6 @@
 import itertools
 
+
 lst1 = input().split(', ')
 lst2 = input().split(', ')
 lst3 = input().split(', ')

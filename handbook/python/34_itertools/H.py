@@ -1,4 +1,5 @@
-from itertools import islice, repeat
+from itertools import islice
+
 
 m = int(input())
 eats = []
@@ -9,4 +10,3 @@ n = int(input())
 k = n // m + 1
 for e in islice(eats * k, n):
     print(e)
-

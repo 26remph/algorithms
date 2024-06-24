@@ -17,6 +17,7 @@ visited = set()  # Посещена ли вершина?
 Q = []  # Очередь
 BFS = []
 
+
 # Поиск в ширину - ПВШ (Breadth First Search - BFS)
 def bfs(v):
     if v in visited:  # Если вершина уже посещена, выходим
@@ -25,10 +26,11 @@ def bfs(v):
     BFS.append(v)  # Запоминаем порядок обхода
     # print("v = %d" % v)
     for i in inc[v]:  # Все смежные с v вершины
-        if not i in visited:
+        if i not in visited:
             Q.append(i)
     while Q:
         bfs(Q.pop(0))
+
 
 start = 1
 bfs(start)  # start - начальная вершина обхода

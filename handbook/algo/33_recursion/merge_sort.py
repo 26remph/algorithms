@@ -41,11 +41,11 @@ def merge(arr1, arr2):
     i, j = 0, 0
     while i < len(arr1) and j < len(arr2):
 
-        if i < len(arr1) - 1 and arr1[i] == arr1[i+1]:
+        if i < len(arr1) - 1 and arr1[i] == arr1[i + 1]:
             i += 1
             continue
 
-        if j < len(arr2) - 1 and arr2[j] == arr2[j+1]:
+        if j < len(arr2) - 1 and arr2[j] == arr2[j + 1]:
             j += 1
             continue
 

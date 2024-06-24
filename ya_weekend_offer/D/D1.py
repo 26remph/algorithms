@@ -1,6 +1,7 @@
 # n = int(input())
 import time
 
+
 # test_files = ['input1_D.txt', 'input2_D.txt', 'input3_D.txt', 'input4_D.txt']
 test_files = ['input5_D.txt']
 for i in range(len(test_files)):
@@ -53,6 +54,3 @@ for i in range(len(test_files)):
     #
     # print(cnt)
     # print("--- %s seconds ---" % (time.time() - start_time))
-
-
-

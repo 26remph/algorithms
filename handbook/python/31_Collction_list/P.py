@@ -36,4 +36,3 @@ for ch in t:
         s = ''
 
 print(s)
-

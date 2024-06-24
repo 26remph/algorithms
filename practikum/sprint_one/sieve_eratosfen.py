@@ -1,5 +1,6 @@
 import time
 
+
 def eratosthenes(n):
     numbers = list(range(n + 1))
     numbers[0] = numbers[1] = False

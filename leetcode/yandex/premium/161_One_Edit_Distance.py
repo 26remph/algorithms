@@ -15,7 +15,7 @@ class Solution:
 
         for i in range(len(t)):
             if s[i] != t[i]:
-                return s[i+1:] == t[i+1:] if len(s) == len(t) else s[i+1:] == t[i:]
+                return s[i + 1:] == t[i + 1:] if len(s) == len(t) else s[i + 1:] == t[i:]
 
         return True
 

@@ -1,5 +1,7 @@
-from itertools import starmap, product
 import random
+
+from itertools import product, starmap
+
 
 # S = random.randint(1, 200)
 # A = [random.randint(1, 100) for _ in range(1, 20)]
@@ -56,7 +58,6 @@ def long_foo():
     sumBC_gen = starmap(lambda x, y: x + y, BC)
 
     B_plus_C = set(sumBC_gen)
-
 
     ind_a = len(A)
     for ind in range(len(A)):

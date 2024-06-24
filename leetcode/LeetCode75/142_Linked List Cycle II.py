@@ -32,6 +32,7 @@ class Solution:
             head, slow = head.next, slow.next
         return head
 
+
 sol = Solution()
 node1 = ListNode(2)
 node2 = ListNode(0)

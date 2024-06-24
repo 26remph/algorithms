@@ -1,5 +1,6 @@
 import collections
 import heapq
+
 from typing import List
 
 
@@ -21,8 +22,7 @@ class Solution:
 
 if __name__ == '__main__':
     # words = ["i","love","leetcode","i","love","coding"]
-    words = ["i","love","leetcode","i","love","coding"]
+    words = ["i", "love", "leetcode", "i", "love", "coding"]
     k = 3
     sol = Solution()
     print(sol.topKFrequent(words, k))
-

@@ -64,5 +64,3 @@ def water():
 
     # print(''.join(rez))
     return ''.join(rez)
-
-

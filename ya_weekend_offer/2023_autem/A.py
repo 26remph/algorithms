@@ -36,4 +36,3 @@ if __name__ == '__main__':
     # for n, m, c2, c5, ans in test:
     #     res = bin_search(0, m * c2 + m * c5)
     #     assert res == ans, f'{n=}, {m=}, {c2=}, {c5=}, {ans=}, {res=}'
-

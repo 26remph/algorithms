@@ -1,5 +1,6 @@
 from typing import List
 
+
 pair_staples = {
     '{': '}',
     '[': ']',
@@ -7,6 +8,7 @@ pair_staples = {
 }
 
 stack: List[int] = []
+
 
 def is_corect_backet_seq(seq):
     if not seq:
@@ -24,7 +26,7 @@ def is_corect_backet_seq(seq):
             last = stack.pop()
             last_closed = pair_staples.get(last)
 
-            if not(last_closed and last_closed == elem):
+            if not (last_closed and last_closed == elem):
                 return False
         else:
             stack.append(elem)

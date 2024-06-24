@@ -14,4 +14,3 @@ for i in range(len(letters)):
         ans = chr(i)
         max_ = letters[i]
 print(ans)
-

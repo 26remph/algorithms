@@ -1,11 +1,9 @@
-import random
-import timeit
 
 
 def main():
 
     ans = [0]
-    st, end = 0, K if K != len(arr) else K - 1
+    st, end = 0, K if len(arr) != K else K - 1
 
     while end < len(arr):
         min_price = (arr[st], st)  # (price, day)
@@ -37,8 +35,3 @@ if __name__ == '__main__':
     #     t = timeit.timeit(main, number=1)
     #     max_t = max(max_t, t)
     # print(max_t)
-
-
-
-
-

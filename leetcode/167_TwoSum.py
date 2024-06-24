@@ -11,7 +11,7 @@ class Solution:
             elif numbers[i] + numbers[j] < target:
                 i += 1
             else:
-                return [i+1, j+1]
+                return [i + 1, j + 1]
 
 
 sol = Solution()
@@ -21,10 +21,10 @@ target = 9
 assert sol.twoSum(numbers, target) == [1, 2]
 
 
-numbers = [2,3,4]
+numbers = [2, 3, 4]
 target = 6
 assert sol.twoSum(numbers, target) == [1, 3]
 
-numbers = [-1,0]
+numbers = [-1, 0]
 target = -1
 assert sol.twoSum(numbers, target) == [1, 2]

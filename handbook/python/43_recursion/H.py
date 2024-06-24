@@ -11,6 +11,7 @@ def fibonacci(n):
             a, b = b, a + b
             yield b
 
+
 print(*fibonacci(0), sep=', ')
 print(*fibonacci(1), sep=', ')
 print(*fibonacci(2), sep=', ')

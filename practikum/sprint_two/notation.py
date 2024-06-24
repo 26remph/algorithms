@@ -1,6 +1,7 @@
 # ID 69343342
 import operator
 
+
 FABRIC = {
     '+': operator.add,
     '-': operator.sub,
@@ -35,7 +36,7 @@ def calculator(row):
     stack = Stack()
 
     for ch in row:
-        if ch in FABRIC.keys():
+        if ch in FABRIC:
 
             x = int(stack.pop())
             y = int(stack.pop())

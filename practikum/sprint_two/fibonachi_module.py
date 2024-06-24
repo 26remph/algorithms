@@ -13,6 +13,7 @@ def fibonachi(n):
 
     return z
 
+
 n, k = map(int, input().strip().split(' '))
 # start_time = time.time()
 print(fibonachi(n))

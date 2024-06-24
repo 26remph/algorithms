@@ -9,7 +9,7 @@ def solution():
             return
 
         if op < n:
-            gen(res+'(', op+1, cl)
+            gen(res + '(', op + 1, cl)
 
         if cl < op:
             res += ')'

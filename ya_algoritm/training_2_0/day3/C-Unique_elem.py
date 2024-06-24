@@ -15,4 +15,3 @@ for num in nums:
         ans.append(str(num))
 
 print(' '.join(ans))
-

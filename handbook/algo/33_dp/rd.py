@@ -1,5 +1,5 @@
-import random
 import time
+
 
 t = time.time()
 x = 10

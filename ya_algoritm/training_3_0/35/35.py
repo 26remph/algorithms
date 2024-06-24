@@ -12,7 +12,7 @@ def dfs(v, prev):
 
         if not visited[e][0]:
             dfs(e, v)
-            visited[e][0] = 2 # black node is two
+            visited[e][0] = 2  # black node is two
         else:
             if visited[v][0] == visited[e][0] == 1 and e != prev:
                 # print('cycle detect:', v, '->', e, 'prev', prev)
@@ -30,17 +30,17 @@ def dfs(v, prev):
 
 
 n = int(input())
-graph = [[] for _ in range(n+1)]
-sys.setrecursionlimit(max(1000, n*2))
-visited = [[0, []]for _ in range(n+1)]
+graph = [[] for _ in range(n + 1)]
+sys.setrecursionlimit(max(1000, n * 2))
+visited = [[0, []]for _ in range(n + 1)]
 ans = []
 
-for v in range(1, n+1):
+for v in range(1, n + 1):
     e = list(map(int, input().split(' ')))
     graph[v].extend([0] + e)
 
 
-for v in range(1, n+1):
+for v in range(1, n + 1):
     if not visited[v][0]:
         dfs(v, 0)
         visited[v][0] = 2

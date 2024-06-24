@@ -38,4 +38,3 @@ if __name__ == '__main__':
     node2 = Node(2, node3, node6)
     root = Node(1, node2, node9)
     solution(root)
-

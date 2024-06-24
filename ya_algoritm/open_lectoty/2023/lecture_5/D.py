@@ -1,8 +1,4 @@
-import random
-import time
 from collections import defaultdict, deque
-from pprint import pprint
-from string import ascii_lowercase
 
 
 # def speed_test():
@@ -66,13 +62,13 @@ def solution_wa(s):
         if ch == s[i]:
            sub.append(i)
         else:
-            node[s[i-1]].append(list(sub))
+            node[s[i - 1]].append(list(sub))
             sub.clear()
             sub.append(i)
             ch = s[i]
 
     if sub:
-        node[s[len(s)-1]].append(list(sub))
+        node[s[len(s) - 1]].append(list(sub))
 
     # pprint(node)
 
@@ -82,7 +78,7 @@ def solution_wa(s):
         if ch == s[i]:
             continue
         else:
-            deq = node[s[i-1]]
+            deq = node[s[i - 1]]
             if not deq:
                 continue
             pref = deq.popleft()
@@ -93,7 +89,7 @@ def solution_wa(s):
                 col -= 1
 
             if col == before:
-                node[s[i-1]].append(pref)
+                node[s[i - 1]].append(pref)
                 break
 
             ch = s[i]
@@ -136,7 +132,7 @@ def solution(s):
     if j - i:
         ans = j - i + 1
     else:
-        if s[i-1] != s[j]:
+        if s[i - 1] != s[j]:
             ans = 1
 
     return ans
@@ -154,9 +150,3 @@ if __name__ == '__main__':
         # t = time.time()
         # solution(s)
         # print(time.time() - t, '(s)')
-
-
-
-
-
-

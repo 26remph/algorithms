@@ -1,5 +1,7 @@
 import math
-from operator import mul, add, sub, floordiv
+
+from operator import add, floordiv, mul, sub
+
 
 op = {
     '*': mul, '+': add, '-': sub, '/': floordiv,
@@ -35,5 +37,3 @@ for val in arr:
 
     # print('s:', stack)
 print(''.join(map(str, stack)))
-
-

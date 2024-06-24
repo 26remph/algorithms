@@ -5,6 +5,7 @@ class DoubleConnectedNode:
         self.next = next
         self.prev = prev
 
+
 def solution(node):
     # Your code
     # ヽ(´▽`)/
@@ -28,11 +29,13 @@ def solution(node):
 
     return node
 
+
 def print_rez(node):
     print(node, '>')
     while node:
         print(node.value)
         node = node.next
+
 
 def test():
     node3 = DoubleConnectedNode("node3")
@@ -56,5 +59,6 @@ def test():
     # node2.next == node1 node2.prev == node3
     # node1.next == node0 node1.prev == node2
     # node0.prev == node1
+
 
 test()

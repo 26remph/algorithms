@@ -39,7 +39,6 @@ class MyQueueLinkedList:
             print('error')
             return
 
-
         x = self.head
         self.head = self.head.next
         self.len -= 1

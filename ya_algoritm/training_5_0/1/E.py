@@ -1,6 +1,3 @@
-import random
-import timeit
-from collections import defaultdict
 
 
 def dfs(x, depht):
@@ -43,9 +40,12 @@ def main():
 
     return x
 
+
 import sys
 
+
 sys.set_int_max_str_digits(0)
+
 
 def main_opt():
 
@@ -100,5 +100,3 @@ if __name__ == '__main__':
     #     # assert res_dfs == main(), f'{n=}, {k=}, {d=}, {res_dfs=}, {res_main=}'
     #     assert not(res_dfs > 0 and res_main < 0)
     #     print('pass')
-
-

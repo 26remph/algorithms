@@ -28,6 +28,7 @@ def merge_sort(array):
 
     return result
 
+
 s = input()
 t = input()
 srt_t = ''.join(merge_sort(list(t)))

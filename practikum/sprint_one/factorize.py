@@ -1,5 +1,6 @@
 from typing import List
 
+
 def min_simple(n: int) -> int:
     if n % 2 == 0:
         return 2
@@ -27,4 +28,3 @@ def factorize(number: int) -> List[int]:
 
 result = factorize(int(input()))
 print(" ".join(map(str, result)))
-

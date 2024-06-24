@@ -8,7 +8,7 @@ class Subscriber:
 
     def data_updated(self, trace_id: str, data: dict):
         printed_data = {
-            "trace_id": trace_id, "offer": {"id": data["id"]},}
+            "trace_id": trace_id, "offer": {"id": data["id"]}, }
 
         for field in self.fields:
             if field in data:
@@ -43,7 +43,9 @@ class OfferRepository:
                 new_offer[key].update(update_offer[key])
             else:
                 new_offer[key] = update_offer[key]
-        subscribers = self.get_subscribers_for_notify(self.storage[update_offer["id"]], new_offer)
+        subscribers = self.get_subscribers_for_notify(
+            self.storage[update_offer["id"]], new_offer
+        )
         self.storage[update_offer["id"]] = new_offer
         self.notify_subscribers(subscribers, update_message["trace_id"], new_offer)
 

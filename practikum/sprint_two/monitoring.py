@@ -1,4 +1,4 @@
-from typing import Tuple, List, Dict
+from typing import Dict, List, Tuple
 
 
 def read_input() -> Tuple[int, int]:
@@ -21,4 +21,3 @@ del n, m
 
 for _, val in t_matrix.items():
     print(' '.join(val))
-

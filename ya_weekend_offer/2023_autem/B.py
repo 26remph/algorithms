@@ -1,12 +1,11 @@
 import itertools
-import random
 
 
 def check_solution(arr, n, k):
 
     min_l = float('inf')
     for c in itertools.combinations(arr, n - k):
-         min_l = min(min_l, max(c) - min(c))
+        min_l = min(min_l, max(c) - min(c))
 
     return min_l
 
@@ -84,5 +83,3 @@ if __name__ == '__main__':
     #     assert res_true == res_test, f'{arr=}, {n=}, {k=}, {res_test=}, {res_true=}'
     #
     #     print(f'check: {(n, k, arr)=}')
-
-

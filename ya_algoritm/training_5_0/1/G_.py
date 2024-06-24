@@ -1,4 +1,3 @@
-from timeit import timeit
 
 
 def check_defense(i, j):
@@ -8,7 +7,7 @@ def check_defense(i, j):
         i, j = j - i, i
         step += 1
 
-    return step -1 if bool(step % 2) else -1
+    return step - 1 if bool(step % 2) else -1
 
 
 def solider_attack(x, x1, y):
@@ -102,4 +101,3 @@ def main():
 if __name__ == '__main__':
     x, y, p = map(int, [input() for _ in range(0, 3)])
     print(main())
-

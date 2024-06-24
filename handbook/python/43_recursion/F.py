@@ -22,14 +22,12 @@ def merge(arr1, arr2) -> list:
     return res
 
 
-
 def merge_sort(arr):
 
     if len(arr) < 2:
         return arr
     else:
         return merge(merge_sort(arr[:len(arr) // 2]), merge_sort(arr[len(arr) // 2:]))
-
 
 
 if __name__ == '__main__':

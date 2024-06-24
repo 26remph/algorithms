@@ -1,5 +1,7 @@
-from math import prod
 from itertools import product
+from math import prod
+
+
 n = int(input())
 cnt = 0
 for x in product(range(1, n + 1), repeat=2):
@@ -9,5 +11,3 @@ for x in product(range(1, n + 1), repeat=2):
     else:
         print(prod((x)))
         cnt = 0
-
-

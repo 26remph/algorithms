@@ -1,5 +1,6 @@
 import string
 
+
 fn = 's.txt'
 fn_out = 's_out.txt'
 shift = int(input())
@@ -16,5 +17,3 @@ with open(fn, encoding='UTF-8') as f:
 
 with open(fn_out, 'w') as f:
     f.write(''.join(ans))
-
-

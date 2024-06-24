@@ -23,4 +23,3 @@ if cur_ind != -1:
 
 for i in range(n):
     print(answer[i][0], answer[i][1])
-

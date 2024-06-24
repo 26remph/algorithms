@@ -1,5 +1,6 @@
 import itertools
 
+
 names = {'пики': 'пик', 'трефы': 'треф', 'черви': 'червей', 'буби': 'бубен'}
 
 suits = ['буби', 'пики', 'трефы', 'черви']
@@ -15,4 +16,3 @@ for c in itertools.permutations(itertools.product(cards, suits), 3):
 
     if cnt == 10:
         break
-

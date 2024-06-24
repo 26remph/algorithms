@@ -17,7 +17,7 @@ class Solution:
 
 sol = Solution()
 s = ["h", "e", "l", "l", "o"]
-assert sol.reverseString(s) == ["o","l","l","e","h"]
+assert sol.reverseString(s) == ["o", "l", "l", "e", "h"]
 
 s = ["H", "a", "n", "n", "a", "h"]
-assert sol.reverseString(s) == ["h","a","n","n","a","H"]
+assert sol.reverseString(s) == ["h", "a", "n", "n", "a", "H"]

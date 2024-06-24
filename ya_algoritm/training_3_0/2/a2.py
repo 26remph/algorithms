@@ -32,5 +32,3 @@ for i in range(len(s)):
 gsumm = max(gsumm, summa)
 
 print('gsumm', gsumm)
-
-

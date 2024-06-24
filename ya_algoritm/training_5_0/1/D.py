@@ -81,4 +81,3 @@ if __name__ == '__main__':
     print(ans)
     # for i in range(8):
     #     print(arr[i])
-

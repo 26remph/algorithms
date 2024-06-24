@@ -14,7 +14,6 @@ class Solution:
         return ' '.join(arr)
 
 
-
 sol = Solution()
 s = "Let's take LeetCode contest"
 

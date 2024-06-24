@@ -20,5 +20,3 @@ for ind, ch in enumerate(arr):
 
 
 print(f"/{'/'.join(build_paths)}")
-
-

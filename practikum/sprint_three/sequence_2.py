@@ -14,6 +14,7 @@ def merge_sort(seq, s):
 
     return result
 
+
 s = input()
 t = input()
 rez = ''.join(merge_sort(t, s))

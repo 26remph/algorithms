@@ -1,6 +1,7 @@
 from collections import defaultdict
 from pprint import pprint
 
+
 N = int(input())
 points = defaultdict(int)
 for _ in range(N):
@@ -12,7 +13,7 @@ for _ in range(N):
     if len(p2) > 1:
         key2 = p2[:-1]
 
-    points[key1+key2] += 1
+    points[key1 + key2] += 1
 
 pprint(points)
 print(max(points.values()))

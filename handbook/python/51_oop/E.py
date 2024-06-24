@@ -11,6 +11,7 @@ class Rectangle(object):
     def perimeter(self) -> float:
         return round(2 * (self.a + self.b), 2)
 
+
 if __name__ == '__main__':
     rect = Rectangle((3.2, -4.3), (7.52, 3.14))
     print(rect.perimeter())

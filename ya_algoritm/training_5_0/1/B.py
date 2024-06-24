@@ -36,4 +36,3 @@ print(main())
 #     g3, g4 = map(int, input().split(":"))
 #     first_play = int(input())
 #     print(main())
-

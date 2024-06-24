@@ -12,10 +12,3 @@ else:
 
 
 print(cost)
-
-
-
-
-
-
-

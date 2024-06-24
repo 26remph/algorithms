@@ -1,6 +1,5 @@
 # Definition for a binary tree node.
-from collections import deque, defaultdict
-from typing import Optional, List
+from typing import List, Optional
 
 
 class TreeNode:
@@ -38,22 +37,23 @@ class Solution:
 
         return ans
 
-
     def levelOrderRecursion(self, root: Optional[TreeNode]) -> List[List[int]]:
 
         ans = []
+
         def dfs(node, lvl, ans):
             if node:
                 # print(lvl, node.val)
                 if len(ans) < lvl + 1:
                     ans.append([])
                 ans[lvl].append(node.val)
-                dfs(node.left, lvl+1, ans)
-                dfs(node.right, lvl+1, ans)
+                dfs(node.left, lvl + 1, ans)
+                dfs(node.right, lvl + 1, ans)
 
         dfs(root, 0, ans)
 
         return ans
+
 
 sol = Solution()
 node4 = TreeNode(4)

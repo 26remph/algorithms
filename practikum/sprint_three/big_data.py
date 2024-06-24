@@ -8,6 +8,7 @@ def is_first_num(num_1, num_2):
     else:
         return False
 
+
 def get_bigdata(array, less):
 
     for i in range(1, len(array)):
@@ -18,6 +19,7 @@ def get_bigdata(array, less):
             j -= 1
         array[j] = item_to_insert
     return array
+
 
 n = int(input())
 arr = list(map(int, input().split(' ')))

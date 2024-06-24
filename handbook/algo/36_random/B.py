@@ -31,5 +31,3 @@ if __name__ == '__main__':
     arr = list(map(int, input().split()))
     quicksort(arr, 0, n - 1)
     print(' '.join(map(str, arr)))
-
-

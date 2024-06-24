@@ -1,5 +1,6 @@
 from typing import List, Tuple
 
+
 n: int = 0
 
 

@@ -33,6 +33,7 @@ class Rectangle:
         self.dot1 = lx + width, ly
         self.dot2 = lx, ly - height
 
+
 if __name__ == '__main__':
     print('--- first example')
     rect = Rectangle((3.2, -4.3), (7.52, 3.14))
@@ -49,4 +50,4 @@ if __name__ == '__main__':
         x = random.random()
         y = random.random()
         r = Rectangle((x, y), (x * random.randint(-2, 2), y * random.randint(-2, 2)))
-        Rectangle((0,0), (0,0))
+        Rectangle((0, 0), (0, 0))

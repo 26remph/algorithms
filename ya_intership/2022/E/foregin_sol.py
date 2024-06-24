@@ -1,10 +1,13 @@
-from collections import Counter
 from array import array
+from collections import Counter
+
+
 n = int(input())
 # По условию задачи X и Y не больше 10^9
 max_x_y = 2 ** 30
 
-# Индекс, количество А, количество B, количество не расш. инргид., список зелий в которых участвует ингридиент
+# Индекс, количество А, количество B, количество не расш. инргид.,
+# список зелий в которых участвует ингридиент
 p = array('L', (0 for _ in range(n << 2)))
 p[0], p[4 + 1] = 1, 1
 pp = [[] for _ in range(n)]
@@ -33,5 +36,7 @@ result = []
 for _ in range(q):
     x, y, s = map(int, input().split())
     base = (s - 1) << 2
-    result.append("1" if p[base + 2] <= 0 and p[base] <= x and p[base + 1] <= y else "0")
+    result.append(
+        "1" if p[base + 2] <= 0 and p[base] <= x and p[base + 1] <= y else "0"
+    )
 print("".join(result))

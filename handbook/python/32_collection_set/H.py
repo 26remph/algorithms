@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 N = int(input())
 stat = defaultdict(list)
 for _ in range(N):

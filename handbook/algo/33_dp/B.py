@@ -1,4 +1,3 @@
-import time
 
 n, m = map(int, input().split())
 # t = time.time()

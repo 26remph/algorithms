@@ -1,4 +1,4 @@
-from typing import List, Tuple, Optional
+from typing import List, Optional, Tuple
 
 
 def two_sum(arr: List[int], target_sum: int) -> Optional[Tuple[int, int]]:

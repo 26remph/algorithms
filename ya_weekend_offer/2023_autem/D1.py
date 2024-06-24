@@ -8,7 +8,7 @@ def solution():
 
     if len(plan) == m:
         greed = 0
-        for key, val in plan.items():
+        for _, val in plan.items():
             greed += max(val) - min(val)
         return greed
     else:

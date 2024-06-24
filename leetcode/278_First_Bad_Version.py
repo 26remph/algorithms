@@ -7,6 +7,7 @@ def isBadVersion(version: int) -> bool:
     print(versions)
     return versions[version - 1]
 
+
 class Solution:
     def firstBadVersion(self, n: int) -> int:
 

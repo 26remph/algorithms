@@ -20,10 +20,7 @@ def solution(s):
         else:
             steak.append(s[i])
 
-    if steak:
-        return False
-
-    return True
+    return not steak
 
 
 if __name__ == '__main__':

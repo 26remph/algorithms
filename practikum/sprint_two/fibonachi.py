@@ -8,6 +8,7 @@ def fibonachi(n):
 
     return fibonachi(n - 1) + fibonachi(n - 2)
 
+
 start_time = time.time()
 
 n = 32

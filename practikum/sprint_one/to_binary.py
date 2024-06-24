@@ -14,7 +14,9 @@ def to_binary(number: int) -> str:
 
     return ''.join(str(x) for x in reversed(bin_digits))
 
+
 def read_input() -> int:
     return int(input().strip())
+
 
 print(to_binary(read_input()))

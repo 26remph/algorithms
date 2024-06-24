@@ -27,7 +27,6 @@ class Programmer:
         # return f'{self.name}, {self.position=}, {self.worked_time=}, {self.current_rate=}, {self.salary=}, {sum(self.salary.values())}'
 
 
-
 if __name__ == '__main__':
     programmer = Programmer('Васильев Иван', 'Junior')
     programmer.work(750)
@@ -41,4 +40,3 @@ if __name__ == '__main__':
     programmer.rise()
     programmer.work(250)
     print(programmer.info())
-

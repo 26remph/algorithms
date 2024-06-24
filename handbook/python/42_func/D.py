@@ -1,6 +1,7 @@
 import datetime
 import locale
 
+
 d = {'мая': 'Май'}
 
 

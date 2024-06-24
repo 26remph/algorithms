@@ -4,7 +4,7 @@ class Solution:
         i = 0; j = len(s) - 1
         while i < j:
             if s[i] != s[j]:
-                return s[i:j] == s[i:j][::-1] or s[i+1:j+1] == s[i+1:j+1][::-1]
+                return s[i:j] == s[i:j][::-1] or s[i + 1:j + 1] == s[i + 1:j + 1][::-1]
             i += 1; j -= 1
 
         return True
@@ -18,7 +18,7 @@ class Solution:
                     return False
                 return (
                         self.validPalindrome(s[i:j], True) or
-                        self.validPalindrome(s[i+1:j+1], True)
+                        self.validPalindrome(s[i + 1:j + 1], True)
                 )
 
             i += 1

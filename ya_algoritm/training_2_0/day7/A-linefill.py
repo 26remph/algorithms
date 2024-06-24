@@ -24,4 +24,3 @@ for act in arr:
     cnt += act[1]
 
 print(sum_cut)
-

@@ -1,4 +1,5 @@
 import collections
+
 from typing import List
 
 
@@ -68,4 +69,3 @@ if __name__ == '__main__':
     # s = "eccbbbbdec"
     sol = Solution()
     print(sol.partitionLabels(s))
-

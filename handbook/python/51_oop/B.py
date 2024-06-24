@@ -1,5 +1,7 @@
 import math
+
 from typing import TypeVar
+
 
 Dot = TypeVar('Dot', bound='Point')
 

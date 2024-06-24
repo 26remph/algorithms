@@ -1,5 +1,6 @@
 import sys
 
+
 sys.setrecursionlimit(100_000)
 
 
@@ -13,7 +14,7 @@ def dfs(v):
 
 
 n = int(input())
-graph = [[] for _ in range(n+1)]
+graph = [[] for _ in range(n + 1)]
 visited = [-1] * (n + 1)
 
 for _ in range(n - 1):
@@ -25,6 +26,3 @@ for _ in range(n - 1):
 # print(graph)
 dfs(1)
 print(*visited[1:])
-
-
-

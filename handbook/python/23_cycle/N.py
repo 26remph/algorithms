@@ -1,5 +1,6 @@
 import random
 
+
 n = int(input())
 
 test_cnt = 100
@@ -13,4 +14,3 @@ if n > 1:
             break
 
 print(ans)
-

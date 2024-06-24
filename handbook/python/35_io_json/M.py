@@ -1,6 +1,7 @@
 import json
 import sys
 
+
 fn = input()
 
 with open(fn, 'r+', encoding='UTF-8') as f:
@@ -13,4 +14,3 @@ with open(fn, 'r+', encoding='UTF-8') as f:
     f.truncate()
     f.seek(0)
     json.dump(d, f, indent=4)
-

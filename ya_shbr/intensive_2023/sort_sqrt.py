@@ -7,8 +7,8 @@ def solution(arr):
         flag = False
         res.append(arr[i])
         for j in range(len(res) - 1, 0, -1):
-            if res[j-1] < res[j]:
-                res[j-1], res[j] = res[j], res[j-1]
+            if res[j - 1] < res[j]:
+                res[j - 1], res[j] = res[j], res[j - 1]
                 flag = True
             if not flag:
                 break

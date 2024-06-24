@@ -10,4 +10,3 @@ tail = 1
 tail = (tail + 1) % max_n
 print('tail', tail)
 print(5 % 8)
-

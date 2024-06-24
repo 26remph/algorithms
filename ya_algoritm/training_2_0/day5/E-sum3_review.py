@@ -1,4 +1,6 @@
 from itertools import product
+
+
 S = int(input())
 A = list(map(int, input().split()))[1:]
 B = list(map(int, input().split()))[1:]

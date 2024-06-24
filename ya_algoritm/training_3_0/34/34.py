@@ -1,5 +1,6 @@
 import sys
 
+
 def dfs(v):
 
     visited[v] = 1  # grey
@@ -17,17 +18,17 @@ def dfs(v):
 
 n, m = map(int, input().split(' '))
 
-graph = [[] for _ in range(n+1)]
+graph = [[] for _ in range(n + 1)]
 graph[0].append(True)  # non cycled graph
-visited = [0] * (n+1)
-sys.setrecursionlimit(max(997, n*2))
+visited = [0] * (n + 1)
+sys.setrecursionlimit(max(997, n * 2))
 ans = []
 
 for _ in range(m):
     v, h = map(int, input().split(' '))
     graph[v].append(h)
 
-for v in range(1, n+1):
+for v in range(1, n + 1):
     if not visited[v]:
         dfs(v)
         visited[v] = 2

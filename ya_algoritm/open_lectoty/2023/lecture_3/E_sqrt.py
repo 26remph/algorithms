@@ -5,7 +5,7 @@ arr.sort()
 # --- sqrt solution
 out = []
 for i in range(len(arr)):
-    for j in range(i+1, len(arr)):
+    for j in range(i + 1, len(arr)):
         out.append((arr[i], arr[j]))
 
 for i in range(len(arr)):
@@ -19,4 +19,3 @@ print('sum:', _summ)
 
 ans_sqrt = sum(_summ[-k:])
 print(ans_sqrt)
-

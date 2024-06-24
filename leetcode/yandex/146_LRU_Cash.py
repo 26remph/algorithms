@@ -39,4 +39,3 @@ if __name__ == '__main__':
     lru.get(1)
     lru.get(3)
     lru.get(4)
-

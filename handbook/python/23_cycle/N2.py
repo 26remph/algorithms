@@ -12,6 +12,3 @@ else:
 
     if not flag:
         print('YES')
-
-
-

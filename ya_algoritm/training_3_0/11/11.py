@@ -1,4 +1,5 @@
 import sys
+
 from collections import Counter
 
 
@@ -23,7 +24,6 @@ class Stack:
 
     def get(self, *args, **kwargs):
         print(self._seq[-1] if self._seq else 'error')
-
 
 
 stack = Stack()

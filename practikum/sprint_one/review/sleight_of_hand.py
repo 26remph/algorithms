@@ -3,8 +3,8 @@
 Игра «Тренажёр для скоростной печати»
 """
 # id 68997972
-from typing import List, Tuple
 from collections import Counter
+from typing import List, Tuple
 
 
 def get_sum(matrix: List[str], k: int) -> int:

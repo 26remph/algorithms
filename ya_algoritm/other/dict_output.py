@@ -44,6 +44,7 @@ def solution_stack(names: dict):
 
     return ans
 
+
 if __name__ == '__main__':
 
     a = {

@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 # words = {}
 cnt = Counter()
 with open('input.txt', encoding='utf8') as f:
@@ -21,6 +22,3 @@ with open('input.txt', encoding='utf8') as f:
 #     print(word[1])
 for rez in sorted(cnt.most_common(), key=lambda x: (-x[1], x[0])):
     print(rez[0])
-
-
-

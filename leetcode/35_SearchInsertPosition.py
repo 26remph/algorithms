@@ -31,5 +31,3 @@ target = 2
 assert sol.searchInsert(nums, target) == sol.searchfastInsert(nums, target)
 target = 7
 assert sol.searchInsert(nums, target) == sol.searchfastInsert(nums, target)
-
-

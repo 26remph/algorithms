@@ -1,4 +1,6 @@
 from bisect import bisect_left, bisect_right
+
+
 N = int(input())
 arr = list(map(int, input().split()))
 M = int(input())
@@ -12,7 +14,7 @@ def bi_left(a, x):
 
 def bi_right(a, x):
     i = bisect_right(a, x)
-    return i if a[i-1] == x else 0
+    return i if a[i - 1] == x else 0
 
 
 for q in Q:

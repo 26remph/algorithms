@@ -5,6 +5,7 @@ def answer(func):
 
     return warp
 
+
 @answer
 def a_plus(a, b):
     return a + b

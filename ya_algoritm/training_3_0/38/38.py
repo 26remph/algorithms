@@ -1,13 +1,14 @@
 from collections import deque
 
-getv = lambda i, j: (i-1) * m + j if 0 < i <= n and 0 < j <= m else None
+
+getv = lambda i, j: (i - 1) * m + j if 0 < i <= n and 0 < j <= m else None
 
 
 def get_neig(dot) -> list[tuple[int, int]]:
     x, y = dot
     edge = [
-        (x+2, y+1), (x+2, y-1), (x-2, y+1), (x-2, y-1),
-        (x-1, y-2), (x+1, y-2), (x-1, y+2), (x+1, y+2)
+        (x + 2, y + 1), (x + 2, y - 1), (x - 2, y + 1), (x - 2, y - 1),
+        (x - 1, y - 2), (x + 1, y - 2), (x - 1, y + 2), (x + 1, y + 2)
     ]
     return [(dot[0], dot[1]) for dot in edge if getv(dot[0], dot[1])]
 

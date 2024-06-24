@@ -1,5 +1,6 @@
 from sys import stdin
 
+
 before = 0
 after = 0
 cnt = 0

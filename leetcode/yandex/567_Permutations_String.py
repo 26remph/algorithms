@@ -22,7 +22,6 @@ class Solution:
 
         return False
 
-
     def slow_checkInclusion(self, s1: str, s2: str) -> bool:
         s1 = ''.join(sorted(list(s1)))
         deq = collections.deque()
@@ -38,7 +37,6 @@ class Solution:
             deq.popleft()
 
         return False
-
 
 
 if __name__ == '__main__':

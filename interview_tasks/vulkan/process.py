@@ -17,6 +17,5 @@ class MyAwesomeClassProxy(BaseProxy):
         self._callmethod('exposed_func')
 
 
-
 test = TestPrintClass()
 print(test)

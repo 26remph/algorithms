@@ -7,8 +7,8 @@ def main():
         arr.sort()
 
         min_ = arr[0] ^ arr[1]
-        for i in range(n-1):
-            min_ = min(arr[i] ^ arr[i+1], min_)
+        for i in range(n - 1):
+            min_ = min(arr[i] ^ arr[i + 1], min_)
 
         print(min_)
 

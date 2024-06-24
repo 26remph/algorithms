@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 k = int(input())
 s = input()
 
@@ -41,4 +42,3 @@ for ch, freq in chars:
 
 if k < len(s):
     print(gmax)
-

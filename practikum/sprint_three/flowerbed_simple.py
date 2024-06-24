@@ -1,5 +1,6 @@
 from typing import Dict
 
+
 flowerbeds: Dict[int, int] = {}
 
 n = int(input())
@@ -28,5 +29,3 @@ for key, val in flowerbeds.items():
         end = val
 
 print(start, end)
-
-

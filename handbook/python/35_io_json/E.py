@@ -1,5 +1,6 @@
 from sys import stdin
 
+
 ans = set()
 for row in stdin:
     words = row.rstrip().split()

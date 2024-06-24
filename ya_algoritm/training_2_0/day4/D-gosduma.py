@@ -1,5 +1,8 @@
 import sys
+
 from collections import deque
+
+
 voices = {}
 
 cnt_num = 0

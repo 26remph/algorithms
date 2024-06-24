@@ -7,4 +7,3 @@ for i in range(len(nums)):
         print('NO')
     else:
         print('YES')
-

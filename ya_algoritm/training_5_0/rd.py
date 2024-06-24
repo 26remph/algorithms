@@ -1,4 +1,3 @@
-import statistics
 
 
 def check_win(i, j):

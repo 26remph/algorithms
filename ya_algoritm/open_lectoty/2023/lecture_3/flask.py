@@ -1,9 +1,8 @@
 import bisect
-import itertools
-import random
-import time
+
 
 LIMIT_USEFUL = 2_000_001
+
 
 def produce_flask(x, useful=0, is_ans=False) -> tuple[int, int]:
 
@@ -41,7 +40,6 @@ def produce_flask(x, useful=0, is_ans=False) -> tuple[int, int]:
             useful += prefix[len(arr)] - prefix[i]
             # useful += sum(arr[i:len(arr)])
             # assert prefix[len(arr)] - prefix[i] == sum(arr[i:len(arr)])
-
 
     return flask, useful
 

@@ -26,7 +26,3 @@ for i in range(n + 1):
 #     print(dp[i])
 
 print('Win' if dp[n][m] else 'Loose')
-
-
-
-

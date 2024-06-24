@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 s = input()
 count = Counter()
 

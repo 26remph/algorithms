@@ -1,9 +1,14 @@
 import random
-from typing import List, Tuple, Optional
+
+from typing import List, Optional, Tuple
+
+
 # import time
 
 
-def get_directions(point: Optional[Tuple[int, int, str]], maze) -> List[Optional[Tuple[int, int, str]]]:
+def get_directions(
+        point: Optional[Tuple[int, int, str]], maze
+) -> List[Optional[Tuple[int, int, str]]]:
 
     if point is None:
         return [None, None, None, None]
@@ -63,7 +68,7 @@ def foo(maze: List[List[str]], enter_point: Tuple[int, int, str]) -> List[List[s
 
 
 def read_input() -> Tuple[List[List[str]], Tuple[int, int, str]]:
-    n, m = map(int, input().strip().split())
+    n, _ = map(int, input().strip().split())
     maze: List[List[str]] = []
     s_point: Tuple[int, int, str] = (-1, -1, '')
     for i in range(n):

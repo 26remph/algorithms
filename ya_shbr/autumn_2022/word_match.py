@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 str_a: str = input().strip()
 str_b: str = input().strip()
 

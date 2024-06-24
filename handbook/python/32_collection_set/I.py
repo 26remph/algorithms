@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 words = defaultdict(int)
 while s := input():
     for key in s.split():

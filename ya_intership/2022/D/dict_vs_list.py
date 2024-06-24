@@ -1,6 +1,7 @@
 import random
 import time
 
+
 data_dict = {}
 data_list = []
 N = 200_000
@@ -38,5 +39,3 @@ for _ in range(N):
             rez = x[0] * x[1]
 
 print("LIST TIME: --- %s seconds ---" % (time.time() - start_time))
-
-

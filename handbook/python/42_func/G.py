@@ -45,4 +45,3 @@ if __name__ == '__main__':
     print(get_sum(), get_average())
     enter_results(1.23, 4.56, 3.14, 2.71, 0, 0)
     print(get_sum(), get_average())
-

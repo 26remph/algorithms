@@ -9,4 +9,3 @@ if __name__ == '__main__':
     print(result)
     result = number_length(-0)
     print(result)
-

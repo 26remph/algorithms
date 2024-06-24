@@ -1,5 +1,6 @@
 from bisect import bisect_left, bisect_right
 
+
 n = int(input())
 arr = [tuple(map(int, input().split())) for _ in range(n)]
 

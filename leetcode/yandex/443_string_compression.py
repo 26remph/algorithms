@@ -76,13 +76,12 @@ class Solution:
 
 if __name__ == '__main__':
     tests = (
-        (["a","a","b","b","c","c","c"], 6),
+        (["a", "a", "b", "b", "c", "c", "c"], 6),
         (["a"], 1),
-        (["a","b","b","b","b","b","b","b","b","b","b","b","b"], 4),
+        (["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"], 4),
         (["a"], 1),
     )
     sol = Solution()
     for s, res in tests:
         # print(sol.compress(s))
         assert sol.compress(s) == res, f'{s=}, {res}'
-

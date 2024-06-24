@@ -8,8 +8,7 @@ arrive.sort()
 
 min_sec = SEC_IN_DAY - arrive[-1] + arrive[0]
 for i in range(1, len(arrive)):
-    min_sec = min(arrive[i]-arrive[i-1], min_sec)
+    min_sec = min(arrive[i] - arrive[i - 1], min_sec)
 
 # print(arrive, min_sec, min_sec // 60, '(min)')
 print(min_sec // 60)
-

@@ -12,7 +12,7 @@ else:
         k = n
 
     for i in range(2, n):
-        lind = max(i-k, 0)
+        lind = max(i - k, 0)
         dp.append(sum(dp[lind:i]))
 
     print(dp[-1])

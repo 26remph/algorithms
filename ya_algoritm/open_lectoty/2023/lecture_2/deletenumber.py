@@ -2,8 +2,9 @@
 # arr = list(map(int, input().split()))
 import random
 
+
 replay = 0
-while (replay:= replay + 1) != 10_000:
+while (replay := replay + 1) != 10_000:
     n = random.randint(1, 100)
     arr = []
     for _ in range(n):
@@ -29,7 +30,6 @@ while (replay:= replay + 1) != 10_000:
             total_cur += 1
             cur = 1
 
-
     maxseq = max(maxseq, total_cur)
     # print(len(arr) - maxseq)
     ans = len(arr) - maxseq
@@ -47,4 +47,3 @@ while (replay:= replay + 1) != 10_000:
 
     assert ans_1 == ans, print(' '.join(map(str, arr)))
 print('ok', replay, '(pass)')
-

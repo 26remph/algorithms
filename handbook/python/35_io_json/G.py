@@ -21,5 +21,3 @@ print(min_num)
 print(max_num)
 print(total)
 print(f'{avg:.3}')
-
-

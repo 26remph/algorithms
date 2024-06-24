@@ -1,4 +1,3 @@
-import random
 
 
 def solution(times):
@@ -66,8 +65,3 @@ if __name__ == '__main__':
     #
     #     # print(arr)
     #     assert solution(arr) == sol(arr), arr
-
-
-
-
-

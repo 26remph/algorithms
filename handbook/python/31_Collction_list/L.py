@@ -1,8 +1,8 @@
 eat = ['Манная', 'Гречневая', 'Пшённая', 'Овсяная', 'Рисовая']
 N = int(input())
-if N <= len(eat):
+if len(eat) >= N:
     print('\n'.join(eat[:N]))
-elif N > len(eat):
+elif len(eat) < N:
     full = N // len(eat)
     tall = N - full * len(eat)
     for _ in range(full):

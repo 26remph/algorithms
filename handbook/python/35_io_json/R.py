@@ -1,6 +1,6 @@
 # import os
 import math
-import os
+
 
 d = {
     0: 'Б',
@@ -27,4 +27,3 @@ if math.ceil(size_b) >= 1024:
     suffix += 1
 
 print(f'{math.ceil(size_b)}{d[suffix]}')
-

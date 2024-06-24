@@ -22,5 +22,6 @@ def read_input() -> Tuple[List[List[int]], int, int, int, int]:
     col = int(input())
     return matrix, row, col, n, m
 
+
 matrix, row, col, n, m = read_input()
 print(" ".join(map(str, get_neighbours(matrix, row, col, n, m))))

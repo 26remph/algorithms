@@ -1,5 +1,6 @@
 import sys
 
+
 def dfs(v, col):
 
     visited[v] = [col, False]
@@ -17,16 +18,16 @@ def dfs(v, col):
 
 n, m = map(int, input().split(' '))
 
-graph = [[] for _ in range(n+1)]
+graph = [[] for _ in range(n + 1)]
 graph[0].append(True)  # bipartite
-sys.setrecursionlimit(max(997, n*2))
+sys.setrecursionlimit(max(997, n * 2))
 for _ in range(m):
     v, h = map(int, input().split(' '))
     graph[v].append(h)
     graph[h].append(v)
 
 
-visited: list[list[int | bool]] = [[0, False] for _ in range(n+1)]
+visited: list[list[int | bool]] = [[0, False] for _ in range(n + 1)]
 color = 1
 for i in range(1, len(graph)):
     if not visited[i][0]:

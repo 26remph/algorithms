@@ -1,6 +1,7 @@
 from collections import defaultdict
 from pprint import pprint
 
+
 L, N, M = map(int, input().split())
 
 pref = [0] * (L + 1)
@@ -19,10 +20,9 @@ for i in range(1, len(pref)):
     if points:
         thin = sum([1 for p in points if p[1] < 0])
 
-    pref[i] = pref[i-1] + thin
+    pref[i] = pref[i - 1] + thin
 
 print('pref:', pref)
 for _ in range(M):
     m = int(input())
     print(pref[m])
-

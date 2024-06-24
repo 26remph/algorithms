@@ -25,7 +25,3 @@ for i in range(len(street)):
 
 # print(route_cost)
 print(max(route_cost))
-
-
-
-

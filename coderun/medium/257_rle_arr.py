@@ -1,7 +1,6 @@
-import random
 import time
+
 from array import array
-from bisect import bisect_left
 from string import ascii_lowercase
 
 

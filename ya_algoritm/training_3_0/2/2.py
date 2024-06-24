@@ -1,6 +1,8 @@
-from collections import Counter
 import time
+
+from collections import Counter
 from string import ascii_lowercase
+
 
 k = int(input())
 s = input()

@@ -12,14 +12,14 @@ TOUCH = {
 COMBOS = []
 
 
-def get_combo(start, indent = 0, prefix = ''):
+def get_combo(start, indent=0, prefix=''):
 
     if start == 0:
         # print(prefix)
         COMBOS.append(prefix)
     else:
-        for i in range(len(press[indent+1])):
-            get_combo(start - 1, indent + 1, prefix + press[indent+1][i])
+        for i in range(len(press[indent + 1])):
+            get_combo(start - 1, indent + 1, prefix + press[indent + 1][i])
 
 
 keys = [int(x) for x in input()]
@@ -31,4 +31,3 @@ for x in press[0]:
     get_combo(cnt, prefix=x)
 
 print(*COMBOS)
-

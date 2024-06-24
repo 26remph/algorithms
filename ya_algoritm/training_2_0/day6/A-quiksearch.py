@@ -26,11 +26,11 @@ def right_search(i, j, num):
     return i if arr[i] <= num else -1
 
 
-def bin_my(lo, hi , num):
+def bin_my(lo, hi, num):
 
     while lo < hi:
 
-        mid = lo + (hi-lo+1) // 2
+        mid = lo + (hi - lo + 1) // 2
 
         if num < arr[mid]:
             hi = mid - 1

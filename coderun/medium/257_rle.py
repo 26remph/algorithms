@@ -1,5 +1,6 @@
 import random
 import time
+
 from bisect import bisect_left
 from string import ascii_lowercase
 
@@ -119,7 +120,7 @@ def main():
             # print(ans, '| m', middle, 'l', left, 'r', right, '|', start, end)
             out.append(str(ans))
 
-    tq = time.time()-t
+    tq = time.time() - t
     print(tq, '(s)')
     print(tpref + tq, '(s) all')
     # print('s', s)

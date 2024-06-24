@@ -7,7 +7,7 @@ def binary_search(arr, x, left, right):
     # print('ind_mid', mid, 'mid', arr[mid], 'left', left, 'right', right)
     if arr[mid] == x:
         # print('# центральный элемент — искомый')
-        while arr[mid-1] == x:
+        while arr[mid - 1] == x:
             mid -= 1
         return mid
     elif x < arr[mid]:
@@ -16,6 +16,7 @@ def binary_search(arr, x, left, right):
     else:
         # print('# иначе следует искать в правой половине')
         return binary_search(arr, x, mid + 1, right)
+
 
 _ = int(input())
 capital = list(map(int, input().split(' ')))

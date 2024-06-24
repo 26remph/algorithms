@@ -15,4 +15,4 @@ if __name__ == '__main__':
     node_b = Node('b', node_c)
     node_a = Node('a', node_b)
 
-    solution(root)
+    solution()

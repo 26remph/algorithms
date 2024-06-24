@@ -37,5 +37,3 @@ if __name__ == '__main__':
     # print(merge(lst1=l1, lst2=l2))
     lst = [7, 2, 5, 3, 7, 13, 1, 6]
     print(merge_sort(lst))
-
-

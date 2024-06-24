@@ -22,6 +22,7 @@ class Solution:
 
         return -1
 
+
 if __name__ == '__main__':
     sol = Solution()
     arr = [1, 7, 3, 6, 5, 6]
@@ -40,7 +41,3 @@ if __name__ == '__main__':
     assert sol.pivotIndex(arr) == 3
     arr = [-1, 8]
     assert sol.pivotIndex(arr) == -1
-
-
-
-

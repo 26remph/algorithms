@@ -1,4 +1,3 @@
-from sys import stdin
 code = {
     "А": "A",
     "Б": "B",

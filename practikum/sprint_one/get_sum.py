@@ -1,5 +1,7 @@
-from typing import Tuple
 import time
+
+from typing import Tuple
+
 
 def get_sum(f_num: str, s_num: str) -> str:
     max_digit: int = max(len(f_num), len(s_num)) + 1
@@ -37,6 +39,8 @@ def read_input() -> Tuple[str, str]:
     first_number = input().strip()
     second_number = input().strip()
     return first_number, second_number
+
+
 first_number, second_number = read_input()
 
 start_time = time.time()

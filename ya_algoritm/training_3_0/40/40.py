@@ -1,17 +1,19 @@
 import itertools
-from collections import deque, defaultdict
+
+from collections import defaultdict, deque
+
 
 n = int(input())
 m = int(input())
 
 graph: list[list[list[tuple[int, int, int]]]]  # (vertex, line, cost)
-graph = [[[] for _ in range(n+1)] for _ in range(m+1)]
+graph = [[[] for _ in range(n + 1)] for _ in range(m + 1)]
 subway = defaultdict(set)
 
-for line in range(1, m+1):
+for line in range(1, m + 1):
     p = list(map(int, input().strip().split(' ')))
     for i in range(1, len(p) - 1):
-        v, e = p[i], p[i+1]
+        v, e = p[i], p[i + 1]
         graph[line][v].append((e, line, 0))
         graph[line][e].append((v, line, 0))
         subway[v].add(line)
@@ -24,7 +26,7 @@ for v, lines in subway.items():
             graph[end][v].append((v, point, 1))
             graph[point][v].append((v, end, 1))
 
-#DEBUG
+# DEBUG
 # print('---')
 # print('sub', subway)
 # for line in range(m+1):
@@ -35,7 +37,7 @@ for v, lines in subway.items():
 # forward
 a, b = map(int, input().split(' '))
 visited: list[list[None | int]]  # vertex, line
-visited = [[None for _ in range(m+1)] for _ in range(n+1)]
+visited = [[None for _ in range(m + 1)] for _ in range(n + 1)]
 for line in subway[a]:
     visited[a][line] = 0
 
@@ -76,5 +78,3 @@ if a == b:
     print(0)
 else:
     print(visited[out_st[0]][out_st[1]] if success else -1)
-
-

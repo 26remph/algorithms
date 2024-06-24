@@ -1,5 +1,6 @@
 from typing import List
 
+
 def get_weather_randomness(temp: List[int]) -> int:
 
     _len = len(temp)
@@ -26,6 +27,7 @@ def read_input() -> List[int]:
     n = int(input())
     temperatures = list(map(int, input().strip().split()))
     return temperatures
+
 
 temperatures = read_input()
 print(get_weather_randomness(temperatures))

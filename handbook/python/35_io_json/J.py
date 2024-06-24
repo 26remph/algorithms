@@ -1,4 +1,6 @@
 from collections import deque
+
+
 fn = input()
 n = int(input())
 

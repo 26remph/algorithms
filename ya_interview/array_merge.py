@@ -4,35 +4,25 @@ def solution(a1: list, a2: list) -> list:
     while a1 and a2:
         if a1[-1] > a2[-1]:
             num = a1.pop()
-            if out and num != out[-1]:
-                out.append(num)
-            elif not out:
+            if out and num != out[-1] or not out:
                 out.append(num)
 
         elif a1[-1] < a2[-1]:
             num = a2.pop()
-            if out and num != out[-1]:
-                out.append(num)
-            elif not out:
+            if out and num != out[-1] or not out:
                 out.append(num)
         else:
             a1.pop()
             num = a2.pop()
-            if out and num != out[-1]:
-                out.append(num)
-            elif not out:
+            if out and num != out[-1] or not out:
                 out.append(num)
 
     for num in reversed(a1):
-        if out and num != out[-1]:
-            out.append(num)
-        elif not out:
+        if out and num != out[-1] or not out:
             out.append(num)
 
     for num in reversed(a2):
-        if out and num != out[-1]:
-            out.append(num)
-        elif not out:
+        if out and num != out[-1] or not out:
             out.append(num)
 
     return out[::-1]

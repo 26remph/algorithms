@@ -1,5 +1,6 @@
 import operator
 
+
 s = input()
 
 expr = s.split(' ')

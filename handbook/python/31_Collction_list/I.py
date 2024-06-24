@@ -6,4 +6,3 @@ while s := input():
         continue
     else:
         print(s[:ind])
-

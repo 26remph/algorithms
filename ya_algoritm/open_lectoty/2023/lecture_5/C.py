@@ -1,5 +1,3 @@
-import bisect
-import random
 import time
 
 
@@ -10,7 +8,7 @@ def solution_2(n, arr):
     def lbin(l=0, r=len(arr), find=3):
 
         while l < r:
-            mid = (l+r) // 2
+            mid = (l + r) // 2
             if arr[mid] >= find:
                 r = mid
             else:
@@ -21,10 +19,10 @@ def solution_2(n, arr):
     f = 3
     print('ind:', lbin(find=3), 'f:', f, arr)
 
-    def rbin(l=0, r=len(arr)-1, find=3):
+    def rbin(l=0, r=len(arr) - 1, find=3):
 
         while l < r:
-            mid = (l+r+1) // 2
+            mid = (l + r + 1) // 2
             if arr[mid] <= find:
                 l = mid
             else:
@@ -39,9 +37,9 @@ def solution(n, arr):
 
     # ans = [0]
     ans = []
-    for i in range(1, n-1):
-        if arr[i-1] < arr[i] and arr[i] > arr[i+1]:
-            ans.append(i+1)
+    for i in range(1, n - 1):
+        if arr[i - 1] < arr[i] and arr[i] > arr[i + 1]:
+            ans.append(i + 1)
             break
 
     return ans[0] if ans else 0
@@ -51,15 +49,15 @@ def solution(n, arr):
 def solution_3(n, arr):
 
     l = 1
-    r = len(arr)-2
+    r = len(arr) - 2
     while l < r:
-        mid = (l+r) // 2
-        if arr[mid] >= arr[mid+1]:
+        mid = (l + r) // 2
+        if arr[mid] >= arr[mid + 1]:
             r = mid
         else:
             l = mid + 1
     # print(arr)
-    return l+1 if arr[l-1] < arr[l] and arr[l] > arr[l+1] else 0
+    return l + 1 if arr[l - 1] < arr[l] and arr[l] > arr[l + 1] else 0
 
 
 if __name__ == '__main__':
@@ -70,7 +68,7 @@ if __name__ == '__main__':
 
     n = 10_000
     arr = list(range(1, n))
-    arr.append(n-2)
+    arr.append(n - 2)
     # print(arr)
     t = time.time()
     solution_3(n, arr)
@@ -85,4 +83,3 @@ if __name__ == '__main__':
     #     peak = solution(n, arr)
     #     assert res in peak, f'{arr}, res: {res}, peak:{peak}'
     #     cnt += 1
-

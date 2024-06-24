@@ -1,5 +1,6 @@
 import heapq
 
+
 n, m, q = map(int, input().split())
 disabled = [set() for _ in range(n + 1)]
 reboots = [0] * (n + 1)
@@ -27,7 +28,9 @@ for _ in range(q):
     heap_cur = heap_min if log[0] == "GETMIN" else heap_max
     k = 1 if log[0] == "GETMIN" else - 1
 
-    while heap_cur[0][0] != k * reboots[heap_cur[0][1]] * (m - len(disabled[heap_cur[0][1]])):
+    while heap_cur[0][0] != k * reboots[heap_cur[0][1]] * (
+            m - len(disabled[heap_cur[0][1]])
+    ):
         old = heapq.heappop(heap_cur)
 
     print(heap_cur[0][1])

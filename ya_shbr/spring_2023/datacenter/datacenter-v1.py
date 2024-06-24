@@ -34,8 +34,9 @@ for _ in range(q):
         print(min_heap[0][1])
 
     if func == 'GETMAX':
-        while max_heap[0][0] != -1 * N[max_heap[0][1]][0] * (M - len(N[max_heap[0][1]][1])):
+        while max_heap[0][0] != -1 * N[max_heap[0][1]][0] * (
+                M - len(N[max_heap[0][1]][1])
+        ):
             heapq.heappop(max_heap)
 
         print(max_heap[0][1])
-

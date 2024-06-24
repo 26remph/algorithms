@@ -1,5 +1,6 @@
 import random
 
+
 MODE = {
     False: 'data_create',
     True: 'query'

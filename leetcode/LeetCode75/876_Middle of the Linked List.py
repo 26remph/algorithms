@@ -1,10 +1,12 @@
 from typing import Optional
 
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
 
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
@@ -19,6 +21,7 @@ class Solution:
 
         return center[1]
 
+
 node6 = ListNode(6)
 node5 = ListNode(5)
 # node5 = ListNode(5, node6)
@@ -30,6 +33,3 @@ sol = Solution()
 
 head = sol.middleNode(node1)
 print(head.val)
-
-
-

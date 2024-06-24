@@ -1,5 +1,4 @@
 # https://lisiynos.github.io/s1/graph_alg_py.html
-from pprint import pprint
 
 # # Смежность вершин
 # inc = {
@@ -78,6 +77,7 @@ def dfs(v):
         if v != start:
             print(v)
         dfs(graph.get(v)[1])
+
 
 print(start)
 dfs(start)

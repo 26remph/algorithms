@@ -1,4 +1,3 @@
-import random
 
 
 def recursive_digit_sum(n: int, summa=0):
@@ -20,4 +19,3 @@ def recursive_digit_sum_ex(n: int, summa=0):
 if __name__ == '__main__':
     print(recursive_digit_sum(123))
     print(recursive_digit_sum(7321346))
-

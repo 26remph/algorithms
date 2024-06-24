@@ -137,12 +137,12 @@ def main(L, x1, v1, x2, v2):
     if v1 <= 0 and v2 <= 0 or v1 >= 0 and v2 >= 0:
         if x1 < x2:
             if v1 > 0 and v2 > 0:
-                time_limit = (L/2 - x2) / abs(v2)
+                time_limit = (L / 2 - x2) / abs(v2)
             elif v1 < 0 and v2 < 0:
                 time_limit = x1 / abs(v1)
         else:
             if v1 > 0 and v2 > 0:
-                time_limit = (L/2 - x1) / abs(v1)
+                time_limit = (L / 2 - x1) / abs(v1)
             elif v1 <= 0 and v2 < 0:
                 time_limit = x2 / abs(v2)
 

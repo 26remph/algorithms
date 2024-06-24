@@ -20,7 +20,3 @@ if ans:
     print('\n'.join(ans))
 else:
     print('Готовить нечего')
-
-
-
-

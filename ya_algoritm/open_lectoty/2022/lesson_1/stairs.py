@@ -11,4 +11,3 @@ while sum <= n:
     sum += i
 
 print(i - 1)
-

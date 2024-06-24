@@ -7,6 +7,3 @@ for i in range(len(s) // 2):
         break
 
 print('YES' if flag else 'NO')
-
-
-

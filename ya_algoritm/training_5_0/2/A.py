@@ -9,4 +9,3 @@ if __name__ == '__main__':
         y_max = max(y_max, y)
 
     print(x_min, y_min, x_max, y_max)
-

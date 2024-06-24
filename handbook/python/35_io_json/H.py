@@ -15,4 +15,3 @@ ans.sort()
 fans = open(fn3, 'w', encoding='UTF-8')
 print('\n'.join(ans), file=fans)
 fans.close()
-

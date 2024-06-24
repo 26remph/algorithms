@@ -10,4 +10,3 @@ for num in arr:
     ans.append(d)
 
 print(ans)
-

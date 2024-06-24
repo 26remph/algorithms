@@ -23,6 +23,7 @@ def merge(arr, lf, mid, rg):
 
 	return arr[lf:rg]
 
+
 def merge_sort(arr, lf, rg):
 
 	if len(arr[lf:rg]) == 1:
@@ -33,6 +34,7 @@ def merge_sort(arr, lf, rg):
 	merge_sort(arr, mid, rg)
 
 	return merge(arr, lf, mid, rg)
+
 
 def test():
 	a = [1, 4, 9, 2, 10, 11]

@@ -1,7 +1,10 @@
 import collections
 import sys
 
+
 sys.setrecursionlimit(2_000)
+
+
 def solution(graph):
 
     def dfs(v, lvl):

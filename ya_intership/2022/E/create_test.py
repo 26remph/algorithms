@@ -1,10 +1,10 @@
-import string
 import random
 import sys
-import time
+
 
 N = 200_000
 SUM_N_LIMIT = 1_000_000
+
 
 def gen_string(n):
     return (
@@ -67,7 +67,6 @@ print(f'size_of_x: {syze_of_x // 1000:,} kbytes')
 
 # print(sys.getsizeof(int_ch))
 # print(sys.getsizeof(int_int) * 4)
-
 
 
 # start_time = time.time()

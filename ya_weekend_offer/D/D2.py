@@ -11,6 +11,7 @@
 import itertools
 import time
 
+
 test_files = ['input4_D.txt']
 for i in range(len(test_files)):
     name = test_files[i]
@@ -24,7 +25,7 @@ start_time = time.time()
 
 result = itertools.combinations(words, 2)
 cnt = 0
-for item in result:
+for _ in result:
     cnt += 1
 
 print("--- %s seconds ---" % (time.time() - start_time))

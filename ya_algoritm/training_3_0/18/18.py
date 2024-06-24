@@ -1,5 +1,7 @@
 import sys
+
 from collections import deque
+
 
 class Deque:
     _seq = deque()
@@ -30,6 +32,7 @@ class Deque:
     def clear(self, *args, **kwargs):
         self._seq.clear()
         print('ok')
+
 
 deq = Deque()
 while (order := sys.stdin.readline().rstrip()) != 'exit':

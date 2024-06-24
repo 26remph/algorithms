@@ -9,7 +9,7 @@ def read_input() -> list:
         n = int(f.readline().rstrip())
 
         data = []
-        while line:=f.readline().rstrip():
+        while line := f.readline().rstrip():
         # for _ in range(n):
         #     data.append(tuple(map(int, input().split())))
             data.append(tuple(map(int, line.split())))

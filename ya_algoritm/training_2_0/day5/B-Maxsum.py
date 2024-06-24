@@ -1,10 +1,11 @@
 import random
 
+
 def pref_sum():
-    pref = [0]*(N+1)
+    pref = [0] * (N + 1)
     for i in range(len(arr)):
         if (pref[i] + arr[i]) > 0:
-            pref[i+1] = pref[i] + arr[i]
+            pref[i + 1] = pref[i] + arr[i]
 
     ans = max(pref[1:])
     if ans == 0:
@@ -37,6 +38,7 @@ def test_func(n, a):
 # N = 1
 # arr = [-37]
 # assert test_func(N, arr) == pref_sum(), f'arr: {arr}'
+
 
 while True:
     N = random.randint(1, 10)

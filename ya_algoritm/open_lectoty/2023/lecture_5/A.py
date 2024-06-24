@@ -1,5 +1,6 @@
 import collections
 
+
 a, b = input(), input()
 
 
@@ -29,5 +30,3 @@ for i in range(len(b)):
 
 print(bull)
 print(cow)
-
-

@@ -1,4 +1,3 @@
-import random
 
 def rotate(ai, bi, arr):
 
@@ -7,7 +6,7 @@ def rotate(ai, bi, arr):
 
     # print(f'rotate: {ai=}, {bi=}, {arr[ai: bi + 1]=}, {arr[ai:]=}, {arr[:bi+1]=}')
     if bi < ai:
-        return max(arr[ai:] + arr[:bi+1])
+        return max(arr[ai:] + arr[:bi + 1])
 
     return max(arr[ai: bi + 1])
 

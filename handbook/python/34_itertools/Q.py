@@ -1,5 +1,6 @@
 import itertools
 
+
 names = {'пики': 'пик', 'трефы': 'треф', 'черви': 'червей', 'буби': 'бубен'}
 
 suits = ['буби', 'пики', 'трефы', 'черви']
@@ -21,4 +22,3 @@ for c in itertools.combinations(itertools.product(cards, suits), 3):
 
         if cur == last_lyout:
             is_print = True
-

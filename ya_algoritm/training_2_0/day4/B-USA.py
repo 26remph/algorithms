@@ -1,4 +1,6 @@
 import sys
+
+
 ans = {}
 for row in sys.stdin:
     print(row.strip())

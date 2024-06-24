@@ -27,7 +27,6 @@ class Solution:
 
         return ans
 
-
     def longestSubarray_without_slice(self, nums: List[int]) -> int:
 
         z_cnt = 0
@@ -58,12 +57,12 @@ class Solution:
 
 if __name__ == '__main__':
     tests = (
-        ([1,1,0,1], 3),
-        ([0,1,1,1,0,1,1,0,1], 5),
-        ([1,1,1], 2),
+        ([1, 1, 0, 1], 3),
+        ([0, 1, 1, 1, 0, 1, 1, 0, 1], 5),
+        ([1, 1, 1], 2),
         ([0, 0], 0),
         ([1], 0),
-        ([1,1,0,0,1,1,1,0,1], 4),
+        ([1, 1, 0, 0, 1, 1, 1, 0, 1], 4),
     )
 
     sol = Solution()

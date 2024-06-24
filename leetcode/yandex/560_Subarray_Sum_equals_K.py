@@ -1,4 +1,5 @@
 import collections
+
 from typing import List
 
 
@@ -24,7 +25,7 @@ class Solution:
 
         ans = 0
         for i in range(len(prefix)):
-            for j in range(i+1, len(prefix)):
+            for j in range(i + 1, len(prefix)):
                 if prefix[j] - prefix[i] == k:
                     ans += 1
 

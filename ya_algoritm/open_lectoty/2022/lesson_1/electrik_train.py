@@ -7,6 +7,7 @@ D. Разница во времени
 
 from datetime import datetime, timedelta
 
+
 # def slow_f(arr):
 #
 #     min_t = 1440

@@ -26,6 +26,3 @@ for x in ans:
 
 # print('cuts:', cuts)
 # print('ans:', ans)
-
-
-

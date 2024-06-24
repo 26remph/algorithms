@@ -20,6 +20,3 @@ while stack:
     ans[val[1]] = -1
 
 print(*map(str, ans))
-
-
-

@@ -2,6 +2,7 @@
 MEMORY_LIMIT = 200
 S_LONG = 50_000_000
 
+
 def get_min_pos():
 
     with open('./input.txt', 'r') as f:
@@ -44,5 +45,6 @@ def get_min_pos():
             pos = min_pos
 
         print(pos)
+
 
 get_min_pos()

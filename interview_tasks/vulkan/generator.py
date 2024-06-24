@@ -17,6 +17,8 @@ print(increment(x))
 print(x)
 
 import sys
+
+
 arr_1 = []
 arr2 = arr_1
 print(sys.getrefcount(arr_1))

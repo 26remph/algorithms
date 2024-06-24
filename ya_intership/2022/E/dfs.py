@@ -1,8 +1,9 @@
 # Смежность вершин
 import random
 import time
-from pprint import pprint
+
 from collections import deque
+
 
 # inc = {
 #     1: {2, 8},
@@ -100,7 +101,6 @@ print('total time:', time.time() - start_time, 'sec.')
 # bfs(start)  # start - начальная вершина обхода
 # print(len(BFS))
 # print(BFS)  # Выводится: [1, 2, 8, 3, 7, 4, 5, 9, 6]
-
 
 
 # visited = set()

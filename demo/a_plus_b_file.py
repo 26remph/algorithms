@@ -18,4 +18,3 @@ def read_input() -> Tuple[int, int]:
 a, b = read_input()
 with open('output.txt', 'w') as f:
     print(get_sum(a, b), file=f)
-

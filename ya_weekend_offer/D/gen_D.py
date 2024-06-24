@@ -1,6 +1,7 @@
 import random
 import string
 
+
 N = 10
 chars = []
 S = 100_000
@@ -14,6 +15,3 @@ with open('input4_D.txt', 'w+') as f:
 
         word = ''.join(chars)
         f.write(f'{word}\n')
-
-
-

@@ -39,9 +39,9 @@ def read_input() -> list:
 
     return input_str
 
+
 str_datas: list = read_input()
 # print(get_pos(str_data))
 with open('output.txt', 'w') as f:
     for row in str_datas:
         print(get_pos(row), file=f)
-

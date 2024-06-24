@@ -1,5 +1,5 @@
 import collections
-from pprint import pprint
+
 from typing import List
 
 
@@ -11,8 +11,8 @@ class Solution:
 
         path = collections.deque()
         for i in range(3):
-            if is_valid(s[:i+1]):
-                path.append(s[:i+1])
+            if is_valid(s[:i + 1]):
+                path.append(s[:i + 1])
 
         ans = []
         while path:
@@ -35,7 +35,6 @@ class Solution:
 
         return ans
 
-
     def dfs_restoreIpAddresses(self, s: str) -> List[str]:
 
         def is_valid(p):
@@ -49,6 +48,7 @@ class Solution:
 
         ip = []
         ans = []
+
         def dfs(sub):
             prefix = ''
             for i in range(len(sub)):
@@ -58,7 +58,7 @@ class Solution:
                     prefix += sub[i]
                 if is_valid(prefix):
                     ip.append(prefix)
-                    dfs(sub[i+1:])
+                    dfs(sub[i + 1:])
                     if len(ip) == 4:
                         if len(''.join(ip)) == len(s):
                             ans.append('.'.join(ip))

@@ -8,6 +8,7 @@ def same_type(func):
 
     return wrapper
 
+
 @same_type
 def a_plus_b(a, b):
     return a + b

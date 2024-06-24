@@ -1,4 +1,3 @@
-import random
 
 def can_locate(lengh) -> bool:
 

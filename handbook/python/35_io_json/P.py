@@ -1,5 +1,6 @@
 from sys import stdin
 
+
 s = input().strip()
 fn_lst = []
 for fn in stdin:
@@ -20,10 +21,3 @@ if ans:
     print('\n'.join(ans))
 else:
     print("404. Not Found")
-
-
-
-
-
-
-

@@ -8,13 +8,10 @@ def insert_selection(arr):
 
         arr[i], arr[maxel[1]] = arr[maxel[1]], arr[i]
 
-
-
     if arr[0] > arr[1]:
         arr[0], arr[1] = arr[1], arr[0]
 
     print(arr)
-
 
 
 if __name__ == '__main__':

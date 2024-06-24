@@ -19,4 +19,3 @@ if profit[1] > 0 and profit[2] > 0:
     ans = [profit[1] + 1, profit[2] + 1]
 
 print(' '.join(map(str, ans)))
-

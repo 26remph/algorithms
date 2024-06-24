@@ -1,4 +1,6 @@
 from collections import defaultdict
+
+
 n = int(input())
 surname = defaultdict(int)
 for _ in range(n):

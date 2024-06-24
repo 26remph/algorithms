@@ -8,5 +8,5 @@ if __name__ == '__main__':
     print(size)
     ax = [0] * (size - n) + ax
     bx = [0] * (size - m) + bx
-    for a, b in zip(ax, bx):
+    for a, b in zip(ax, bx, strict=False):
         print(a + b, end=' ')

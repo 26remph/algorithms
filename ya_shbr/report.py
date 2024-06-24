@@ -1,6 +1,7 @@
-from typing import Tuple, Dict, Union
 import json
 import time
+
+from typing import Dict, Tuple, Union
 
 
 def judge(element, _filter):

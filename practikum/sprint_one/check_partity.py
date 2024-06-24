@@ -15,5 +15,6 @@ def print_result(result: bool) -> None:
     else:
         print("FAIL")
 
+
 a, b, c = map(int, input().strip().split())
 print_result(check_parity(a, b, c))

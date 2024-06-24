@@ -13,8 +13,6 @@ class Solution:
 if __name__ == '__main__':
     nums1 = [1, 2, 3]
     nums2 = [2, 4, 6]
-    ans = [[1,3], [4,6]]
+    ans = [[1, 3], [4, 6]]
     sol = Solution()
     print(sol.findDifference(nums1, nums2))
-
-

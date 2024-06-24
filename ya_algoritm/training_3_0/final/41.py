@@ -12,7 +12,6 @@ class Stack:
         self._seq.append((key, n))
         self.cnt.update({key: n})
 
-
     def delete(self, *args, **kwargs):
         n = int(args[0][0])
         while self._seq and (val := self._seq.pop()):

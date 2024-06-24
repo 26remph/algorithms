@@ -10,9 +10,9 @@ def merge(arr, lf, mid, rg):
         k += 1
 
     for i in range(len(z)):
-        arr[k+i] = z[i]
+        arr[k + i] = z[i]
     for i in range(len(y)):
-        arr[k+i] = y[i]
+        arr[k + i] = y[i]
     # print(lf, rg)
     return arr[lf:rg]
 
@@ -22,7 +22,7 @@ def merge_sort(arr, lf, rg):
     print(arr, id(arr))
     if len(arr[lf:rg]) < 2:
         return arr[lf:rg]
-    mid = lf + (rg - lf)//2
+    mid = lf + (rg - lf) // 2
     merge_sort(arr, lf, mid)
     merge_sort(arr, mid, rg)
     return merge(arr, lf, mid, rg)

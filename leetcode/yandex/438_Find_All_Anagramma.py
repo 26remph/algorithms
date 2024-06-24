@@ -1,4 +1,5 @@
 import collections
+
 from typing import List
 
 
@@ -26,7 +27,6 @@ class Solution:
             ans.append(len(s) - len(p))
 
         return ans
-
 
     def dict_findAnagrams(self, s: str, p: str) -> List[int]:
         d1 = collections.Counter(p)

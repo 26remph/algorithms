@@ -3,6 +3,7 @@
 
 memory_limit = 1
 
+
 def get_min_pos():
 
     with open('./input.txt', 'r') as f:
@@ -45,6 +46,7 @@ def get_min_pos():
         print(pos)
         with open('output_autumn.txt', 'a') as file_out:
             print(pos, file=file_out)
+
 
 with open('input_example.txt', 'r') as f_ex:
     rows = f_ex.readlines()

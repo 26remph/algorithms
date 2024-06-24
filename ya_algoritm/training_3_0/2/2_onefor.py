@@ -1,7 +1,5 @@
 # k = int(input())
 # s = input()
-import string
-from collections import deque
 
 # k = 1
 # s = '0000111101110111111'
@@ -141,4 +139,3 @@ for i in range(len(s)):
 
 print('gsumm', gsumm)
 print('summa', summa, 'left_summa=', left_summa, 'r_summa', r_summa)
-

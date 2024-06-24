@@ -1,5 +1,6 @@
 import collections
 
+
 d = collections.defaultdict(lambda: [0])
 
 d['a'][0] += 1

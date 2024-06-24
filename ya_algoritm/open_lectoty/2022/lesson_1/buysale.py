@@ -63,7 +63,7 @@ assert profit_day(n, data) == true_solving(n, data)
 
 data = [5, 1, 3, 1, 6, 4, 8]
 n = len(data)
-assert profit_day(n,data) == true_solving(n, data)
+assert profit_day(n, data) == true_solving(n, data)
 
 data = [1, 6, 2, 6, 2, 6, 2, 6]
 n = len(data)

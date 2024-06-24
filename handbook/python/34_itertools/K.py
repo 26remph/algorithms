@@ -1,4 +1,6 @@
 from itertools import product
+
+
 n = int(input())
 m = int(input())
 line = 0

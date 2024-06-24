@@ -3,6 +3,7 @@
 # a == b (эквиваленция)
 import itertools
 
+
 x, y = False, False
 print(x <= y)
 print(not x or y)

@@ -1,5 +1,7 @@
 import time
+
 from collections import Counter
+
 
 k = int(input())
 s = input()

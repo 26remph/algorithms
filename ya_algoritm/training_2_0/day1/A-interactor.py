@@ -15,4 +15,3 @@ if i == 7:
     ans = 1
 
 print(ans)
-

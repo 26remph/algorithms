@@ -14,6 +14,3 @@ for i in range(len(arr)):
     out.append(ans)
 
 print(' '.join(out))
-
-
-

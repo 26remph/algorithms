@@ -5,7 +5,7 @@ def main():
         n -= i
         i += 1
 
-    return i-1
+    return i - 1
 
 
 if __name__ == '__main__':

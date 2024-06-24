@@ -1,13 +1,14 @@
 import time
 
+
 start = time.time()
 with open('data.txt') as f:
     n = int(f.readline().rstrip())
     # n = int(input())
-    while line:= f.readline().rstrip():
+    while line := f.readline().rstrip():
         data = []
         key = 3
-        for _ in range(n-2):
+        for _ in range(n - 2):
             row = list(map(int, line.split()))
             row.append(key)
             row.append(max(row[1:-1]))
@@ -30,7 +31,7 @@ with open('data.txt') as f:
                 elif i == 2:
                     sum_B += 1
                 else:
-                    content = ing_amount.get(i, None)
+                    content = ing_amount.get(i)
                     if content is None:
                         wrong = True
                         break
@@ -72,4 +73,3 @@ with open('query.txt') as f:
 # print(''.join(rez))
 print(f'query time: {time.time() - start_query}')
 print(f'total time: {time.time() - start} seconds')
-

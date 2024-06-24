@@ -1,13 +1,14 @@
 # ID 69517242
 import random
 
+
 def partition(array, pivot):
 
     left, right, = 0, len(array) - 1
     while left < right:
         key_left = (array[left][1], array[left][2])
         key_right = (array[right][1], array[right][2])
-        name_left, name_right  = array[left][0], array[right][0]
+        name_left, name_right = array[left][0], array[right][0]
 
         if key_left > pivot:
             left += 1
@@ -25,6 +26,7 @@ def partition(array, pivot):
         left += 1
 
     return array[0: left], array[right: len(array)]
+
 
 def quicksort(array):
     if len(array) < 2:
@@ -49,4 +51,3 @@ def read_input():
 if __name__ == '__main__':
     for write in quicksort(read_input()):
         print(write[0])
-

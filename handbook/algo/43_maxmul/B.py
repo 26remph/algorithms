@@ -41,4 +41,3 @@ if __name__ == '__main__':
         print('Yes')
         print(' '.join(map(str, arr)))
         # print(f'{col=}')
-

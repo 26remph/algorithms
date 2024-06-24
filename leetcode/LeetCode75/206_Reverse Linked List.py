@@ -29,7 +29,6 @@ class Solution:
             head = next
         return prev       # Return the prev pointer to get the reverse linked list...
 
-
     def reverseListRecursion(self, head: ListNode) -> ListNode:
         if not head:
             return None
@@ -40,6 +39,7 @@ class Solution:
             return lastnode
 
         return head
+
 
 node5 = ListNode(5)
 node4 = ListNode(4, node5)

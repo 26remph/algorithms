@@ -10,4 +10,5 @@ def is_palindrome(line: str) -> bool:
     rev_word = ''.join(reversed(list(phrase)))
     return phrase == rev_word
 
+
 print(is_palindrome(input().strip()))

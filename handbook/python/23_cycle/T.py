@@ -1,4 +1,3 @@
-import time
 
 
 def solution(blocks):

@@ -27,8 +27,3 @@ if stack:
     isTrue = False
 
 print('yes' if isTrue else 'no')
-
-
-
-
-

@@ -1,5 +1,5 @@
 from collections import defaultdict
-from pprint import pprint
+
 
 friends = defaultdict(set)
 while s := input():
@@ -18,7 +18,3 @@ for my in sorted(friends.keys()):
     ans = list(far_friends)
     ans.sort()
     print(f'{my}:', ', '.join(ans))
-
-
-
-

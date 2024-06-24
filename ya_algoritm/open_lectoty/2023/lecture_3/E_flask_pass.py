@@ -62,4 +62,3 @@ if min_useful != -LIMIT_USEFUL:
         ans_my += (k - flask) * min_useful
 
 print(ans_my)
-

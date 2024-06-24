@@ -21,5 +21,3 @@ for w in msg:
         key = morze.get(ch.upper())
         code.append(key)
     print(' '.join(code))
-
-

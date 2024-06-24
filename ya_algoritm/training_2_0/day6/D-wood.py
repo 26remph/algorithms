@@ -20,4 +20,3 @@ def bin_left(lo, hi):
 
 
 print(bin_left(0, pow(10, 18)))
-

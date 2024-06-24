@@ -22,4 +22,3 @@ if __name__ == '__main__':
     # print(ind, arr, order)
     # print(' '.join(map(str, arr)))
     print(' '.join(map(str, arr[:ind + 1] + order)))
-

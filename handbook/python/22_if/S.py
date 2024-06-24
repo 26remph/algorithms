@@ -20,8 +20,3 @@ elif x < -4 < 0 < y <= 5:
     print(DANGER if y <= Fx else FREE)
 else:
     print(FREE)
-
-
-
-
-

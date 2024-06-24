@@ -1,4 +1,3 @@
-import sys
 
 
 class Heap:
@@ -9,8 +8,8 @@ class Heap:
 
         i = len(self._seq) - 1
         while i > 0:
-            if self._seq[(i-1)//2] < self._seq[i]:
-                self._seq[(i-1)//2], self._seq[i] = self._seq[i], self._seq[(i-1)//2]
+            if self._seq[(i - 1) // 2] < self._seq[i]:
+                self._seq[(i - 1) // 2], self._seq[i] = self._seq[i], self._seq[(i - 1) // 2]
             else:
                 break
             i = (i - 1) // 2
@@ -27,8 +26,8 @@ class Heap:
 
         self._seq[i] = last
         while True:
-            lch = (self._seq[2*i+1], 2*i+1) if len(self._seq) > 2*i + 1 else None
-            rch = (self._seq[2*i+2], 2*i+2) if len(self._seq) > 2*i + 2 else None
+            lch = (self._seq[2 * i + 1], 2 * i + 1) if len(self._seq) > 2 * i + 1 else None
+            rch = (self._seq[2 * i + 2], 2 * i + 2) if len(self._seq) > 2 * i + 2 else None
 
             if lch or rch:
                 if lch and rch:

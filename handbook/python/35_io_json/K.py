@@ -1,5 +1,6 @@
 import json
 
+
 fn_in = input()
 fn_out = input()
 
@@ -37,9 +38,3 @@ with open(fn_out, "w", encoding="UTF-8") as f:
     json.dump(out, f)
 
 print(out)
-
-
-
-
-
-

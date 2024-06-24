@@ -1,9 +1,6 @@
 import itertools
-import random
-import time
-import timeit
+
 from collections import deque
-from functools import lru_cache
 
 
 def merge(lst1: deque, lst2: deque):
@@ -33,8 +30,8 @@ def merge_sort(lst: deque):
     if len(lst) <= 1:
         return lst
     else:
-        left = deque(itertools.islice(lst, 0, len(lst)//2))
-        right = deque(itertools.islice(lst, len(lst)//2, len(lst)))
+        left = deque(itertools.islice(lst, 0, len(lst) // 2))
+        right = deque(itertools.islice(lst, len(lst) // 2, len(lst)))
         return merge(merge_sort(left), merge_sort(right))
 
 
@@ -153,6 +150,3 @@ if __name__ == '__main__':
     #     print(f'{ans=}, \n{max_ans=}, {ans_lst[max_ans[1]]=}')
     #     print(f'{main(good_b, acid_b)=}')
     #     assert main(good_b, acid_b)[0] == max_ans[0]
-
-
-

@@ -1,10 +1,11 @@
-from collections import defaultdict
-from collections import deque
+from collections import defaultdict, deque
+
+
 N = int(input())
 
 tree = defaultdict(list)
 topic = {}
-for i in range(1, N+1):
+for i in range(1, N + 1):
     num = int(input())
 
     if num == 0:
@@ -17,7 +18,7 @@ for i in range(1, N+1):
 
 topics = []
 max_cnt = 0
-for root in topic.keys():
+for root in topic:
     visited = deque(tree[root])
     cnt = 0
     while visited:
@@ -28,5 +29,3 @@ for root in topic.keys():
     topics.append((topic[root], cnt))
 
 print(max(topics, key=lambda x: x[1])[0])
-
-

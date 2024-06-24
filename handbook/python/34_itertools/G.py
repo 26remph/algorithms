@@ -1,5 +1,6 @@
 import itertools
 
+
 n = int(input())
 lst = []
 for _ in range(n):

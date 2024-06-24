@@ -1,5 +1,7 @@
 import re
+
 from collections import deque
+
 
 def get_pos(expr: str) -> int:
 

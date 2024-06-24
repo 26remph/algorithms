@@ -1,5 +1,6 @@
 import json
 
+
 fn = 'o.json'
 tests = json.load(open(fn, encoding="UTF-8"))
 
@@ -11,6 +12,3 @@ for group in tests:
             score += int(points) / len(group['tests'])
 
 print(int(score))
-
-
-

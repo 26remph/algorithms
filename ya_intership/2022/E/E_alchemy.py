@@ -1,9 +1,10 @@
 from pprint import pprint
 
+
 n = int(input())
 data = []
 key = 3
-for _ in range(n-2):
+for _ in range(n - 2):
     row = list(map(int, input().split()))
     row.append(key)
     row.append(max(row[1:-1]))
@@ -27,7 +28,7 @@ for value in data:
         elif i == 2:
             sum_B += 1
         else:
-            content = ing_amount.get(i, None)
+            content = ing_amount.get(i)
             if content is None:
                 wrong = True
                 break
@@ -60,4 +61,3 @@ for _ in range(q):
         rez.append('0')
 
 print(''.join(rez))
-

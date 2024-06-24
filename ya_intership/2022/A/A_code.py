@@ -1,5 +1,6 @@
 import string
 
+
 abc = string.ascii_lowercase
 
 n = input()

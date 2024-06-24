@@ -6,8 +6,8 @@ class DataCenter:
     def __init__(self, N, M):
         self.N = [[0, set()] for _ in range(n + 1)]
         self.M = M
-        self.min_heap = [(0, i+1) for i in range(N)]
-        self.max_heap = [(0, i+1) for i in range(N)]
+        self.min_heap = [(0, i + 1) for i in range(N)]
+        self.max_heap = [(0, i + 1) for i in range(N)]
 
     def _update_heap(self, i):
         r = self.N[i][0]
@@ -29,13 +29,17 @@ class DataCenter:
         self._update_heap(i)
 
     def getmin(self):
-        while self.min_heap[0][0] != self.N[self.min_heap[0][1]][0] * (self.M - len(self.N[self.min_heap[0][1]][1])):
+        while self.min_heap[0][0] != self.N[self.min_heap[0][1]][0] * (
+                self.M - len(self.N[self.min_heap[0][1]][1])
+        ):
             heapq.heappop(self.min_heap)
 
         return self.min_heap[0][1]
 
     def getmax(self):
-        while self.max_heap[0][0] != -1 * self.N[self.max_heap[0][1]][0] * (self.M - len(self.N[self.max_heap[0][1]][1])):
+        while self.max_heap[0][0] != -1 * self.N[self.max_heap[0][1]][0] * (
+                self.M - len(self.N[self.max_heap[0][1]][1])
+        ):
             heapq.heappop(self.max_heap)
 
         return self.max_heap[0][1]
@@ -51,4 +55,3 @@ for _ in range(q):
     res = func(*args)
     if res:
         print(res)
-

@@ -39,6 +39,7 @@ def read_input() -> Tuple[dict, list]:
 
     return vacancy, arr
 
+
 vacancy, arr = read_input()
 for player in get_player(vacancy, arr):
     print(player)

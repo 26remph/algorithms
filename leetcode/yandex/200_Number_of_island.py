@@ -1,7 +1,6 @@
 import collections
+
 from typing import List
-
-
 
 
 class Solution:
@@ -23,10 +22,10 @@ class Solution:
                     stack.append((i, j))
                     while stack:
                         i, j = stack.popleft()
-                        l = (i, j-1) if j - 1 >= 0 and grid[i][j-1] == '1' else None
-                        r = (i, j+1) if j + 1 < m and grid[i][j+1] == '1' else None
-                        u = (i-1, j) if i - 1 >= 0 and grid[i-1][j] == '1' else None
-                        d = (i+1, j) if i + 1 < n and grid[i+1][j] == '1' else None
+                        l = (i, j - 1) if j - 1 >= 0 and grid[i][j - 1] == '1' else None
+                        r = (i, j + 1) if j + 1 < m and grid[i][j + 1] == '1' else None
+                        u = (i - 1, j) if i - 1 >= 0 and grid[i - 1][j] == '1' else None
+                        d = (i + 1, j) if i + 1 < n and grid[i + 1][j] == '1' else None
                         for p in (l, r, u, d):
                             if p:
                                 if not visited[p[0] * m + p[1]]:

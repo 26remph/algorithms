@@ -1,4 +1,3 @@
-import timeit
 
 
 def check_win(i, j):

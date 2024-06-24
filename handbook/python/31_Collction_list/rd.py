@@ -5,4 +5,3 @@ for _ in range(N):
         ans = 'NO'
 
 print(ans)
-

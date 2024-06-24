@@ -25,5 +25,5 @@ def solution(arr):
 
 if __name__ == '__main__':
     n = int(input())
-    arr = [x for x in range(2, n + 1)]
+    arr = list(range(2, n + 1))
     solution(arr)

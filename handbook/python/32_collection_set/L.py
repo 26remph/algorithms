@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 n = int(input())
 cnt = defaultdict(int)
 
@@ -17,4 +18,3 @@ for f in fio:
 
 if flag:
     print('Однофамильцев нет')
-

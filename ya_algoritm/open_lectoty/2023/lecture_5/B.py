@@ -65,11 +65,9 @@ def solution(n, k, s):
             # print('_marks:', marks, '_flag:', is_cont)
             letter.clear()
 
-
         # br += 1
         # if br == 10:
         #     break
-
 
     # print('marks:', marks)
     ans, cnt = 0, 0

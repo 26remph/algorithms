@@ -1,5 +1,6 @@
-from typing import List, Tuple, Optional, Dict
 import time
+
+from typing import Dict, List, Optional, Tuple
 
 
 def foo(vacancy: Dict[str, int], arr: List[Tuple[str, str, int, int]]) -> List[str]:

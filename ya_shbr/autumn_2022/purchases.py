@@ -1,6 +1,7 @@
 import json
 import time
 
+
 NS = 'NAME_CONTAINS'
 PGT = 'PRICE_GREATER_THAN'
 PLT = 'PRICE_LESS_THAN'

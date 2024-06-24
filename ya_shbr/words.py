@@ -1,5 +1,6 @@
 import time
 
+
 word_one: str = input().strip()
 word_two: str = input().strip()
 

@@ -8,6 +8,3 @@ while (n := int(input())) != 0:
 
 cnt = sum([1 for x in seq if x == maxN])
 print(cnt)
-
-
-

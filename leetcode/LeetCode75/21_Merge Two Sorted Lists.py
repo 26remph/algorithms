@@ -27,7 +27,7 @@ class Solution:
         order.sort(key=lambda x: x.val)
         for i in range(len(order) - 1):
             node = order[i]
-            node.next = order[i+1]
+            node.next = order[i + 1]
 
         return order[0]
 
@@ -46,7 +46,6 @@ class Solution:
             cur.next = list1 if list1 else list2
 
         return dummy.next
-
 
     def mergeTwoListsRecursively(self, list1: Optional[ListNode],
                       list2: Optional[ListNode]) -> Optional[ListNode]:

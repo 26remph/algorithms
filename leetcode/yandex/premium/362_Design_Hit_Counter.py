@@ -1,6 +1,7 @@
 from collections import deque
 
-class HitCounter: # queue
+
+class HitCounter:  # queue
 
     def __init__(self):
         """
@@ -25,7 +26,7 @@ class HitCounter: # queue
         return len(self.hits)
 
 
-class HitCounter: # follow-up
+class HitCounter:  # follow-up
     def __init__(self):
         self.times = [0] * 300
         self.hits = [0] * 300

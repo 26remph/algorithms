@@ -1,6 +1,7 @@
 
 READ_SIZE_LIMIT = 2_000_000
 
+
 def get_staples_pos():
 
     with open('input.txt', 'r') as f:

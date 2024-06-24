@@ -1,5 +1,6 @@
 import bisect
 
+
 n = int(input())
 arr = list(set(map(int, input().strip().split(' '))))
 arr.sort()

@@ -11,4 +11,5 @@ def is_power_of_four(number: int) -> bool:
 
         n += 1
 
+
 print(is_power_of_four(int(input())))

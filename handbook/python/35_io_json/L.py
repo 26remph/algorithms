@@ -18,4 +18,3 @@ with (
 
         for fw in (f_even, f_odd, f_eq):
             fw.write("\n")
-

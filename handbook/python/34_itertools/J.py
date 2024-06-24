@@ -1,4 +1,4 @@
-from itertools import combinations, product
+from itertools import product
 
 
 n = int(input())
@@ -12,4 +12,3 @@ ans = [(p1, p2, n - p1 - p2) for p1, p2 in [p for p in product(range(1, n - 1), 
 ans.sort(key=lambda x: (x[0], x[1]))
 for x in ans:
     print(*x)
-

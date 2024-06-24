@@ -1,5 +1,7 @@
 import sys
+
 from collections import Counter
+
 
 cnt = Counter()
 
@@ -35,4 +37,3 @@ for lvl in range(max_val, 0, -1):
     print(''.join(chars))
 
 print(''.join([x[0] for x in lst]))
-

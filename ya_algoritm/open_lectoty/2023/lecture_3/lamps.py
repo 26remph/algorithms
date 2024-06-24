@@ -24,7 +24,7 @@ def can_produce(ask) -> bool:
         while tail >= ask and cnt < n:
             cnt += 1
             tail -= ask
-            spec.append(str(arr[i][0]+1))
+            spec.append(str(arr[i][0] + 1))
 
         # print('i:', i, 'cnt', cnt, 'ask:', ask)
         if cnt == n: return True

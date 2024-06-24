@@ -15,4 +15,3 @@ if const in s3:
         rez = s3
 
 print(rez, len(rez))
-

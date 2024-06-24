@@ -1,6 +1,6 @@
+from collections import deque
 from typing import List
 
-from collections import deque
 
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
@@ -21,7 +21,6 @@ class Solution:
             nums.insert(0, val)
 
         return nums
-
 
     def rotate_v3(self, nums: List[int], k: int) -> None:
 
@@ -63,4 +62,3 @@ k = 2
 # assert sol.rotate(nums, k) == [3, 99, -1, -100]
 # assert sol.rotate_v2(nums, k) == [3, 99, -1, -100]
 assert sol.rotate_v3(nums, k) == [3, 99, -1, -100]
-

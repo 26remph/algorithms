@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 N = int(input())
 toys = defaultdict(int)
 for _ in range(N):
@@ -17,5 +18,3 @@ for key, val in toys.items():
 
 ans.sort()
 print('\n'.join(ans))
-
-

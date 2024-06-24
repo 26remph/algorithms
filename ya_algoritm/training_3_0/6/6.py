@@ -3,6 +3,7 @@ class Node:
         self.next = next
         self.val = val
 
+
 n = int(input())
 m = int(input())
 
@@ -12,7 +13,7 @@ for i in range(m):
     if i == 0:
         head = Node(val=(s, e))
     else:
-        head = Node(next=head, val=(s,e))
+        head = Node(next=head, val=(s, e))
 
     prev, cur = head, head.next
     while cur is not None:
