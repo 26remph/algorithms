@@ -53,23 +53,24 @@ class Checkers:
             print(self.desk[i])
 
 
-print('--example_1---')
-checkers = Checkers()
-checkers.show_desk()
-for row in '87654321':
-    for col in 'ABCDEFGH':
-        # print(checkers.get_cell(col + row).status(), end='')
-        print(checkers.get_cell(col + row), end='')
-    print()
+if __name__ == '__main__':
+    print('--example_1---')
+    checkers = Checkers()
+    checkers.show_desk()
+    for row in '87654321':
+        for col in 'ABCDEFGH':
+            # print(checkers.get_cell(col + row).status(), end='')
+            print(checkers.get_cell(col + row), end='')
+        print()
 
-print('--example_2---')
-checkers = Checkers()
-checkers.move('C3', 'D4')
-checkers.move('H6', 'G5')
-for row in '87654321':
-    for col in 'ABCDEFGH':
-        print(checkers.get_cell(col + row).status(), end='')
-    print()
+    print('--example_2---')
+    checkers = Checkers()
+    checkers.move('C3', 'D4')
+    checkers.move('H6', 'G5')
+    for row in '87654321':
+        for col in 'ABCDEFGH':
+            print(checkers.get_cell(col + row).status(), end='')
+        print()
 
 
 

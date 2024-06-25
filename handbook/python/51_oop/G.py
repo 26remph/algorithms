@@ -53,12 +53,12 @@ if __name__ == '__main__':
     print(rect.get_pos(), rect.get_size(), sep='\n')
     rect.scale(2.0)
     print(rect.get_pos(), rect.get_size(), sep='\n')
-    # print('--- example 3 ---')
-    # rect = Rectangle((3.14, 2.71), (-3.14, -2.71))
-    # print(rect.get_pos(), rect.get_size(), sep='\n')
-    # rect.turn()
-    # rect.turn()
-    # print(rect.get_pos(), rect.get_size(), sep='\n')
+    print('--- example 3 ---')
+    rect = Rectangle((3.14, 2.71), (-3.14, -2.71))
+    print(rect.get_pos(), rect.get_size(), sep='\n')
+    rect.turn()
+    rect.turn()
+    print(rect.get_pos(), rect.get_size(), sep='\n')
 
     # test class
     # method = ['turn', 'scale', 'get_pos']

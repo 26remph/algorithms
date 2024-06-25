@@ -41,16 +41,17 @@ class Queue:
         return self.head is None
 
 
-print("--- example 1 ---")
-queue = Queue()
-for item in range(10):
-    queue.push(item)
-while not queue.is_empty():
-    print(queue.pop(), end=" ")
+if __name__ == '__main__':
+    print("--- example 1 ---")
+    queue = Queue()
+    for item in range(10):
+        queue.push(item)
+    while not queue.is_empty():
+        print(queue.pop(), end=" ")
 
-print("--- example 2 ---")
-queue = Queue()
-for item in ("Hello,", "world!"):
-    queue.push(item)
-while not queue.is_empty():
-    print(queue.pop())
+    print("--- example 2 ---")
+    queue = Queue()
+    for item in ("Hello,", "world!"):
+        queue.push(item)
+    while not queue.is_empty():
+        print(queue.pop())
