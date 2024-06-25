@@ -37,7 +37,8 @@ while True:
             # print('j_i ->', i, j, 'ans:', ans)
 
         i += 1
-        if i == j: j += 1
+        if i == j:
+            j += 1
 
     print(time.time() - t, '(s)')
     print(ans)

@@ -15,7 +15,7 @@ class Checker(list):
         print('fl:', self._flags)
 
     def is_continuous(self):
-        return True if self._flags >= 4 else False
+        return self._flags >= 4
 
 
 ch = Checker([0] * 4)

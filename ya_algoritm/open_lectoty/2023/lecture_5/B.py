@@ -10,7 +10,7 @@ def sqrt_sol(n, k, s):
     for i in range(n):
         for j in range(i, n):
             cnt = collections.Counter(s[i:j + 1])
-            flags = [False if val < k else True for val in cnt.values()]
+            flags = [not val < k for val in cnt.values()]
             if all(flags):
                 dist = max(j - i + 1, dist)
 
@@ -161,16 +161,16 @@ if __name__ == '__main__':
         (7, 2, 'ktfkfyq', 0),
         (8, 2, 'mpmujprd', 0),
         (18, 2, 'afepdjfsfcsryvbjno', 0),
-        (147, 3, 'skudbeyfjqgbmrsuqmemedydnhthdhtvlnxhirlwfhqxptlgscarglvnhxgnsetzxekhybtsiedgqvzthrifwppittevxgfexukbxoxtadxjhipyzkykneneandlqxpwgsbgsvbryrxbquwoenw', 0),
+        (147, 3, 'skudbeyfjqgbmrsuqmemedydnhthdhtvlnxhirlwfhqxptlgscarglvnhxgnsetzxekhybtsiedgqvzthrifwppittevxgfexukbxoxtadxjhipyzkykneneandlqxpwgsbgsvbryrxbquwoenw', 0),  # noqa: E501
         (14, 2, 'yhdjyuucicniio', 0),
     ]
 
     # for n, k, s, res in tests:
-        # assert solution(len(s), k, s) == res, f'sol: {solution(len(s), k, s)} res: {res}, s: {s}'
-        # assert sqrt_sol(len(s), k, s) == res, f'sol: {sqrt_sol(len(s), k, s)} res: {res}, s: {s}'
-        # sqrt = sqrt_sol(n, k, s)
-        # sol = solution(n, k, s)
-        # assert sqrt == sol, f'n:{n} k:{k} s:{s} -> sqrt: {sqrt} != sol: {sol}'
+    #     assert solution(len(s), k, s) == res, f'sol: {solution(len(s), k, s)} res: {res}, s: {s}'  # noqa: E501
+    #     assert sqrt_sol(len(s), k, s) == res, f'sol: {sqrt_sol(len(s), k, s)} res: {res}, s: {s}'  # noqa: E501
+    #     sqrt = sqrt_sol(n, k, s)
+    #     sol = solution(n, k, s)
+    #     assert sqrt == sol, f'n:{n} k:{k} s:{s} -> sqrt: {sqrt} != sol: {sol}'
 
     # cnt = 1
     # base = 1

@@ -18,7 +18,7 @@ def pref_sum():
     return ans
 
 
-def test_func(n, a):
+def test_func(a):
 
     # n = int(input())
     # a = list(map(int, input().split()))
@@ -43,4 +43,4 @@ def test_func(n, a):
 while True:
     N = random.randint(1, 10)
     arr = [random.randint(-100, 100) for _ in range(N)]
-    assert test_func(N, arr) == pref_sum(), f'arr: {arr}'
+    assert test_func(arr) == pref_sum(), f'arr: {arr}'

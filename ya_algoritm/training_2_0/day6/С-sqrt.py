@@ -22,9 +22,6 @@ def bi_left(lo, hi):
     return lo
 
 
-if a > 0:
-    ans = bi_left(-10000, 10000) + EPS
-else:
-    ans = bi_left(-10000, 10000)
+ans = bi_left(-10000, 10000) + EPS if a > 0 else bi_left(-10000, 10000)
 
 print(ans)

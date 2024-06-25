@@ -15,7 +15,7 @@ for i in range(n):
     if len(cnt[arr[i]]) > 1:
         pos = cnt[arr[i]]
 
-        if min([pos[j] - pos[j - 1] for j in range(1, len(pos))]) <= k:
+        if min(pos[j] - pos[j - 1] for j in range(1, len(pos))) <= k:
             ans = 'YES'
             break
 print(ans)

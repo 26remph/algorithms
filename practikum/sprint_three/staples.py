@@ -10,7 +10,7 @@ def is_correct(prefix):
             else:
                 return False
 
-    return True if not stack else False
+    return not stack
 
 
 def get_binary(n, prefix=''):

@@ -7,7 +7,7 @@ path = input().strip()
 build_paths = []
 arr = path.split('/')
 
-for ind, ch in enumerate(arr):
+for _, ch in enumerate(arr):
     if not ch:
         continue
 

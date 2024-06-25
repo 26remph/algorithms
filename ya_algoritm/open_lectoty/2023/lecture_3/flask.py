@@ -90,9 +90,8 @@ while True:
     # print('flask:', flask, 'total_useful', totla_useful)
 
     ans_my = total_useful
-    if min_useful != -LIMIT_USEFUL:
-        if flask < k:
-            ans_my += (k - flask) * min_useful
+    if min_useful != -LIMIT_USEFUL and flask < k:
+        ans_my += (k - flask) * min_useful
 
     # print('optimize ->', ans_my)
     print(ans_my)

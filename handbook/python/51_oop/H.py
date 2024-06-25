@@ -71,8 +71,3 @@ if __name__ == '__main__':
         for col in 'ABCDEFGH':
             print(checkers.get_cell(col + row).status(), end='')
         print()
-
-
-
-
-

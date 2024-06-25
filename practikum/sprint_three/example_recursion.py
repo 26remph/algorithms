@@ -7,7 +7,8 @@ def countDown(start, indent=1, prefix='zero'):
     else:
         # Рекурсивный вызов 'countDown'
         countDown(start - 1, indent + 1, prefix='first')
-        countDown(start - 1, indent + 1, prefix='second')        # Вызов 'countDown' не дает функции print выполнится
+        # Вызов 'countDown' не дает функции print выполнится
+        countDown(start - 1, indent + 1, prefix='second')
         # и накапливает (откладывает) ее исполнение в стеке
         print('-' * indent, 'END:', start, prefix)
 

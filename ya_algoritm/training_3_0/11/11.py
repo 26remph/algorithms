@@ -8,21 +8,20 @@ class Stack:
     _seq = []
     cnt = Counter()
 
-    def add(self, *args, **kwargs):
+    def add(self, *args):
         n = args[0][0]
         key = args[0][1]
-        for i in range(n):
+        for _ in range(n):
             self._seq.append(key)
         self.cnt.update({key: n})
         print('ok')
 
-    def pop(self, *args, **kwargs):
+    def pop(self, *args):
         n = args[0][0]
-        for i in range(n):
-            s
-        print(self._seq.pop() if self._seq else 'error')
+        for _ in range(n):
+            print(self._seq.pop() if self._seq else 'error')
 
-    def get(self, *args, **kwargs):
+    def get(self):
         print(self._seq[-1] if self._seq else 'error')
 
 

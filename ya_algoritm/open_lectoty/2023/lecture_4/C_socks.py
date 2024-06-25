@@ -2,7 +2,7 @@ L, N, M = map(int, input().split())
 
 pref = [0] * (L + 1)
 cuts = [0] * (L + 1)
-for i in range(N):
+for _ in range(N):
     l, r = map(int, input().split())
     cuts[l - 1] += 1  # left
     cuts[r] -= 1  # right

@@ -18,7 +18,7 @@ for i in range(1, len(pref)):
     points = cuts.get(i)
     thin = 0
     if points:
-        thin = sum([1 for p in points if p[1] < 0])
+        thin = sum(1 for p in points if p[1] < 0)
 
     pref[i] = pref[i - 1] + thin
 

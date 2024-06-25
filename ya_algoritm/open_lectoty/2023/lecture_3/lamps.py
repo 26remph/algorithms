@@ -14,7 +14,8 @@ spec = []
 def can_produce(ask) -> bool:
 
     # print('ask -> ', ask)
-    if ask > arr[0][1]: return False
+    if ask > arr[0][1]:
+        return False
 
     spec.clear()
     cnt = 0
@@ -27,7 +28,8 @@ def can_produce(ask) -> bool:
             spec.append(str(arr[i][0] + 1))
 
         # print('i:', i, 'cnt', cnt, 'ask:', ask)
-        if cnt == n: return True
+        if cnt == n:
+            return True
 
     return False
 

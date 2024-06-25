@@ -23,7 +23,7 @@ class Queue:
         del head
         del tail
 
-    def push(self, *args, **kwargs):
+    def push(self, *args):
         n = args[0]
 
         self.tail += 1
@@ -39,10 +39,13 @@ class Queue:
 
         self.head += 1 if self.head == -1 else 0
 
-        # print('ок', 'seq:', self._seq, 'h', self.head, 't', self.tail, 'i', i, 'k', self.k)
+        # print(
+        #     'ок', 'seq:', self._seq, 'h', self.head,
+        #     't', self.tail, 'i', i, 'k', self.k
+        # )
         print('ok')
 
-    def pop(self, *args, **kwargs):
+    def pop(self):
         if self.head < 0:
             print('error')
         else:

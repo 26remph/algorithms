@@ -1,5 +1,4 @@
-def check(m, params):
-    ...
+def check():
     return True
 
 

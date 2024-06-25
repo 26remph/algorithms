@@ -23,6 +23,7 @@ while i < n - 1:
         ans += j - i
 
     i += 1
-    if i == j: j += 1
+    if i == j:
+        j += 1
 
 print(ans)

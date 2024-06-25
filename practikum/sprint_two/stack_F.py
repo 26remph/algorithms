@@ -4,7 +4,7 @@ class StackMax:
         self.obj = []
 
     def is_empty(self):
-        return False if self.obj else True
+        return not self.obj
 
     def get_max(self):
         print('None' if self.is_empty() else max(self.obj))

@@ -57,8 +57,7 @@ ans = produce_flask(min_useful, is_ans=True)
 flask, total_useful = ans[0], ans[1]
 
 ans_my = total_useful
-if min_useful != -LIMIT_USEFUL:
-    if flask < k:
-        ans_my += (k - flask) * min_useful
+if min_useful != -LIMIT_USEFUL and flask < k:
+    ans_my += (k - flask) * min_useful
 
 print(ans_my)

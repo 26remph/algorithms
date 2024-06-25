@@ -8,7 +8,7 @@ def can_locate(lengh) -> bool:
             cnt += 1
             last_ind = i
 
-    return True if cnt >= K else False
+    return cnt >= K
 
 
 def bin_search(lo, hi):

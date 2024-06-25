@@ -7,7 +7,7 @@ def fibonachi(n):
     if n == 0 or n == 1:
         return 1
 
-    for i in range(n):
+    for _ in range(n):
         z = (x + y) % 10 ** k
         x, y = y, z
 

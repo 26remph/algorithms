@@ -60,7 +60,7 @@ def solution_wa(s):
     for i in range(len(s)):
 
         if ch == s[i]:
-           sub.append(i)
+            sub.append(i)
         else:
             node[s[i - 1]].append(list(sub))
             sub.clear()
@@ -95,15 +95,15 @@ def solution_wa(s):
             ch = s[i]
 
     ans = 0
-    col = sum([1 for val in node.values() if val])
+    col = sum(1 for val in node.values() if val)
     if col == 1:
         for val in node.values():
-            if val and sum([len(v) for v in val]) == 1:
+            if val and sum(len(v) for v in val) == 1:
                 ans = 1
                 break
     else:
         for val in node.values():
-            ans += sum([len(v) for v in val])
+            ans += sum(len(v) for v in val)
 
     print(ans)
     # pprint(node)
@@ -111,7 +111,8 @@ def solution_wa(s):
 
 def solution(s):
 
-    if len(s) == 1: return 1
+    if len(s) == 1:
+        return 1
 
     i, j = 0, len(s) - 1
 
@@ -143,10 +144,10 @@ if __name__ == '__main__':
     print(solution(s))
 
     # while True:
-        # s = ''.join([random.choice(ascii_lowercase) for _ in range(10)])
-        # s = 'hgcgtcpihl'
-        # print(s)
-        # solution_sqrt(s)
-        # t = time.time()
-        # solution(s)
-        # print(time.time() - t, '(s)')
+    #     s = ''.join([random.choice(ascii_lowercase) for _ in range(10)])
+    #     s = 'hgcgtcpihl'
+    #     print(s)
+    #     solution_sqrt(s)
+    #     t = time.time()
+    #     solution(s)
+    #     print(time.time() - t, '(s)')

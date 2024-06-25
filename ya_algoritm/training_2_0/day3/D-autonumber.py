@@ -9,7 +9,7 @@ ans = []
 max_cnt = 0
 for pos in range(N):
     num = input()
-    cnt = sum([1 for x in witness if set(x).issubset(num)])
+    cnt = sum(1 for x in witness if set(x).issubset(num))
     max_cnt = max(cnt, max_cnt)
     ans.append((pos, num, cnt))
 

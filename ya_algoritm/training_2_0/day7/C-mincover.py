@@ -41,10 +41,7 @@ print('cover_cnt:', cover_cnt)
 
 min_cnt = 0
 if cover_cnt:
-    if len(cover_cnt) > 1:
-        min_cnt = min(cover_cnt[:-1])
-    else:
-        min_cnt = cover_cnt[0]
+    min_cnt = min(cover_cnt[:-1]) if len(cover_cnt) > 1 else cover_cnt[0]
 
 if not min_cnt:
     print('No solution')

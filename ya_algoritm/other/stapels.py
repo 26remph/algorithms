@@ -10,10 +10,7 @@ def solution(seq):
             else:
                 return False
 
-    if stack:
-        return False
-
-    return True
+    return not stack
 
 
 if __name__ == '__main__':

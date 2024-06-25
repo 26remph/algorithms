@@ -1,7 +1,7 @@
 import time
 
 
-def solution_2(n, arr):
+def solution_2(arr):
 
     arr = [2, 4]
 
@@ -46,7 +46,7 @@ def solution(n, arr):
     # return set(ans)
 
 
-def solution_3(n, arr):
+def solution_3(arr):
 
     l = 1
     r = len(arr) - 2
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     arr.append(n - 2)
     # print(arr)
     t = time.time()
-    solution_3(n, arr)
+    solution_3(arr)
     # solution(n, arr)
     print(time.time() - t, '(s)')
 
