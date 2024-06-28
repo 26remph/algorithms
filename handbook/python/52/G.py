@@ -142,4 +142,3 @@ if __name__ == '__main__':
     assert b.__str__() == b1.__str__()
     assert c.__str__() == c1.__str__()
     assert a.reverse().__str__() == a1.reverse().__str__()
-
