@@ -4,7 +4,7 @@ import json
 def main():
     n, m = map(int, input().split())
     all_rows = {'offers': []}
-    for i in range(n):
+    for _ in range(n):
         feed = json.loads(input())
         all_rows['offers'] += feed['offers']
     all_rows['offers'] = all_rows['offers'][:m]

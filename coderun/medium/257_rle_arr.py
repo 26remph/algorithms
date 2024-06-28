@@ -7,7 +7,7 @@ from string import ascii_lowercase
 def main():
     # s = input() * 125_000
     s = input()
-    q = int(input())
+    _ = int(input())
 
     t = time.time()
 

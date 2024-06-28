@@ -5,7 +5,7 @@ class StackMaxEffective:
         self.max = []
 
     def is_empty(self):
-        return False if self.obj else True
+        return not self.obj
 
     def peek_max(self):
 

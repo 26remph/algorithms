@@ -4,11 +4,7 @@ def solution(a, b):
         return False
 
     b = set(b)
-    for ch in a:
-        if ch not in b:
-            return False
-
-    return True
+    return all(ch in b for ch in a)
 
 
 if __name__ == '__main__':

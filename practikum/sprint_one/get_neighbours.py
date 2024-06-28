@@ -16,7 +16,7 @@ def read_input() -> Tuple[List[List[int]], int, int, int, int]:
     n = int(input())
     m = int(input())
     matrix = []
-    for i in range(n):
+    for _ in range(n):
         matrix.append(list(map(int, input().strip().split())))
     row = int(input())
     col = int(input())

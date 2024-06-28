@@ -11,7 +11,8 @@ def gcd(a, b):
 def test10ok(x, y):
     # x, y = map(int, input().split())
 
-    if x == y: return 1
+    if x == y:
+        return 1
 
     cnt = 0
     lim = int(x + (y - x) / 2)
@@ -28,8 +29,10 @@ def test10ok(x, y):
 def main(x, y):
     # x, y = map(int, input().split())
 
-    if x == y: return 1
-    if y % x != 0: return 0
+    if x == y:
+        return 1
+    if y % x != 0:
+        return 0
 
     cnt = 2
     for i in range(2, (y // x // 2) + 1):
@@ -37,9 +40,12 @@ def main(x, y):
         a = x * i
         b = y * x / a
 
-        if a >= b: break
-        if b != int(b): continue
-        if gcd(a, b) == x: cnt += 2
+        if a >= b:
+            break
+        if b != int(b):
+            continue
+        if gcd(a, b) == x:
+            cnt += 2
 
     return cnt
 

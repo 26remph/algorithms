@@ -6,7 +6,8 @@ def main():
 
     cnt = 0
     for ch in S:
-        if ch in J: cnt += 1
+        if ch in J:
+            cnt += 1
 
     print(cnt)
 

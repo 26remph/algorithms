@@ -19,7 +19,7 @@ def two_sum(arr: List[int], target_sum: int) -> Optional[Tuple[int, int]]:
 
 
 def read_input() -> Tuple[List[int], int]:
-    n = int(input())
+    _ = int(input())
     arr = list(map(int, input().strip().split()))
     target_sum = int(input())
     return arr, target_sum

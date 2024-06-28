@@ -1,7 +1,7 @@
 
 def main():
     T = int(input())
-    for t in range(T):
+    for _ in range(T):
         n = int(input())
         arr = list(map(int, input().split()))
         arr.sort()

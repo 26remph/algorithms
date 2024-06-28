@@ -20,14 +20,15 @@ def main():
     # pref = [[0, 0, 0] for _ in range(size+1)]  # [start, end, len]
     # pref: list[tuple[int, int, int]] = [(0, 0, 0)]  # len+1, [start, end, len]
 
-    pref: list[list[tuple[int, int, int, int]]] = [[] for _ in range(2)]  # len+1, [start, end, len, abslen]
+    # len+1, [start, end, len, abs, len]
+    pref: list[list[tuple[int, int, int, int]]] = [[] for _ in range(2)]
     pref[0].append((0, 0, 0, 0))
     num_s = ''
     letters = set(ascii_lowercase)
 
     # print('init=', pref)
     H = 10
-    lim = 500_000
+    # lim = 500_000
     h = 0
     prev = pref[0][0]
     for i in range(len(s)):
@@ -51,7 +52,7 @@ def main():
                     pref[h].append(prev)
 
                 num_s = ''
-                col += 1
+                # col += 1
 
             else:
                 st = prev[1] + 1
@@ -96,8 +97,8 @@ def main():
         else:
             # middle = pref[h][end-1][2] - pref[h][start][2]
             try:
-                t0 = pref[h2][end][2]
-                t1 = pref[h1][start][2]
+                _ = pref[h2][end][2]
+                _ = pref[h1][start][2]
             except IndexError:
                 print('i, j', i, j)
                 print('(h1, s)', h1, start, '(h2, e)', h2, end)
@@ -108,7 +109,7 @@ def main():
 
                 return None
 
-            t3 = pref[h2][end][3]
+            # _ = pref[h2][end][3]
             middle = pref[h2][end][2] - pref[h1][start][2] - pref[h2][end][3]
 
             s_pos = pref[h1][start][1]

@@ -22,7 +22,7 @@ from typing import List, Tuple
 
 
 def read_input() -> Tuple[List[int], List[int]]:
-    n = int(input())
+    _ = int(input())
     a = list(map(int, input().strip().split()))
     b = list(map(int, input().strip().split()))
     return a, b

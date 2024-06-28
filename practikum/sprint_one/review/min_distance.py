@@ -11,10 +11,7 @@ def calc_dist(street: List[int], min_dist: List[int], reverse=False) -> List[int
     """Рассчитывает минимальное расстояние до нулевого значения,
     в зависимости от направления обхода: прямой или обратный.
     """
-    if reverse:
-        params = (len(street) - 1, -1, -1)
-    else:
-        params = (0, len(street), 1)
+    params = (len(street) - 1, -1, -1) if reverse else (0, len(street), 1)
 
     skip = True
     zero_point: int = 0

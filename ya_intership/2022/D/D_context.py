@@ -35,9 +35,8 @@ for _ in range(q):
     left = bisect_left(keys, start)
 
     _sum = 0
-    if left <= right and len(src) == 1:
-        if src[0][search_key] <= end:
-            _sum = total[0]
+    if left <= right and len(src) == 1 and src[0][search_key] <= end:
+        _sum = total[0]
 
     if left <= right and len(src) > 1:
         if left - 1 < 0:

@@ -2,7 +2,7 @@ from collections import Counter
 
 
 def main():
-    n = int(input())
+    _ = int(input())
     arr = list(map(int, input().split()))
     cnt = Counter(arr)
 

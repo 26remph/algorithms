@@ -24,7 +24,7 @@ def get_weather_randomness(temp: List[int]) -> int:
 
 
 def read_input() -> List[int]:
-    n = int(input())
+    _ = int(input())
     temperatures = list(map(int, input().strip().split()))
     return temperatures
 

@@ -8,7 +8,7 @@ def get_sum(number_list: List[int], k: int) -> List[int]:
 
 
 def read_input() -> Tuple[List[int], int]:
-    n = int(input())
+    _ = int(input())
     number_list = list(map(int, input().strip().split()))
     k = int(input())
     return number_list, k

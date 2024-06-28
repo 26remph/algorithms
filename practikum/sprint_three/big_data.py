@@ -3,10 +3,7 @@ def is_first_num(num_1, num_2):
     checksum_1 = int(str(num_1) + str(num_2))
     checksum_2 = int(str(num_2) + str(num_1))
 
-    if checksum_1 > checksum_2:
-        return True
-    else:
-        return False
+    return checksum_1 > checksum_2
 
 
 def get_bigdata(array, less):

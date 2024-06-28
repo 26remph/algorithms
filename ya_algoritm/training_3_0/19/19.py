@@ -30,10 +30,7 @@ class Heap:
             rch = (self._seq[2 * i + 2], 2 * i + 2) if len(self._seq) > 2 * i + 2 else None
 
             if lch or rch:
-                if lch and rch:
-                    max_ch = max(lch, rch, key=lambda x: x[0])
-                else:
-                    max_ch = lch
+                max_ch = max(lch, rch, key=lambda x: x[0]) if lch and rch else lch
                 if max_ch[0] > self._seq[i]:
                     self._seq[i], self._seq[max_ch[1]] = self._seq[max_ch[1]], self._seq[i]
                 else:
