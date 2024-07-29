@@ -67,5 +67,5 @@
 
 <p>
     <img align="center" src="./fav.svg" title="home page"/>
-    <span> algorithms © 2022, created by remph ツ </span>
+    <span> algorithms © 2024, created by remph ツ </span>
 </p>
