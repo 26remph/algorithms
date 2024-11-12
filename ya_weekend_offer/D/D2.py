@@ -1,4 +1,3 @@
-
 # from Levenshtein import distance
 #
 # n = 5
@@ -12,11 +11,11 @@ import itertools
 import time
 
 
-test_files = ['input4_D.txt']
+test_files = ["input4_D.txt"]
 for i in range(len(test_files)):
     name = test_files[i]
     words = []
-    with open(name, 'r') as f:
+    with open(name, "r") as f:
         n = int(f.readline())
         for _, line in enumerate(f, 2):
             words.append(line.rstrip())

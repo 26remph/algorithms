@@ -2,9 +2,7 @@ A, K, B, M, X = map(int, input().split())
 
 
 def bin_left(lo, hi):
-
     while lo < hi:
-
         day = (lo + hi) // 2
 
         progress_one = A * (day - day // K)

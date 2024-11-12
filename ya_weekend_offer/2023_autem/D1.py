@@ -2,7 +2,6 @@ import collections
 
 
 def solution():
-
     if len(plan) < m:
         return -1
 
@@ -15,7 +14,7 @@ def solution():
         return 4 / 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     k, n, m = map(int, input().split())
     plan = collections.defaultdict(list)
     for _ in range(n):

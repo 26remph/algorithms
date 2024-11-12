@@ -1,5 +1,5 @@
 s = input()
-ans = 'NO'
+ans = "NO"
 if s == s[::-1]:
-    ans = 'YES'
+    ans = "YES"
 print(ans)

@@ -1,4 +1,4 @@
-n, m = map(int, input().strip().split(' '))
+n, m = map(int, input().strip().split(" "))
 dp = [[0 for _ in range(m + 1)] for _ in range(n + 1)]
 
 dp[1][1] = 1

@@ -1,5 +1,4 @@
 def main():
-
     N, M = map(int, input().split())
 
     bid = list(map(int, input().split()))
@@ -18,5 +17,5 @@ def main():
     print(profit)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -2,8 +2,7 @@ import itertools
 
 
 def check_solution(arr, n, k):
-
-    min_l = float('inf')
+    min_l = float("inf")
     for c in itertools.combinations(arr, n - k):
         min_l = min(min_l, max(c) - min(c))
 
@@ -11,7 +10,6 @@ def check_solution(arr, n, k):
 
 
 def wrong_solution(arr, n, k):
-
     if n == 0 or n == 1:
         return 0
 
@@ -22,26 +20,25 @@ def wrong_solution(arr, n, k):
     while i != j and step:
         if arr[i + 1] - arr[j] < arr[i] - arr[j - 1]:
             i += 1
-            print(f'{i=}')
+            print(f"{i=}")
         else:
             j -= 1
-            print(f'{j=}')
+            print(f"{j=}")
 
         step -= 1
 
     # assert j - i + 1 == n - k, f'{arr=}, {n=}, {k=}'
-    print(f'{i=}, {j=}')
+    print(f"{i=}, {j=}")
     return arr[i] - arr[j]
 
 
 def solution(arr, n, k):
-
     if k == 0:
         return max(arr) - min(arr)
 
     arr.sort()
     # print(arr)
-    min_l = float('inf')
+    min_l = float("inf")
     for i in range(n - k - 1, len(arr)):
         min_l = min(min_l, arr[i] - arr[i - (n - k - 1)])
         # print('i=', i, 'j=', i - (n - k - 1))
@@ -49,7 +46,7 @@ def solution(arr, n, k):
     return min_l
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n, k = map(int, input().split())
     arr = list(map(int, input().split()))
     print(solution(arr, n, k))

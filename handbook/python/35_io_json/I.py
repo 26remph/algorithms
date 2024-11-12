@@ -1,9 +1,8 @@
-f1 = open(input(), encoding='UTF-8')
-f2 = open(input(), 'w', encoding='UTF-8')
+f1 = open(input(), encoding="UTF-8")
+f2 = open(input(), "w", encoding="UTF-8")
 
 ans = []
 for line in f1:
-
     wrds = []
     wrd = ""
     for ch in line:
@@ -21,7 +20,7 @@ for line in f1:
     if len(wrds) == 1 and wrds[0] == "\n":
         continue
 
-    f2.write(' '.join(wrds))
+    f2.write(" ".join(wrds))
 
 
 f1.close()

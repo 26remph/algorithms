@@ -5,38 +5,36 @@ from typing import List
 
 class Solution:
     def restoreIpAddresses(self, s: str) -> List[str]:
-
         def is_valid(p):
             return p and int(p) <= 255 and str(int(p)) == p
 
         path = collections.deque()
         for i in range(3):
-            if is_valid(s[:i + 1]):
-                path.append(s[:i + 1])
+            if is_valid(s[: i + 1]):
+                path.append(s[: i + 1])
 
         ans = []
         while path:
             prefix = path.popleft()
-            len_ip = len(prefix.split('.'))
+            len_ip = len(prefix.split("."))
 
             if len_ip == 4:
                 ans.append(prefix)
 
-            st = len(''.join(prefix.split('.')))
+            st = len("".join(prefix.split(".")))
             if len_ip == 3:
                 if is_valid(s[st:]):
-                    prefix += '.' + s[st:]
+                    prefix += "." + s[st:]
                     path.append(prefix)
 
             if len_ip < 3:
                 for i in range(1, 4):
-                    if is_valid(s[st: st + i]):
-                        path.append(prefix + '.' + s[st: st + i])
+                    if is_valid(s[st : st + i]):
+                        path.append(prefix + "." + s[st : st + i])
 
         return ans
 
     def dfs_restoreIpAddresses(self, s: str) -> List[str]:
-
         def is_valid(p):
             if not p or int(p) > 255:
                 return False
@@ -50,7 +48,7 @@ class Solution:
         ans = []
 
         def dfs(sub):
-            prefix = ''
+            prefix = ""
             for i in range(len(sub)):
                 if len(ip) == 3:
                     prefix = sub[i:]
@@ -58,18 +56,18 @@ class Solution:
                     prefix += sub[i]
                 if is_valid(prefix):
                     ip.append(prefix)
-                    dfs(sub[i + 1:])
+                    dfs(sub[i + 1 :])
                     if len(ip) == 4:
-                        if len(''.join(ip)) == len(s):
-                            ans.append('.'.join(ip))
+                        if len("".join(ip)) == len(s):
+                            ans.append(".".join(ip))
                     ip.pop()
 
         dfs(s)
         return ans
 
 
-if __name__ == '__main__':
-    s = '25525511135'
+if __name__ == "__main__":
+    s = "25525511135"
     # s = '0000'
     # s = '101023'
     # s = '10101010'

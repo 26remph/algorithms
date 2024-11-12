@@ -1,16 +1,16 @@
 x, y = 0, 0
 
-while (s := input()) != 'СТОП':
+while (s := input()) != "СТОП":
     match s:
-        case 'СЕВЕР':
+        case "СЕВЕР":
             x += int(input())
-        case 'ЮГ':
+        case "ЮГ":
             x -= int(input())
-        case 'ЗАПАД':
+        case "ЗАПАД":
             y -= int(input())
-        case 'ВОСТОК':
+        case "ВОСТОК":
             y += int(input())
         case _:
-            print('Not allowed way. Try again.')
+            print("Not allowed way. Try again.")
 
-print(f'{x}\n{y}')
+print(f"{x}\n{y}")

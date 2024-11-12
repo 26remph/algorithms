@@ -2,9 +2,7 @@ from bisect import bisect_left, bisect_right
 
 
 def read_input() -> list:
-
-    with open('data_create.txt') as f:
-
+    with open("data_create.txt") as f:
         # n = int(input())
         _ = int(f.readline().rstrip())
 
@@ -34,7 +32,7 @@ def water():
         end_sum.append(_sum)
 
     print(end_ind)
-    with open('query.txt') as f:
+    with open("query.txt") as f:
         # q = int(input())
         _ = int(f.readline().rstrip())
         rez = []
@@ -66,10 +64,11 @@ def water():
                     _sum_alt = total_sum[ind_right] - total_sum[ind_left - 1]
 
             rez.append(str(_sum_alt))
-            print('ind_left:', ind_left)
-            print('ind_right:', ind_right)
-            print('_sum_alt:', _sum_alt)
+            print("ind_left:", ind_left)
+            print("ind_right:", ind_right)
+            print("_sum_alt:", _sum_alt)
             # print(_sum_alt)
-    return ''.join(rez)
+    return "".join(rez)
+
 
 # print(' '.join(rez))

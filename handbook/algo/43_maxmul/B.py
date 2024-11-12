@@ -21,14 +21,14 @@ def maxPairwiseProduct(a):
     return m1 * m2, cnt
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     col = 0
     arr = []
     gen = 0
     # match = 0
     while col <= n * 1.5 and gen != 100_000:
-    # while gen != 100_000:
+        # while gen != 100_000:
         arr = [random.randint(0, n) for x in range(n)]
         max_mul, col = maxPairwiseProduct(arr)
         # if col > n * 1.5: match += 1
@@ -36,8 +36,8 @@ if __name__ == '__main__':
 
     # print('match', match / 100_000 * 100, '%')
     if gen == 100_000:
-        print('No')
+        print("No")
     else:
-        print('Yes')
-        print(' '.join(map(str, arr)))
+        print("Yes")
+        print(" ".join(map(str, arr)))
         # print(f'{col=}')

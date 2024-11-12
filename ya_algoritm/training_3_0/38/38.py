@@ -7,13 +7,19 @@ getv = lambda i, j: (i - 1) * m + j if 0 < i <= n and 0 < j <= m else None
 def get_neig(dot) -> list[tuple[int, int]]:
     x, y = dot
     edge = [
-        (x + 2, y + 1), (x + 2, y - 1), (x - 2, y + 1), (x - 2, y - 1),
-        (x - 1, y - 2), (x + 1, y - 2), (x - 1, y + 2), (x + 1, y + 2)
+        (x + 2, y + 1),
+        (x + 2, y - 1),
+        (x - 2, y + 1),
+        (x - 2, y - 1),
+        (x - 1, y - 2),
+        (x + 1, y - 2),
+        (x - 1, y + 2),
+        (x + 1, y + 2),
     ]
     return [(dot[0], dot[1]) for dot in edge if getv(dot[0], dot[1])]
 
 
-n, m, s, t, q = map(int, input().strip().split(' '))
+n, m, s, t, q = map(int, input().strip().split(" "))
 
 OUT = (s, t)
 L, prev = None, None
@@ -51,7 +57,7 @@ while path:
 
 total_len = 0
 for _ in range(q):
-    i, j = map(int, input().strip().split(' '))
+    i, j = map(int, input().strip().split(" "))
     cur_len = arr[getv(i, j)][0]
     if cur_len is None:
         total_len = -1

@@ -1,7 +1,4 @@
-
-
 class Node:
-
     def __init__(self, value, next_node=None, prev_node=None):
         self.cut = value
         self.next = next_node
@@ -12,7 +9,7 @@ class Node:
 n = int(input())
 head = Node(None)
 for _ in range(0, n):
-    points = list(map(int, input().split(' ')))
+    points = list(map(int, input().split(" ")))
     cut = points[0], points[1]
 
     if head.cut is None:

@@ -2,10 +2,10 @@ s = input()
 
 i, k = 0, len(s) - 1
 
-ans = 'YES'
+ans = "YES"
 while i < k:
     if s[i] != s[k]:
-        ans = 'NO'
+        ans = "NO"
         break
 
     i += 1

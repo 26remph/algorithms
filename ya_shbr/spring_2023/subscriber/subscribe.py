@@ -8,7 +8,9 @@ class Subscriber:
 
     def data_updated(self, trace_id: str, data: dict):
         printed_data = {
-            "trace_id": trace_id, "offer": {"id": data["id"]}, }
+            "trace_id": trace_id,
+            "offer": {"id": data["id"]},
+        }
 
         for field in self.fields:
             if field in data:
@@ -28,7 +30,7 @@ class OfferRepository:
     def get_subscribers_for_notify(self, old_offer: dict, new_offer: dict) -> list:
         subscribers = []
 
-        for (subscriber, trigger_fields) in self.subscribers:
+        for subscriber, trigger_fields in self.subscribers:
             for field in trigger_fields:
                 if field in new_offer and old_offer.get(field) != new_offer.get(field):
                     subscribers.append(subscriber)

@@ -10,11 +10,8 @@ class Node:
 
 
 class Solution:
-
-    def preorder(self, root: 'Node') -> List[int]:
-
+    def preorder(self, root: "Node") -> List[int]:
         def dfs(node, order):
-
             if node:
                 order.append(node.val)
                 for children in node.children:
@@ -24,7 +21,7 @@ class Solution:
 
         return dfs(root, [])
 
-    def preorderNonRecursion(self, root: 'Node') -> List[int]:
+    def preorderNonRecursion(self, root: "Node") -> List[int]:
         nodes_visited = deque()
         nodes_visited.append(root)
         ans = []

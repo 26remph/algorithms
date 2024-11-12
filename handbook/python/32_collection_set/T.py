@@ -2,7 +2,6 @@ from collections import defaultdict
 
 
 def gcd(a, b):
-
     while b:
         a %= b
         a, b = b, a
@@ -11,7 +10,7 @@ def gcd(a, b):
 
 
 nums = defaultdict(list)
-arr = list(set((map(int, input().split('; ')))))
+arr = list(set((map(int, input().split("; ")))))
 arr.sort()
 
 for i in range(len(arr)):
@@ -22,4 +21,4 @@ for i in range(len(arr)):
             nums[b].append(a)
 
 for key, val in sorted(list(nums.items())):
-    print(key, '-', ', '.join(map(str, val)))
+    print(key, "-", ", ".join(map(str, val)))

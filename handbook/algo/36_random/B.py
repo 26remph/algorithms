@@ -19,15 +19,14 @@ def partition(a, lo, hi):
 
 
 def quicksort(a, lo, hi):
-
     if lo < hi:
         ind = partition(a, lo, hi)
         quicksort(a, lo, ind)
         quicksort(a, ind + 1, hi)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     arr = list(map(int, input().split()))
     quicksort(arr, 0, n - 1)
-    print(' '.join(map(str, arr)))
+    print(" ".join(map(str, arr)))

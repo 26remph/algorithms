@@ -14,7 +14,6 @@ def set_column_to_zero(a: list, column: int):
 
 
 def renew_max_for_column():
-
     # search new max for j
     max_column = [0, 0]
     for j in range(1, m + 1):
@@ -28,7 +27,6 @@ def renew_max_for_column():
 
 
 def renew_max_for_row(a: list) -> list:
-
     # search new max for i
     max_row = [0, 0]
     for i in range(1, n + 1):
@@ -48,8 +46,7 @@ def get_max(a: list):
     return left_max
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     n, m = map(int, input().split())
     arr = [[0 for _ in range(m + 1)] for _ in range(1)]
     max_i, max_j = [0, 0], [0, 0]
@@ -81,4 +78,4 @@ if __name__ == '__main__':
     res_1 = (max_i[1], new_max_j[1], left_max)  # (i, j, left_max)
 
     ans = (res_1[0], res_1[1]) if res_1[2] <= res_2[2] else (res_2[0], res_2[1])
-    print(' '.join(map(str, ans)))
+    print(" ".join(map(str, ans)))

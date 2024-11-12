@@ -1,5 +1,4 @@
 def is_poli(s):
-
     if len(s) == 1:
         return 1
 
@@ -11,7 +10,7 @@ def is_poli(s):
     return 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     N = int(input())
     ans = 0
     for _ in range(N):

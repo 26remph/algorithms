@@ -1,4 +1,3 @@
-
 n = int(input())
 
 word = [0] * 26
@@ -9,17 +8,15 @@ for i in range(n):
 # print('w:', word)
 
 cnt = 0
-inf = float('inf')
+inf = float("inf")
 l_min = inf
 ans = 0
 isContinue = True
 
 while isContinue:
-
     isContinue = False
 
     for i in range(26):
-
         if word[i]:
             cnt += 1
             l_min = min(l_min, word[i])

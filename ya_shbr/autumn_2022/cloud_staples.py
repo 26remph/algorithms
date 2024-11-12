@@ -1,11 +1,8 @@
-
 READ_SIZE_LIMIT = 2_000_000
 
 
 def get_staples_pos():
-
-    with open('input.txt', 'r') as f:
-
+    with open("input.txt", "r") as f:
         stack: list = []
         break_pos = -1
 
@@ -16,11 +13,10 @@ def get_staples_pos():
 
         row: str = f.readline(READ_SIZE_LIMIT)
         while row:
-
             for ind, ch in enumerate(row):
-                if ch == '{':
+                if ch == "{":
                     stack.append(ind + shift + 1)
-                if ch == '}':
+                if ch == "}":
                     if is_first:
                         is_first = False
                         first_staples_pos = ind + shift + 1

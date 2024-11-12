@@ -1,4 +1,4 @@
-if __name__ == '__main__':
+if __name__ == "__main__":
     N = int(input())
     arr = list(map(int, input().split()))
     x = max(arr)

@@ -4,7 +4,6 @@ from typing import List
 
 
 class Solution:
-
     def maxDistToClosest(self, seats: List[int]) -> int:
         res = 0
         prev = -1
@@ -17,7 +16,6 @@ class Solution:
         return max(res, len(seats) - prev - 1)
 
     def _zmaxDistToClosest(self, seats: List[int]) -> int:
-
         max_dist = 1
 
         zero = 0
@@ -46,15 +44,12 @@ class Solution:
         return max_dist
 
     def _maxDistToClosest(self, seats: List[int]) -> int:
-
         zeros = 0
         max_zeros = 0
         total = sum(seats)
         cnt = 0
         for i in range(len(seats)):
-
             if seats[i] == 1:
-
                 cnt += 1
 
                 if cnt == 1:
@@ -62,7 +57,11 @@ class Solution:
                     if total == 1:
                         max_zeros = max(max_zeros, len(seats) - i - 1)
                 elif cnt == total:
-                    max_zeros = max(len(seats) - i - 1, max_zeros, zeros // 2 + 1 if zeros % 2 else zeros // 2)
+                    max_zeros = max(
+                        len(seats) - i - 1,
+                        max_zeros,
+                        zeros // 2 + 1 if zeros % 2 else zeros // 2,
+                    )
                     break
                 else:
                     if zeros % 2:
@@ -77,7 +76,7 @@ class Solution:
         return max_zeros if max_zeros else 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tests = (
         ([1, 1, 0, 0, 0, 1, 0], 2),
         ([1, 0, 1], 1),
@@ -91,4 +90,4 @@ if __name__ == '__main__':
     sol = Solution()
     for arr, ans in tests:
         res = sol.maxDistToClosest(arr)
-        assert ans == res, f'{ans=}, {res=}, {arr=}'
+        assert ans == res, f"{ans=}, {res=}, {arr=}"

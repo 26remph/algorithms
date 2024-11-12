@@ -33,8 +33,7 @@ def main():
 # q, m = map(int, input().split())
 # print(main())
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     tests = [
         (2, 2, 1, 1, 5),
         (2, 1, 2, 0, 3),
@@ -58,7 +57,7 @@ if __name__ == '__main__':
     ]
     for test in tests:
         p, v, q, m, ans = test
-        assert main() == ans, f'{p=}, {v=}, {q=}, {m=}, {ans=}, {main()=}'
+        assert main() == ans, f"{p=}, {v=}, {q=}, {m=}, {ans=}, {main()=}"
 
     for _ in range(100_000):
         p, v = random.randint(-10, 10), random.randint(0, 10)
@@ -69,4 +68,4 @@ if __name__ == '__main__':
         print(ans_s, len(ans_s))
 
         res = len(set(range(p - v, p + v + 1)) | set(range(q - m, q + m + 1)))
-        assert main() == res, f'{main()=}, {res=}, {p=}, {v=}, {q=}, {m=}'
+        assert main() == res, f"{main()=}, {res=}, {p=}, {v=}, {q=}, {m=}"

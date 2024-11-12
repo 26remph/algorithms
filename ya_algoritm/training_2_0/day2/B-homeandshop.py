@@ -6,12 +6,10 @@ indS = -1
 route_cost = []
 
 for i in range(len(street)):
-
     if street[i] == 2:
         indS = i
 
     if street[i] == 1:
-
         if indS >= 0:
             left_coast = i - indS
 

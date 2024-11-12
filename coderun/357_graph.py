@@ -10,8 +10,8 @@ def main():
     for _ in range(T):
         w = input()
         for ind in range(len(w) - 3):
-            w1 = ''.join([w[ind], w[ind + 1], w[ind + 2]])
-            w2 = ''.join([w[ind + 1], w[ind + 2], w[ind + 3]])
+            w1 = "".join([w[ind], w[ind + 1], w[ind + 2]])
+            w2 = "".join([w[ind + 1], w[ind + 2], w[ind + 3]])
             V.add(w1)
             V.add(w2)
             W[(w1, w2)] += 1
@@ -22,5 +22,5 @@ def main():
         print(key[0], key[1], val)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

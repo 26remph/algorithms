@@ -23,8 +23,8 @@ def printtree(root):
     def dfs(node, level):
         child = TREE.get(node)
         if node:
-            dot = '.' * level
-            ans = f'{dot}{node}' if dot else f'{node}'
+            dot = "." * level
+            ans = f"{dot}{node}" if dot else f"{node}"
             print(ans)
             level += 1
             dfs(child[0], level)
@@ -36,13 +36,13 @@ def printtree(root):
 TREE = {}
 ROOT = None
 
-ADD = 'ADD'
-ALREADY = 'ALREADY'
-DONE = 'DONE'
-YES = 'YES'
-SEARCH = 'SEARCH'
-NO = 'NO'
-PRINTTREE = 'PRINTTREE'
+ADD = "ADD"
+ALREADY = "ALREADY"
+DONE = "DONE"
+YES = "YES"
+SEARCH = "SEARCH"
+NO = "NO"
+PRINTTREE = "PRINTTREE"
 
 val = None
 for row in sys.stdin:

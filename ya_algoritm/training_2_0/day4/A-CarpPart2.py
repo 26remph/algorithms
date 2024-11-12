@@ -9,4 +9,4 @@ for _ in range(N):
         ans[key] = value
 
 for key in sorted(ans.keys()):
-    print(f'{key} {ans[key]}')
+    print(f"{key} {ans[key]}")

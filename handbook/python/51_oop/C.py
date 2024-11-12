@@ -4,13 +4,13 @@ class RedButton:
 
     def click(self) -> None:
         self.counter += 1
-        print('Тревога!')
+        print("Тревога!")
 
     def count(self) -> int:
         return self.counter
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     first_button = RedButton()
     second_button = RedButton()
     for time in range(5):

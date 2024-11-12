@@ -2,7 +2,6 @@ import sys
 
 
 def dfs(v):
-
     visited[v] = 1  # grey
 
     for i in graph[v]:
@@ -16,7 +15,7 @@ def dfs(v):
                 # print('cycle:', v, '->', i)
 
 
-n, m = map(int, input().split(' '))
+n, m = map(int, input().split(" "))
 
 graph = [[] for _ in range(n + 1)]
 graph[0].append(True)  # non cycled graph
@@ -25,7 +24,7 @@ sys.setrecursionlimit(max(997, n * 2))
 ans = []
 
 for _ in range(m):
-    v, h = map(int, input().split(' '))
+    v, h = map(int, input().split(" "))
     graph[v].append(h)
 
 for v in range(1, n + 1):
@@ -37,7 +36,7 @@ for v in range(1, n + 1):
 if graph[0][0]:
     print(*reversed(ans))
 else:
-    print('-1')
+    print("-1")
 
 # print('---')
 # for i in range(n+1):

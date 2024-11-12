@@ -1,7 +1,7 @@
 # ID 69340518
 
-class Deque:
 
+class Deque:
     def __init__(self, n):
         self.__max_n = n
         self.__queue = [None] * n
@@ -18,7 +18,7 @@ class Deque:
             self.__tail = (self.__tail + 1) % self.__max_n
             self.__len += 1
         else:
-            raise ValueError('error')
+            raise ValueError("error")
 
     def push_front(self, x):
         if self.__len != self.__max_n:
@@ -26,11 +26,11 @@ class Deque:
             self.__head = (self.__head - 1) % self.__max_n
             self.__len += 1
         else:
-            raise ValueError('error')
+            raise ValueError("error")
 
     def pop_front(self):
         if self.is_empty():
-            raise ValueError('error')
+            raise ValueError("error")
 
         x = self.__queue[self.__head]
         self.__queue[self.__head] = None
@@ -41,7 +41,7 @@ class Deque:
 
     def pop_back(self):
         if self.is_empty():
-            raise ValueError('error')
+            raise ValueError("error")
 
         x = self.__queue[self.__tail - 1]
         self.__queue[self.__tail - 1] = None
@@ -51,13 +51,13 @@ class Deque:
         return x
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     capacity = int(input())
     queue = Deque(capacity)
 
     for _ in range(n):
-        command, *params = input().split(' ')
+        command, *params = input().split(" ")
         func = getattr(queue, command)
         try:
             rez = func(*params)

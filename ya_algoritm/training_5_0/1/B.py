@@ -1,5 +1,4 @@
-def justify(g1, g2, g3, g4, fp):
-
+def justify(g1, g2, g3, g4):
     if g1 + g3 == g2 + g4:
         if first_play == 1:
             if g3 > g2:
@@ -14,7 +13,6 @@ def justify(g1, g2, g3, g4, fp):
 
 
 def main():
-
     if g1 + g3 > g2 + g4:
         return 0
     elif g1 + g3 == g2 + g4:

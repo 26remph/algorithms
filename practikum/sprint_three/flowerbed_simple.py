@@ -5,7 +5,7 @@ flowerbeds: Dict[int, int] = {}
 
 n = int(input())
 for _ in range(n):
-    cut = list(map(int, input().split(' ')))
+    cut = list(map(int, input().split(" ")))
     key = cut[0]
     narrow_end = cut[1]
 
@@ -20,7 +20,6 @@ flowerbeds = dict(sorted(flowerbeds.items()))
 start = next(iter(flowerbeds))
 end = flowerbeds[start]
 for key, val in flowerbeds.items():
-
     if key <= end:
         end = max(end, val)
     else:

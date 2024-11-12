@@ -75,7 +75,7 @@ for start in range(3, N + 1):
 
 # print('node_to_visit:', node_to_visit)
 # print('loop_point:', loop_point)
-print('total time:', time.time() - start_time, 'sec.')
+print("total time:", time.time() - start_time, "sec.")
 
 
 # visited = set()  # Посещена ли вершина?

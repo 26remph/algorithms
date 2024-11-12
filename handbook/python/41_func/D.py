@@ -3,18 +3,34 @@ import locale
 
 
 d: dict[str, tuple[str, ...]] = {
-    'en': (
-        'january', 'february', 'march',
-        'april', 'may', 'june',
-        'july', 'august', 'september',
-        'october', 'november', 'december'
+    "en": (
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december",
     ),
-    'ru': (
-        'январь', 'февраль', 'март',
-        'апрель', 'май', 'июнь',
-        'июль', 'август', 'сентябрь',
-        'октябрь', 'ноябрь', 'декабрь'
-    )
+    "ru": (
+        "январь",
+        "февраль",
+        "март",
+        "апрель",
+        "май",
+        "июнь",
+        "июль",
+        "август",
+        "сентябрь",
+        "октябрь",
+        "ноябрь",
+        "декабрь",
+    ),
 }
 
 
@@ -25,7 +41,7 @@ def month_ext(m: int, lng: str) -> str:
 
 
 def month(m: int, lng: str) -> str:
-    d = {'мая': 'Май'}
+    d = {"мая": "Май"}
     loc_name = locale.normalize(lng)
     locale.setlocale(locale.LC_TIME, loc_name)
     dt = datetime.datetime.strptime(str(m), "%m")
@@ -35,15 +51,15 @@ def month(m: int, lng: str) -> str:
         return normalize
 
     last_char = dt.strftime("%B")[-1:]
-    if last_char == 'а':
-        return dt.strftime('%B')[:-1].capitalize()
+    if last_char == "а":
+        return dt.strftime("%B")[:-1].capitalize()
 
-    if last_char == 'я':
-        return str(dt.strftime('%B')[:-1] + 'ь').capitalize()
+    if last_char == "я":
+        return str(dt.strftime("%B")[:-1] + "ь").capitalize()
 
-    return dt.strftime('%B').capitalize()
+    return dt.strftime("%B").capitalize()
 
 
-if __name__ == '__main__':
-    print([month(i, 'en') for i in range(1, 13)])
-    print([month(i, 'ru') for i in range(1, 13)])
+if __name__ == "__main__":
+    print([month(i, "en") for i in range(1, 13)])
+    print([month(i, "ru") for i in range(1, 13)])

@@ -9,9 +9,9 @@ class Solution:
                 i += 1
                 j -= 1
 
-            arr[ind] = ''.join(words)
+            arr[ind] = "".join(words)
 
-        return ' '.join(arr)
+        return " ".join(arr)
 
 
 sol = Solution()

@@ -26,7 +26,7 @@ def merge(a1: tuple, a2: tuple) -> tuple:
     return tuple(ans)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for _ in range(10_000):
         a1 = [randint(1, 10) for _ in range(randint(1, 10))]
         a2 = [randint(1, 10) for _ in range(randint(1, 10))]
@@ -34,4 +34,4 @@ if __name__ == '__main__':
         a2.sort()
         arr = a1 + a2
         arr.sort()
-        assert merge(tuple(a1), tuple(a2)) == tuple(arr), f'{a1=}, {a2=}, {arr=}'
+        assert merge(tuple(a1), tuple(a2)) == tuple(arr), f"{a1=}, {a2=}, {arr=}"

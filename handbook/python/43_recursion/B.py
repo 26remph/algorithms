@@ -1,5 +1,3 @@
-
-
 def recursive_digit_sum(n: int, summa=0):
     if n:
         summa += n % 10
@@ -16,6 +14,6 @@ def recursive_digit_sum_ex(n: int, summa=0):
     return summa
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(recursive_digit_sum(123))
     print(recursive_digit_sum(7321346))

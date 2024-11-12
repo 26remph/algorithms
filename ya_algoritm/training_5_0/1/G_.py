@@ -1,5 +1,3 @@
-
-
 def check_defense(i, j):
     step = 1
     while i > 0 and j > 0:
@@ -59,7 +57,6 @@ def main():
     gold_seq = 0.5 * (1 + pow(5, 0.5))  # win condition
 
     while True:
-
         # tactic
         if rnd != 1:
             if x1 == x:
@@ -98,6 +95,6 @@ def main():
         rnd += 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     x, y, p = map(int, [input() for _ in range(0, 3)])
     print(main())

@@ -9,10 +9,10 @@ def dfs(v):
                 dfs(i)
 
 
-n, m = map(int, input().strip().split(' '))
+n, m = map(int, input().strip().split(" "))
 graph: list[list[int]] = [[] for _ in range(n + 1)]
 for _ in range(m):
-    v, h = map(int, input().strip().split(' '))
+    v, h = map(int, input().strip().split(" "))
     graph[v].append(h)
     graph[h].append(v)
 

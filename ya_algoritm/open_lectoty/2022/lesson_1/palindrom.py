@@ -1,31 +1,31 @@
 def sol(s):
     if len(s) == 1:
-        return ''
+        return ""
     middle = len(s) // 2
     flag = False
     for i in range(middle):
-        if s[i] != 'a':
-            ans = s[:i] + 'a' + s[i + 1:]
+        if s[i] != "a":
+            ans = s[:i] + "a" + s[i + 1 :]
             flag = True
             break
     if flag:
         return ans
     else:
-        return s[:-1] + 'b'
+        return s[:-1] + "b"
 
 
 poly = input()
-rez = ''
+rez = ""
 if len(poly) > 1:
     for i, ch in enumerate(poly):
-        if ch != 'a':
-            rez = poly[:i] + 'a' + poly[i + 1:]
-            if rez == ''.join(list(reversed(rez))):
-                rez = ''
+        if ch != "a":
+            rez = poly[:i] + "a" + poly[i + 1 :]
+            if rez == "".join(list(reversed(rez))):
+                rez = ""
             break
 
     if not rez:
-        rez = poly[:-1] + 'b'
+        rez = poly[:-1] + "b"
 
 print(rez)
 print(sol(poly))

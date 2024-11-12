@@ -2,7 +2,6 @@ from typing import List
 
 
 def get_weather_randomness(temp: List[int]) -> int:
-
     _len = len(temp)
     if not _len:
         return 0

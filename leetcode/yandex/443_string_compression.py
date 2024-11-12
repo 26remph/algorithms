@@ -2,14 +2,11 @@ from typing import List
 
 
 class Solution:
-
     def compress(self, chars: List[str]) -> int:
-
         cnt = 0
         ch = chars[0]
         total = 0
         for i in range(len(chars)):
-
             if chars[i] == ch:
                 cnt += 1
             else:
@@ -43,20 +40,18 @@ class Solution:
         return len(chars)
 
     def compress_low(self, chars: List[str]) -> int:
-
         cnt = 0
         ch = chars[0]
         ans = []
 
         for i in range(len(chars)):
-
             if chars[i] == ch:
                 cnt += 1
             else:
                 if cnt > 1:
                     ans.append(ch)
                     ans.extend([x for x in str(cnt)])
-                    chars[0] = '1'
+                    chars[0] = "1"
                 else:
                     ans.append(ch)
                 cnt = 1
@@ -71,10 +66,10 @@ class Solution:
         chars.clear()
         chars.extend(ans)
 
-        return len(''.join(ans))
+        return len("".join(ans))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tests = (
         (["a", "a", "b", "b", "c", "c", "c"], 6),
         (["a"], 1),
@@ -84,4 +79,4 @@ if __name__ == '__main__':
     sol = Solution()
     for s, res in tests:
         # print(sol.compress(s))
-        assert sol.compress(s) == res, f'{s=}, {res}'
+        assert sol.compress(s) == res, f"{s=}, {res}"

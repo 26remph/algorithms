@@ -47,4 +47,4 @@ for _ in range(q):
 
     out.append(str(_sum))
 
-print(' '.join(out))
+print(" ".join(out))

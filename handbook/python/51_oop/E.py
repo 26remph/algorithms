@@ -12,7 +12,7 @@ class Rectangle(object):
         return round(2 * (self.a + self.b), 2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     rect = Rectangle((3.2, -4.3), (7.52, 3.14))
     print(rect.perimeter())
     rect = Rectangle((7.52, -4.3), (3.2, 3.14))

@@ -10,4 +10,4 @@ for _ in range(N + M):
 if ans:
     print(len(ans))
 else:
-    print('Таких нет')
+    print("Таких нет")

@@ -1,12 +1,12 @@
 # 4
 class A:
     def say(self):
-        return 'a'
+        return "a"
 
 
 class B:
     def say(self):
-        return 'b'
+        return "b"
 
 
 class C(A, B):

@@ -1,6 +1,6 @@
 def merge(arr, lf, mid, rg):
-    left = arr[lf: mid]
-    right = arr[mid: rg]
+    left = arr[lf:mid]
+    right = arr[mid:rg]
 
     l, r, k = 0, 0, lf
     while l < len(left) and r < len(right):
@@ -25,7 +25,6 @@ def merge(arr, lf, mid, rg):
 
 
 def merge_sort(arr, lf, rg):
-
     if len(arr[lf:rg]) == 1:
         return arr[lf:rg]
 
@@ -48,5 +47,5 @@ def test():
     assert c == expected
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test()

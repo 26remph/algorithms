@@ -14,6 +14,6 @@ def a_plus_b(a, b):
     return a + b
 
 
-print(a_plus_b(3, 5.2) or 'Fail')
-print(a_plus_b(7, '9') or 'Fail')
-print(a_plus_b(-3, 5) or 'Fail')
+print(a_plus_b(3, 5.2) or "Fail")
+print(a_plus_b(7, "9") or "Fail")
+print(a_plus_b(-3, 5) or "Fail")

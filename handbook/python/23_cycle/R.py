@@ -1,7 +1,4 @@
-
-
 def solution(n):
-
     if n == 1:
         return [1]
 
@@ -17,9 +14,9 @@ def solution(n):
     return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
-    print(' * '.join(map(str, solution(n))))
+    print(" * ".join(map(str, solution(n))))
 
 
 # Это число известно как RSA-2048.

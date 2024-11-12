@@ -10,13 +10,13 @@ cnt = Counter(f)
 result = []
 for ind, ch in enumerate(str_b):
     if ch == str_a[ind]:
-        result.append('P')
+        result.append("P")
         continue
 
     if cnt[ch] > 0:
-        result.append('S')
+        result.append("S")
         cnt.subtract(ch)
     else:
-        result.append('I')
+        result.append("I")
 
-print(''.join(result))
+print("".join(result))

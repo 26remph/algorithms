@@ -12,13 +12,13 @@ cnt = Counter(f)
 
 for ind, ch in enumerate(word_two):
     if ch == word_one[ind]:
-        print('correct')
+        print("correct")
         continue
 
     if cnt[ch] > 0:
-        print('present')
+        print("present")
         cnt.subtract(ch)
     else:
-        print('absent')
+        print("absent")
 
 # print("--- %s seconds ---" % (time.time() - start_time))

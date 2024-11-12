@@ -2,7 +2,6 @@ import sys
 
 
 def dfs(v, col):
-
     visited[v] = [col, False]
 
     for i in graph[v]:
@@ -16,13 +15,13 @@ def dfs(v, col):
             visited[v][1] = True  # check neig complete
 
 
-n, m = map(int, input().split(' '))
+n, m = map(int, input().split(" "))
 
 graph = [[] for _ in range(n + 1)]
 graph[0].append(True)  # bipartite
 sys.setrecursionlimit(max(997, n * 2))
 for _ in range(m):
-    v, h = map(int, input().split(' '))
+    v, h = map(int, input().split(" "))
     graph[v].append(h)
     graph[h].append(v)
 
@@ -33,7 +32,7 @@ for i in range(1, len(graph)):
     if not visited[i][0]:
         dfs(i, color)
 
-print('YES' if graph[0][0] else 'NO')
+print("YES" if graph[0][0] else "NO")
 
 # for i in range(len(graph)):
 #     print(f'{i}: {graph[i]}')

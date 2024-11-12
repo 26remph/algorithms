@@ -29,8 +29,8 @@ def test_gen(coll):
         yield v
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     arr = [1, 2, 4, 1, 7, 4, 6, 8, 1]
 
     for v in OddIter(arr):
-        print('odd val:', v)
+        print("odd val:", v)

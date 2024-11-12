@@ -1,5 +1,4 @@
 def partition(a, lo, hi):
-
     pivot = a[lo]
     i = lo
     for j in range(lo + 1, hi):
@@ -14,11 +13,11 @@ def partition(a, lo, hi):
     return i
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _ = int(input())
     arr = list(map(int, input().split()))
     order = []
     ind = partition(arr, 0, len(arr))
     # print(ind, arr, order)
     # print(' '.join(map(str, arr)))
-    print(' '.join(map(str, arr[:ind + 1] + order)))
+    print(" ".join(map(str, arr[: ind + 1] + order)))

@@ -1,5 +1,4 @@
 class Checker(list):
-
     _flags: int = 0
 
     def __setitem__(self, key, value):
@@ -12,7 +11,7 @@ class Checker(list):
         elif prev > 3 and now < 3:
             self._flags -= 1
 
-        print('fl:', self._flags)
+        print("fl:", self._flags)
 
     def is_continuous(self):
         return self._flags >= 4

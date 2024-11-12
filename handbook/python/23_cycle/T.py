@@ -1,7 +1,4 @@
-
-
 def solution(blocks):
-
     hash_prev = [0]
     ans = -1
     for i in range(len(blocks)):
@@ -17,7 +14,20 @@ def solution(blocks):
                     if h < 100 and h == b - 256 * r - pow(256, 2) * m:
                         cur_hash.append(h)
                         is_correct = True
-                        print('i:', i, 'r:', r, 'm:', m, 'h:', h, 'lim_m:', lim_m, 'hash', hash_prev)
+                        print(
+                            "i:",
+                            i,
+                            "r:",
+                            r,
+                            "m:",
+                            m,
+                            "h:",
+                            h,
+                            "lim_m:",
+                            lim_m,
+                            "hash",
+                            hash_prev,
+                        )
         hash_prev = cur_hash[:]
 
         if not is_correct:
@@ -26,7 +36,7 @@ def solution(blocks):
     return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     N = int(input())
     arr = [int(input()) for _ in range(N)]
     # t = time.time()

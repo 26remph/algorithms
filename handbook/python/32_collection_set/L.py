@@ -14,7 +14,7 @@ for f in fio:
     col = cnt[f]
     if col > 1:
         flag = False
-        print(f, '-', cnt[f])
+        print(f, "-", cnt[f])
 
 if flag:
-    print('Однофамильцев нет')
+    print("Однофамильцев нет")

@@ -1,5 +1,4 @@
 def main():
-
     s = input()
     C = input()
     t = set()
@@ -33,5 +32,5 @@ def main():
     print(0 if min_len == len(s) + 1 else min_len)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

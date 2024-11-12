@@ -3,9 +3,9 @@ def solution():
         ans = []
         for j in range(1, n + 1):
             ans.append(str(i * j))
-        print(' '.join(ans))
+        print(" ".join(ans))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     solution()

@@ -12,7 +12,6 @@ spec = []
 
 
 def can_produce(ask) -> bool:
-
     # print('ask -> ', ask)
     if ask > arr[0][1]:
         return False
@@ -50,6 +49,6 @@ def bin_search(lo, hi):
 ans = bin_search(1, maq_q // n + 1)
 if can_produce(ans):
     print(ans)
-    print('\n'.join(spec))
+    print("\n".join(spec))
 else:
     print(0)

@@ -1,5 +1,3 @@
-
-
 def check_win(i, j):
     # i, j = 16, 26
     # i, j = 37, 60
@@ -38,16 +36,16 @@ nums = {(el[0], el[1]) for el in ans}
 # print('ans:', f'{len(ans)=}')
 # print(nums)
 
-print('---')
+print("---")
 cnt = 0
 for n1, n2 in nums:
     res = check_win(n1, n2)
     if res:
         cnt += 1
-        print(f'{(n1, n2, n2 / n1)}')
+        print(f"{(n1, n2, n2 / n1)}")
 
-print('pass')
-print('win in:', cnt)
+print("pass")
+print("win in:", cnt)
 print((2584, 4181) in nums)
 # print(check_win(2548, 4181))
 # print(check_win(3, 2), 3 / 2)

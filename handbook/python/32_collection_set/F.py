@@ -7,4 +7,4 @@ for _ in range(N + M):
     else:
         ans.add(s)
 
-print('\n'.join(sorted(list(ans))) if ans else 'Таких нет')
+print("\n".join(sorted(list(ans))) if ans else "Таких нет")

@@ -1,8 +1,7 @@
-prefix = '##'
-suffix = '@@@'
+prefix = "##"
+suffix = "@@@"
 
 while s := input():
-
     if s.endswith(suffix):
         continue
     elif s.startswith(prefix):

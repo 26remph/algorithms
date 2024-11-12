@@ -5,8 +5,8 @@ N = int(input())
 toys = defaultdict(int)
 for _ in range(N):
     s = input()
-    name = s[:s.index(':')]
-    child_toys = set(s[s.index(':') + 1:].strip().split(', '))
+    name = s[: s.index(":")]
+    child_toys = set(s[s.index(":") + 1 :].strip().split(", "))
     for t in child_toys:
         toys[t] += 1
 
@@ -17,4 +17,4 @@ for key, val in toys.items():
         ans.append(key)
 
 ans.sort()
-print('\n'.join(ans))
+print("\n".join(ans))

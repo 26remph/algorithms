@@ -5,6 +5,6 @@ def make_matrix(size, value=0):
     return [[value for _ in range(i)] for _ in range(j)]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(make_matrix(3))
     print(make_matrix((4, 2), 1))

@@ -12,7 +12,7 @@ def fibonacci(n):
             yield b
 
 
-print(*fibonacci(0), sep=', ')
-print(*fibonacci(1), sep=', ')
-print(*fibonacci(2), sep=', ')
+print(*fibonacci(0), sep=", ")
+print(*fibonacci(1), sep=", ")
+print(*fibonacci(2), sep=", ")
 print(*fibonacci(5))

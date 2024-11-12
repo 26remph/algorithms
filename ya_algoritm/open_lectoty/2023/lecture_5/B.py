@@ -4,12 +4,11 @@ import time
 
 
 def sqrt_sol(n, k, s):
-
     # print(s)
     dist = 0
     for i in range(n):
         for j in range(i, n):
-            cnt = collections.Counter(s[i:j + 1])
+            cnt = collections.Counter(s[i : j + 1])
             flags = [not val < k for val in cnt.values()]
             if all(flags):
                 dist = max(j - i + 1, dist)
@@ -18,7 +17,6 @@ def sqrt_sol(n, k, s):
 
 
 def markup(marks: list, letter: dict, limit: int):
-
     flag = False
     for val in letter.values():
         if val[0] < limit:
@@ -31,7 +29,6 @@ def markup(marks: list, letter: dict, limit: int):
 
 
 def solution(n, k, s):
-
     marks = []
     cnt = collections.Counter(s)
     for ch in s:
@@ -45,7 +42,6 @@ def solution(n, k, s):
 
     is_cont = True
     while is_cont:
-
         is_cont = False
         for i in range(n):
             if marks[i] > 0:
@@ -82,7 +78,7 @@ def solution(n, k, s):
     return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from string import ascii_lowercase
     # limit_str = ''.join([random.choice(ascii_lowercase) for _ in range(100)])
     # print(limit_str)
@@ -115,54 +111,59 @@ if __name__ == '__main__':
     # print('done')
 
     tests = [
-        (6, 3, 'absaaa', 3),
-        (5, 3, 'aaabb', 3),
-        (6, 2, 'ababbc', 5),
-        (18, 3, 'dabababdedabababdd', 9),
-        (21, 3, 'aaabbbbbbbbbcccdeeedd', 21),
-        (16, 3, 'abababdedabababd', 6),
-        (4, 2, 'abce', 0),
-        (17, 2, 'aaabccccdeeeebfff', 4),
-        (6, 2, 'abaccc', 3),
-        (10, 2, 'caaabaaaad', 4),
-        (1, 1, 'f', 1),
-        (2, 1, 'fd', 2),
-        (10, 10, 'ffffffffff', 10),
-        (10, 10, 'ffffffzfff', 0),
-        (10, 1, 'qwertyuiop', 10),
-        (10, 1, 'qqwweerrtt', 10),
-        (18, 3, 'qweqwertyrtyuiouio', 0),
-        (21, 3, 'qweqwertyrtyuiouioqwe', 0),
-        (21, 3, 'qweqweqwertyrtyuiouio', 9),
-        (2, 2, 'fd', 0),
-        (2, 2, 'ff', 2),
-        (8, 2, 'ffgdfhjt', 2),
-        (10, 2, 'ffffdhhhhh', 5),
-        (10, 2, 'qwfffffhzx', 5),
-        (10, 2, 'qwfffffhzx', 5),
-        (2, 2, 'qq', 2),
-        (3, 2, 'qqe', 2),
-        (6, 2, 'qqewww', 3),
-        (15, 2, 'qqewwwterererer', 8),
-        (14, 2, 'qqewwwerererer', 14),
-        (5, 2, 'asdas', 0),
-        (2, 2, 'aa', 2),
-        (6, 3, 'ababbc', 0),
-        (5, 3, 'aaabb', 3),
-        (11, 3, 'dabababdeda', 6),
-        (21, 4, 'aaabbbbbbbbbcccdeeedd', 9),
-        (16, 3, 'abababdedabababd', 6),
-        (9, 2, 'ljjfivqlj', 2),
-        (6, 2, 'abaccc', 3),
-        (4, 5, 'aaaa', 0),
-        (8, 4, 'ccccaaac', 4),
-        (1, 2, 'c', 0),
-        (6, 3, 'aaabbb', 6),
-        (7, 2, 'ktfkfyq', 0),
-        (8, 2, 'mpmujprd', 0),
-        (18, 2, 'afepdjfsfcsryvbjno', 0),
-        (147, 3, 'skudbeyfjqgbmrsuqmemedydnhthdhtvlnxhirlwfhqxptlgscarglvnhxgnsetzxekhybtsiedgqvzthrifwppittevxgfexukbxoxtadxjhipyzkykneneandlqxpwgsbgsvbryrxbquwoenw', 0),  # noqa: E501
-        (14, 2, 'yhdjyuucicniio', 0),
+        (6, 3, "absaaa", 3),
+        (5, 3, "aaabb", 3),
+        (6, 2, "ababbc", 5),
+        (18, 3, "dabababdedabababdd", 9),
+        (21, 3, "aaabbbbbbbbbcccdeeedd", 21),
+        (16, 3, "abababdedabababd", 6),
+        (4, 2, "abce", 0),
+        (17, 2, "aaabccccdeeeebfff", 4),
+        (6, 2, "abaccc", 3),
+        (10, 2, "caaabaaaad", 4),
+        (1, 1, "f", 1),
+        (2, 1, "fd", 2),
+        (10, 10, "ffffffffff", 10),
+        (10, 10, "ffffffzfff", 0),
+        (10, 1, "qwertyuiop", 10),
+        (10, 1, "qqwweerrtt", 10),
+        (18, 3, "qweqwertyrtyuiouio", 0),
+        (21, 3, "qweqwertyrtyuiouioqwe", 0),
+        (21, 3, "qweqweqwertyrtyuiouio", 9),
+        (2, 2, "fd", 0),
+        (2, 2, "ff", 2),
+        (8, 2, "ffgdfhjt", 2),
+        (10, 2, "ffffdhhhhh", 5),
+        (10, 2, "qwfffffhzx", 5),
+        (10, 2, "qwfffffhzx", 5),
+        (2, 2, "qq", 2),
+        (3, 2, "qqe", 2),
+        (6, 2, "qqewww", 3),
+        (15, 2, "qqewwwterererer", 8),
+        (14, 2, "qqewwwerererer", 14),
+        (5, 2, "asdas", 0),
+        (2, 2, "aa", 2),
+        (6, 3, "ababbc", 0),
+        (5, 3, "aaabb", 3),
+        (11, 3, "dabababdeda", 6),
+        (21, 4, "aaabbbbbbbbbcccdeeedd", 9),
+        (16, 3, "abababdedabababd", 6),
+        (9, 2, "ljjfivqlj", 2),
+        (6, 2, "abaccc", 3),
+        (4, 5, "aaaa", 0),
+        (8, 4, "ccccaaac", 4),
+        (1, 2, "c", 0),
+        (6, 3, "aaabbb", 6),
+        (7, 2, "ktfkfyq", 0),
+        (8, 2, "mpmujprd", 0),
+        (18, 2, "afepdjfsfcsryvbjno", 0),
+        (
+            147,
+            3,
+            "skudbeyfjqgbmrsuqmemedydnhthdhtvlnxhirlwfhqxptlgscarglvnhxgnsetzxekhybtsiedgqvzthrifwppittevxgfexukbxoxtadxjhipyzkykneneandlqxpwgsbgsvbryrxbquwoenw",
+            0,
+        ),  # noqa: E501
+        (14, 2, "yhdjyuucicniio", 0),
     ]
 
     # for n, k, s, res in tests:
@@ -196,12 +197,12 @@ if __name__ == '__main__':
         n = base
         k = random.randint(1, base)
         wrds = [random.choice(ascii_lowercase) for _ in range(n)]
-        s = ''.join(wrds)
+        s = "".join(wrds)
 
         t = time.time()
         res = solution(n, k, s)
-        print(time.time() - t, '(s)')
+        print(time.time() - t, "(s)")
 
         cnt += 1
 
-    print('done')
+    print("done")

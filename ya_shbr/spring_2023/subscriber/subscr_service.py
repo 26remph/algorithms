@@ -17,7 +17,6 @@ class Subscriber:
 
 
 class OfferStore:
-
     def __init__(self):
         self.subscribers: list[(Subscriber, list[str])] = []
         self.storage: dict[str, dict] = {}
@@ -28,7 +27,7 @@ class OfferStore:
     def get_subscribers(self, old_: dict, new_: dict) -> list:
         subscribers = []
 
-        for (subscriber, trigger_fields) in self.subscribers:
+        for subscriber, trigger_fields in self.subscribers:
             for field in trigger_fields:
                 if field in new_ and old_.get(field) != new_.get(field):
                     subscribers.append(subscriber)
@@ -39,16 +38,14 @@ class OfferStore:
         update_offer = inp_data["offer"]
         trace_id = inp_data["trace_id"]
 
-        new_offer = copy.deepcopy(
-            self.storage.setdefault(update_offer["id"], {}))
+        new_offer = copy.deepcopy(self.storage.setdefault(update_offer["id"], {}))
         for key in update_offer:
             if isinstance(new_offer.get(key), dict):
                 new_offer[key].update(update_offer[key])
             else:
                 new_offer[key] = update_offer[key]
 
-        subscribers = self.get_subscribers(self.storage[update_offer["id"]],
-                                           new_offer)
+        subscribers = self.get_subscribers(self.storage[update_offer["id"]], new_offer)
         self.storage[update_offer["id"]] = new_offer
         for sub in subscribers:
             sub.output(trace_id, new_offer)
@@ -59,7 +56,7 @@ if __name__ == "__main__":
     n, m = map(int, input().split())
     for _ in range(n):
         a, b, *fields = input().split()
-        store.add_subscriber(Subscriber(fields), fields[:int(a)])
+        store.add_subscriber(Subscriber(fields), fields[: int(a)])
 
     for _ in range(m):
         json_data = json.loads(input())

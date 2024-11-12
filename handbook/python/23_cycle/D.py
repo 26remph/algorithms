@@ -8,4 +8,4 @@ ans = []
 for i in range(n, m, step):
     ans.append(str(i))
 
-print(' '.join(ans))
+print(" ".join(ans))

@@ -1,8 +1,7 @@
 def solution(seq):
-
     stack = []
     for ch in seq:
-        if ch == '(':
+        if ch == "(":
             stack.append(ch)
         else:
             if stack:
@@ -13,24 +12,24 @@ def solution(seq):
     return not stack
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tests = [
-        ('()', True),
-        ('(', False),
-        (')', False),
-        ('', True),
-        ('())(', False),
-        ('(())', True),
-        (')()', False),
-        ('()()', True),
-        ('(())', True),
-        ('()()()', True),
-        ('()(())', True),
-        ('(())()', True),
-        ('(()())', True),
-        ('((()))', True)
+        ("()", True),
+        ("(", False),
+        (")", False),
+        ("", True),
+        ("())(", False),
+        ("(())", True),
+        (")()", False),
+        ("()()", True),
+        ("(())", True),
+        ("()()()", True),
+        ("()(())", True),
+        ("(())()", True),
+        ("(()())", True),
+        ("((()))", True),
     ]
     for s, ans in tests:
-        assert solution(s) == ans, f's: {s}, sol: {solution(s)}, ans: {ans}'
+        assert solution(s) == ans, f"s: {s}, sol: {solution(s)}, ans: {ans}"
 
-    print('pass')
+    print("pass")

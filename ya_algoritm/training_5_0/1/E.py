@@ -24,7 +24,6 @@ def dfs(x, depht):
 
 
 def main():
-
     x = n
     for _ in range(1, d + 1):
         x *= 10
@@ -46,8 +45,7 @@ sys.set_int_max_str_digits(0)
 
 
 def main_opt():
-
-    suf = ''
+    suf = ""
     x = n * 10
     for _ in range(0, 2):
         for i in range(0, 9):
@@ -65,10 +63,10 @@ def main_opt():
     if len(suf) < 2:
         return -1
 
-    return int(str(n) + suf[0] + ''.join([suf[1] for _ in range(0, d - 1)]))
+    return int(str(n) + suf[0] + "".join([suf[1] for _ in range(0, d - 1)]))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n, k, d = map(int, input().strip().split())
     print(main_opt())
     # n, k, d = 2, 5, 100

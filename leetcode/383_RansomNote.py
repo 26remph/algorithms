@@ -2,7 +2,6 @@ import collections
 
 
 class Solution:
-
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         cnt_mag = collections.Counter(magazine)
         cnt_note = collections.Counter(ransomNote)

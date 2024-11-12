@@ -4,7 +4,7 @@ from collections import deque
 def get_num(x, y) -> None | int:
     num = None
     if 0 < x <= n and 0 < y <= m:
-        num = ((x - 1) * n + y)
+        num = (x - 1) * n + y
 
     return num
 
@@ -12,20 +12,26 @@ def get_num(x, y) -> None | int:
 def get_neig(dot, plan) -> list[tuple[int, int]]:
     x, y = dot
     edges = [
-        (x - 1, y + 1), (x - 1, y), (x - 1, y - 1), (x, y + 1),
-        (x, y - 1), (x + 1, y + 1), (x + 1, y), (x + 1, y - 1)
+        (x - 1, y + 1),
+        (x - 1, y),
+        (x - 1, y - 1),
+        (x, y + 1),
+        (x, y - 1),
+        (x + 1, y + 1),
+        (x + 1, y),
+        (x + 1, y - 1),
     ]
 
     neig = []
     for dot in edges:
         num = get_num(dot[0], dot[1])
-        if num and plan[dot[0]][dot[1]] == '.':
+        if num and plan[dot[0]][dot[1]] == ".":
             neig.append(dot)
 
     return neig
 
 
-n, m = map(int, input().split(' '))
+n, m = map(int, input().split(" "))
 cave = [[None for _ in range(m + 1)] for _ in range(n + 1)]
 
 for i in range(1, n + 1):
@@ -33,9 +39,9 @@ for i in range(1, n + 1):
     for j in range(1, m + 1):
         cave[i][j] = s[j - 1]
 
-i, j = map(int, input().split(' '))
+i, j = map(int, input().split(" "))
 enter_dot = (i, j)
-i, j = map(int, input().split(' '))
+i, j = map(int, input().split(" "))
 out_dot = set()
 out_dot.add((i, j))
 

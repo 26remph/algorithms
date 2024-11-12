@@ -1,5 +1,4 @@
 def dfs(n, from_rod, to_rod, ext1, ext2):
-
     if n == 0:
         return
 
@@ -17,7 +16,7 @@ def dfs(n, from_rod, to_rod, ext1, ext2):
     dfs(n - 2, ext1, to_rod, from_rod, ext2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     cnt = [0]
     dfs(n, 1, 4, 2, 3)

@@ -8,14 +8,13 @@ def get_sum(f_num: str, s_num: str) -> str:
     shift_digits: int = 0
 
     for _ in range(max_digit - len(f_num)):
-        f_num = '0' + f_num
+        f_num = "0" + f_num
 
     for _ in range(max_digit - len(s_num)):
-        s_num = '0' + s_num
+        s_num = "0" + s_num
 
-    rez_str: str = ''
+    rez_str: str = ""
     for dig in range(max_digit - 1, -1, -1):
-
         bit_sum = int(f_num[dig]) + int(s_num[dig]) + shift_digits
         shift_digits = 0
 

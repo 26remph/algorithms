@@ -1,5 +1,4 @@
 def gcd(a, b):
-
     while b > 0:
         a %= b
         a, b = max(a, b), min(a, b)
@@ -9,11 +8,9 @@ def gcd(a, b):
 
 
 def solution(arr):
-
     arr.sort(reverse=True)
     tail = arr[-1]
     while tail > 0:
-
         for i in range(len(arr) - 1):
             arr[i] = arr[i] % tail
 
@@ -30,7 +27,7 @@ def solution(arr):
     return tail
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     N = int(input())
     arr = []
     for _ in range(N):

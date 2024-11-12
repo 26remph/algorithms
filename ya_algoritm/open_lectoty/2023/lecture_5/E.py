@@ -1,12 +1,11 @@
 def solution(arr, N):
-
     high = [(arr[i], i) for i in range(N)]
 
     center = max(high, key=lambda x: x[0])
-    left = high[:center[1]]
+    left = high[: center[1]]
     left.sort()
 
-    right = high[center[1] + 1:]
+    right = high[center[1] + 1 :]
     right.sort(key=lambda x: (-x[0], x[1]))
     high = left + [center] + right
     # print('high', high)
@@ -16,7 +15,6 @@ def solution(arr, N):
     j = center[1]
     i_right_h = high[j][1]
     for i in range(center[1], N - 1):
-
         if i == i_right_h:
             while j < len(high) and (i_right_h := high[j][1]) <= i:
                 j += 1
@@ -36,7 +34,6 @@ def solution(arr, N):
     i_left_h = high[j][1]
     for i in range(center[1], -1, -1):
         if i == i_left_h:
-
             while j > 0 and i_left_h >= i:
                 i_left_h = high[j][1]
                 j -= 1
@@ -54,7 +51,7 @@ def solution(arr, N):
     return cnt
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     N = int(input())
     arr = list(map(int, input().strip().split()))
     print(solution(arr, N))

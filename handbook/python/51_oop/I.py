@@ -41,7 +41,7 @@ class Queue:
         return self.head is None
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("--- example 1 ---")
     queue = Queue()
     for item in range(10):

@@ -4,5 +4,5 @@
 # }
 offer = {}
 
-offer.update({'count': 900})
+offer.update({"count": 900})
 print(offer)

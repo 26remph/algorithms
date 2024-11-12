@@ -3,14 +3,10 @@ import operator
 
 s = input()
 
-expr = s.split(' ')
+expr = s.split(" ")
 stack = []
 
-operand = {
-    '+': operator.add,
-    '-': operator.sub,
-    '*': operator.mul
-}
+operand = {"+": operator.add, "-": operator.sub, "*": operator.mul}
 
 for ch in expr:
     func = operand.get(ch)

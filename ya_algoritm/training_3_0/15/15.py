@@ -1,10 +1,9 @@
 n = int(input())
-arr = list(map(int, input().split(' ')))
+arr = list(map(int, input().split(" ")))
 
 stack = []
 ans = [0] * len(arr)
 for i in range(n):
-
     if not stack:
         stack.append((arr[i], i))
         continue

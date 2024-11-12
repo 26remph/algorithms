@@ -1,5 +1,4 @@
 def is_power_of_four(number: int) -> bool:
-
     n: int = 0
     while True:
         rez = pow(4, n)

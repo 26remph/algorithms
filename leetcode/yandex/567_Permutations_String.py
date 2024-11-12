@@ -4,7 +4,7 @@ import collections
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
         d1 = collections.Counter(s1)
-        d2 = collections.Counter(s2[:len(s1)])
+        d2 = collections.Counter(s2[: len(s1)])
 
         for i in range(len(s1), len(s2)):
             # print(f'{i=}', d1, d2)
@@ -23,7 +23,7 @@ class Solution:
         return False
 
     def slow_checkInclusion(self, s1: str, s2: str) -> bool:
-        s1 = ''.join(sorted(list(s1)))
+        s1 = "".join(sorted(list(s1)))
         deq = collections.deque()
         j = 0
         for i in range(len(s2)):
@@ -31,7 +31,7 @@ class Solution:
                 deq.append(s2[j])
                 j += 1
 
-            if s1 == ''.join(sorted(deq)):
+            if s1 == "".join(sorted(deq)):
                 return True
 
             deq.popleft()
@@ -39,7 +39,7 @@ class Solution:
         return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s1 = "adc"
     s2 = "dcda"
     sol = Solution()

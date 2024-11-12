@@ -1,5 +1,4 @@
 def get_pos(expr: str) -> int:
-
     stack: list = []
     wrong_seq: list = []
 
@@ -8,9 +7,9 @@ def get_pos(expr: str) -> int:
     first_pos = True
 
     for ind, symbol in enumerate(expr):
-        if symbol == '{':
+        if symbol == "{":
             stack.append(ind + 1)
-        if symbol == '}':
+        if symbol == "}":
             if first_pos:
                 first_pos = False
                 min_pos = ind + 1
@@ -33,8 +32,7 @@ def get_pos(expr: str) -> int:
 
 
 def read_input() -> list:
-
-    with open('./input.txt', 'r') as f:
+    with open("./input.txt", "r") as f:
         input_str: list = f.readlines()
 
     return input_str
@@ -42,6 +40,6 @@ def read_input() -> list:
 
 str_datas: list = read_input()
 # print(get_pos(str_data))
-with open('output.txt', 'w') as f:
+with open("output.txt", "w") as f:
     for row in str_datas:
         print(get_pos(row), file=f)

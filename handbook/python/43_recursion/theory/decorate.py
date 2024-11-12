@@ -1,5 +1,4 @@
 def count(func):
-
     count = 0
 
     def wrapper(*args, **kwargs):
@@ -12,11 +11,11 @@ def count(func):
 
 @count
 def hello(n):
-    return f'Hello {n}'
+    return f"Hello {n}"
 
 
-if __name__ == '__main__':
-    print(hello('Maksim'))
-    print(hello('Maksim'))
-    print(hello('Maksim'))
-    print(hello('Maksim'))
+if __name__ == "__main__":
+    print(hello("Maksim"))
+    print(hello("Maksim"))
+    print(hello("Maksim"))
+    print(hello("Maksim"))

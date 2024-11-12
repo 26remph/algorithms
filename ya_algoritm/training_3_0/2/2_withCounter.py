@@ -14,14 +14,12 @@ elif k == 0:
 
 gmax = 0
 for ch, freq in chars:
-
     if freq < max_freq and max_freq >= k:
         break
 
     i, j = 0, 0
     cnt = 0
     while i < len(s):
-
         cnt += 1 if ch != s[i] else 0
         cnt -= 1 if j < i and ch != s[j - 1] else 0
 

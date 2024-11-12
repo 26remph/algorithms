@@ -1,5 +1,4 @@
 class Node:
-
     def __init__(self, value):
         self.next = None
         self.value = value
@@ -9,7 +8,6 @@ class Node:
 
 
 class MyQueueLinkedList:
-
     def __init__(self):
         # self.queue = []
         self.tail = None
@@ -36,7 +34,7 @@ class MyQueueLinkedList:
 
     def get(self):
         if self.is_empty():
-            print('error')
+            print("error")
             return
 
         x = self.head
@@ -53,6 +51,6 @@ n = int(input())
 queue = MyQueueLinkedList()
 
 for _ in range(n):
-    command, *params = input().split(' ')
+    command, *params = input().split(" ")
     func = getattr(queue, command)
     func(*params)

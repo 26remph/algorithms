@@ -2,7 +2,6 @@ import heapq
 
 
 class DataCenter:
-
     def __init__(self, N, M):
         self.N = [[0, set()] for _ in range(n + 1)]
         self.M = M
@@ -30,7 +29,7 @@ class DataCenter:
 
     def getmin(self):
         while self.min_heap[0][0] != self.N[self.min_heap[0][1]][0] * (
-                self.M - len(self.N[self.min_heap[0][1]][1])
+            self.M - len(self.N[self.min_heap[0][1]][1])
         ):
             heapq.heappop(self.min_heap)
 
@@ -38,7 +37,7 @@ class DataCenter:
 
     def getmax(self):
         while self.max_heap[0][0] != -1 * self.N[self.max_heap[0][1]][0] * (
-                self.M - len(self.N[self.max_heap[0][1]][1])
+            self.M - len(self.N[self.max_heap[0][1]][1])
         ):
             heapq.heappop(self.max_heap)
 

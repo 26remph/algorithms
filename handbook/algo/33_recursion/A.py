@@ -3,7 +3,6 @@ n = int(input())
 
 # cnt = [0]
 def dfs(n, from_, to_):
-
     # cnt[0] += 1
 
     if n == 1:

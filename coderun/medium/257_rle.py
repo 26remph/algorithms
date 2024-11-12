@@ -23,7 +23,7 @@ def main():
     # len+1, [start, end, len, abs, len]
     pref: list[list[tuple[int, int, int, int]]] = [[] for _ in range(2)]
     pref[0].append((0, 0, 0, 0))
-    num_s = ''
+    num_s = ""
     letters = set(ascii_lowercase)
 
     # print('init=', pref)
@@ -32,9 +32,7 @@ def main():
     h = 0
     prev = pref[0][0]
     for i in range(len(s)):
-
         if s[i] in letters:
-
             if num_s:
                 num = int(num_s)
                 # st, end = pref[h][j-1][1] + 1, pref[h][j-1][1] + num
@@ -51,7 +49,7 @@ def main():
                     h = end // H
                     pref[h].append(prev)
 
-                num_s = ''
+                num_s = ""
                 # col += 1
 
             else:
@@ -66,12 +64,12 @@ def main():
                 pref[h].append(prev)
 
         else:
-            num_s = ''.join([num_s, s[i]])
+            num_s = "".join([num_s, s[i]])
 
     # print('fill=', pref)
     tpref = time.time() - t
-    print(tpref, '(s)')
-    print('l=', l, 'len(arr)', len(pref))
+    print(tpref, "(s)")
+    print("l=", l, "len(arr)", len(pref))
 
     t = time.time()
     out = []
@@ -83,12 +81,10 @@ def main():
         j = random.randint(i, l)
 
         h1 = i // H
-        start = bisect_left(pref[h1], i,
-                            key=lambda x: i if x[0] <= i <= x[1] else x[0])
+        start = bisect_left(pref[h1], i, key=lambda x: i if x[0] <= i <= x[1] else x[0])
 
         h2 = j // H
-        end = bisect_left(pref[h2], j,
-                          key=lambda x: j if x[0] <= j <= x[1] else x[1])
+        end = bisect_left(pref[h2], j, key=lambda x: j if x[0] <= j <= x[1] else x[1])
 
         if start == end:
             ans = (len(str(j - i + 1)) + 1) if j - i > 0 else 1
@@ -100,12 +96,12 @@ def main():
                 _ = pref[h2][end][2]
                 _ = pref[h1][start][2]
             except IndexError:
-                print('i, j', i, j)
-                print('(h1, s)', h1, start, '(h2, e)', h2, end)
+                print("i, j", i, j)
+                print("(h1, s)", h1, start, "(h2, e)", h2, end)
 
-                print('h1', pref[h1], len(pref[h1]))
-                print('h2', pref[h2], len(pref[h2]))
-                print('pr', pref)
+                print("h1", pref[h1], len(pref[h1]))
+                print("h2", pref[h2], len(pref[h2]))
+                print("pr", pref)
 
                 return None
 
@@ -122,11 +118,11 @@ def main():
             out.append(str(ans))
 
     tq = time.time() - t
-    print(tq, '(s)')
-    print(tpref + tq, '(s) all')
+    print(tq, "(s)")
+    print(tpref + tq, "(s) all")
     # print('s', s)
     # print('\n'.join(out))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

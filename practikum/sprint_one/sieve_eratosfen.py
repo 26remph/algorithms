@@ -18,7 +18,7 @@ def eratosthenes_effective(n):
         if numbers[num]:
             for j in range(num * num, n + 1, num):
                 numbers[j] = False
-    return numbers 
+    return numbers
 
 
 def get_least_primes_linear(n):
@@ -34,6 +34,7 @@ def get_least_primes_linear(n):
                 break
             lp[x] = p
     return primes, lp
+
 
 # start_time = time.time()
 # eratosthenes_effective(1000000)

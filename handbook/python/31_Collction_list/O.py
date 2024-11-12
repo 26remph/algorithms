@@ -2,7 +2,6 @@ from collections import deque
 
 
 def gcd_multi(numbs):
-
     if len(numbs) == 1:
         return numbs[0]
     elif not numbs:
@@ -10,7 +9,6 @@ def gcd_multi(numbs):
 
     deq = deque(sorted(numbs, reverse=True))
     while deq[1] > 0:
-
         while not (b := deq.pop()):
             pass
 
@@ -20,6 +18,6 @@ def gcd_multi(numbs):
     return deq[0]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     arr = list(map(int, input().split()))
     print(gcd_multi(arr))

@@ -34,9 +34,9 @@ code = {
     "Ь": "",
 }
 
-out = open('transliteration.txt', 'a', encoding='UTF-8')
+out = open("transliteration.txt", "a", encoding="UTF-8")
 
-with open('cyrillic.txt', encoding="UTF-8") as f:
+with open("cyrillic.txt", encoding="UTF-8") as f:
     for row in f.readlines():
         ans = []
         for ch in row.rstrip():
@@ -51,6 +51,6 @@ with open('cyrillic.txt', encoding="UTF-8") as f:
             else:
                 ans.append(ch)
 
-        print(''.join(ans), file=out)
+        print("".join(ans), file=out)
 
 out.close()

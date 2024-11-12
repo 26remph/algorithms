@@ -15,15 +15,18 @@ def get_num(z, x, y) -> None | int:
 def get_neig(dot, plan) -> list[tuple[int, int, int]]:
     z, x, y = dot
     edges = [
-        (z, x + 1, y), (z, x - 1, y),
-        (z, x, y + 1), (z, x, y - 1),
-        (z + 1, x, y), (z - 1, x, y)
+        (z, x + 1, y),
+        (z, x - 1, y),
+        (z, x, y + 1),
+        (z, x, y - 1),
+        (z + 1, x, y),
+        (z - 1, x, y),
     ]
 
     neig = []
     for dot in edges:
         num = get_num(dot[0], dot[1], dot[2])
-        if num and plan[dot[0]][dot[1]][dot[2]] == '.':
+        if num and plan[dot[0]][dot[1]][dot[2]] == ".":
             neig.append(dot)
 
     return neig
@@ -35,14 +38,13 @@ enter_dot = (0, 0, 0)
 z, i = 0, 0
 cave = [[[None for _ in range(n + 1)] for _ in range(n + 1)] for _ in range(n + 1)]
 while row := sys.stdin.readline():
-
     s = row.rstrip()
     if s:
         for j in range(1, n + 1):
             cave[z][i][j] = s[j - 1]
-            if s[j - 1] == 'S':
+            if s[j - 1] == "S":
                 enter_dot = (z, i, j)
-            if z == 1 and (s[j - 1] == '.' or s[j - 1] == 'S'):
+            if z == 1 and (s[j - 1] == "." or s[j - 1] == "S"):
                 out_dot.add((z, i, j))
         i += 1
     else:

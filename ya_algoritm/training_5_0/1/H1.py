@@ -1,6 +1,4 @@
-
 def check(mid, a, s1, b, s2):
-
     if a < b:
         return (b + mid * s2) - (a + mid * s1) <= delta
 
@@ -18,7 +16,6 @@ def bin_answer(t1, t2, x1, v1, x2, v2):
 
 
 def shift_iniit_pos(L, x1, v1, x2, v2):
-
     shift_x1_to_zero = x1 / abs(v1) if v1 != 0 else 0
     shift_x1_to_l2 = (L / 2 - x1) / abs(v1) if v1 != 0 else 0
     shift_x2_to_zero = x2 / abs(v2) if v2 != 0 else 0
@@ -94,7 +91,6 @@ def shift_pos(L, x1, v1, x2, v2):
 
 
 def main(L, x1, v1, x2, v2):
-
     ans = []
     # map to up coordinate square
     if x1 > L / 2:
@@ -109,7 +105,7 @@ def main(L, x1, v1, x2, v2):
         return 0
     # both not move
     if v1 == v2 == 0:
-        return 'NO'
+        return "NO"
 
     # init position
     if x1 == 0 and x2 == L / 2:
@@ -157,8 +153,8 @@ def main(L, x1, v1, x2, v2):
     return sum(ans)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     L, x1, v1, x2, v2 = map(int, input().split())
     delta: float = 1e-09
     res = main(L, x1, v1, x2, v2)
-    print(f'YES \n{round(res, 10)}')
+    print(f"YES \n{round(res, 10)}")

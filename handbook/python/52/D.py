@@ -3,7 +3,7 @@ class Fraction:
         if denom:
             self.numer, self.denom = int(numer), int(denom)
         else:
-            self.numer, self.denom = map(int, numer.split('/'))
+            self.numer, self.denom = map(int, numer.split("/"))
         self._reduction()
 
     @staticmethod
@@ -33,19 +33,16 @@ class Fraction:
         return self.denom
 
     def __str__(self):
-        return str(self.numer) + '/' + str(self.denom)
+        return str(self.numer) + "/" + str(self.denom)
 
     def __repr__(self):
-        return (
-                self.__class__.__name__
-                + f"({str(self.numer)}, {str(self.denom)})"
-        )
+        return self.__class__.__name__ + f"({str(self.numer)}, {str(self.denom)})"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     fraction = Fraction(3, 9)
     print(fraction, repr(fraction))
-    fraction = Fraction('7/14')
+    fraction = Fraction("7/14")
     print(fraction, repr(fraction))
 
     fraction = Fraction(3, 210)

@@ -3,7 +3,7 @@ from collections import Counter
 
 # words = {}
 cnt = Counter()
-with open('input.txt', encoding='utf8') as f:
+with open("input.txt", encoding="utf8") as f:
     while line := f.readline().rstrip():
         cnt.update(line.split())
         # for word in line.split():

@@ -1,1 +1,1 @@
-print(''.join(set(input())))
+print("".join(set(input())))

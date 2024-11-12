@@ -1,4 +1,4 @@
-n, k = map(int, input().split(' '))
+n, k = map(int, input().split(" "))
 
 f0, f1 = 1, 1
 dp = [f0, f1]

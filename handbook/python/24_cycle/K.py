@@ -1,5 +1,4 @@
 def solution(num):
-
     if num == 1:
         return False
 
@@ -13,7 +12,7 @@ def solution(num):
     return True if i == 1 else False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     cnt = 0
     for _ in range(n):

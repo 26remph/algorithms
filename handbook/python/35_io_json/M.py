@@ -4,10 +4,10 @@ import sys
 
 fn = input()
 
-with open(fn, 'r+', encoding='UTF-8') as f:
+with open(fn, "r+", encoding="UTF-8") as f:
     d = json.load(f)
     for line in sys.stdin:
-        key, val = line.split('==')
+        key, val = line.split("==")
         d: dict
         d[key.strip()] = val.strip()
 

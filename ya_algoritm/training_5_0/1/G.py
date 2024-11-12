@@ -1,5 +1,3 @@
-
-
 def check_defense(i, j):
     step = 1
     while i > 0 and j > 0:
@@ -61,7 +59,6 @@ def main():
     gold_seq = 0.5 * (1 + pow(5, 0.5))  # win condition
 
     while True:
-
         # tactic
         if rnd != 1:
             if x1 == x:
@@ -78,18 +75,18 @@ def main():
                 flow_attacks = 1
                 print(x / (x1 - x + y) < gold_seq, x / (x1 - x + y))
             else:
-                print('---check variant')
+                print("---check variant")
                 step_to_win_now = check_defense(x1 - x + y, x)
                 next_x, next_x1, next_y = solider_attack(x, x1, y)
-                print(f'{next_x=}, {next_x1=}, {next_y=}')
+                print(f"{next_x=}, {next_x1=}, {next_y=}")
                 step_to_win_next = check_defense(next_x1 - next_x + next_y, next_x)
-                print(f'{step_to_win_next=}, {step_to_win_now=}')
+                print(f"{step_to_win_next=}, {step_to_win_now=}")
                 if step_to_win_now < step_to_win_next + 1 or step_to_win_next < 0:
                     flow_attacks = 2
                 else:
                     flow_attacks = 1
 
-        print(f'{rnd=}, {flow_attacks=}, {x=}, {x1=}, {p=}, {y=}')
+        print(f"{rnd=}, {flow_attacks=}, {x=}, {x1=}, {p=}, {y=}")
 
         if flow_attacks == 1:
             x, x1, y = solider_attack(x, x1, y)
@@ -106,7 +103,7 @@ def main():
         rnd += 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # x, y, p = map(int, [input() for _ in range(0, 3)])
     x, y, p = 10, 11, 15
     assert main() == 4
@@ -127,10 +124,10 @@ if __name__ == '__main__':
     x, y, p = 300, 301, 484
     assert main() == 6
     x, y, p = 250, 500, 249
-    assert main() == 101, '39'
+    assert main() == 101, "39"
     x, y, p = 3000, 5000, 3000
-    assert main() == -1, '148'
+    assert main() == -1, "148"
 
     print(main())
     # print(timeit('main()', number=1, globals=globals()))
-    print('pass')
+    print("pass")

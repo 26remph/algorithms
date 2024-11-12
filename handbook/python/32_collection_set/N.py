@@ -17,6 +17,6 @@ for _ in range(M):
 
 if ans:
     ans.sort()
-    print('\n'.join(ans))
+    print("\n".join(ans))
 else:
-    print('Готовить нечего')
+    print("Готовить нечего")

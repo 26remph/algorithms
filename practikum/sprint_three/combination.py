@@ -1,19 +1,18 @@
 TOUCH = {
-    2: 'abc',
-    3: 'def',
-    4: 'ghi',
-    5: 'jkl',
-    6: 'mno',
-    7: 'pqrs',
-    8: 'tuv',
-    9: 'wxyz'
+    2: "abc",
+    3: "def",
+    4: "ghi",
+    5: "jkl",
+    6: "mno",
+    7: "pqrs",
+    8: "tuv",
+    9: "wxyz",
 }
 
 COMBOS = []
 
 
-def get_combo(start, indent=0, prefix=''):
-
+def get_combo(start, indent=0, prefix=""):
     if start == 0:
         # print(prefix)
         COMBOS.append(prefix)

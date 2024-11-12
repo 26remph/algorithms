@@ -9,7 +9,7 @@ s = input()
 t = time.time()
 # chars = set(s)
 chars = set()
-chars.add('l')
+chars.add("l")
 
 if k >= len(s):
     print(len(s))
@@ -18,12 +18,10 @@ elif k == 0:
 
 gmax = 0
 for ch in chars:
-
     i, j = 0, 0
     cnt = 0
     skip = True
     while i < len(s):
-
         if skip:
             for i in range(len(s)):
                 if s[i] != ch:
@@ -51,4 +49,4 @@ for ch in chars:
     gmax = max(gmax, ans)
 
 print(gmax)
-print('time(s):', time.time() - t)
+print("time(s):", time.time() - t)

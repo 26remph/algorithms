@@ -23,5 +23,5 @@ def recursive_sum(*args):
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(recursive_sum(1, 2, 3))

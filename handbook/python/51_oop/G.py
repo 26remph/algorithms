@@ -42,37 +42,37 @@ class Rectangle:
         self.resize(self.w * factor, self.h * factor)
 
 
-if __name__ == '__main__':
-    print('--- example 1 ---')
+if __name__ == "__main__":
+    print("--- example 1 ---")
     rect = Rectangle((3.14, 2.71), (-3.14, -2.71))
-    print(rect.get_pos(), rect.get_size(), sep='\n')
+    print(rect.get_pos(), rect.get_size(), sep="\n")
     rect.turn()
-    print(rect.get_pos(), rect.get_size(), sep='\n')
-    print('--- example 2 ---')
+    print(rect.get_pos(), rect.get_size(), sep="\n")
+    print("--- example 2 ---")
     rect = Rectangle((3.14, 2.71), (-3.14, -2.71))
-    print(rect.get_pos(), rect.get_size(), sep='\n')
+    print(rect.get_pos(), rect.get_size(), sep="\n")
     rect.scale(2.0)
-    print(rect.get_pos(), rect.get_size(), sep='\n')
-    print('--- example 3 ---')
+    print(rect.get_pos(), rect.get_size(), sep="\n")
+    print("--- example 3 ---")
     rect = Rectangle((3.14, 2.71), (-3.14, -2.71))
-    print(rect.get_pos(), rect.get_size(), sep='\n')
+    print(rect.get_pos(), rect.get_size(), sep="\n")
     rect.turn()
     rect.turn()
-    print(rect.get_pos(), rect.get_size(), sep='\n')
+    print(rect.get_pos(), rect.get_size(), sep="\n")
 
     # test class
     # method = ['turn', 'scale', 'get_pos']
-    method = ['scale', 'get_pos']
+    method = ["scale", "get_pos"]
     for _ in range(1):
         dot1 = (random.uniform(-10.0, 10.0), random.uniform(-10.0, 10.0))
         dot2 = (random.uniform(-10.0, 10.0), random.uniform(-10.0, 10.0))
         rect = Rectangle(dot1, dot2)
         rect_check = RectangleCheck(dot1, dot2)
-        print('> rect', dot1, dot2, 'tested')
+        print("> rect", dot1, dot2, "tested")
         for _ in range(10):
             func_name = random.choice(method)
             param = None
-            if func_name == 'scale':
+            if func_name == "scale":
                 param = random.uniform(0.0, 10.0)
                 val = getattr(rect, func_name)(param)
                 val_check = getattr(rect_check, func_name)(param)
@@ -80,5 +80,5 @@ if __name__ == '__main__':
                 val = getattr(rect, func_name)()
                 val_check = getattr(rect_check, func_name)()
 
-            assert val == val_check, f'{func_name=}({val=}, {val_check=})'
-            print(func_name, param, val, val_check, 'ok')
+            assert val == val_check, f"{func_name=}({val=}, {val_check=})"
+            print(func_name, param, val, val_check, "ok")

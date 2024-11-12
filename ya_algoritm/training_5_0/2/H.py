@@ -10,7 +10,7 @@ def test_func(ta):
     print(ta)
 
     test_ans = []
-    min_max = [float('inf'), -1, -1]
+    min_max = [float("inf"), -1, -1]
     for i in range(n):
         for j in range(m):
             copy_test = deepcopy(ta)
@@ -19,7 +19,7 @@ def test_func(ta):
                     if k == i or l == j:
                         copy_test[k][l] = 0
 
-            print('---')
+            print("---")
             max_copy = 0
             for k in range(n):
                 for l in range(m):
@@ -32,14 +32,14 @@ def test_func(ta):
             for k in copy_test:
                 print(k)
             print(max_copy)
-    print(f'min_max: {min_max}')
-    print(f'{test_ans=}')
+    print(f"min_max: {min_max}")
+    print(f"{test_ans=}")
     result = set()
     for i in range(len(test_ans)):
         if test_ans[i][0] == min_max[0]:
             result.add((test_ans[i][1], test_ans[i][2]))
 
-    print(f'{result=}')
+    print(f"{result=}")
     return result
 
 
@@ -56,7 +56,6 @@ def set_column_to_zero(a: list, column: int):
 
 
 def renew_max_for_column():
-
     # search new max for j
     max_column = [0, 0]
     for j in range(1, m + 1):
@@ -70,7 +69,6 @@ def renew_max_for_column():
 
 
 def renew_max_for_row(a: list) -> list:
-
     # search new max for i
     max_row = [0, 0]
     for i in range(1, n + 1):
@@ -90,8 +88,7 @@ def get_max(a: list):
     return left_max
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     # n, m = map(int, input().split())
     # arr = [[0 for _ in range(m+1)] for _ in range(1)]
     # max_i, max_j = [0, 0], [0, 0]
@@ -128,11 +125,11 @@ if __name__ == '__main__':
         test_ans = test_func(test_arr)
 
         # debug
-        print('\ninit')
+        print("\ninit")
         for i in range(n + 1):
             print(arr[i])
 
-        print('\nsecond convert')
+        print("\nsecond convert")
         # calculate second array
         arr_copy = deepcopy(arr)
         set_column_to_zero(arr_copy, max_j[1])
@@ -140,7 +137,7 @@ if __name__ == '__main__':
         set_row_to_zero(arr_copy, new_max_i[1])
         left_max = get_max(arr_copy)
         res_2 = (new_max_i[1], max_j[1], left_max)
-        print('second:', f'{max_i=}, {max_j=}, {new_max_i=}, {left_max=}, {res_2=}')
+        print("second:", f"{max_i=}, {max_j=}, {new_max_i=}, {left_max=}, {res_2=}")
         for i in range(n + 1):
             print(arr_copy[i])
 
@@ -150,11 +147,11 @@ if __name__ == '__main__':
         set_column_to_zero(arr, new_max_j[1])
         left_max = get_max(arr)
         res_1 = (max_i[1], new_max_j[1], left_max)  # (i, j, left_max)
-        print('first:', f'{max_i=}, {max_j=}, {new_max_j=}, {left_max=}, {res_1=}')
+        print("first:", f"{max_i=}, {max_j=}, {new_max_j=}, {left_max=}, {res_1=}")
 
         ans = (res_1[0], res_1[1]) if res_1[2] <= res_2[2] else (res_2[0], res_2[1])
         for i in range(n + 1):
             print(arr[i])
-        print(f'{test_ans=}, {ans=}')
+        print(f"{test_ans=}, {ans=}")
         assert ans in test_ans
         # print(' '.join(map(str, ans)))

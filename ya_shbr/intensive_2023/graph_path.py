@@ -1,5 +1,4 @@
 class Node:
-
     def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
@@ -7,7 +6,6 @@ class Node:
 
 
 def solution(root):
-
     from collections import deque
 
     deq = deque()
@@ -25,8 +23,7 @@ def solution(root):
         print(node.val)
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     node4 = Node(4)
     node5 = Node(5)
     node6 = Node(6)

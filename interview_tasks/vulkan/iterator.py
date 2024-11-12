@@ -1,4 +1,4 @@
-""""Example from yandex practicum"""
+""" "Example from yandex practicum"""
 
 
 class Range:

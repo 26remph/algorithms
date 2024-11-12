@@ -2,9 +2,9 @@ from typing import List
 
 
 pair_staples = {
-    '{': '}',
-    '[': ']',
-    '(': ')',
+    "{": "}",
+    "[": "]",
+    "(": ")",
 }
 
 stack: List[int] = []
@@ -15,11 +15,9 @@ def is_corect_backet_seq(seq):
         return True
 
     for elem in seq:
-
         closed_staples = pair_staples.get(elem)
 
         if closed_staples is None:
-
             if not stack:
                 return False
 

@@ -2,9 +2,7 @@ from bisect import bisect_left, bisect_right
 
 
 def left_search(i, j, num):
-
     while i < j:
-
         mid = (i + j) // 2
         if arr[mid] >= num:
             j = mid
@@ -15,7 +13,6 @@ def left_search(i, j, num):
 
 
 def right_search(i, j, num):
-
     while i < j:
         mid = (i + j + 1) // 2
         if arr[mid] <= num:
@@ -27,9 +24,7 @@ def right_search(i, j, num):
 
 
 def bin_my(lo, hi, num):
-
     while lo < hi:
-
         mid = lo + (hi - lo + 1) // 2
 
         if num < arr[mid]:
@@ -62,4 +57,4 @@ for _ in range(K):
     r1 = bi_right(arr, R)
     ans.append(str(r1 - l1))
 
-print(' '.join(ans))
+print(" ".join(ans))

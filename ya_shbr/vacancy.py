@@ -5,7 +5,6 @@ from typing import List, Tuple
 
 
 def foo(vacancy: dict, arr: List[Tuple[str, str, int, int]]) -> List[str]:
-
     staff: List[str] = []
     vacancy_sorted = dict(sorted(vacancy.items(), key=lambda x: x[0]))
     arr.sort(key=lambda x: (x[1], -x[2], x[3]))
@@ -35,12 +34,12 @@ def read_input() -> Tuple[dict, list]:
     n = int(input())
     vacancy = {}
     for _ in range(n):
-        name, capcity = input().strip().split(',')
+        name, capcity = input().strip().split(",")
         vacancy[name] = int(capcity)
     k: int = int(input())
     arr = []
     for _ in range(k):
-        candidate_id, vacancy_id, task, fine = input().strip().split(',')
+        candidate_id, vacancy_id, task, fine = input().strip().split(",")
         arr.append((candidate_id, vacancy_id, int(task), int(fine)))
 
     return vacancy, arr

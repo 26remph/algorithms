@@ -1,10 +1,8 @@
 def solution(n):
-
     width = len(str(n // 2 + 1))
 
     left = []
     for i in range(1, n + 1):
-
         row = []
         if i < n // 2 + 1:
             row += left
@@ -15,7 +13,6 @@ def solution(n):
 
             left.append(str(i))
         else:
-
             row += left
 
             delta = 0 if n % 2 != 0 else -1
@@ -28,10 +25,10 @@ def solution(n):
                 left.pop()
 
         for ind in range(len(row)):
-            print(f'{row[ind]:^{width + 1}}', end='')
-        print('')
+            print(f"{row[ind]:^{width + 1}}", end="")
+        print("")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     N = int(input())
     solution(N)

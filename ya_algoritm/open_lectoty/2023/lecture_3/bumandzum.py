@@ -27,7 +27,6 @@ while True:
 
     i, j = 0, 1
     while i < n - 1:
-
         while j < n - 1 and arr[j + 1] > arr[i] * 0.5 + 7:
             j += 1
             # print('j_w ->', i, j)
@@ -40,7 +39,7 @@ while True:
         if i == j:
             j += 1
 
-    print(time.time() - t, '(s)')
+    print(time.time() - t, "(s)")
     print(ans)
 
     # ----

@@ -1,7 +1,4 @@
-
-
 def main():
-
     ans = [0]
     st, end = 0, K if len(arr) != K else K - 1
 
@@ -23,7 +20,7 @@ def main():
     return max(ans)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     N, K = map(int, input().split())
     arr = list(map(int, input().split()))
     print(main())

@@ -36,7 +36,6 @@ def main(x, y):
 
     cnt = 2
     for i in range(2, (y // x // 2) + 1):
-
         a = x * i
         b = y * x / a
 
@@ -50,8 +49,7 @@ def main(x, y):
     return cnt
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     for _ in range(1_000):
         # x = random.randint(1, 100)
         # y = random.randint(x, 100)
@@ -60,5 +58,5 @@ if __name__ == '__main__':
         # print(test10ok(x, y))
         # print('--->', time.time() - t)
         t = time.time()
-        print(main(x, y), time.time() - t, '(sec)')
+        print(main(x, y), time.time() - t, "(sec)")
         # assert main(x, y) == test10ok(x, y), f'x={x}, y={y}'

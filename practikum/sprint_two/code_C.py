@@ -6,7 +6,6 @@
 
 
 def get_node_by_index(node, idx):
-
     while idx and node is not None:
         node = node.next_item
         idx -= 1
@@ -26,6 +25,7 @@ def solution(node, idx):
         prev.next_item = None if cur_node is None else cur_node.next_item
 
     return node
+
 
 # def print_rezult(node):
 #     while node:

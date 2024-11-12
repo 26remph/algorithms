@@ -1,7 +1,7 @@
 class Fraction:
     def __init__(self, *args) -> None:
         if isinstance(args[0], str):
-            self.__num, self.__den = [int(c) for c in args[0].split('/')]
+            self.__num, self.__den = [int(c) for c in args[0].split("/")]
         else:
             self.__num = args[0]
             self.__den = args[1]
@@ -10,10 +10,10 @@ class Fraction:
     def __sign(self):
         return -1 if self.__num < 0 else 1
 
-    def __neg__(self) -> 'Fraction':
+    def __neg__(self) -> "Fraction":
         return Fraction(-self.__num, self.__den)
 
-    def __add__(self, other) -> 'Fraction':
+    def __add__(self, other) -> "Fraction":
         common_denominator = self.__den * other.__den
         new = Fraction(1, 1)
         new.__num = self.__num * other.__den + other.__num * self.__den
@@ -21,7 +21,7 @@ class Fraction:
         new.__reduction()
         return new
 
-    def __sub__(self, other) -> 'Fraction':
+    def __sub__(self, other) -> "Fraction":
         common_denominator = self.__den * other.__den
         new = Fraction(1, 1)
         new.__num = self.__num * other.__den - other.__num * self.__den
@@ -29,21 +29,21 @@ class Fraction:
         new.__reduction()
         return new
 
-    def __iadd__(self, other) -> 'Fraction':
+    def __iadd__(self, other) -> "Fraction":
         common_denominator = self.__den * other.__den
         self.__num = self.__num * other.__den + other.__num * self.__den
         self.__den = common_denominator
         self.__reduction()
         return self
 
-    def __isub__(self, other) -> 'Fraction':
+    def __isub__(self, other) -> "Fraction":
         common_denominator = self.__den * other.__den
         self.__num = self.__num * other.__den - other.__num * self.__den
         self.__den = common_denominator
         self.__reduction()
         return self
 
-    def __mul__(self, other) -> 'Fraction':
+    def __mul__(self, other) -> "Fraction":
         common_denominator = self.__den * other.__den
         new = Fraction(1, 1)
         new.__num = self.__num * other.__num
@@ -51,19 +51,19 @@ class Fraction:
         new.__reduction()
         return new
 
-    def __truediv__(self, other) -> 'Fraction':
+    def __truediv__(self, other) -> "Fraction":
         new = Fraction(self.__num, self.__den)
         new.__reduction()
         return new.__mul__(other.reverse())
 
-    def __imul__(self, other) -> 'Fraction':
+    def __imul__(self, other) -> "Fraction":
         common_denominator = self.__den * other.__den
         self.__num = self.__num * other.__num
         self.__den = common_denominator
         self.__reduction()
         return self
 
-    def __itruediv__(self, other) -> 'Fraction':
+    def __itruediv__(self, other) -> "Fraction":
         return self.__imul__(other.reverse())
 
     def _gcd(self, a, b) -> int:
@@ -82,7 +82,7 @@ class Fraction:
         return self.__num, self.__den
 
     def __str__(self) -> str:
-        return f'{self.__num}/{self.__den}'
+        return f"{self.__num}/{self.__den}"
 
     def __repr__(self) -> str:
         return f"Fraction('{self.__num}/{self.__den}')"
@@ -99,5 +99,5 @@ class Fraction:
         self.__reduction()
         return abs(self.__den)
 
-    def reverse(self) -> 'Fraction':
+    def reverse(self) -> "Fraction":
         return Fraction(self.__den, self.__num)

@@ -1,9 +1,7 @@
 def merge(lst1, lst2):
-
     i, j = 0, 0
     res = []
     while i < len(lst1) and j < len(lst2):
-
         if lst1[i] < lst2[j]:
             res.append(lst1[i])
             i += 1
@@ -23,7 +21,6 @@ def merge(lst1, lst2):
 
 
 def merge_sort(arr):
-
     if len(arr) <= 1:
         return arr
     else:
@@ -31,7 +28,7 @@ def merge_sort(arr):
         return merge(merge_sort(arr[:n]), merge_sort(arr[n:]))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _ = input()
     arr = list(map(int, input().split()))
-    print(' '.join(map(str, merge_sort(arr))))
+    print(" ".join(map(str, merge_sort(arr))))

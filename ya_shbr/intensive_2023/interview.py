@@ -1,6 +1,6 @@
 def transform(s: str):
     if not s:
-        return ''
+        return ""
     result = [s[0], 0]
     for i in s[1:]:
         if i != result[-2]:
@@ -9,10 +9,10 @@ def transform(s: str):
             result[-1] += 1
 
     print(result)
-    return ''.join(result)
+    return "".join(result)
 
 
-print(transform('AAAAAAAABBBBBCCCCCCC'))
+print(transform("AAAAAAAABBBBBCCCCCCC"))
 
 # row = 'AZZZZZ'
 # assert transform(row) == 'AZ5'

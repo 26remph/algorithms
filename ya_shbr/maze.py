@@ -7,17 +7,16 @@ from typing import List, Optional, Tuple
 
 
 def get_directions(
-        point: Optional[Tuple[int, int, str]], maze
+    point: Optional[Tuple[int, int, str]], maze
 ) -> List[Optional[Tuple[int, int, str]]]:
-
     if point is None:
         return [None, None, None, None]
 
     x, y = point[0], point[1]
-    left = (x, y + 1, 'R') if maze[x][y + 1] == '.' else None
-    right = (x, y - 1, 'L') if maze[x][y - 1] == '.' else None
-    up = (x + 1, y, 'D') if maze[x + 1][y] == '.' else None
-    down = (x - 1, y, 'U') if maze[x - 1][y] == '.' else None
+    left = (x, y + 1, "R") if maze[x][y + 1] == "." else None
+    right = (x, y - 1, "L") if maze[x][y - 1] == "." else None
+    up = (x + 1, y, "D") if maze[x + 1][y] == "." else None
+    down = (x - 1, y, "U") if maze[x - 1][y] == "." else None
 
     directions = [right, down, left, up]
 
@@ -37,7 +36,6 @@ def get_step(directions) -> Tuple[Optional[Tuple[int, int, str]], bool]:
 
 
 def mark_point(cur_point: Optional[Tuple[int, int, str]], maze) -> None:
-
     if cur_point is not None:
         x, y, ch = cur_point
         maze[x][y] = ch
@@ -70,13 +68,13 @@ def foo(maze: List[List[str]], enter_point: Tuple[int, int, str]) -> List[List[s
 def read_input() -> Tuple[List[List[str]], Tuple[int, int, str]]:
     n, _ = map(int, input().strip().split())
     maze: List[List[str]] = []
-    s_point: Tuple[int, int, str] = (-1, -1, '')
+    s_point: Tuple[int, int, str] = (-1, -1, "")
     for i in range(n):
         row: list = []
         for ind, j in enumerate(input()):
             row.append(j)
-            if j == 'S':
-                s_point = (i, ind, 'S')
+            if j == "S":
+                s_point = (i, ind, "S")
         maze.append(row)
 
     return maze, s_point
@@ -84,7 +82,7 @@ def read_input() -> Tuple[List[List[str]], Tuple[int, int, str]]:
 
 def print_result(result: List[List[str]]) -> None:
     for row in result:
-        print(''.join(row))
+        print("".join(row))
 
 
 matrix, enter = read_input()

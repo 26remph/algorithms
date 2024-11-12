@@ -1,14 +1,10 @@
-
-
 def solution(times):
-
-    h, m, sec = map(int, times[0].split(':'))
+    h, m, sec = map(int, times[0].split(":"))
     last = h * 3600 + m * 60 + sec
 
     cnt = 1
     for i in range(1, len(times)):
-
-        h, m, sec = map(int, times[i].split(':'))
+        h, m, sec = map(int, times[i].split(":"))
         h * 3600 + m * 60 + sec
 
         if last < (h * 3600 + m * 60 + sec):
@@ -22,14 +18,12 @@ def solution(times):
 
 
 def sol(arr):
-
-    h, m, sec = map(int, arr[0].split(':'))
+    h, m, sec = map(int, arr[0].split(":"))
     now = h * 3600 + m * 60 + sec
 
     cnt = 0
     for i in range(len(arr)):
-
-        h, m, sec = map(int, arr[i].split(':'))
+        h, m, sec = map(int, arr[i].split(":"))
         if now >= h * 3600 + m * 60 + sec:
             cnt += 1
 
@@ -38,7 +32,7 @@ def sol(arr):
     return cnt
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # n = int(input())
     # arr = []
     # for _ in range(n):

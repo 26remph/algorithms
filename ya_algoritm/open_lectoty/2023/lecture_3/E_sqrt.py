@@ -12,10 +12,10 @@ for i in range(len(arr)):
     out.append((0, arr[i]))
 
 out.sort(key=lambda x: x[0] + x[1])
-print('l=', len(out), 'pair', out)
+print("l=", len(out), "pair", out)
 
 _summ = [x[0] + x[1] for x in out]
-print('sum:', _summ)
+print("sum:", _summ)
 
 ans_sqrt = sum(_summ[-k:])
 print(ans_sqrt)

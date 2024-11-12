@@ -1,5 +1,4 @@
 class MyQueueSized:
-
     def __init__(self, n):
         self.max_n = n
         self.queue = [None] * n
@@ -16,11 +15,11 @@ class MyQueueSized:
             self.tail = (self.tail + 1) % self.max_n
             self.len += 1
         else:
-            print('error')
+            print("error")
 
     def pop(self):
         if self.is_empty():
-            print('None')
+            print("None")
             return
 
         x = self.queue[self.head]
@@ -32,7 +31,7 @@ class MyQueueSized:
 
     def peek(self):
         if self.is_empty():
-            print('None')
+            print("None")
             return
 
         print(self.queue[self.head])
@@ -46,6 +45,6 @@ capacity = int(input())
 queue = MyQueueSized(capacity)
 
 for _ in range(n):
-    command, *params = input().split(' ')
+    command, *params = input().split(" ")
     func = getattr(queue, command)
     func(*params)

@@ -2,7 +2,7 @@ from typing import List, Tuple
 
 
 def get_sum(number_list: List[int], k: int) -> List[int]:
-    x = int(''.join(map(str, number_list)))
+    x = int("".join(map(str, number_list)))
     rez_str = str(x + k)
     return [int(i) for i in rez_str]
 

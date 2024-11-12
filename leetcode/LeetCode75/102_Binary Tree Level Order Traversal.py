@@ -11,8 +11,8 @@ class TreeNode:
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-
-        if not root: return None
+        if not root:
+            return None
 
         ans = []
         level = []
@@ -20,7 +20,6 @@ class Solution:
         ans.append([root.val])
 
         while level:
-
             visited = level.pop()
             child_node = []
             while visited:
@@ -38,7 +37,6 @@ class Solution:
         return ans
 
     def levelOrderRecursion(self, root: Optional[TreeNode]) -> List[List[int]]:
-
         ans = []
 
         def dfs(node, lvl, ans):

@@ -14,6 +14,6 @@ for _ in range(M):
 ans = list(kitchen - complete)
 ans.sort()
 if ans:
-    print('\n'.join(ans))
+    print("\n".join(ans))
 else:
-    print('Готовить нечего')
+    print("Готовить нечего")

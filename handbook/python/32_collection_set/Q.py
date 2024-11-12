@@ -10,11 +10,10 @@ while s := input():
 # pprint(friends)
 
 for my in sorted(friends.keys()):
-
     far_friends = set()
     for f in friends[my]:
         far_friends.update(friends[f] - {my} - friends[my])
 
     ans = list(far_friends)
     ans.sort()
-    print(f'{my}:', ', '.join(ans))
+    print(f"{my}:", ", ".join(ans))

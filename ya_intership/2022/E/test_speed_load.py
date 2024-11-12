@@ -10,4 +10,4 @@ for _ in range(N):
     for _ in range(W):
         x = x + 2
 
-print(time.time() - start, 'sec')
+print(time.time() - start, "sec")

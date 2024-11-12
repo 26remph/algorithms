@@ -1,5 +1,5 @@
 while s := input():
-    ind = s.find('#')
+    ind = s.find("#")
     if ind == -1:
         print(s)
     elif ind == 0:

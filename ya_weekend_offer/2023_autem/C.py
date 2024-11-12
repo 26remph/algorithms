@@ -6,7 +6,6 @@ sys.setrecursionlimit(2_000)
 
 
 def solution(graph):
-
     def dfs(v, lvl):
         visited[v] = True
         if graph[v]:
@@ -28,7 +27,7 @@ def solution(graph):
     #         dfs(node)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     graph = collections.defaultdict(list)
     for i in range(1, n + 1):

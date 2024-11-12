@@ -1,11 +1,11 @@
 import string
 
 
-fn = 's.txt'
-fn_out = 's_out.txt'
+fn = "s.txt"
+fn_out = "s_out.txt"
 shift = int(input())
 ans = []
-with open(fn, encoding='UTF-8') as f:
+with open(fn, encoding="UTF-8") as f:
     while s := f.read(1):
         alphabet = string.ascii_lowercase if s.islower() else string.ascii_uppercase
         pos = alphabet.find(s)
@@ -15,5 +15,5 @@ with open(fn, encoding='UTF-8') as f:
         else:
             ans.append(s)
 
-with open(fn_out, 'w') as f:
-    f.write(''.join(ans))
+with open(fn_out, "w") as f:
+    f.write("".join(ans))

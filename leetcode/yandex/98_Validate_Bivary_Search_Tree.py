@@ -17,7 +17,7 @@ class TreeNode:
 
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        prev = float('-inf')
+        prev = float("-inf")
 
         def inorder(node):
             nonlocal prev
@@ -25,27 +25,28 @@ class Solution:
                 return True
             if not (inorder(node.left) and prev < node.val):
                 return False
-            print(prev, '<', node.val)
+            print(prev, "<", node.val)
             prev = node.val
             return inorder(node.right)
+
         return inorder(root)
 
     def var_isValidBST(self, root: Optional[TreeNode]) -> bool:
-
         def dfs(node, lower, upper):
-
             if not node:
                 return True
 
             if lower < node.val < upper:
-                return dfs(node.left, lower, node.val) and dfs(node.right, node.val, upper)
+                return dfs(node.left, lower, node.val) and dfs(
+                    node.right, node.val, upper
+                )
             else:
                 return False
 
-        return dfs(root, lower=float('-inf'), upper=float('inf'))
+        return dfs(root, lower=float("-inf"), upper=float("inf"))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # add on
     node16 = TreeNode(16, None, None)
     # ---

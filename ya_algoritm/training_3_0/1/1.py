@@ -18,8 +18,8 @@ while row := sys.stdin.readline():
 #     else:
 #         cnt.update(Counter(row.strip()))
 
-if cnt.get(' '):
-    cnt.pop(' ')
+if cnt.get(" "):
+    cnt.pop(" ")
 
 lst = cnt.most_common()
 max_val = -1 if not lst else lst[0][1]
@@ -29,11 +29,11 @@ for lvl in range(max_val, 0, -1):
     chars = []
     for ind in range(len(lst)):
         if lst[ind][1] == lvl:
-            chars.append('#')
+            chars.append("#")
             lst[ind] = (lst[ind][0], lst[ind][1] - 1)
         else:
-            chars.append(' ')
+            chars.append(" ")
 
-    print(''.join(chars))
+    print("".join(chars))
 
-print(''.join([x[0] for x in lst]))
+print("".join([x[0] for x in lst]))

@@ -1,6 +1,5 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-
         judje_fw = {}
         judje_back = {}
         for i in range(len(s)):

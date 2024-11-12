@@ -1,6 +1,4 @@
-
 def can_locate(lengh) -> bool:
-
     cnt = 1
     last_ind = 0
     for i in range(1, N):
@@ -12,7 +10,6 @@ def can_locate(lengh) -> bool:
 
 
 def bin_search(lo, hi):
-
     while lo < hi:
         mid = (lo + hi + 1) // 2
         if can_locate(mid):
@@ -24,7 +21,7 @@ def bin_search(lo, hi):
 
 
 N, K = map(int, input().split())
-arr = list(map(int, input().strip().split(' ')))
+arr = list(map(int, input().strip().split(" ")))
 ans = 0
 if K > 1:
     ans = bin_search(1, max(arr) + 1)

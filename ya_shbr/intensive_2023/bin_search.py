@@ -11,7 +11,7 @@ def left_search(arr, num):
     return l
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     arr = [1, 2, 3, 4, 5, 6, 7, 10]
     ind = left_search(arr, 9)
     assert left_search(arr, 5) == 4

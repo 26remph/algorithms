@@ -3,7 +3,6 @@ def check():
 
 
 def rbinsearch(l, r, check, params):
-
     while l < r:
         m = (l + r + 1) // 2
         if check(m, params):

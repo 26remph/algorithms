@@ -23,5 +23,5 @@ def sliding_window(iterable, n):
         yield tuple(window)
 
 
-for w in sliding_window('abcdefg', 4):
+for w in sliding_window("abcdefg", 4):
     print(w)

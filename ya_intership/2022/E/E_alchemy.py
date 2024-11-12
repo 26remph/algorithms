@@ -13,7 +13,7 @@ for _ in range(n - 2):
     key += 1
 
 data.sort(key=lambda x: x[-1])
-ing_amount = {key: None for key in range(3, n + 1)}
+ing_amount = dict.fromkeys(range(3, n + 1))
 print(data)
 
 for value in data:
@@ -52,12 +52,12 @@ for _ in range(q):
     key = row[2]
     content = ing_amount.get(key)
     if content is None:
-        rez.append('0')
+        rez.append("0")
         continue
 
     if content[0] <= ing_A and content[1] <= ing_B:
-        rez.append('1')
+        rez.append("1")
     else:
-        rez.append('0')
+        rez.append("0")
 
-print(''.join(rez))
+print("".join(rez))

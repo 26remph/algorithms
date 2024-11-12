@@ -1,6 +1,5 @@
 # ID 69517339
 def binary_search(arr, x, left, right):
-
     if right <= left:
         return -1
 
@@ -22,7 +21,6 @@ def binary_search(arr, x, left, right):
 
 
 def broken_search(nums, target) -> int:
-
     if not nums:
         return -1
 
@@ -59,5 +57,5 @@ def test():
     assert broken_search(arr, 12) == 6
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test()

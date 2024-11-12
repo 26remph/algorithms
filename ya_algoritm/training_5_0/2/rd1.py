@@ -12,15 +12,15 @@ def worker():
     print(f'Поток с именем "{name}" завершился')
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     threads = []
     for i in range(5):
-        t = threading.Thread(name=f'Поток {i}', target=worker)
+        t = threading.Thread(name=f"Поток {i}", target=worker)
         threads.append(t)
         t.start()
 
     amount = threading.active_count()
-    print(f'Всего потоков запущено: {amount}')
+    print(f"Всего потоков запущено: {amount}")
 
     threads_list = threading.enumerate()
     print(threads_list)

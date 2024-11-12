@@ -20,7 +20,7 @@ class Solution:
         return sum(candy)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # arr = [1, 2, 2]
     arr = [1, 0, 2]
     # arr = [3, 4, 4, 4, 4, 2, 1]

@@ -11,16 +11,15 @@ for ind in range(N):
     data_dict[ind] = (
         random.randint(1, EDGE),
         random.randint(1, EDGE),
-        random.randint(1, EDGE)
+        random.randint(1, EDGE),
     )
 
 for _ in range(N):
-    data_list.append(
-        (random.randint(1, EDGE),
-         random.randint(1, EDGE),
-         random.randint(1, EDGE)
-         )
-    )
+    data_list.append((
+        random.randint(1, EDGE),
+        random.randint(1, EDGE),
+        random.randint(1, EDGE),
+    ))
 
 # start_time = time.time()
 # for _ in range(N):

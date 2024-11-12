@@ -7,9 +7,9 @@ graph = [[] for _ in range(n + 1)]
 visited: list[None | int] = [None] * (n + 1)
 
 for v in range(1, n + 1):
-    graph[v].extend([0] + [*map(int, input().strip().split(' '))])
+    graph[v].extend([0] + [*map(int, input().strip().split(" "))])
 
-start, end = map(int, input().split(' '))
+start, end = map(int, input().split(" "))
 
 path = deque()
 for e in range(len(graph[start])):
@@ -18,7 +18,6 @@ for e in range(len(graph[start])):
 visited[start] = 0
 
 while path:
-
     v, e = path.popleft()
     if visited[e] is None:
         visited[e] = visited[v] + 1

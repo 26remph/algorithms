@@ -16,17 +16,15 @@ def main():
     #     if s[i] in ascii_lowercase:
     #         size += 1
 
-    arr = array('L', [0])
+    arr = array("L", [0])
     # pref = [[0, 0, 0] for _ in range(size+1)]  # [start, end, len]
 
-    num_s = ''
+    num_s = ""
     j = 1
 
-    print('init=', arr)
+    print("init=", arr)
     for i in range(len(s)):
-
         if s[i] in ascii_lowercase:
-
             if num_s:
                 num = int(num_s)
                 arr.append(j)
@@ -35,7 +33,7 @@ def main():
                 # pref[j][0] = pref[j-1][1] + 1
                 # pref[j][1] = pref[j-1][1] + num
                 # pref[j][2] = pref[j-1][2] + len(str(num)) + 1
-                num_s = ''
+                num_s = ""
 
             else:
                 arr.append(j)
@@ -46,11 +44,11 @@ def main():
             j += 1
 
         else:
-            num_s = ''.join([num_s, s[i]])
+            num_s = "".join([num_s, s[i]])
 
-    print('fill=', arr)
+    print("fill=", arr)
     tpref = time.time() - t
-    print(tpref, '(s)')
+    print(tpref, "(s)")
 
     # t = time.time()
     # out = []
@@ -88,5 +86,5 @@ def main():
     # print('\n'.join(out))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

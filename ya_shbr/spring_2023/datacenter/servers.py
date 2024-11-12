@@ -26,10 +26,10 @@ for _ in range(q):
         continue
 
     heap_cur = heap_min if log[0] == "GETMIN" else heap_max
-    k = 1 if log[0] == "GETMIN" else - 1
+    k = 1 if log[0] == "GETMIN" else -1
 
     while heap_cur[0][0] != k * reboots[heap_cur[0][1]] * (
-            m - len(disabled[heap_cur[0][1]])
+        m - len(disabled[heap_cur[0][1]])
     ):
         old = heapq.heappop(heap_cur)
 

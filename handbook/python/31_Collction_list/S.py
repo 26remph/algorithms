@@ -4,13 +4,18 @@ from operator import add, floordiv, mul, sub
 
 
 op = {
-    '*': mul, '+': add, '-': sub, '/': floordiv,
-    '~': lambda x: (-1) * x, '!': math.factorial, '#': lambda x: [x, x],
-    '@': lambda x: (x.pop(), x.pop(), x.pop())
+    "*": mul,
+    "+": add,
+    "-": sub,
+    "/": floordiv,
+    "~": lambda x: (-1) * x,
+    "!": math.factorial,
+    "#": lambda x: [x, x],
+    "@": lambda x: (x.pop(), x.pop(), x.pop()),
 }
-bi = {'*', '+', '-', '/'}
-uni = {'~', '!', '#'}
-trio = {'@'}
+bi = {"*", "+", "-", "/"}
+uni = {"~", "!", "#"}
+trio = {"@"}
 
 arr = input().strip().split()
 stack = []
@@ -22,12 +27,12 @@ for val in arr:
         if val in bi:
             a = stack.pop()
             b = stack.pop()
-            if val in '-/':
+            if val in "-/":
                 a, b = b, a
             stack.append(func(a, b))
         elif val in uni:
             a = stack.pop()
-            if val in '!~':
+            if val in "!~":
                 stack.append(func(a))
             else:
                 stack.extend(func(a))
@@ -36,4 +41,4 @@ for val in arr:
             stack += [b, a, c]
 
     # print('s:', stack)
-print(''.join(map(str, stack)))
+print("".join(map(str, stack)))

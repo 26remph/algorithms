@@ -12,15 +12,15 @@ class Stack:
         return len(self.stack) == 0
 
 
-if __name__ == '__main__':
-    print('--- example 1 ---')
+if __name__ == "__main__":
+    print("--- example 1 ---")
     stack = Stack()
     for item in range(10):
         stack.push(item)
     while not stack.is_empty():
         print(stack.pop(), end=" ")
 
-    print('--- example 2 ---')
+    print("--- example 2 ---")
     stack = Stack()
     for item in ("Hello,", "world!"):
         stack.push(item)

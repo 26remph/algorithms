@@ -5,7 +5,7 @@ class Fraction:
     def __init__(self, numer: str | int, denom: int | None = None):
         self.sign = 1
         if isinstance(numer, str):
-            numer, denom = map(int, numer.split('/'))
+            numer, denom = map(int, numer.split("/"))
 
         self.sign *= -1 if numer < 0 < denom or denom < 0 < numer else 1
         self.__numer, self.__denom = abs(numer), abs(denom)
@@ -33,11 +33,7 @@ class Fraction:
 
     def _multiply(self, o, flip=False):
         on, od = (o.__denom, o.__numer) if flip else (o.__numer, o.__denom)
-        return (
-            self.__numer * on,
-            self.__denom * od,
-            self.sign * o.sign
-        )
+        return (self.__numer * on, self.__denom * od, self.sign * o.sign)
 
     def __add__(self, other):
         n, d, s = self._addition(other, "add")
@@ -100,7 +96,7 @@ class Fraction:
 
     def __neg__(self):
         sign = "-" if self.sign * (-1) == -1 else ""
-        val = f'{sign}{str(self.__numer)}/{str(self.__denom)}'
+        val = f"{sign}{str(self.__numer)}/{str(self.__denom)}"
         return Fraction(val)
 
     def _reduction(self):
@@ -129,17 +125,17 @@ class Fraction:
 
     def __str__(self):
         sign = "-" if self.sign == -1 else ""
-        return sign + str(self.__numer) + '/' + str(self.__denom)
+        return sign + str(self.__numer) + "/" + str(self.__denom)
 
     def __repr__(self):
         sign = "-" if self.sign == -1 else ""
         return (
-                self.__class__.__name__
-                + f"('{sign}{str(self.__numer)}/{str(self.__denom)}')"
+            self.__class__.__name__
+            + f"('{sign}{str(self.__numer)}/{str(self.__denom)}')"
         )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     a = Fraction(1, 3)
     b = Fraction(1, 2)
     print(a > b, a < b, a >= b, a <= b, a == b, a >= b)

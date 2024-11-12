@@ -1,15 +1,13 @@
 def solution(s):
-
     steak = []
-    close = ')}]'
+    close = ")}]"
     pairs = {
-        '(': ')',
-        '[': ']',
-        '{': '}',
+        "(": ")",
+        "[": "]",
+        "{": "}",
     }
 
     for i in range(len(s)):
-
         if s[i] in close:
             if steak:
                 val = steak.pop()
@@ -23,14 +21,9 @@ def solution(s):
     return not steak
 
 
-if __name__ == '__main__':
-    test = [
-        ('[]{}()', True),
-        ('[{()}]', True),
-        ('[{()}]', True),
-        ('[{]}]', False)
-    ]
+if __name__ == "__main__":
+    test = [("[]{}()", True), ("[{()}]", True), ("[{()}]", True), ("[{]}]", False)]
 
     for s, ans in test:
         print(solution(s))
-        assert solution(s) == ans, f'{ans=}, {s=}'
+        assert solution(s) == ans, f"{ans=}, {s=}"

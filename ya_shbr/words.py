@@ -10,14 +10,14 @@ use_index: set = set()
 for ind, ch in enumerate(word_two):
     if ch == word_one[ind]:
         use_index.add(ind)
-        print('correct')
+        print("correct")
     else:
         ind_find: int = 0
         pos = 0
         while True:
             pos = word_one.find(ch, ind_find, len(word_one))
 
-            if pos == - 1:
+            if pos == -1:
                 break
 
             if pos in use_index:
@@ -33,8 +33,8 @@ for ind, ch in enumerate(word_two):
             break
 
         if pos == -1 or word_one[pos] == word_two[pos]:
-            print('absent')
+            print("absent")
         else:
-            print('present')
+            print("present")
 
 print("--- %s seconds ---" % (time.time() - start_time))

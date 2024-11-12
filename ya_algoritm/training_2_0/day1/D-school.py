@@ -1,6 +1,4 @@
-
 def target_v2(array, n):
-
     if n == 1:
         return array[0]
     elif n == 2:
@@ -17,7 +15,6 @@ def target_v2(array, n):
     sumR = arr[-1]
     ans = (abs(sumR - agr[-1]), len(arr) - 1)
     for i in range(n - 2, -1, -1):
-
         sumR += abs(array[i])
         if abs(sumR - agr[i]) < ans[0]:
             ans = (abs(sumR - agr[i]), i)
@@ -82,8 +79,8 @@ arr = [0, 0]
 assert target_v2(arr, len(arr)) == target_v3(arr, len(arr))
 
 arr = [0, 1, 2]
-print('v2=', target_v2(arr, len(arr)))
-print('v3=', target_v3(arr, len(arr)))
+print("v2=", target_v2(arr, len(arr)))
+print("v3=", target_v3(arr, len(arr)))
 assert target_v2(arr, len(arr)) == target_v3(arr, len(arr))
 
 arr = [-4, -3, -2, -1, 0, 1, 2, 3, 4]

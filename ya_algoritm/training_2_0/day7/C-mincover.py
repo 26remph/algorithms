@@ -7,7 +7,7 @@ CLOSE = -1
 L = (0, SEPARATOR, M)
 R = (M, SEPARATOR, 0)
 arr = [L, R]
-while (row := input()) != '0 0':
+while (row := input()) != "0 0":
     start, end = map(int, row.split())
     arr.append((start, OPEN, end))
     arr.append((end, CLOSE, start))
@@ -36,15 +36,15 @@ for i in range(len(arr)):
 
 print(cnt_arr)
 print(indL, indR)
-cover_cnt = cnt_arr[indL + 1: indR]
-print('cover_cnt:', cover_cnt)
+cover_cnt = cnt_arr[indL + 1 : indR]
+print("cover_cnt:", cover_cnt)
 
 min_cnt = 0
 if cover_cnt:
     min_cnt = min(cover_cnt[:-1]) if len(cover_cnt) > 1 else cover_cnt[0]
 
 if not min_cnt:
-    print('No solution')
+    print("No solution")
 else:
     print(min_cnt)
     ans = set()

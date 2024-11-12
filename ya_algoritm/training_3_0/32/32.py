@@ -2,7 +2,6 @@ import sys
 
 
 def dfs(v, cnt):
-
     visited[v] = True
     comp[cnt].append(v)
     if graph[v]:
@@ -11,12 +10,12 @@ def dfs(v, cnt):
                 dfs(i, cnt)
 
 
-n, m = map(int, input().split(' '))
+n, m = map(int, input().split(" "))
 graph: list[list[int]] = [[] for _ in range(n + 1)]
 sys.setrecursionlimit(max(997, n * 2))
 
 for _ in range(m):
-    v, h = map(int, input().split(' '))
+    v, h = map(int, input().split(" "))
     graph[v].append(h)
     graph[h].append(v)
 

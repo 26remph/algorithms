@@ -1,7 +1,7 @@
 n = int(input())
-member_n = input().strip().split(' ')
+member_n = input().strip().split(" ")
 m = int(input())
-member_m = input().strip().split(' ')
+member_m = input().strip().split(" ")
 
 dp = [[0 for _ in range(m + 1)] for _ in range(n + 1)]
 

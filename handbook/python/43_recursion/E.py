@@ -2,14 +2,12 @@ from collections import defaultdict
 
 
 def result_accumulator(func):
-
     queue = defaultdict(list)
 
-    def warp(*args, method='accumulate'):
-
+    def warp(*args, method="accumulate"):
         queue[id(func)].append(func(*args))
 
-        if method == 'drop':
+        if method == "drop":
             dump = queue[id(func)][:]
             queue[id(func)].clear()
             return dump
@@ -24,10 +22,10 @@ def a_plus_b(a, b):
 
 @result_accumulator
 def get_letters(text: str) -> str:
-    return ''.join(sorted(set(filter(str.isalpha, text.lower()))))
+    return "".join(sorted(set(filter(str.isalpha, text.lower()))))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # test 1
     print(a_plus_b(3, 5, method="accumulate"))
     print(a_plus_b(7, 9))
@@ -36,6 +34,6 @@ if __name__ == '__main__':
     print(a_plus_b(10, 35, method="drop"))
     # test 2
     print()
-    print(get_letters('Hello, world!'))
-    print(get_letters('Декораторы это круто =)'))
-    print(get_letters('Ехали медведи на велосипеде', method='drop'))
+    print(get_letters("Hello, world!"))
+    print(get_letters("Декораторы это круто =)"))
+    print(get_letters("Ехали медведи на велосипеде", method="drop"))

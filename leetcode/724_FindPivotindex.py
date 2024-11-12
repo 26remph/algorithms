@@ -3,7 +3,6 @@ from typing import List
 
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
-
         if len(nums) == 1:
             return 0
 
@@ -23,7 +22,7 @@ class Solution:
         return -1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sol = Solution()
     arr = [1, 7, 3, 6, 5, 6]
     assert sol.pivotIndex(arr) == 3

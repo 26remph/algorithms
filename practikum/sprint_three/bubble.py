@@ -1,4 +1,3 @@
-
 def get_bubble(n, arr):
     f = False
     is_printed = False
@@ -19,5 +18,5 @@ def get_bubble(n, arr):
 
 
 n = int(input())
-arr = list(map(int, input().split(' ')))
+arr = list(map(int, input().split(" ")))
 get_bubble(n, arr)

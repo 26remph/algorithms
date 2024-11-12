@@ -1,5 +1,4 @@
 def selection(a):
-
     for i in range(len(a)):
         min_ind = i
         for j in range(i + 1, len(a)):
@@ -11,6 +10,6 @@ def selection(a):
     return a
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     arr = [7, 92, 87, 1, 4, 3, 2, 6]
     print(selection(arr))

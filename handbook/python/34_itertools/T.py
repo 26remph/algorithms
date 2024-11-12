@@ -10,4 +10,4 @@ print(not x or y)
 
 for x, y in itertools.product(range(2), repeat=2):
     assert (x <= y) == (not x or y)
-    print(x, y, '-> equal')
+    print(x, y, "-> equal")

@@ -15,7 +15,6 @@ ans += sum(range(1, col + 1))
 
 i, j = 0, 1
 while i < n - 1:
-
     while j < n - 1 and arr[j + 1] > arr[i] * 0.5 + 7:
         j += 1
 

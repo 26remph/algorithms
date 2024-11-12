@@ -14,10 +14,10 @@ def solution():
             ans.append((i, -1))
 
     ans.sort(key=lambda x: x[0])
-    return ' '.join(map(str, [progr for _, progr in ans]))
+    return " ".join(map(str, [progr for _, progr in ans]))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n, k = map(int, input().split())
     program = [0] + list(map(int, input().split()))
     lst = []

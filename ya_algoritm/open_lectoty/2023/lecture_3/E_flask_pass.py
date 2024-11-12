@@ -5,7 +5,6 @@ LIMIT_USEFUL = 2_000_001
 
 
 def produce_flask(x, useful=0, is_ans=False) -> tuple[int, int]:
-
     i, j = 0, len(arr) - 1
     flask = 0
     while i < j:
@@ -31,7 +30,6 @@ def produce_flask(x, useful=0, is_ans=False) -> tuple[int, int]:
 
 
 def bin_search(lo, hi):
-
     while lo < hi:
         mid = (lo + hi) // 2
         if produce_flask(mid)[0] <= k:

@@ -1,5 +1,4 @@
 def is_first_num(num_1, num_2):
-
     checksum_1 = int(str(num_1) + str(num_2))
     checksum_2 = int(str(num_2) + str(num_1))
 
@@ -7,7 +6,6 @@ def is_first_num(num_1, num_2):
 
 
 def get_bigdata(array, less):
-
     for i in range(1, len(array)):
         item_to_insert = array[i]
         j = i
@@ -19,7 +17,7 @@ def get_bigdata(array, less):
 
 
 n = int(input())
-arr = list(map(int, input().split(' ')))
+arr = list(map(int, input().split(" ")))
 
 rez = get_bigdata(arr, is_first_num)
-print(''.join(map(str, rez)))
+print("".join(map(str, rez)))

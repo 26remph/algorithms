@@ -5,7 +5,6 @@ num = arr[0]
 maxseq = 0
 cur, total_cur = 0, 0
 for i in range(n):
-
     if arr[i] == num:
         cur += 1
         total_cur += 1

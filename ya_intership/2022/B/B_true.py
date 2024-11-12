@@ -4,13 +4,10 @@ n = int(input())
 for _ in range(n):
     log_data = input().split()
     x = id_time.setdefault(int(log_data[3]), [])
-    x.append(
-        (
-            (int(log_data[0]) * 1440) + (int(log_data[1]) * 60) + (
-                int(log_data[2])),
-            log_data[4],
-        )
-    )
+    x.append((
+        (int(log_data[0]) * 1440) + (int(log_data[1]) * 60) + (int(log_data[2])),
+        log_data[4],
+    ))
 
 for ship, ship_time in id_time.items():
     ship_time = sorted(ship_time)

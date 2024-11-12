@@ -1,9 +1,9 @@
 from typing import List, Tuple
 
 
-def get_neighbours(matrix: List[List[int]], row: int,
-                   col: int, n: int, m: int) -> List[int]:
-
+def get_neighbours(
+    matrix: List[List[int]], row: int, col: int, n: int, m: int
+) -> List[int]:
     left = matrix[row][col - 1] if col - 1 >= 0 else None
     right = matrix[row][col + 1] if col + 1 < m else None
     upper = matrix[row - 1][col] if row - 1 >= 0 else None

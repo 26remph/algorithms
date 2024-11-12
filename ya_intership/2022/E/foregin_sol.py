@@ -4,11 +4,11 @@ from collections import Counter
 
 n = int(input())
 # По условию задачи X и Y не больше 10^9
-max_x_y = 2 ** 30
+max_x_y = 2**30
 
 # Индекс, количество А, количество B, количество не расш. инргид.,
 # список зелий в которых участвует ингридиент
-p = array('L', (0 for _ in range(n << 2)))
+p = array("L", (0 for _ in range(n << 2)))
 p[0], p[4 + 1] = 1, 1
 pp = [[] for _ in range(n)]
 for index in range(2, n):

@@ -3,7 +3,7 @@ import math
 from typing import TypeVar
 
 
-Dot = TypeVar('Dot', bound='Point')
+Dot = TypeVar("Dot", bound="Point")
 
 
 class Point:
@@ -20,7 +20,7 @@ class Point:
         return round(math.sqrt(l1), ndigits=2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # first example
     point = Point(3, 5)
     print(point.x, point.y)

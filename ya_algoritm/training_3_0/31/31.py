@@ -9,14 +9,14 @@ def dfs(v):
                 dfs(i)
 
 
-with open('input.txt') as f:
+with open("input.txt") as f:
     row = f.readline().rstrip()
-    n, m = map(int, row.split(' '))
+    n, m = map(int, row.split(" "))
     graph: list[list[int]] = [[] for _ in range(n + 1)]
     sys.setrecursionlimit(max(1000, n * 2))
 
     while row := f.readline().rstrip():
-        v, h = map(int, row.strip().split(' '))
+        v, h = map(int, row.strip().split(" "))
         graph[v].append(h)
         graph[h].append(v)
 

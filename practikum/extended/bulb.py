@@ -4,17 +4,18 @@
 LOCAL = False
 
 if LOCAL:
+
     class Node:
         def __init__(self, value, left=None, right=None):
             self.value = value
             self.right = right
             self.left = left
 
+
 MAX_VALUE = 0
 
 
 def solution(root):
-
     if root:
         global MAX_VALUE
         MAX_VALUE = max(MAX_VALUE, root.value)
@@ -32,5 +33,5 @@ def test():
     assert solution(node4) == 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test()

@@ -25,19 +25,18 @@ class Solution:
         for i in range(len(s)):
             if s[i] not in total:
                 part += 1
-                p[ord(s[i]) - ord('a')] = part
+                p[ord(s[i]) - ord("a")] = part
                 d[part] += 1
                 # print(s[i], p)
                 # print(f'{part=}, {p=}, {d=}, {total=}')
             else:
-
                 d[part] += 1
 
-                if p[ord(s[i]) - ord('a')] < part:
+                if p[ord(s[i]) - ord("a")] < part:
                     # print(s[i], part, p, d)
                     # print('p[si]=', p[ord(s[i]) - ord('a')])
 
-                    part = p[ord(s[i]) - ord('a')]
+                    part = p[ord(s[i]) - ord("a")]
                     # conc = []
                     col = 0
                     for key, val in d.items():
@@ -63,7 +62,7 @@ class Solution:
         return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # s = "ababcbacadefegdehijhklij"
     # s = "qvmwtmzzse"
     # s = "eccbbbbdec"

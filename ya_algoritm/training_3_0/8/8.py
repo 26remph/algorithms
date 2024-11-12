@@ -2,7 +2,7 @@ k = int(input())
 
 arr = []
 for _ in range(k):
-    x, y = map(int, input().split(' '))
+    x, y = map(int, input().split(" "))
     arr.append((x, y))
 
 arr.sort(key=lambda t: t[0])

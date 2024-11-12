@@ -7,8 +7,8 @@ def modern_print(s: str) -> None:
         print(s)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     modern_print("Hello!")
     modern_print("Hello!")
     modern_print("How do you do?")
-    modern_print("Hello!")    # print(hash("c") > hash("b"), "c" < "b")
+    modern_print("Hello!")  # print(hash("c") > hash("b"), "c" < "b")

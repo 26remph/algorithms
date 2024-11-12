@@ -2,7 +2,6 @@ from collections import deque
 
 
 class HitCounter:  # queue
-
     def __init__(self):
         """
         Initialize your data structure here.

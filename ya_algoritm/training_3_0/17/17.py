@@ -1,12 +1,11 @@
 from collections import deque
 
 
-k1 = deque(map(int, input().strip().split(' ')))
-k2 = deque(map(int, input().strip().split(' ')))
+k1 = deque(map(int, input().strip().split(" ")))
+k2 = deque(map(int, input().strip().split(" ")))
 
 cnt = 0
 while k1 and k2:
-
     card1 = k1.popleft()
     card2 = k2.popleft()
 
@@ -24,11 +23,11 @@ while k1 and k2:
 
     cnt += 1
     if cnt >= 1_000_000:
-        print('botva')
+        print("botva")
         break
 
 if k1 and cnt < 1_000_000:
-    print('first', cnt)
+    print("first", cnt)
 
 if k2 and cnt < 1_000_000:
-    print('second', cnt)
+    print("second", cnt)

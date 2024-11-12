@@ -1,10 +1,9 @@
-
 def solution(arr):
     val = max(arr, key=lambda x: (x[2], x[0]))
     return val[1]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     N = int(input())
     arr = []
     for i in range(N):

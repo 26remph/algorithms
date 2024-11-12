@@ -8,7 +8,7 @@ class Fraction:
     def __init__(self, numer: str | int, denom: int | None = None):
         self.sign = 1
         if isinstance(numer, str):
-            numer, denom = map(int, numer.split('/'))
+            numer, denom = map(int, numer.split("/"))
 
         self.sign *= -1 if numer < 0 < denom or denom < 0 < numer else 1
         self.__numer, self.__denom = abs(numer), abs(denom)
@@ -27,14 +27,14 @@ class Fraction:
         return (
             self.__numer * other.__numer,
             self.__denom * other.__denom,
-            self.sign * other.sign
+            self.sign * other.sign,
         )
 
     def _divide(self, other):
         return (
             self.__numer * other.__denom,
             self.__denom * other.__numer,
-            self.sign * other.sign
+            self.sign * other.sign,
         )
 
     def __add__(self, other):
@@ -75,7 +75,7 @@ class Fraction:
 
     def __neg__(self):
         sign = "-" if self.sign * (-1) == -1 else ""
-        val = f'{sign}{str(self.__numer)}/{str(self.__denom)}'
+        val = f"{sign}{str(self.__numer)}/{str(self.__denom)}"
         return Fraction(val)
 
     @staticmethod
@@ -111,18 +111,20 @@ class Fraction:
 
     def __str__(self):
         sign = "-" if self.sign == -1 else ""
-        return sign + str(self.__numer) + '/' + str(self.__denom)
+        return sign + str(self.__numer) + "/" + str(self.__denom)
 
     def __repr__(self):
         sign = "-" if self.sign == -1 else ""
         return (
-                self.__class__.__name__
-                + f"('{sign}{str(self.__numer)}/{str(self.__denom)}')"
+            self.__class__.__name__
+            + f"('{sign}{str(self.__numer)}/{str(self.__denom)}')"
         )
 
 
-if __name__ == '__main__':
-    n, d, k, m = [random.choice([x for x in range(-10, 10) if x != 0]) for _ in range(4)]
+if __name__ == "__main__":
+    n, d, k, m = [
+        random.choice([x for x in range(-10, 10) if x != 0]) for _ in range(4)
+    ]
     print(n, d, k, m)
     a = Fraction(n, d)
     a1 = CheckFraction(n, d)

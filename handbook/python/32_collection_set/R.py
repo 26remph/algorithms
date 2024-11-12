@@ -6,7 +6,7 @@ N = int(input())
 points = defaultdict(int)
 for _ in range(N):
     p1, p2 = input().split()
-    key1, key2 = '0', '0'
+    key1, key2 = "0", "0"
     if len(p1) > 1:
         key1 = p1[:-1]
 

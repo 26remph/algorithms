@@ -1,5 +1,4 @@
 def check(cost):
-
     var1 = (cost // c2 + cost % c2 // c5 * 4) + n >= m
     var2 = (cost // c5 * 4 + cost % c5 // c2) + n >= m
     # col1 = (cost // c2 + cost % c2 // c5 * 4)
@@ -9,7 +8,6 @@ def check(cost):
 
 
 def bin_search(l, r):
-
     while l < r:
         cost = (l + r) // 2
         if check(cost):
@@ -20,7 +18,7 @@ def bin_search(l, r):
     return l
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     m = int(input())
     c2 = int(input())

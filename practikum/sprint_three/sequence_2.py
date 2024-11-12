@@ -1,5 +1,4 @@
 def merge_sort(seq, s):
-
     result = []
     s_ind = 0
     for ch in seq:
@@ -17,5 +16,5 @@ def merge_sort(seq, s):
 
 s = input()
 t = input()
-rez = ''.join(merge_sort(t, s))
+rez = "".join(merge_sort(t, s))
 print(s in rez)

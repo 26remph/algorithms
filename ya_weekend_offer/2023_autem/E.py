@@ -1,7 +1,7 @@
 import collections
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n, k = map(int, input().split())
     pr = [0]
     pr += list(map(int, input().split()))
@@ -31,4 +31,4 @@ if __name__ == '__main__':
 
     ans.sort(key=lambda x: x[0])
     # print(f'{ans=}')
-    print(' '.join(map(str, [r for i, r in ans])))
+    print(" ".join(map(str, [r for i, r in ans])))

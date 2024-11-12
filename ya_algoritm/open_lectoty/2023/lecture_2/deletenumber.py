@@ -15,7 +15,6 @@ while (replay := replay + 1) != 10_000:
     maxseq = 0
     cur, total_cur = 0, 0
     for i in range(n):
-
         if arr[i] == num:
             cur += 1
             total_cur += 1
@@ -45,5 +44,5 @@ while (replay := replay + 1) != 10_000:
     # print(len(arr) - max_col)
     ans_1 = len(arr) - max_col
 
-    assert ans_1 == ans, print(' '.join(map(str, arr)))
-print('ok', replay, '(pass)')
+    assert ans_1 == ans, print(" ".join(map(str, arr)))
+print("ok", replay, "(pass)")

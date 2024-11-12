@@ -29,4 +29,4 @@ else:
             break
         i += 1
 
-print(' '.join(ans))
+print(" ".join(ans))

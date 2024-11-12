@@ -19,7 +19,6 @@ def pref_sum():
 
 
 def test_func(a):
-
     # n = int(input())
     # a = list(map(int, input().split()))
     s = 0
@@ -30,8 +29,9 @@ def test_func(a):
         if s < 0:
             s = 0
         # print(s, end=' ')
-    print('mx', mx)
+    print("mx", mx)
     return mx
+
 
 # N = int(input())
 # arr = list(map(int, input().split()))
@@ -43,4 +43,4 @@ def test_func(a):
 while True:
     N = random.randint(1, 10)
     arr = [random.randint(-100, 100) for _ in range(N)]
-    assert test_func(arr) == pref_sum(), f'arr: {arr}'
+    assert test_func(arr) == pref_sum(), f"arr: {arr}"

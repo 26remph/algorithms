@@ -3,6 +3,7 @@
 
 Расчет минимальной дистанции
 """
+
 # id 68997991
 from typing import List
 
@@ -29,10 +30,10 @@ def calc_dist(street: List[int], min_dist: List[int], reverse=False) -> List[int
 
 def get_dist(street: List[int]) -> List[int]:
     """Алгоритм O(2n) сложности. Работает в два прохода. Прямой - для расчета
-     первого приближения минимальных расстояний к нулевым точкам массива
-     `street`. Обратный - уточняющий минимальные расстояния до нулевых точек
-     массиа `street`.
-     """
+    первого приближения минимальных расстояний к нулевым точкам массива
+    `street`. Обратный - уточняющий минимальные расстояния до нулевых точек
+    массиа `street`.
+    """
     min_dist: list = [len(street)] * len(street)
     min_dist = calc_dist(street, min_dist)
     min_dist = calc_dist(street, min_dist, reverse=True)
@@ -46,6 +47,6 @@ def read_input() -> List[int]:
     return street
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     streets = read_input()
     print(*get_dist(streets))

@@ -1,4 +1,3 @@
-
 def true_solving(n, cost):
     minIndex = 0
     maxGas = 1 / cost[0]
@@ -15,13 +14,11 @@ def true_solving(n, cost):
 
 
 def profit_day(_, data):
-
     CASH = 1000
     min_d = max_d = (1, data[0])
     profit = (min_d[0], max_d[0], 0)
 
     for day, price in enumerate(data):
-
         if price < min_d[1]:
             min_d = (day + 1, price)
             max_d = min_d

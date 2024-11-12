@@ -9,7 +9,7 @@ m = int(input())
 
 head = None
 for i in range(m):
-    s, e = map(int, input().split(' '))
+    s, e = map(int, input().split(" "))
     head = Node(val=(s, e)) if i == 0 else Node(next=head, val=(s, e))
 
     prev, cur = head, head.next

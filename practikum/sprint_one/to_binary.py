@@ -1,7 +1,6 @@
 def to_binary(number: int) -> str:
-
     if number == 0:
-        return '0'
+        return "0"
 
     bin_digits = []
 
@@ -12,7 +11,7 @@ def to_binary(number: int) -> str:
 
     bin_digits.append(1)
 
-    return ''.join(str(x) for x in reversed(bin_digits))
+    return "".join(str(x) for x in reversed(bin_digits))
 
 
 def read_input() -> int:

@@ -17,7 +17,7 @@ def dfs(v, level):
                 level -= 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     graph = collections.defaultdict(list)
     for i in range(1, n + 1):

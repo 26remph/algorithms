@@ -2,7 +2,6 @@ from collections import Counter
 
 
 class Stack:
-
     _seq = []
     cnt = Counter()
 
@@ -32,6 +31,6 @@ class Stack:
 N = int(input())
 stack = Stack()
 for _ in range(N):
-    name, *val = input().split(' ')
+    name, *val = input().split(" ")
     func = getattr(stack, name)
     func(val)

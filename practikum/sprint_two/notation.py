@@ -3,14 +3,14 @@ import operator
 
 
 FABRIC = {
-    '+': operator.add,
-    '-': operator.sub,
-    '*': operator.mul,
-    '/': operator.floordiv,
+    "+": operator.add,
+    "-": operator.sub,
+    "*": operator.mul,
+    "/": operator.floordiv,
 }
 
 
-class Stack():
+class Stack:
     def __init__(self):
         self.__items = []
 
@@ -28,16 +28,14 @@ class Stack():
 
 
 def read_input():
-    return input().split(' ')
+    return input().split(" ")
 
 
 def calculator(row):
-
     stack = Stack()
 
     for ch in row:
         if ch in FABRIC:
-
             x = int(stack.pop())
             y = int(stack.pop())
             func = FABRIC[ch]
@@ -50,6 +48,6 @@ def calculator(row):
     return stack.pop()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     row = read_input()
     print(calculator(row))

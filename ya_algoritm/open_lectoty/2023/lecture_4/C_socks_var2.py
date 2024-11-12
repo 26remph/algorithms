@@ -22,7 +22,7 @@ for i in range(1, len(pref)):
 
     pref[i] = pref[i - 1] + thin
 
-print('pref:', pref)
+print("pref:", pref)
 for _ in range(M):
     m = int(input())
     print(pref[m])

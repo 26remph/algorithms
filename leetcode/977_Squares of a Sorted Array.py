@@ -3,7 +3,7 @@ from typing import List
 
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        arr = [x ** 2 for x in nums]
+        arr = [x**2 for x in nums]
         arr.sort()
         return arr
 

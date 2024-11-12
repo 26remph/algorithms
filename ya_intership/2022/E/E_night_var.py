@@ -2,11 +2,10 @@ from collections import deque
 
 
 def calculate(deq, ingredient):
-
-    deq.append('X')
+    deq.append("X")
     while deq:
         value = deq.popleft()
-        if value == 'X':
+        if value == "X":
             break
 
         _id = value[-2]
@@ -54,7 +53,7 @@ for _ in range(n - 2):
     key += 1
 
 # arr.sort(key=lambda x: x[-1])
-ing_amount = {key: None for key in range(3, n + 1)}
+ing_amount = dict.fromkeys(range(3, n + 1))
 
 # dq = deque(arr)
 _len_before = len(dq)
@@ -73,9 +72,9 @@ for _ in range(q):
 
     x = ing_amount.get(key)
     if x is None:
-        out.append('0')
+        out.append("0")
         continue
 
-    out.append('1') if x[0] <= inc_a and x[1] <= inc_b else out.append('0')
+    out.append("1") if x[0] <= inc_a and x[1] <= inc_b else out.append("0")
 
-print(''.join(out))
+print("".join(out))

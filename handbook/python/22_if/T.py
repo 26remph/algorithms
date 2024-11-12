@@ -1,7 +1,7 @@
 s1, s2, s3 = input(), input(), input()
-const = 'зайка'
+const = "зайка"
 
-rez = ''
+rez = ""
 if const in s1:
     if not rez or len(s1) < len(rez):
         rez = s1

@@ -9,9 +9,9 @@ from typing import Optional
 
 
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode],
-                      list2: Optional[ListNode]) -> Optional[ListNode]:
-
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         order = []
         if not list1 and not list2:
             return None
@@ -31,8 +31,9 @@ class Solution:
 
         return order[0]
 
-    def mergeTwoListsIteratively(self, list1: Optional[ListNode],
-                      list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoListsIteratively(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         cur = dummy = ListNode()
         while list1 and list2:
             if list1.val < list2.val:
@@ -47,9 +48,9 @@ class Solution:
 
         return dummy.next
 
-    def mergeTwoListsRecursively(self, list1: Optional[ListNode],
-                      list2: Optional[ListNode]) -> Optional[ListNode]:
-
+    def mergeTwoListsRecursively(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         if not list1 or not list2:
             return list1 or list2
 

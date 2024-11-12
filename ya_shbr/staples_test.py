@@ -2,8 +2,7 @@ import re
 
 
 def get_pos(expr: str) -> int:
-
-    pattern: str = r'\(|\)'
+    pattern: str = r"\(|\)"
 
     matches = re.finditer(pattern, expr)
     count = 0
@@ -24,9 +23,9 @@ def get_pos(expr: str) -> int:
     pos: int = -1
     wrong_seq: list = []
     for match in matches:
-        if match[0] == '(':
+        if match[0] == "(":
             stack.append(match.end())
-        if match[0] == ')':
+        if match[0] == ")":
             if not stack:
                 # return -1
                 if len(wrong_seq) > 1:
@@ -40,7 +39,7 @@ def get_pos(expr: str) -> int:
         pos = stack.pop()
 
     if len(wrong_seq) == 1 and len(stack) == 0:
-        match = re.search(r'\)', expr)
+        match = re.search(r"\)", expr)
         if match:
             pos = match.end()
             return pos
@@ -49,13 +48,12 @@ def get_pos(expr: str) -> int:
 
 
 def read_input() -> str:
-
-    with open('input.txt', 'r') as f:
+    with open("input.txt", "r") as f:
         input_str: str = f.readline().strip()
 
     return input_str
 
 
 expression: str = read_input()
-with open('output.txt', 'w') as f:
+with open("output.txt", "w") as f:
     print(get_pos(expression), file=f)

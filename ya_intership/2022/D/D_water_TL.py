@@ -1,5 +1,4 @@
 def binsearch(arr: list, ind: int, x: int, left, right) -> int:
-
     if right <= left:
         return right
     mid = (left + right) // 2
@@ -17,8 +16,7 @@ def binsearch(arr: list, ind: int, x: int, left, right) -> int:
 
 
 def water():
-    with open('data_create.txt') as f:
-
+    with open("data_create.txt") as f:
         # n = int(input())
         _ = int(f.readline().rstrip())
         data = []
@@ -29,8 +27,7 @@ def water():
         end_ind = sorted(data, key=lambda x: (x[1], x[0]))
 
     print(end_ind)
-    with open('query.txt') as f:
-
+    with open("query.txt") as f:
         # q = int(input())
         _ = int(f.readline().rstrip())
 
@@ -46,7 +43,6 @@ def water():
 
             sum_day = 0
             for pos in range(ind, len(source)):
-
                 if source[pos][search_ind] > end:
                     break
 
@@ -59,4 +55,4 @@ def water():
             # print(sum_day)
 
     # print(''.join(rez))
-    return ''.join(rez)
+    return "".join(rez)

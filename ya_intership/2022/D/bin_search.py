@@ -3,8 +3,15 @@ from bisect import bisect_left, bisect_right
 
 # data = [('red', 5), ('red', 5), ('blue', 1), ('yellow', 8), ('black', 0)]
 data = [
-    ('red', 5), ('red', 5), ('red', 5), ('red', 5), ('blue', 1),
-    ('yellow', 4), ('black', 0), ('green', 10), ('borrow', 12)
+    ("red", 5),
+    ("red", 5),
+    ("red", 5),
+    ("red", 5),
+    ("blue", 1),
+    ("yellow", 4),
+    ("black", 0),
+    ("green", 10),
+    ("borrow", 12),
 ]
 # Или `key=operator.itemgetter(1)`
 data.sort(key=lambda r: r[1])

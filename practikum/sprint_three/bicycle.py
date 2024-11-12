@@ -1,5 +1,4 @@
 def binary_search(arr, x, left, right):
-
     if right <= left:
         return left
 
@@ -19,7 +18,7 @@ def binary_search(arr, x, left, right):
 
 
 _ = int(input())
-capital = list(map(int, input().split(' ')))
+capital = list(map(int, input().split(" ")))
 cost = int(input())
 
 cash_available = capital[-1]

@@ -2,11 +2,9 @@ import time
 
 
 def solution_2(arr):
-
     arr = [2, 4]
 
     def lbin(l=0, r=len(arr), find=3):
-
         while l < r:
             mid = (l + r) // 2
             if arr[mid] >= find:
@@ -17,10 +15,9 @@ def solution_2(arr):
         return l
 
     f = 3
-    print('ind:', lbin(find=3), 'f:', f, arr)
+    print("ind:", lbin(find=3), "f:", f, arr)
 
     def rbin(l=0, r=len(arr) - 1, find=3):
-
         while l < r:
             mid = (l + r + 1) // 2
             if arr[mid] <= find:
@@ -30,11 +27,10 @@ def solution_2(arr):
 
         return l
 
-    print('ind:', rbin(find=3), 'f:', f, arr)
+    print("ind:", rbin(find=3), "f:", f, arr)
 
 
 def solution(n, arr):
-
     # ans = [0]
     ans = []
     for i in range(1, n - 1):
@@ -47,7 +43,6 @@ def solution(n, arr):
 
 
 def solution_3(arr):
-
     l = 1
     r = len(arr) - 2
     while l < r:
@@ -60,7 +55,7 @@ def solution_3(arr):
     return l + 1 if arr[l - 1] < arr[l] and arr[l] > arr[l + 1] else 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # n = int(input())
     # arr = list(map(int, input().split()))
     # print(solution_3(n, arr))
@@ -73,7 +68,7 @@ if __name__ == '__main__':
     t = time.time()
     solution_3(arr)
     # solution(n, arr)
-    print(time.time() - t, '(s)')
+    print(time.time() - t, "(s)")
 
     # cnt = 0
     # while cnt != 100_000:

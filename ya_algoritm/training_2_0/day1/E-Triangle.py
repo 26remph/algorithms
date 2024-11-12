@@ -9,9 +9,9 @@ else:
     C_dist = pow(pow(abs(Y - d), 2) + pow(X, 2), 0.5)
 
     ans = min(enumerate([A_dist, B_dist, C_dist]), key=lambda x: x[1])
-    print('A_dist', A_dist)
-    print('B_dist', B_dist),
-    print('C_dist', C_dist)
+    print("A_dist", A_dist)
+    (print("B_dist", B_dist),)
+    print("C_dist", C_dist)
 
     print(ans)
     print(ans[0] + 1)

@@ -10,7 +10,6 @@ class Cell:
 
 
 class Checkers:
-
     cell = Cell
     rows_sign = "87654321"
     columns_sign = "ABCDEFGH"
@@ -36,7 +35,6 @@ class Checkers:
                         self.desk[i][j] = self.cell("W")
 
     def move(self, f: str, t: str) -> None:
-
         st_i, st_j = self.get_index_by_sign(*list(f))
         end_i, end_j = self.get_index_by_sign(*list(t))
         cur_state = self.desk[st_i][st_j].status()
@@ -53,21 +51,21 @@ class Checkers:
             print(self.desk[i])
 
 
-if __name__ == '__main__':
-    print('--example_1---')
+if __name__ == "__main__":
+    print("--example_1---")
     checkers = Checkers()
     checkers.show_desk()
-    for row in '87654321':
-        for col in 'ABCDEFGH':
+    for row in "87654321":
+        for col in "ABCDEFGH":
             # print(checkers.get_cell(col + row).status(), end='')
-            print(checkers.get_cell(col + row), end='')
+            print(checkers.get_cell(col + row), end="")
         print()
 
-    print('--example_2---')
+    print("--example_2---")
     checkers = Checkers()
-    checkers.move('C3', 'D4')
-    checkers.move('H6', 'G5')
-    for row in '87654321':
-        for col in 'ABCDEFGH':
-            print(checkers.get_cell(col + row).status(), end='')
+    checkers.move("C3", "D4")
+    checkers.move("H6", "G5")
+    for row in "87654321":
+        for col in "ABCDEFGH":
+            print(checkers.get_cell(col + row).status(), end="")
         print()

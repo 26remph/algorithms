@@ -1,22 +1,20 @@
 def solution():
-
     ans = []
 
     def gen(res, op, cl):
-
         if len(res) == 2 * n:
             ans.append(res)
             return
 
         if op < n:
-            gen(res + '(', op + 1, cl)
+            gen(res + "(", op + 1, cl)
 
         if cl < op:
-            res += ')'
+            res += ")"
             cl += 1
             gen(res, op, cl)
 
-    gen('', 0, 0)
+    gen("", 0, 0)
 
     # for i in range(len(ans)):
     #     s = ans[i]
@@ -29,13 +27,13 @@ def solution():
     return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     tests = [
-        (('()'), 1),
-        (('(())', '()()'), 2),
-        (('(()())', '((()))', '()()()', '(())()', '()(())'), 3),
-        (('(((())))', '((()()))', '()()()()', '()(())()', '(()()())'), 4),
+        (("()"), 1),
+        (("(())", "()()"), 2),
+        (("(()())", "((()))", "()()()", "(())()", "()(())"), 3),
+        (("(((())))", "((()()))", "()()()()", "()(())()", "(()()())"), 4),
     ]
     print(solution())
     # print(' '.join(solution()))

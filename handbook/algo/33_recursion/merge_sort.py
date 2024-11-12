@@ -2,11 +2,9 @@ from collections import deque
 
 
 def merge_deq(arr1: deque, arr2: deque):
-
     result = deque()
 
     while arr1 or arr2:
-
         if not arr1:
             return result + arr2
 
@@ -36,11 +34,9 @@ def merge_deq(arr1: deque, arr2: deque):
 
 
 def merge(arr1, arr2):
-
     res = []
     i, j = 0, 0
     while i < len(arr1) and j < len(arr2):
-
         if i < len(arr1) - 1 and arr1[i] == arr1[i + 1]:
             i += 1
             continue
@@ -72,7 +68,6 @@ def merge(arr1, arr2):
 
 
 def merge_sort(arr):
-
     n = len(arr)
     if n <= 1:
         return arr
@@ -81,7 +76,7 @@ def merge_sort(arr):
         return merge(merge_sort(arr[:mid]), merge_sort(arr[mid:]))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test = (
         ([6], [6], [6]),
         ([1, 2], [1, 2], [1, 2]),
@@ -93,7 +88,7 @@ if __name__ == '__main__':
     )
     for lst1, lst2, ans in test:
         res = merge(lst1, lst2)
-        assert res == ans, f'{res=}, {ans=}'
+        assert res == ans, f"{res=}, {ans=}"
 
     res = merge_sort([3, 1, 0, 10, 10, 100, 100, 1])
     print(res)

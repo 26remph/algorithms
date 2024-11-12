@@ -2,7 +2,6 @@ import random
 
 
 class RandomizedSet:
-
     def __init__(self):
         self.last = 0
         self.store = {}
@@ -24,7 +23,7 @@ class RandomizedSet:
         if val not in self.store:
             return False
 
-        print(f'{self.store=}, {self.ind=}, {val=}, {self.last=}')
+        print(f"{self.store=}, {self.ind=}, {val=}, {self.last=}")
 
         ind = self.store[val]
 
@@ -34,11 +33,12 @@ class RandomizedSet:
         del self.store[val]
         self.last -= 1
 
-        print(f'{self.store=}, {self.ind=}, {val=}, {ind=}, {self.last=}')
+        print(f"{self.store=}, {self.ind=}, {val=}, {ind=}, {self.last=}")
         return True
 
     def getRandom(self) -> int:
         return self.ind[random.randint(0, self.last - 1)]
+
 
 # Your RandomizedSet object will be instantiated and called as such:
 # obj = RandomizedSet()
@@ -47,7 +47,7 @@ class RandomizedSet:
 # param_3 = obj.getRandom()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     rnd = RandomizedSet()
     print(rnd.remove(0))
     print(rnd.remove(0))

@@ -5,8 +5,7 @@ from collections import deque
 
 
 def get_pos(expr: str) -> int:
-
-    pattern: str = r'\(|\)'
+    pattern: str = r"\(|\)"
 
     matches = re.finditer(pattern, expr)
     count = 0
@@ -26,10 +25,9 @@ def get_pos(expr: str) -> int:
     stack = deque()
     matches = re.finditer(pattern, expr)
     for match in matches:
-
-        if match[0] == '(':
+        if match[0] == "(":
             stack.append(match.endpos)
-        if match[0] == ')':
+        if match[0] == ")":
             if not stack:
                 return pos
             stack.pop()
@@ -41,18 +39,17 @@ def get_pos(expr: str) -> int:
 
 
 def read_input() -> str:
-
     # with open('input.txt', 'r') as f:
-    with open('inp_stapels_full.txt', 'r') as f:
+    with open("inp_stapels_full.txt", "r") as f:
         input_str: str = f.readline().strip()
 
     return input_str
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     expression: str = read_input()
     start_time = time.time()
-    with open('output.txt', 'w') as f:
+    with open("output.txt", "w") as f:
         # print(get_pos(expression), file=f)
         print(get_pos(expression))
 

@@ -4,7 +4,7 @@ for _ in range(n):
     price.append(int(input().strip()))
 
 
-inf = float('inf')
+inf = float("inf")
 dp = [[inf for _ in range(n + 2)] for _ in range(n + 1)]
 
 # init base

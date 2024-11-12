@@ -7,4 +7,4 @@ ans = manka & oves
 if ans:
     print(len(ans))
 else:
-    print('Таких нет')
+    print("Таких нет")

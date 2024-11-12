@@ -4,7 +4,6 @@ from collections import deque
 
 
 def merge(lst1: deque, lst2: deque):
-
     # deque test
     result = deque()
     while lst1 or lst2:
@@ -42,7 +41,7 @@ def main(good: deque, acid: deque):
         return acid[0][0], [1]
 
     h = 0
-    max_h = float('-inf')
+    max_h = float("-inf")
     order = []
     for b in merge_sort(good):
         h += b[0]
@@ -65,13 +64,12 @@ def main(good: deque, acid: deque):
     return max_h, order
 
 
-if __name__ == '__main__':
-
-    with open('input.txt', encoding='UTF-8') as f:
+if __name__ == "__main__":
+    with open("input.txt", encoding="UTF-8") as f:
         n = int(f.readline().rstrip())
         good_b = deque()
         acid_b = deque()
-        max_acid = float('-inf')
+        max_acid = float("-inf")
         cnt = 1
         for row in f:
             ai, bi = map(int, row.rstrip().split())

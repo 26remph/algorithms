@@ -8,7 +8,7 @@ class OddIter:
                 yield val
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     arr = [2, 4, 5, 6, 7, 11, 13]
     odd_iter = OddIter(arr)
     for odd_val in odd_iter:

@@ -2,7 +2,6 @@ import collections
 
 
 def markup(marks: list, letter: dict, limit: int):
-
     flag = False
     for val in letter.values():
         if val[0] < limit:
@@ -14,7 +13,6 @@ def markup(marks: list, letter: dict, limit: int):
 
 
 def solution(n, k, s):
-
     marks = []
     cnt = collections.Counter(s)
     for ch in s:
@@ -23,7 +21,6 @@ def solution(n, k, s):
     letter = collections.defaultdict(lambda: [0])  # [count, indexs]
     is_cont = True
     while is_cont:
-
         is_cont = False
         for i in range(n):
             if marks[i] > 0:
@@ -50,7 +47,7 @@ def solution(n, k, s):
     return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n, k = map(int, input().split())
     s = input()
     print(solution(n, k, s))

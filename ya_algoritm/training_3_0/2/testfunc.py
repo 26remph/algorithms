@@ -10,7 +10,7 @@ for _ in range(10_000):
     arr = []
     for _ in range(30):
         arr.append(random.choice(string.ascii_lowercase))
-    s = ''.join(arr)
+    s = "".join(arr)
     assert prettyfor(k, s) == prettywhile(k, s), (k, s)
 
 # k = 50

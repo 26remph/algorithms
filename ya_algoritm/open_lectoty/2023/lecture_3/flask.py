@@ -5,7 +5,6 @@ LIMIT_USEFUL = 2_000_001
 
 
 def produce_flask(x, useful=0, is_ans=False) -> tuple[int, int]:
-
     i, j = 0, len(arr) - 1
     flask = 0
     while i < j:
@@ -45,7 +44,6 @@ def produce_flask(x, useful=0, is_ans=False) -> tuple[int, int]:
 
 
 def bin_search(lo, hi):
-
     while lo < hi:
         mid = (lo + hi) // 2
         if produce_flask(mid)[0] <= k:
@@ -59,7 +57,6 @@ n, k = map(int, input().strip().split())
 arr = list(map(int, input().strip().split()))
 
 while True:
-
     # t = time.time()
     # print('---------')
     # n = random.randint(1, 5)
@@ -107,13 +104,13 @@ while True:
         out.append((0, arr[i]))
 
     out.sort(key=lambda x: x[0] + x[1])
-    print('l=', len(out), 'pair', out)
+    print("l=", len(out), "pair", out)
 
     _summ = [x[0] + x[1] for x in out]
-    print('sum:', _summ)
+    print("sum:", _summ)
 
     ans_sqrt = sum(_summ[-k:])
     print(ans_sqrt)
 
-    assert ans_my == ans_sqrt, f'ans: {ans_my} -> {arr}, sqrt: {ans_sqrt} -> {out}'
+    assert ans_my == ans_sqrt, f"ans: {ans_my} -> {arr}, sqrt: {ans_sqrt} -> {out}"
     # assert False

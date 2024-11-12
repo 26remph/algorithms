@@ -2,7 +2,7 @@ import datetime
 import math
 
 
-frm = '%H:%M:%S'
+frm = "%H:%M:%S"
 a = datetime.datetime.strptime(input().strip(), frm)
 b = datetime.datetime.strptime(input().strip(), frm)
 c = datetime.datetime.strptime(input().strip(), frm)

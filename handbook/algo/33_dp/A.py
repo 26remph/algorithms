@@ -14,15 +14,19 @@ for i in range(n + 1):
             continue
 
         if not i:
-             dp[i][j] = 1 if dp[i][j - 1] == 0 else 0
+            dp[i][j] = 1 if dp[i][j - 1] == 0 else 0
 
         if not j:
             dp[i][j] = 1 if dp[i - 1][j] == 0 else 0
 
         if i > 0 and j > 0:
-            dp[i][j] = 0 if all([dp[i - 1][j] == 1, dp[i][j - 1] == 1, dp[i - 1][j - 1] == 1]) else 1
+            dp[i][j] = (
+                0
+                if all([dp[i - 1][j] == 1, dp[i][j - 1] == 1, dp[i - 1][j - 1] == 1])
+                else 1
+            )
 
 # for i in range(n+1):
 #     print(dp[i])
 
-print('Win' if dp[n][m] else 'Loose')
+print("Win" if dp[n][m] else "Loose")

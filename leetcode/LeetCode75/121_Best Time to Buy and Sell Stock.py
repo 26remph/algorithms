@@ -3,7 +3,6 @@ from typing import List
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-
         profit = 0
         if len(prices) < 2:
             return profit
@@ -24,8 +23,7 @@ class Solution:
         right = 1  # Sell
         max_profit = 0
         while right < len(prices):
-            currentProfit = prices[right] - prices[
-                left]  # our current Profit
+            currentProfit = prices[right] - prices[left]  # our current Profit
             if prices[left] < prices[right]:
                 max_profit = max(currentProfit, max_profit)
             else:

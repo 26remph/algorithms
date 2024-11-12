@@ -2,7 +2,7 @@ import time
 
 
 start = time.time()
-with open('data.txt') as f:
+with open("data.txt") as f:
     n = int(f.readline().rstrip())
     # n = int(input())
     while line := f.readline().rstrip():
@@ -18,7 +18,7 @@ with open('data.txt') as f:
 
         data.sort(key=lambda x: x[-1])
 
-        ing_amount = {key: None for key in range(3, n + 1)}
+        ing_amount = dict.fromkeys(range(3, n + 1))
         for value in data:
             key = value[-2]
             link = value[-1]
@@ -44,11 +44,11 @@ with open('data.txt') as f:
             else:
                 ing_amount[key] = sum_A, sum_B
 
-print(f'read time: {time.time() - start} seconds')
+print(f"read time: {time.time() - start} seconds")
 # print(ing_amount)
 
 start_query = time.time()
-with open('query.txt') as f:
+with open("query.txt") as f:
     q = int(f.readline().rstrip())
     # q = int(input())
     rez = []
@@ -61,15 +61,15 @@ with open('query.txt') as f:
         key = row[2]
         content = ing_amount.get(key)
         if content is None:
-            rez.append('0')
+            rez.append("0")
             continue
 
         if content[0] <= ing_A and content[1] <= ing_B:
-            rez.append('1')
+            rez.append("1")
         else:
-            rez.append('0')
+            rez.append("0")
 
 
 # print(''.join(rez))
-print(f'query time: {time.time() - start_query}')
-print(f'total time: {time.time() - start} seconds')
+print(f"query time: {time.time() - start_query}")
+print(f"total time: {time.time() - start} seconds")

@@ -32,7 +32,6 @@ for ind in range(len(chars)):
     cnt = 0
     # skip = True
     while i < len(s):
-
         # if skip:
         #     t = time.time()
         #     for i in range(len(s)):
@@ -64,4 +63,4 @@ for ind in range(len(chars)):
     gmax = max(gmax, ans)
 
 print(gmax)
-print('time(s):', time.time() - t)
+print("time(s):", time.time() - t)

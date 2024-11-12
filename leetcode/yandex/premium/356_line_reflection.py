@@ -17,7 +17,7 @@ class Solution:
         return True
 
     def way1_isReflected(self, points: List[List[int]]) -> bool:
-        min_x, max_x = float('inf'), float('-inf')
+        min_x, max_x = float("inf"), float("-inf")
         point_set = set()
         for x, y in points:
             min_x = min(min_x, x)
@@ -30,6 +30,6 @@ class Solution:
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sol = Solution()
     print(sol.isReflected())

@@ -1,7 +1,4 @@
-
-
 def main():
-
     amount = 0
     odd_pos = -1
     is_pos_init = False
@@ -12,20 +9,20 @@ def main():
             odd_pos = i
 
     if amount % 2:
-        return ''.join(sign)
+        return "".join(sign)
 
     if odd_pos == len(arr) - 1:
-        sign[-1] = '*'
+        sign[-1] = "*"
     else:
-        sign[odd_pos] = 'x'
+        sign[odd_pos] = "x"
 
-    return ''.join(sign)
+    return "".join(sign)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _ = input()
     arr = list(map(int, input().split()))
-    sign = ['+' for _ in range(len(arr) - 1)]
+    sign = ["+" for _ in range(len(arr) - 1)]
     print(main())
 
     # while True:

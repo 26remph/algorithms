@@ -1,5 +1,6 @@
-'''A. Строительство лесенок'''
-'''https://contest.yandex.ru/contest/39359/problems/A/'''
+"""A. Строительство лесенок"""
+
+"""https://contest.yandex.ru/contest/39359/problems/A/"""
 
 n = int(input())
 

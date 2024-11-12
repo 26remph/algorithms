@@ -90,5 +90,5 @@ while PASS:
     A = [random.randint(1, 100) for _ in range(1, 20)]
     B = [random.randint(1, 100) for _ in range(1, 20)]
     C = [random.randint(1, 100) for _ in range(1, 20)]
-    assert short_foo() == long_foo(), f'{S}\n{A}\n{B}\n{C}'
+    assert short_foo() == long_foo(), f"{S}\n{A}\n{B}\n{C}"
     PASS -= 1

@@ -52,13 +52,11 @@ from collections import defaultdict, deque
 
 
 def solution_wa(s):
-
     node = defaultdict(deque)
 
     sub = []
     ch = s[0]
     for i in range(len(s)):
-
         if ch == s[i]:
             sub.append(i)
         else:
@@ -74,7 +72,6 @@ def solution_wa(s):
 
     ch = s[0]
     for i in range(len(s)):
-
         if ch == s[i]:
             continue
         else:
@@ -110,7 +107,6 @@ def solution_wa(s):
 
 
 def solution(s):
-
     if len(s) == 1:
         return 1
 
@@ -139,7 +135,7 @@ def solution(s):
     return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s = input().strip()
     print(solution(s))
 

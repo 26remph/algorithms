@@ -1,9 +1,9 @@
-n, m = map(int, input().strip().split(' '))
+n, m = map(int, input().strip().split(" "))
 
 dp = [[-1 for _ in range(m + 1)] for _ in range(n + 1)]
 
 for i in range(1, n + 1):
-    row = list(map(int, input().strip().split(' ')))
+    row = list(map(int, input().strip().split(" ")))
     for j in range(1, m + 1):
         dp[i][j] = row[j - 1]
 
@@ -23,8 +23,8 @@ print(max_coast)
 path = []
 i, j = n, m
 while not (i == j == 1):
-    left = dp[i][j - 1], 'R', (i, j - 1)
-    up = dp[i - 1][j], 'D', (i - 1, j)
+    left = dp[i][j - 1], "R", (i, j - 1)
+    up = dp[i - 1][j], "D", (i - 1, j)
     cost = max(left, up)
     i, j = cost[2][0], cost[2][1]
     path.append(cost[1])

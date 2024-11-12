@@ -5,7 +5,6 @@ from typing import List
 
 
 class Solution:
-
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
         n = len(mat)
         m = len(mat[0])
@@ -41,7 +40,7 @@ class Solution:
         return mat
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     mat = [[3, 3, 1, 1], [2, 2, 1, 2], [1, 1, 1, 2]]
     out = [[1, 1, 1, 1], [1, 2, 2, 2], [1, 2, 3, 3]]
     sol = Solution()

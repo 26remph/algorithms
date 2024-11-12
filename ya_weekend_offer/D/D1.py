@@ -3,19 +3,19 @@ import time
 
 
 # test_files = ['input1_D.txt', 'input2_D.txt', 'input3_D.txt', 'input4_D.txt']
-test_files = ['input5_D.txt']
+test_files = ["input5_D.txt"]
 for i in range(len(test_files)):
     name = test_files[i]
     words = []
-    with open(name, 'r') as f:
+    with open(name, "r") as f:
         n = int(f.readline())
         for _, line in enumerate(f, 2):
             words.append(line.rstrip())
 
     # words = []
-# for i in range(n):
-#     w1 = input()
-#     words.append(w1)
+    # for i in range(n):
+    #     w1 = input()
+    #     words.append(w1)
 
     start_time = time.time()
     print(words)
@@ -24,9 +24,9 @@ for i in range(len(test_files)):
     print(words)
     print("--- %s seconds ---" % (time.time() - start_time))
 
-    print(ord('c'))
-    print(ord('o'))
-    print(ord('l'))
+    print(ord("c"))
+    print(ord("o"))
+    print(ord("l"))
     # print(sum((range(100_000))))
 
     # print(words, 'len=', n)

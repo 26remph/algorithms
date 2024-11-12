@@ -3,7 +3,7 @@ import math
 from typing import TypeVar
 
 
-Dot = TypeVar('Dot', bound='Point')
+Dot = TypeVar("Dot", bound="Point")
 
 
 class Point:
@@ -21,8 +21,9 @@ class Point:
 
 
 class PatchedPoint(Point):
-    def __init__(self, val1: int | tuple[int, int] = 0, val2: int | tuple[int, int] = 0
-                 ) -> None:
+    def __init__(
+        self, val1: int | tuple[int, int] = 0, val2: int | tuple[int, int] = 0
+    ) -> None:
         if isinstance(val1, tuple):
             super().__init__(*val1)
         else:
@@ -37,13 +38,13 @@ class PatchedPoint(Point):
         return self
 
     def __str__(self):
-        return f'({self.x}, {self.y})'
+        return f"({self.x}, {self.y})"
 
     def __repr__(self):
-        return self.__class__.__name__ + f'({self.x}, {self.y})'
+        return self.__class__.__name__ + f"({self.x}, {self.y})"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     point = PatchedPoint()
     print(point)
     new_point = point + (2, -3)

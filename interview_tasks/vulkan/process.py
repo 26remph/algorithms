@@ -6,15 +6,14 @@ class TestPrintClass:
         self.x = 100
 
     def __str__(self):
-        return f'{type(self)}:{self.x}'
+        return f"{type(self)}:{self.x}"
 
 
 class MyAwesomeClassProxy(BaseProxy):
-
-    _exposed_ = ('exposed_func', )
+    _exposed_ = ("exposed_func",)
 
     def exposed_func(self):
-        self._callmethod('exposed_func')
+        self._callmethod("exposed_func")
 
 
 test = TestPrintClass()

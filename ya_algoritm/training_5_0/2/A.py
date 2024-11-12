@@ -1,6 +1,6 @@
-if __name__ == '__main__':
+if __name__ == "__main__":
     k = int(input())
-    x_min = x_max = y_min = y_max = float('inf')
+    x_min = x_max = y_min = y_max = float("inf")
 
     for _ in range(k):
         x, y = map(int, input().split())

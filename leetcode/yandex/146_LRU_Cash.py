@@ -1,4 +1,3 @@
-
 class LRUCache:
     def __init__(self, capacity: int):
         self.capacity = capacity
@@ -28,7 +27,7 @@ class LRUCache:
 # param_1 = obj.get(key)
 # obj.put(key,value)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     lru = LRUCache(2)
     lru.put(1, 0)
     lru.put(2, 2)

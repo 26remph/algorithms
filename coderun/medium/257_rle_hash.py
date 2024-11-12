@@ -22,21 +22,19 @@ def main():
     #     else:
     #         num_s += s[i]
 
-    print('size', f'{size:,d}', 'base', base)
+    print("size", f"{size:,d}", "base", base)
 
     harr = [[] for _ in range(size)]  # [start, end, len]
     # pref = [[0, 0, 0] for _ in range(size)]  # [start, end, len]
 
-    print('init=', harr)
+    print("init=", harr)
     # print('init=', pref)
 
-    num_s = ''
+    num_s = ""
     ind = 1
     size = 1
     for i in range(len(s)):
-
         if s[i] in ascii_lowercase:
-
             if num_s:
                 size += int(num_s)
 
@@ -45,7 +43,7 @@ def main():
                 # pref[j][0] = pref[j-1][1] + 1
                 # pref[j][1] = pref[j-1][1] + num
                 # pref[j][2] = pref[j-1][2] + len(str(num)) + 1
-                num_s = ''
+                num_s = ""
 
             else:
                 harr[size % base].append((s[i], size))
@@ -55,21 +53,21 @@ def main():
                 size += 1
 
         else:
-            num_s = ''.join([num_s, s[i]])
+            num_s = "".join([num_s, s[i]])
 
-    print('fill=', harr)
-    print('size', size)
+    print("fill=", harr)
+    print("size", size)
     # print('fill=', pref)
     tpref = time.time() - t
-    print(tpref, '(s)')
+    print(tpref, "(s)")
 
     t = time.time()
     # out = []
     #
     for _ in range(q):
         i, j = map(int, input().split())
-        print(i, '=', harr[i % base])
-        print(j, '=', harr[j % base])
+        print(i, "=", harr[i % base])
+        print(j, "=", harr[j % base])
     #
     #     i = random.randint(1, pref[-1][1])
     #     j = random.randint(i, pref[-1][1])
@@ -94,13 +92,13 @@ def main():
     #         out.append(str(ans))
     #
     tq = time.time() - t
-    print(tq, '(s)')
-    print(tpref + tq, '(s) all')
+    print(tq, "(s)")
+    print(tpref + tq, "(s) all")
 
     # print(cash)
     # print('s', s)
     # print('\n'.join(out))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

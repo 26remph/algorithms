@@ -1,10 +1,4 @@
-d = {
-    0: 0,
-    1: 1,
-    2: 2,
-    3: 2,
-    4: 1
-}
+d = {0: 0, 1: 1, 2: 2, 3: 2, 4: 1}
 
 
 def main():
@@ -16,5 +10,5 @@ def main():
     return col
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(main())

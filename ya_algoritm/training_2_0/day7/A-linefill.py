@@ -15,7 +15,6 @@ cnt = 0
 sum_cut = 0
 start = 0
 for act in arr:
-
     if cnt > 0:
         long = act[0] - start
         sum_cut += long

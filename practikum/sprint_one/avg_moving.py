@@ -5,13 +5,14 @@ n: int = 0
 
 
 def moving_average(arr: List[int], window_size: int) -> List[float]:
-
     sma: list = []
     sma_first = sum(arr[:window_size]) / window_size
     sma.append(sma_first)
 
     for i in range(n - window_size):
-        sma_next = sma[i] - arr[i + 0] / window_size + arr[i + window_size] / window_size
+        sma_next = (
+            sma[i] - arr[i + 0] / window_size + arr[i + window_size] / window_size
+        )
         sma.append(sma_next)
 
     return sma

@@ -11,7 +11,7 @@ graph = [[[] for _ in range(n + 1)] for _ in range(m + 1)]
 subway = defaultdict(set)
 
 for line in range(1, m + 1):
-    p = list(map(int, input().strip().split(' ')))
+    p = list(map(int, input().strip().split(" ")))
     for i in range(1, len(p) - 1):
         v, e = p[i], p[i + 1]
         graph[line][v].append((e, line, 0))
@@ -35,7 +35,7 @@ for v, lines in subway.items():
 #         print(f'{station}: {graph[line][station]}')
 
 # forward
-a, b = map(int, input().split(' '))
+a, b = map(int, input().split(" "))
 visited: list[list[None | int]]  # vertex, line
 visited = [[None for _ in range(m + 1)] for _ in range(n + 1)]
 for line in subway[a]:

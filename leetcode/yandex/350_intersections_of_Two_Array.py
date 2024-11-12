@@ -35,7 +35,7 @@ class Solution:
         return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # nums1 = [1, 2, 2, 1]
     # nums2 = [2, 2]
     nums1 = [4, 9, 5]

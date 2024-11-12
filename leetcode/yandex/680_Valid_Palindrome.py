@@ -1,24 +1,25 @@
 class Solution:
-
     def validPalindrome(self, s: str) -> bool:
-        i = 0; j = len(s) - 1
+        i = 0
+        j = len(s) - 1
         while i < j:
             if s[i] != s[j]:
-                return s[i:j] == s[i:j][::-1] or s[i + 1:j + 1] == s[i + 1:j + 1][::-1]
-            i += 1; j -= 1
+                return (
+                    s[i:j] == s[i:j][::-1] or s[i + 1 : j + 1] == s[i + 1 : j + 1][::-1]
+                )
+            i += 1
+            j -= 1
 
         return True
 
     def recursion_validPalindrome(self, s: str, is_deleted=False) -> bool:
-
         i, j = 0, len(s) - 1
         while i < j:
             if s[i] != s[j]:
                 if is_deleted:
                     return False
-                return (
-                        self.validPalindrome(s[i:j], True) or
-                        self.validPalindrome(s[i + 1:j + 1], True)
+                return self.validPalindrome(s[i:j], True) or self.validPalindrome(
+                    s[i + 1 : j + 1], True
                 )
 
             i += 1
@@ -71,20 +72,26 @@ class Solution:
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tests = (
-        ("pidbliassaqozokmtgahluruufwbjdtayuhbxwoicviygilgzduudzgligyviciowxbhuyatdjbwfuurulhagtmkozoqassailbdip", False),
+        (
+            "pidbliassaqozokmtgahluruufwbjdtayuhbxwoicviygilgzduudzgligyviciowxbhuyatdjbwfuurulhagtmkozoqassailbdip",
+            False,
+        ),
         ("aba", True),
-        ('abca', True),
-        ('abc', False),
-        ('eedede', True),
-        ('tcaac', True),
-        ('atbbga', False),
-        ("aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga", True),
+        ("abca", True),
+        ("abc", False),
+        ("eedede", True),
+        ("tcaac", True),
+        ("atbbga", False),
+        (
+            "aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga",
+            True,
+        ),
         ("ebcbbececabbacecbbcbe", True),
     )
     sol = Solution()
     for s, ans in tests:
         res = sol.validPalindrome(s)
         # res = sol.complex_validPalindrome(s)
-        assert res == ans, f'{res=}, {ans=}, {s=}'
+        assert res == ans, f"{res=}, {ans=}, {s=}"

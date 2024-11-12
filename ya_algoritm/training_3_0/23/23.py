@@ -5,9 +5,8 @@ dp = [0, 0]
 prev = [0, 1]
 ind = 0
 cost, cost1, cost2, cos3 = 0, 0, 0, 0
-inf = float('inf')
+inf = float("inf")
 for i in range(2, n + 1):
-
     if i % 3 == 0:
         ind = i // 3
         cost3 = (dp[ind] + 1, ind)

@@ -9,7 +9,6 @@ from typing import Optional
 
 
 class Solution:
-
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         tail = None
         while head:
@@ -27,7 +26,7 @@ class Solution:
             # Assign curr to prev, next to curr...
             prev = head
             head = next
-        return prev       # Return the prev pointer to get the reverse linked list...
+        return prev  # Return the prev pointer to get the reverse linked list...
 
     def reverseListRecursion(self, head: ListNode) -> ListNode:
         if not head:

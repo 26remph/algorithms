@@ -1,14 +1,12 @@
-
 def rotate(ai, bi, arr):
-
     ai = ai % n
     bi = bi % n
 
     # print(f'rotate: {ai=}, {bi=}, {arr[ai: bi + 1]=}, {arr[ai:]=}, {arr[:bi+1]=}')
     if bi < ai:
-        return max(arr[ai:] + arr[:bi + 1])
+        return max(arr[ai:] + arr[: bi + 1])
 
-    return max(arr[ai: bi + 1])
+    return max(arr[ai : bi + 1])
 
 
 def solution(a, b, k, arr):
@@ -36,7 +34,7 @@ def solution(a, b, k, arr):
     return max(win_to_right, win_to_left)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     arr = list(map(int, input().split()))
     a, b, k = map(int, input().split())

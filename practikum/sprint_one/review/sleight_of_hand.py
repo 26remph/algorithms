@@ -2,6 +2,7 @@
 Ловкость рук.
 Игра «Тренажёр для скоростной печати»
 """
+
 # id 68997972
 from collections import Counter
 from typing import List, Tuple
@@ -18,11 +19,11 @@ def read_input() -> Tuple[List[str], int]:
     k = int(input())
     matrix: list = []
     for _ in range(4):
-        row = [x for x in input().strip() if x != '.']
+        row = [x for x in input().strip() if x != "."]
         matrix = matrix + row
     return matrix, k
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     arr, key = read_input()
     print(get_sum(arr, key))

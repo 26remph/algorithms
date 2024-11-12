@@ -14,14 +14,14 @@ def solution(node):
         node.next, node.prev = node.prev, node.next
         print(node.value)
         if node.next:
-            print('next:', node.next.value)
+            print("next:", node.next.value)
         else:
-            print('next:', None)
+            print("next:", None)
 
         if node.prev:
-            print('prev:', node.prev.value)
+            print("prev:", node.prev.value)
         else:
-            print('prev:', None)
+            print("prev:", None)
         if node.prev:
             node = node.prev
         else:
@@ -31,7 +31,7 @@ def solution(node):
 
 
 def print_rez(node):
-    print(node, '>')
+    print(node, ">")
     while node:
         print(node.value)
         node = node.next

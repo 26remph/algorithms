@@ -9,7 +9,6 @@ class Solution:
 
         i, j = 0, 0
         while i < len(nums):
-
             if nums[i] != 0:
                 i += 1
                 continue
@@ -21,7 +20,6 @@ class Solution:
                 j = i + 1
 
             while j < len(nums):
-
                 if nums[j] == 0:
                     j += 1
                     continue
@@ -36,7 +34,6 @@ class Solution:
         return nums
 
     def moveZeroes_swap(self, nums: List[int]) -> None:
-
         pos = 0
         for i in range(len(nums)):
             if nums[i] != 0:

@@ -18,9 +18,7 @@ row = list(map(int, input().split()))
 N, V = row[0], row[1]
 arr = list(map(int, input().split()))
 
-graph = {
-    1: []
-}
+graph = {1: []}
 route = {}
 for v in range(1, N + 1):
     x = []
@@ -68,7 +66,6 @@ for v in arr:
 
 
 def dfs(v):
-
     if v:
         dfs(graph.get(v)[0])
         if v != start:

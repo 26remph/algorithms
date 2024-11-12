@@ -6,7 +6,6 @@ def gcd_of_two(x, y):
 
 
 def gcd(*args):
-
     if len(args) == 1:
         return args[0]
 
@@ -21,6 +20,6 @@ def gcd(*args):
     return x
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(gcd(36, 48, 156, 100500))
     print(gcd(3))

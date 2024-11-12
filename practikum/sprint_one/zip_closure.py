@@ -30,4 +30,4 @@ def read_input() -> Tuple[List[int], List[int]]:
 
 a, b = read_input()
 for elem in zip(a, b, strict=False):
-    print(elem[0], elem[1], end=' ')
+    print(elem[0], elem[1], end=" ")

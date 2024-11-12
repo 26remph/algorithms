@@ -1,4 +1,3 @@
-
 def main():
     T = int(input())
     for _ in range(T):
@@ -18,5 +17,5 @@ def main():
     # print(5 ^ 8)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

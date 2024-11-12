@@ -3,8 +3,10 @@ import random
 
 
 def partition(array, pivot):
-
-    left, right, = 0, len(array) - 1
+    (
+        left,
+        right,
+    ) = 0, len(array) - 1
     while left < right:
         key_left = (array[left][1], array[left][2])
         key_right = (array[right][1], array[right][2])
@@ -21,11 +23,11 @@ def partition(array, pivot):
         if key_left == key_right and name_left < name_right:
             left += 1
             continue
-        
+
         array[left], array[right] = array[right], array[left]
         left += 1
 
-    return array[0: left], array[right: len(array)]
+    return array[0:left], array[right : len(array)]
 
 
 def quicksort(array):
@@ -48,6 +50,6 @@ def read_input():
     return arr
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for write in quicksort(read_input()):
         print(write[0])

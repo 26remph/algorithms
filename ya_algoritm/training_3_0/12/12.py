@@ -2,12 +2,11 @@ s = input()
 
 stack = []
 
-ch_open = '([{'
-ch_close = ')]}'
-pair = {'(': ')', '[': ']', '{': '}'}
+ch_open = "([{"
+ch_close = ")]}"
+pair = {"(": ")", "[": "]", "{": "}"}
 isTrue = True
 for i in range(len(s)):
-
     if not (s[i] in ch_open or s[i] in ch_close):
         continue
 
@@ -26,4 +25,4 @@ for i in range(len(s)):
 if stack:
     isTrue = False
 
-print('yes' if isTrue else 'no')
+print("yes" if isTrue else "no")

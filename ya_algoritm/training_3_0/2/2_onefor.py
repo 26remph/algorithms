@@ -85,8 +85,8 @@
 # ch = 'i'
 
 k = 10
-s = 'irvumfhblqdtnquivtriihsixp'
-ch = 'i'
+s = "irvumfhblqdtnquivtriihsixp"
+ch = "i"
 
 
 summa = 0
@@ -104,15 +104,23 @@ for i in range(len(s)):
     if s[i] == ch:
         summa += 1
         r_summa += 1 if cnt_z >= 1 else 0
-        print('i', i, 'summa-ch', summa, 'r_summa-ch', r_summa)
+        print("i", i, "summa-ch", summa, "r_summa-ch", r_summa)
     else:
         cnt_z += 1
         if cnt_z == k:
             left_summa = summa - k + 1
-            print('SAVE')
+            print("SAVE")
             print(
-                'i', i, 'l_sum=', left_summa, 'r_summa=', r_summa, 'sum=', summa,
-                'cnt_z=', cnt_z
+                "i",
+                i,
+                "l_sum=",
+                left_summa,
+                "r_summa=",
+                r_summa,
+                "sum=",
+                summa,
+                "cnt_z=",
+                cnt_z,
             )
 
         if cnt_z > k:
@@ -131,21 +139,27 @@ for i in range(len(s)):
                 left_summa = summa
                 cnt_z = k
                 r_summa = 0
-            print('RESET')
+            print("RESET")
             print(
-                'i', i, 'gsumm=',
-                gsumm, 'l_sum=',
+                "i",
+                i,
+                "gsumm=",
+                gsumm,
+                "l_sum=",
                 left_summa,
-                'r_summa', r_summa,
-                'sum=', summa,
-                'cnt_z', cnt_z
+                "r_summa",
+                r_summa,
+                "sum=",
+                summa,
+                "cnt_z",
+                cnt_z,
             )
 
         summa += 1
         r_summa += 1 if cnt_z >= 1 else 0
-        print('i', i, 'summa-dot', summa, 'r_summa-dot', r_summa)
+        print("i", i, "summa-dot", summa, "r_summa-dot", r_summa)
 
     gsumm = max(gsumm, summa)
 
-print('gsumm', gsumm)
-print('summa', summa, 'left_summa=', left_summa, 'r_summa', r_summa)
+print("gsumm", gsumm)
+print("summa", summa, "left_summa=", left_summa, "r_summa", r_summa)

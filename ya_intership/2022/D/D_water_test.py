@@ -5,7 +5,6 @@ from bisect import bisect_left, bisect_right
 
 
 def read_input() -> list:
-
     n = int(input())
 
     data = []
@@ -16,7 +15,6 @@ def read_input() -> list:
 
 
 def read_data_file(filename):
-
     data = []
     with open(filename) as f:
         f.readline()
@@ -28,7 +26,7 @@ def read_data_file(filename):
 
 start_time = time.time()
 # data = read_input()
-data = read_data_file('data_create.txt')
+data = read_data_file("data_create.txt")
 print("READ: --- %s seconds ---" % (time.time() - start_time))
 
 start_ind = sorted(data, key=lambda x: (x[0], x[1]))
@@ -49,11 +47,10 @@ for row in end_ind:
 print("SORTED: --- %s seconds ---" % (time.time() - start_time))
 
 
-with open('query.txt') as f:
+with open("query.txt") as f:
     # q = int(input())
     q = f.readline().rstrip()
     while line := f.readline().rstrip():
-
         row = list(map(int, line.split()))
         start, end, _type = row
 
@@ -71,8 +68,7 @@ with open('query.txt') as f:
             ind_right -= 1
 
         _sum_alt = 0
-        if ind_left <= ind_right and len(source) == 1:
-            if source[0][search_ind] <= end:
+        if ind_left <= ind_right and len(source) == 1 and source[0][search_ind] <= end:
                 _sum_alt = total_sum[0]
 
         if ind_left <= ind_right and len(source) > 1:
@@ -85,10 +81,10 @@ with open('query.txt') as f:
 
 print("\nTOTAL: --- %s seconds ---" % (time.time() - start_time))
 print(
-    'data_size_of:',
-    sys.getsizeof(data) +
-    sys.getsizeof(start_ind) +
-    sys.getsizeof(keys_x0) +
-    sys.getsizeof(end_ind) +
-    sys.getsizeof(keys_x1)
+    "data_size_of:",
+    sys.getsizeof(data)
+    + sys.getsizeof(start_ind)
+    + sys.getsizeof(keys_x0)
+    + sys.getsizeof(end_ind)
+    + sys.getsizeof(keys_x1),
 )

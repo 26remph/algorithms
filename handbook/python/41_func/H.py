@@ -4,6 +4,6 @@ def is_palindrome(s: int | str | tuple | list) -> bool:
     return s == s[::-1]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(is_palindrome(123))
     print(is_palindrome([1, 2, 1, 2, 1]))

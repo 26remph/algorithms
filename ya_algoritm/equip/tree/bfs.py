@@ -2,7 +2,6 @@ from collections import deque
 
 
 def bfs(start, end):
-
     # init deque
     path = deque([(start, e) for e in range(len(graph[start]))])
 
@@ -17,7 +16,7 @@ def bfs(start, end):
     return visited[end]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     graph = [[] for _ in range(n + 1)]
     visited = [0] * (n + 1)

@@ -2,10 +2,9 @@ from collections import deque
 
 
 def solution(names):
-
     def dfs(d, path):
         if isinstance(d, int):
-            res = '.'.join(path), d
+            res = ".".join(path), d
             path.pop()
             return res
 
@@ -21,7 +20,6 @@ def solution(names):
 
 
 def solution_stack(names: dict):
-
     ans = []
 
     stack = deque(names.items())
@@ -36,7 +34,7 @@ def solution_stack(names: dict):
                 stack.extend(v.items())
         else:
             # print('.'.join(root), v)
-            ans.append(('.'.join(root), v))
+            ans.append((".".join(root), v))
 
             root.pop()
 
@@ -45,8 +43,7 @@ def solution_stack(names: dict):
     return ans
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     a = {
         "a": 1,
         "b": 2,
@@ -61,4 +58,4 @@ if __name__ == '__main__':
     ans = [("a", 1), ("b", 2), ("c.d", 1), ("c.e.f", 5)]
     # res = solution(a)
     res = solution_stack(a)
-    assert res == ans, f'{ans=}, {res=}'
+    assert res == ans, f"{ans=}, {res=}"

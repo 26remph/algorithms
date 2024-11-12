@@ -4,9 +4,7 @@ EPS = 0.00001
 
 
 def bi_left(lo, hi):
-
     while lo + EPS < hi:
-
         x = (hi + lo) / 2
 
         if a > 0:

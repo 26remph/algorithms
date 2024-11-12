@@ -4,7 +4,7 @@ def sample_gen(N):
 
 
 a, b, *c = sample_gen(4)
-print(f'{a=}, {b=}, {c=}')
+print(f"{a=}, {b=}, {c=}")
 
 
 def increment(x):

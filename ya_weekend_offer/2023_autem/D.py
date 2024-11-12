@@ -3,7 +3,6 @@ import heapq
 
 
 def solution():
-
     if len(plan) > m:
         return -1
 
@@ -40,7 +39,7 @@ def solution():
     return total_greed
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     k, n, m = map(int, input().split())
 
     plan = collections.defaultdict(list)

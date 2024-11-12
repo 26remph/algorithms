@@ -1,5 +1,3 @@
-
-
 def check_win(i, j):
     # i, j = 16, 26
     # i, j = 37, 60
@@ -34,10 +32,10 @@ def main():
                 if (i, j) in buffer:
                     cnt += 1
 
-    print('hit', cnt, 'form', total, cnt / total * 100)
+    print("hit", cnt, "form", total, cnt / total * 100)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     buffer = set()
     cash()
     main()

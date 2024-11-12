@@ -9,7 +9,7 @@ cnt_num = 0
 while line := sys.stdin.readline().rstrip():
     values = line.split()
     num = int(values.pop())
-    key = ' '.join(values)
+    key = " ".join(values)
     voices[key] = num
     cnt_num += num
 
@@ -19,7 +19,6 @@ total_place = 0
 
 rez = []
 for key, value in voices.items():
-
     int_part = value // K1 if K1 else K1
     rem_part = value % K1 if K1 else K1
 

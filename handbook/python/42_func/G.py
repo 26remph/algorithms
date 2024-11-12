@@ -30,7 +30,7 @@ def get_average():
     return odd_avg, even_avg
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # test 1
     # print('test1')
     # enter_results(1, 2, 3, 4, 5, 6)
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     # enter_results(1, 2)
     # print(get_sum(), get_average())
     # test 2
-    print('test2')
+    print("test2")
     enter_results(3.5, 2.14, 45.2, 37.99)
     print(get_sum(), get_average())
     enter_results(5.2, 7.3)

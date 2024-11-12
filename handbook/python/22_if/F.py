@@ -1,7 +1,7 @@
 year = int(input())
 
-YES = 'YES'
-NO = 'NO'
+YES = "YES"
+NO = "NO"
 
 if year % 400 == 0:
     print(YES)

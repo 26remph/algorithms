@@ -3,7 +3,6 @@ from collections import defaultdict
 
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
-
         t_pos = defaultdict(list)
 
         for pos in range(len(t)):

@@ -11,6 +11,6 @@ q = input()
 ans = stat.get(q)
 if ans:
     ans.sort()
-    print('\n'.join(ans))
+    print("\n".join(ans))
 else:
-    print('Таких нет')
+    print("Таких нет")

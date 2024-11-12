@@ -1,5 +1,4 @@
 def insert_selection(arr):
-
     for i in range(len(arr) - 1, -1, -1):
         maxel = arr[0], 0
         for j in range(0, i):
@@ -14,6 +13,6 @@ def insert_selection(arr):
     print(arr)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     arr = [1, 7, 8, 9, 10, 11, 3]
     insert_selection(arr)

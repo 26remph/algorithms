@@ -1,5 +1,4 @@
 def solution(a):
-
     for i in range(len(a)):
         min_ind = i
         for j in range(i + 1, len(a)):
@@ -11,7 +10,7 @@ def solution(a):
     return a
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     arr = list(map(int, input().split()))
-    print(' '.join(map(str, solution(arr))))
+    print(" ".join(map(str, solution(arr))))

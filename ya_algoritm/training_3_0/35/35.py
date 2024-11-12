@@ -2,7 +2,6 @@ import sys
 
 
 def dfs(v, prev):
-
     visited[v][0] = 1  # grey is one
     visited[v][1].append(prev)
 
@@ -32,11 +31,11 @@ def dfs(v, prev):
 n = int(input())
 graph = [[] for _ in range(n + 1)]
 sys.setrecursionlimit(max(1000, n * 2))
-visited = [[0, []]for _ in range(n + 1)]
+visited = [[0, []] for _ in range(n + 1)]
 ans = []
 
 for v in range(1, n + 1):
-    e = list(map(int, input().split(' ')))
+    e = list(map(int, input().split(" ")))
     graph[v].extend([0] + e)
 
 
@@ -46,11 +45,11 @@ for v in range(1, n + 1):
         visited[v][0] = 2
 
 if ans:
-    print('YES')
+    print("YES")
     print(len(ans[0]))
     print(*ans[0])
 else:
-    print('NO')
+    print("NO")
 
 
 # print('---')

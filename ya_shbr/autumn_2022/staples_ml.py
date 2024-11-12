@@ -1,12 +1,9 @@
-
 MEMORY_LIMIT = 200
 S_LONG = 50_000_000
 
 
 def get_min_pos():
-
-    with open('./input.txt', 'r') as f:
-
+    with open("./input.txt", "r") as f:
         stack: list = []
         wrong_seq: list = []
 
@@ -18,11 +15,11 @@ def get_min_pos():
         input_str: str = f.read(MEMORY_LIMIT)
         while input_str:
             for ind, symbol in enumerate(input_str):
-                if symbol == '{':
+                if symbol == "{":
                     stack.append(ind + 1 + shift)
                     if len(stack) >= S_LONG / 2 + 2:
                         break
-                if symbol == '}':
+                if symbol == "}":
                     if first_pos:
                         first_pos = False
                         min_pos = ind + 1 + shift

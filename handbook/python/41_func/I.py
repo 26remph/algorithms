@@ -20,6 +20,6 @@ def is_prime_ferma(num: int) -> bool:
     return (2 << num - 2) % num == 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(is_prime(1001459))
     print(is_prime(79701))

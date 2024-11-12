@@ -2,7 +2,7 @@ def solution():
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t1 = [(1, 10), (20, 22), (23, 40)]
     t2 = [(8, 10), (20, 22), (25, 30)]
     ans = 3
@@ -16,4 +16,4 @@ if __name__ == '__main__':
 
     for t1, t2, ans in tests:
         res = solution(t1, t2)
-        assert res == ans, f'{res=}, {ans=}'
+        assert res == ans, f"{res=}, {ans=}"

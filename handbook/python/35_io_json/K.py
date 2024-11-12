@@ -5,7 +5,6 @@ fn_in = input()
 fn_out = input()
 
 with open(fn_in, encoding="UTF-8") as f:
-
     count = 0
     pos_count = 0
     min_n = float("inf")
@@ -31,7 +30,7 @@ out = {
     "min": int(min_n),
     "max": int(max_n),
     "sum": int(summa),
-    "average": f'{avg:.2f}'
+    "average": f"{avg:.2f}",
 }
 
 with open(fn_out, "w", encoding="UTF-8") as f:

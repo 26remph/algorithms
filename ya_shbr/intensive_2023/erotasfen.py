@@ -1,5 +1,4 @@
 def solution(arr):
-
     flags = [0] * len(arr)
     for j in range(len(arr)):
         if flags[j] == 1:
@@ -23,7 +22,7 @@ def solution(arr):
     print(ans)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     arr = list(range(2, n + 1))
     solution(arr)

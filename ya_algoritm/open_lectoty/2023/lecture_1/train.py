@@ -1,7 +1,7 @@
 SEC_IN_DAY = 24 * 60 * 60
 
 n = int(input())
-to_sec = lambda x: int(x.split(':')[0]) * 3600 + int(x.split(':')[1]) * 60
+to_sec = lambda x: int(x.split(":")[0]) * 3600 + int(x.split(":")[1]) * 60
 arrive = list(map(to_sec, input().split()))
 arrive.sort()
 

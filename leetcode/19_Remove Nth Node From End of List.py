@@ -9,8 +9,7 @@ class ListNode:
 
 
 class Solution:
-    def removeNthFromEnd(
-            self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         ind = 0 - n
         forward = head
         previous = follow = None
@@ -41,10 +40,10 @@ l1 = ListNode(1, l2)
 sol = Solution()
 node = sol.removeNthFromEnd(l1, 5)
 while node:
-    print(node.val, end='')
+    print(node.val, end="")
     node = node.next
 
-print('\n---')
+print("\n---")
 l2 = ListNode(2)
 l1 = ListNode(1, l2)
 node = sol.removeNthFromEnd(l1, 1)

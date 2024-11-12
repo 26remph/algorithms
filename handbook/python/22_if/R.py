@@ -13,8 +13,8 @@ elif b > a and b > c:
     c, b = b, c
 
 if pow(c, 2) == pow(a, 2) + pow(b, 2):
-    print('100%')
+    print("100%")
 elif pow(c, 2) > pow(a, 2) + pow(b, 2):
-    print('велика')
+    print("велика")
 elif pow(c, 2) < pow(a, 2) + pow(b, 2):
-    print('крайне мала')
+    print("крайне мала")

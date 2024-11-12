@@ -14,4 +14,4 @@ for num in nums:
     if num not in not_unique:
         ans.append(str(num))
 
-print(' '.join(ans))
+print(" ".join(ans))

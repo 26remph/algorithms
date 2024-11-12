@@ -10,10 +10,10 @@ def secret_replace(s, /, **kwargs):
         else:
             ans.append(ch)
 
-    return ''.join(map(str, ans))
+    return "".join(map(str, ans))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     result = secret_replace("Hello, world!", l=("hi", "y"), o=("123", "z"))
     print(result)
     result = secret_replace(

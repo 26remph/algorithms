@@ -4,7 +4,6 @@ from typing import List
 
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
-
         """
         Do not return anything, modify nums in-place instead.
         """
@@ -15,7 +14,6 @@ class Solution:
         return nums
 
     def rotate_v2(self, nums: List[int], k: int) -> None:
-
         for step in range(k):
             val = nums.pop()
             nums.insert(0, val)
@@ -23,7 +21,6 @@ class Solution:
         return nums
 
     def rotate_v3(self, nums: List[int], k: int) -> None:
-
         print(nums)
         j = 0
         for i in range(len(nums)):
@@ -36,7 +33,8 @@ class Solution:
                 nums[narrow] = nums[j]
                 nums[j] = save
                 j += 1
-                if j == 3: break
+                if j == 3:
+                    break
             else:
                 save = nums[narrow]
                 nums[narrow] = nums[i]

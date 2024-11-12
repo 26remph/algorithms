@@ -24,7 +24,7 @@ class Solution:
         return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     A = [1, 3, 2, 4]
     B = [3, 1, 2, 4]
     # A = [2, 3, 1]

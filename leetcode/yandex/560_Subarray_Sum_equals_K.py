@@ -32,7 +32,7 @@ class Solution:
         return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test = (
         ([1, -1, 0], 0, 3),
         ([1, 1, 1], 2, 2),
@@ -44,4 +44,4 @@ if __name__ == '__main__':
     for nums, k, out in test:
         res = sol.subarraySum(nums, k)
         print(res)
-        assert out == res, f'{out=}, {res=}, {nums=}'
+        assert out == res, f"{out=}, {res=}, {nums=}"
