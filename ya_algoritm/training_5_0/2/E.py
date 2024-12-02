@@ -83,7 +83,7 @@ if __name__ == "__main__":
                 good_b.append((ai, bi, cnt, ai - bi))
             cnt += 1
         ans = main(good_b, acid_b)
-        print(f'{ans[0]}\n{" ".join(map(str, ans[1]))}')
+        print(f"{ans[0]}\n{' '.join(map(str, ans[1]))}")
         # print(f'{main(good_b, acid_b)=}')
 
     # speed test

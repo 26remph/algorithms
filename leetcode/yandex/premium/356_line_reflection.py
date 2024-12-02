@@ -2,8 +2,11 @@ from typing import List
 
 
 # Formatted question description: https://leetcode.ca/all/356.html
-# Given n points on a 2D plane, find if there is such a line parallel to the y-axis that reflects the given points symmetrically.
-# In other words, answer whether or not if there exists a line that after reflecting all points over the given line, the original points' set is the same as the reflected ones.
+# Given n points on a 2D plane, find if there is such a line parallel
+# to the y-axis that reflects the given points symmetrically.
+# In other words, answer whether or not if there exists a line that after reflecting
+# all points over the given line, the original points'
+# set is the same as the reflected ones.
 # Note that there can be repeated points.
 
 

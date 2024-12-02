@@ -69,7 +69,7 @@ with open("query.txt") as f:
 
         _sum_alt = 0
         if ind_left <= ind_right and len(source) == 1 and source[0][search_ind] <= end:
-                _sum_alt = total_sum[0]
+            _sum_alt = total_sum[0]
 
         if ind_left <= ind_right and len(source) > 1:
             if ind_left - 1 < 0:

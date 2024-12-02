@@ -23,4 +23,4 @@ if __name__ == "__main__":
         _ = input()
         arr = list(map(int, input().split()))
         ans = solution(arr)
-        print(f'{ans[0]}\n{" ".join(map(str, ans[1]))}')
+        print(f"{ans[0]}\n{' '.join(map(str, ans[1]))}")

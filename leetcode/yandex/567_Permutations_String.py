@@ -17,10 +17,7 @@ class Solution:
             else:
                 del d2[s2[i - len(s1)]]
 
-        if len(d1) == len(d2) and d1 == d2:
-            return True
-
-        return False
+        return bool(len(d1) == len(d2) and d1 == d2)
 
     def slow_checkInclusion(self, s1: str, s2: str) -> bool:
         s1 = "".join(sorted(list(s1)))

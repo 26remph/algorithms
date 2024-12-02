@@ -22,10 +22,9 @@ class Solution:
                 ans.append(prefix)
 
             st = len("".join(prefix.split(".")))
-            if len_ip == 3:
-                if is_valid(s[st:]):
-                    prefix += "." + s[st:]
-                    path.append(prefix)
+            if len_ip == 3 and is_valid(s[st:]):
+                prefix += "." + s[st:]
+                path.append(prefix)
 
             if len_ip < 3:
                 for i in range(1, 4):
@@ -57,9 +56,8 @@ class Solution:
                 if is_valid(prefix):
                     ip.append(prefix)
                     dfs(sub[i + 1 :])
-                    if len(ip) == 4:
-                        if len("".join(ip)) == len(s):
-                            ans.append(".".join(ip))
+                    if len(ip) == 4 and len("".join(ip)) == len(s):
+                        ans.append(".".join(ip))
                     ip.pop()
 
         dfs(s)

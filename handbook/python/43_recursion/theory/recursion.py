@@ -24,8 +24,8 @@ def fib_cash(n):
 
 
 if __name__ == "__main__":
-    print(f'{timeit("fib(35)", number=10, globals=globals()) / 10} c.')
-    print(f'{timeit("fib_nr(35)", number=10, globals=globals()) / 10} c.')
+    print(f"{timeit('fib(35)', number=10, globals=globals()) / 10} c.")
+    print(f"{timeit('fib_nr(35)', number=10, globals=globals()) / 10} c.")
     count = 0
     cash = {0: 1, 1: 1}
     print(f"res={fib_cash(35)}, count={count}")

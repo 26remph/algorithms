@@ -33,7 +33,7 @@ class Solution:
         max_dist = max(max_dist, zero)
 
         zero = 0
-        for i in range(i, j + 1):
+        for _ in range(i, j + 1):
             if seats[i] == 1:
                 zero = 0
             else:
