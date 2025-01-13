@@ -14,7 +14,7 @@ class Solution:
         return nums
 
     def rotate_v2(self, nums: List[int], k: int) -> None:
-        for step in range(k):
+        for _ in range(k):
             val = nums.pop()
             nums.insert(0, val)
 

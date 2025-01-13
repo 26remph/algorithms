@@ -18,7 +18,6 @@ class Queue:
             self.head = node
             self.tail = node
         else:
-            # print(self.head.val, self.tail.val, self.head == self.tail, self.tail is self.head)
             if self.head is self.tail:
                 self.head.next_node = node
                 self.tail = node

@@ -1,3 +1,6 @@
+import sys
+
+
 def sample_gen(N):
     for i in range(N):
         yield i
@@ -15,9 +18,6 @@ def increment(x):
 x = 10
 print(increment(x))
 print(x)
-
-import sys
-
 
 arr_1 = []
 arr2 = arr_1

@@ -20,10 +20,10 @@ class Solution:
         return bool(len(d1) == len(d2) and d1 == d2)
 
     def slow_checkInclusion(self, s1: str, s2: str) -> bool:
-        s1 = "".join(sorted(list(s1)))
+        s1 = "".join(sorted(s1))
         deq = collections.deque()
         j = 0
-        for i in range(len(s2)):
+        for _ in range(len(s2)):
             while j < len(s2) and len(deq) < len(s1):
                 deq.append(s2[j])
                 j += 1

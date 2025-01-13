@@ -29,12 +29,12 @@ class Solution:
 sol = Solution()
 s = "abc"
 t = "ahbgdca"
-assert sol.isSubsequence(s, t) == True
+assert sol.isSubsequence(s, t)
 
 s = "axc"
 t = "ahbgdc"
-assert sol.isSubsequence(s, t) == False
+assert not sol.isSubsequence(s, t)
 
 s = "acb"
 t = "ahbgdc"
-assert sol.isSubsequence(s, t) == False
+assert not sol.isSubsequence(s, t)

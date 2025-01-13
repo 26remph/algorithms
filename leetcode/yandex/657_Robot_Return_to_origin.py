@@ -12,12 +12,13 @@ class Solution:
             if n == "R":
                 dot[0] -= 1
 
-        return True if not dot[0] and not dot[1] else False
+        # return True if not dot[0] and not dot[1] else False
+        return bool(not dot[0] and not dot[1])
 
 
 if __name__ == "__main__":
     # s = 'UD'
     # s = 'LL'
-    # s = 'UDLLRR'
+    s = "UDLLRR"
     sol = Solution()
     print(sol.judgeCircle(s))

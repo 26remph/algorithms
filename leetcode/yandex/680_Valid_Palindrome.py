@@ -32,10 +32,11 @@ class Solution:
             return True
 
         if len(s) == 3:
-            if s[0] != s[2] and s[0] != s[1]:
-                return False
-            else:
-                return True
+            # if s[0] != s[2] and s[0] != s[1]:
+            #     return False
+            # else:
+            #     return True
+            return not (s[0] != s[2] and s[0] != s[1])
 
         cnt = 0
         j = len(s) - 1

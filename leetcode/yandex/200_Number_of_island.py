@@ -24,11 +24,10 @@ class Solution:
                         u = (i - 1, j) if i - 1 >= 0 and grid[i - 1][j] == "1" else None
                         d = (i + 1, j) if i + 1 < n and grid[i + 1][j] == "1" else None
                         for p in (l, r, u, d):
-                            if p:
-                                if not visited[p[0] * m + p[1]]:
-                                    visited[p[0] * m + p[1]] = 1
-                                    print(f"dot={p[0] * m + p[1]}, {p[0], p[1]}")
-                                    stack.append(p)
+                            if p and not visited[p[0] * m + p[1]]:
+                                visited[p[0] * m + p[1]] = 1
+                                print(f"dot={p[0] * m + p[1]}, {p[0], p[1]}")
+                                stack.append(p)
                     island += 1
                     print(visited)
         return island

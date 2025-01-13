@@ -12,7 +12,7 @@ from typing import List
 
 class Solution:
     def isReflected(self, points: list[list[int]]) -> bool:
-        dots = {(x, y) for x, y in points}
+        dots = set((x, y) for x, y in points)
         line_x = min(points)[0] + max(points)[0]
         for i, j in points:
             if (line_x - i, j) not in dots:

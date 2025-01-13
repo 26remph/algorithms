@@ -38,10 +38,7 @@ class Solution:
             if not p or int(p) > 255:
                 return False
 
-            if str(int(p)) != p:
-                return False
-
-            return True
+            return str(int(p)) == p
 
         ip = []
         ans = []

@@ -23,7 +23,6 @@ class Programmer:
 
     def info(self) -> str:
         return f"{self.name} {self.worked_time}ч. {sum(self.salary.values())}тгр."
-        # return f'{self.name}, {self.position=}, {self.worked_time=}, {self.current_rate=}, {self.salary=}, {sum(self.salary.values())}'
 
 
 if __name__ == "__main__":

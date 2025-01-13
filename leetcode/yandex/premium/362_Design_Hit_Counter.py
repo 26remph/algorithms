@@ -25,7 +25,7 @@ class HitCounter:  # queue
         return len(self.hits)
 
 
-class HitCounter:  # follow-up
+class HitCounterV2:  # follow-up
     def __init__(self):
         self.times = [0] * 300
         self.hits = [0] * 300

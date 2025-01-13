@@ -67,4 +67,4 @@ if __name__ == "__main__":
     # s = "qvmwtmzzse"
     # s = "eccbbbbdec"
     sol = Solution()
-    print(sol.partitionLabels(s))
+    # print(sol.partitionLabels(s))
