@@ -31,7 +31,7 @@ def main():
     # print('init=', pref)
 
     num_s = ""
-    ind = 1
+    # ind = 1
     size = 1
     for i in range(len(s)):
         if s[i] in ascii_lowercase:
@@ -84,7 +84,8 @@ def main():
     #         # print(ans, 'start==end')
     #     else:
     #         middle = pref[end-1][2] - pref[start][2]
-    #         left = len(str(pref[start][1] - i + 1)) + 1 if pref[start][1] - i > 0 else 1
+    #         left = (len(str(pref[start][1] - i + 1)) + 1
+    #                 if pref[start][1] - i > 0 else 1)
     #         right = len(str(j - pref[end][0] + 1)) + 1 if j - pref[end][0] > 0 else 1
     #
     #         ans = middle + left + right
