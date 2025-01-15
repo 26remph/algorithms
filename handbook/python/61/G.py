@@ -11,6 +11,6 @@ def make_board(n):
     return a
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     N = 6
     print(make_board(N))

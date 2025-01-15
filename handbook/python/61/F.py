@@ -9,6 +9,6 @@ def multiplication_matrix(n):
     return res
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = 5
     print(multiplication_matrix(n))
