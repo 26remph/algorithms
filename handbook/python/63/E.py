@@ -2,6 +2,7 @@ from sys import stdin
 
 import requests
 
+
 schema = "http://"
 url = schema + input()
 

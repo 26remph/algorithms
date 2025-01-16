@@ -11,13 +11,16 @@ def index():
     # return flask.jsonify([1, 2, "ошибка", 4])
     return flask.jsonify({"first": "1", "third": "3"})
 
+
 @app.route("/first")
 def first():
     return flask.jsonify([1, 2, 3])
 
+
 @app.route("/second")
 def second():
     return flask.jsonify([2, 4, 6])
+
 
 @app.route("/third")
 def third():

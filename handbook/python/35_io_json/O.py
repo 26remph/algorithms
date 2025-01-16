@@ -2,7 +2,8 @@ import json
 
 
 fn = "o.json"
-tests = json.load(open(fn, encoding="UTF-8"))
+with open(fn, encoding="UTF-8") as f:
+    tests = json.load(f)
 
 score = 0
 for group in tests:
